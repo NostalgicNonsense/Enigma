@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+
 public class SimpleCarController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos;
@@ -47,10 +49,12 @@ public class SimpleCarController : MonoBehaviour
         }
     }
 }
+
 [System.Serializable]
-public class AxleInfo {
-	public WheelCollider leftWheel;
-	public WheelCollider rightWheel;
-	public bool motor; // is this wheel attached to motor?
-	public bool steering; // does this wheel apply steer angle?
+public class AxleInfo
+{
+    public WheelCollider leftWheel;
+    public WheelCollider rightWheel;
+    public bool motor; // is this wheel attached to motor?
+    public bool steering; // does this wheel apply steer angle?
 }
