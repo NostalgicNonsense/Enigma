@@ -284,6 +284,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Scripts\SimpleCarController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

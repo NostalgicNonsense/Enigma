@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
 
 public class SimpleCarController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public Turret turret;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -31,6 +32,7 @@ public class SimpleCarController : MonoBehaviour
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -58,3 +60,4 @@ public class AxleInfo
     public bool motor; // is this wheel attached to motor?
     public bool steering; // does this wheel apply steer angle?
 }
+
