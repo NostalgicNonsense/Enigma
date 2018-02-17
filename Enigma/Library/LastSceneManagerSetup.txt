@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Enigma/Scenes/dztesting.unity
+- path: Assets/Enigma/Scenes/jakescene.unity
   isLoaded: 1
   isActive: 1
