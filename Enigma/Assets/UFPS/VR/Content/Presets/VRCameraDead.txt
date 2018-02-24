@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+// NOTE: mouselook settings have been moved to the 'InputDead' preset
+
+ComponentType vp_FPCamera
+PositionOffset 0 0.3 0
+RotationStrafeRoll -50
+RotationSpringStiffness 0.025
+RotationSpringDamping 0.999
+

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enigma", "Enigma.csproj", "{65447FB1-C8FF-C327-E384-FBE741A814F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enigma.Editor", "Enigma.Editor.csproj", "{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{65447FB1-C8FF-C327-E384-FBE741A814F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65447FB1-C8FF-C327-E384-FBE741A814F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65447FB1-C8FF-C327-E384-FBE741A814F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

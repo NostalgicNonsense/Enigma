@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ded5f8f19f9bf8b4db0bba4c58123909
+timeCreated: 1458322256
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ImpactEvent: {fileID: 11400000, guid: a637b86c9c95fed44b75003f05454bee, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

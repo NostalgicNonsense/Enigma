@@ -1,0 +1,10 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPInput
+MouseLookSensitivity 5 5
+MouseLookSmoothSteps 5
+MouseLookSmoothWeight 0.75
+MouseLookAcceleration False
+MouseLookAccelerationThreshold 0.4

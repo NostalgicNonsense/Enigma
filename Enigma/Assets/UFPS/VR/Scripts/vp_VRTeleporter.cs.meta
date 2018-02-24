@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a844b4ecbc05cc04eabeee8ff49b7d59
+timeCreated: 1468350275
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - DirectionPointer: {instanceID: 0}
+  - CursorPrefab: {fileID: 157824, guid: b8d0a4c5d6570024582ab70796c013fd, type: 2}
+  executionOrder: 900
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,72 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPWeapon
+RenderingZoomDamping 0.5
+RenderingFieldOfView 35
+RenderingClippingPlanes 0.01 10
+RenderingZScale 1
+PositionSpringStiffness 0.01
+PositionSpringDamping 0.25
+PositionFallRetract 1
+PositionPivotSpringStiffness 0.1
+PositionPivotSpringDamping 0.5
+PositionKneeling 0.06
+PositionKneelingSoftness 1
+PositionWalkSlide 1 1 1
+PositionPivot 0 -0.15 0.37
+RotationPivot 0 0 0
+PositionInputVelocityScale 3
+PositionMaxInputVelocity 20
+RotationSpringStiffness 0.01
+RotationSpringDamping 0.25
+RotationPivotSpringStiffness 0.01
+RotationPivotSpringDamping 0.25
+RotationKneeling 0
+RotationKneelingSoftness 1
+RotationLookSway 1 1 0
+RotationStrafeSway 1 1 -1
+RotationFallSway 2 0 0
+RotationSlopeSway 0.75
+RotationInputVelocityScale 1
+RotationMaxInputVelocity 5
+RetractionDistance 1
+RetractionOffset 0 0
+RetractionRelaxSpeed 0.25
+ShakeSpeed 0.1
+ShakeAmplitude 0.25 0 1
+BobRate 1.4 0.7 0.7 0.7
+BobAmplitude 0.5 0.4 0.2 0.005
+BobInputVelocityScale 3.5
+BobMaxInputVelocity 250
+BobRequireGroundContact True
+StepPositionForce 0 0.015 0
+StepRotationForce 1.5 0 0
+StepSoftness 5
+StepMinVelocity 2
+StepPositionBalance 0
+StepRotationBalance 0
+StepForceScale 0.05
+LookDownActive False
+LookDownYawLimit 0
+LookDownPositionOffsetMiddle 0.32 -0.37 0.78
+LookDownPositionOffsetLeft 0.27 -0.31 0.7
+LookDownPositionOffsetRight 0.6 -0.41 0.86
+LookDownPositionSpringPower 1
+LookDownRotationOffsetMiddle -3.9 2.24 4.69
+LookDownRotationOffsetLeft -7 -10.5 15.6
+LookDownRotationOffsetRight -9.2 -9.8 48.84
+LookDownRotationSpringPower 1
+AmbientInterval 2.5 7.5
+PositionExitOffset 0 -1 0
+RotationExitOffset 40 0 0
+DoSpringsInLateUpdate False
+PositionOffset 0.24 -0.3 0.29
+PositionSpring2Stiffness 0.2
+PositionSpring2Damping 0.5615942
+RotationOffset -3.158258 -7.89 0
+RotationSpring2Stiffness 0.85
+RotationSpring2Damping 0.6
+AnimationType 1
+AnimationGrip 1

@@ -1,0 +1,9 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPController
+MotorAcceleration 0.252
+MotorDamping 0.15
+MotorAirSpeed 0.9
+PhysicsPushForce 8 // makes the player stronger when pushing rigidbodies around with the 'Run' modifier key held down

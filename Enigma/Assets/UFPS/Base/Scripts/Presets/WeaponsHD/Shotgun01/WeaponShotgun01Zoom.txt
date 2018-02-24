@@ -1,0 +1,30 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPWeapon
+ShakeSpeed 0.4
+ShakeAmplitude 0.025 0 0.045
+RenderingFieldOfView 12
+RenderingZoomDamping 0.5
+PositionOffset -0.3127 -0.453 0.53
+RotationOffset -0.52 5.58 0
+PositionSpringStiffness 0.15
+PositionSpringDamping 0.65
+PositionPivotSpringStiffness 0.75
+PositionPivotSpringDamping 0.65
+PositionPivot -0.32 -0.4 -0.08
+RotationSpringStiffness 0.05
+RotationSpringDamping 0.5
+BobRate 0.8 -0.4 0.4 0.4
+BobAmplitude 5 0 -25 0
+BobInputVelocityScale 2
+PositionWalkSlide -2.5 0 0
+RotationStrafeSway 0 1 0
+RotationInputVelocityScale 0.5
+BobMaxInputVelocity 5.5
+StepRotationForce 0.15 0 0
+StepSoftness 20
+StepMinVelocity 5
+StepPositionBalance 0
+StepRotationBalance 0

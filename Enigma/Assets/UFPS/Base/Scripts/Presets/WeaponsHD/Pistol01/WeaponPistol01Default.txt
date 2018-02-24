@@ -1,0 +1,50 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPWeapon
+RenderingZoomDamping 0.3
+RenderingFieldOfView 30
+RenderingClippingPlanes 0.1 10
+RenderingZScale 1
+PositionSpringStiffness 0.01
+PositionSpringDamping 0.25
+PositionFallRetract 1
+PositionPivotSpringStiffness 0.15
+PositionPivotSpringDamping 0.5
+PositionKneeling 0.1
+PositionKneelingSoftness 1
+PositionWalkSlide 0.75 0 1
+PositionPivot 0 -0.173 -0.58
+RotationPivot 0 0 0
+PositionInputVelocityScale 3
+PositionMaxInputVelocity 20
+RotationSpringStiffness 0.02
+RotationSpringDamping 0.5
+RotationPivotSpringStiffness 0.15
+RotationPivotSpringDamping 0.5
+RotationKneeling 20
+RotationKneelingSoftness 5
+RotationLookSway 2 2.5 0
+RotationStrafeSway 0 1.5 -2
+RotationFallSway 5 0 0
+RotationSlopeSway 0.75
+RotationInputVelocityScale 1
+RotationMaxInputVelocity 5
+RetractionDistance 0
+RetractionOffset 0 0
+RetractionRelaxSpeed 0.25
+RotationInputVelocityScale 1
+RotationMaxInputVelocity 5
+BobRate 1.4 0.7 0.7 0.7
+BobInputVelocityScale 5
+BobMaxInputVelocity 5.5
+StepPositionForce 0 -0.0005 0
+StepRotationForce 0.5 0 0
+StepSoftness 7
+StepMinVelocity 2
+StepForceScale 0.5
+PositionExitOffset 0.13 -0.8 -0.01
+RotationExitOffset 75 0 0
+LookDownActive True
+

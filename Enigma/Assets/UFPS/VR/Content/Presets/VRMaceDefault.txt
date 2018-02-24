@@ -1,0 +1,72 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_FPWeapon
+RenderingZoomDamping 0.5
+RenderingFieldOfView 35
+RenderingClippingPlanes 0.01 10
+RenderingZScale 1
+PositionSpringStiffness 0.01
+PositionSpringDamping 0.3796296
+PositionFallRetract 1
+PositionPivotSpringStiffness 0.1
+PositionPivotSpringDamping 0.5
+PositionKneeling 0.06
+PositionKneelingSoftness 1
+PositionWalkSlide 1 1 1
+PositionPivot 0 -0.1884205 0.32
+RotationPivot 0 0 0
+PositionInputVelocityScale 1
+PositionMaxInputVelocity 25
+RotationSpringStiffness 0.0092593
+RotationSpringDamping 0.3703705
+RotationPivotSpringStiffness 0.01
+RotationPivotSpringDamping 0.25
+RotationKneeling 0
+RotationKneelingSoftness 1
+RotationLookSway 1 1 -2.5
+RotationStrafeSway 0 2 5
+RotationFallSway 2 0 0
+RotationSlopeSway 1
+RotationInputVelocityScale 1
+RotationMaxInputVelocity 15
+RetractionDistance 0
+RetractionOffset 0 0
+RetractionRelaxSpeed 0.25
+ShakeSpeed 0.05
+ShakeAmplitude 0.25 0.5 1
+BobRate 0.8 0.4 0.4 0.4
+BobAmplitude -2.5 2.5 0.2 0.01
+BobInputVelocityScale 1
+BobMaxInputVelocity 250
+BobRequireGroundContact True
+StepPositionForce 0 -0.0012 -0.0012
+StepRotationForce 0 0 0
+StepSoftness 4
+StepMinVelocity 0
+StepPositionBalance 0
+StepRotationBalance 0
+StepForceScale 1
+LookDownActive False
+LookDownYawLimit 60
+LookDownPositionOffsetMiddle 0.32 -0.37 0.78
+LookDownPositionOffsetLeft 0.27 -0.31 0.7
+LookDownPositionOffsetRight 0.6 -0.41 0.86
+LookDownPositionSpringPower 1
+LookDownRotationOffsetMiddle -3.9 2.24 4.69
+LookDownRotationOffsetLeft -7 -10.5 15.6
+LookDownRotationOffsetRight -9.2 -9.8 48.84
+LookDownRotationSpringPower 1
+AmbientInterval 2.5 7.5
+PositionExitOffset 0 -1 0
+RotationExitOffset 40 0 0
+DoSpringsInLateUpdate False
+PositionOffset 0.15 -0.37 0.35
+PositionSpring2Stiffness 0.95
+PositionSpring2Damping 0.25
+RotationOffset 6.38 12.11 9
+RotationSpring2Stiffness 0.9
+RotationSpring2Damping 0.3
+AnimationType 2
+AnimationGrip 1

@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B8B39EA-6DC3-FDCB-6849-88740C4119E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2017.3.1f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WebModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticlesLegacyModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Vuforia.UnityExtensions.Editor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UIAutomation">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/Marie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Enigma.csproj">
+      <Project>{65447FB1-C8FF-C327-E384-FBE741A814F8}</Project>
+      <Name>Enigma</Name>
+    </ProjectReference>
+    <ProjectReference Include="Enigma.unityproj">
+      <Project>{65447FB1-C8FF-C327-E384-FBE741A814F8}</Project>
+      <Name>Enigma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_AboutBox.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_AddonBrowser.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_UFPSMenu.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_UpdateDialog.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_ComponentPersister.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_EditorApplicationQuit.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_EditorGUIUtility.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_EditorUtility.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_EventDumpWindow.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FileDialog.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPCameraEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPControllerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPInputEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPPlayerEventHandlerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPWeaponEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPWeaponMeleeAttackEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_FPWeaponShooterEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_InputEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_InputWindow.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_MessageBox.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_PresetEditorGUIUtility.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_ShooterEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_TimerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_UFPSInfo.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_WeaponEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\vp_WeaponShooterEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Effects\Editor\vp_PlayerFootFXHandlerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Effects\SurfaceSystem\Editor\vp_DecalManagerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Effects\SurfaceSystem\Editor\vp_SurfaceManagerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Gameplay\Editor\vp_FootstepManagerEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Gameplay\Editor\vp_MovingPlatformEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Gameplay\Editor\vp_RemotePlayerWizard.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Gameplay\Editor\vp_SpawnPointEditor.cs" />
+    <Compile Include="Assets\UFPS\Base\Scripts\Gameplay\Editor\vp_SurfaceIdentifierEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\UFPS\Base\Content\Art\Body\Animations\_README_Animations.txt" />
+    <None Include="Assets\UFPS\Base\Content\Art\Body\Materials\InvisibleShadowCaster.shader" />
+    <None Include="Assets\UFPS\Base\Content\Art\Weapons\Source\BasicArms\_README_BasicArms.txt" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\DiffuseVertexColor.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped_Glass.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\Scroll_Emissive.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\SimpleEmissive.shader" />
+    <None Include="Assets\UFPS\Base\Scripts\Gameplay\Player\Local\OldInventory\_OLD_INVENTORY_README_.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\AstronautCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\AstronautController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\AstronautInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\AstronautWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ControllerCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ControllerMegaSpeed.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyShooterZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyWeaponCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CowboyWeaponZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\CrouchInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DefaultCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DefaultInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DefaultWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DrunkCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DrunkController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DrunkInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\DrunkWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\FreezeCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\FreezeController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\FreezeInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ImmobileCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ImmobileController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ImmobileInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ImmobileWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MaceCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MaceInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MaceWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaCameraCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaShooterZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaWeaponCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MafiaWeaponZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MechWeaponZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToDown.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToDownLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToDownRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToUp.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullDown.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullUp.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullUpLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponPullUpRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingDown.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingDownLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingDownRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeWeaponSwingUp.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernCameraCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernCameraZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernCameraZoomInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernControllerZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernShooterZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernWeaponCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ModernWeaponZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseLowSensCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseLowSensInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseLowSensWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseRawUnityCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseRawUnityInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseRawUnityWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseSmoothingCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseSmoothingInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MouseSmoothingWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\OldSchoolCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\OldSchoolController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\OldSchoolInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\OldSchoolShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\OldSchoolWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\Persp1999Camera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\Persp1999Input.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\Persp1999Weapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspModernCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspModernInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspModernWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspOldCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspOldInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PerspOldWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PivotChestWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PivotElbowWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PivotMuzzleWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\PivotWristWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SimpleAIShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SmackController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SniperCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SniperInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SniperShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SniperWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\StompingCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\StompingInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFController.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\SystemOFFWeaponGlideIn.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\TurretCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\TurretInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\TurretShooter.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\TurretWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\WallFacingCamera.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\WallFacingInput.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\WallFacingWeapon.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraDead.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraDefault.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraFreeze.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraReload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraSlide.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Camera\CameraZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerClimb.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerDead.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerDefault.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerFreeze.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\FootFX\FootFXFixedTimeCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\FootFX\FootFXFixedTimeRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\FootFX\FootFXFixedTimeZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Input\InputClimb.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Input\InputDead.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Input\InputZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterMachinegun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterMachinegunOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterMachinegunZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterPistol.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterPistolZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterRevolver.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterRevolverZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponGenericSlide.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegunCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegunOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegunReload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegunRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponMachinegunZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistol.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolReload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolReload2.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponPistolZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolver.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolverCrouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolverOutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolverReload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolverRun.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Weapon\WeaponRevolverZoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\ShooterAssaultRifle01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\ShooterAssaultRifle01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Crouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Reload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Run.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\AssaultRifle01\WeaponAssaultRifle01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Attack.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Rewield.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Grenade01\WeaponGrenade01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Knife01\KnifeAttackToDown.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Knife01\KnifeAttackToDownLeft.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Knife01\KnifeAttackToDownRight.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Crouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Idle.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01OutOfControl.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Run.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Slide.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\WeaponPistol01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\ShooterShotgun01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\ShooterShotgun01Zoom.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Crouch.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Default.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Reload.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Run.txt" />
+    <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Zoom.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRCameraDead.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRMaceDefault.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRMachinegunDefault.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRMachinegunReload.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRMachinegunRun.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRMachinegunZoom.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRPistolDefault.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRPistolReload1.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRPistolReload2.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRPistolRun.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRPistolZoom.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverCrouch.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverDefault.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverReload.txt" />
+    <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverZoom.txt" />
+    <None Include="Assets\UFPS\VR\Content\Scenes\_VR_SCENE_SETUP_README_.txt" />
+    <None Include="Assets\UFPS\VR\_VR_README_.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>
