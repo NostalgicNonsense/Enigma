@@ -225,8 +225,8 @@ public class vp_FootstepManagerEditor : Editor
 						GUILayout.FlexibleSpace();
 						if (GUILayout.Button("Add Sound", GUILayout.MinWidth(90), GUILayout.MaxWidth(90)))
 						{
-							AudioClip clip = new AudioClip();
-							surface.Sounds.Add(clip);
+							//AudioClip clip = new AudioClip();
+							//surface.Sounds.Add(clip);
 							m_Component.SetDirty(true);
 						}
 						GUI.backgroundColor = Color.white;
@@ -298,8 +298,8 @@ public class vp_FootstepManagerEditor : Editor
 						GUILayout.FlexibleSpace();
 						if (GUILayout.Button("Add Texture", GUILayout.MinWidth(90), GUILayout.MaxWidth(90)))
 						{
-							Texture texture = new Texture();
-							surface.Textures.Add(texture);
+							//Texture texture = new Texture();
+							//surface.Textures.Add(texture);
 							m_Component.SetDirty(true);
 						}
 						GUI.backgroundColor = Color.white;

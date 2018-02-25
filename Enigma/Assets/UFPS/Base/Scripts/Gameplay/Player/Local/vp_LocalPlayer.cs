@@ -33,8 +33,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 #if UNITY_5_4_OR_NEWER
 using UnityEngine.SceneManagement;
@@ -59,7 +57,7 @@ public static class vp_LocalPlayer
 
 	private static Vector2 m_MouseSensBackup = new Vector2(5.0f, 5.0f);
 	private static Texture m_CrosshairBackup = null;
-	private static Texture m_InvisibleTexture = new Texture();
+	public static Texture m_InvisibleTexture { get; set; }
 
 
 	/// <summary>
