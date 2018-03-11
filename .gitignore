@@ -34,3 +34,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Enigma/.vs/Enigma/v15/.suo
+Enigma/.vs/Enigma/v15/sqlite3/storage.ide
+Enigma/.vs/Enigma/v15/Server/sqlite3/storage.ide
+Enigma/.vs/Enigma/v15/sqlite3/storage.ide
