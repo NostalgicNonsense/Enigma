@@ -184,7 +184,6 @@ public class vp_SimpleHUD : MonoBehaviour
 				m_FormattedHealth = 0.0f;
 			return ((int)m_FormattedHealth).ToString();
 		}
-
 	}
 
 

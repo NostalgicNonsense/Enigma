@@ -231,6 +231,9 @@
     <Reference Include="Managed/Unity.Locator">
       <HintPath>C:\Program Files\Unity 2018.1.0b8\Editor\Data\Managed/Unity.Locator.dll</HintPath>
     </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>C:/Program Files/Unity 2018.1.0b8/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity 2018.1.0b8/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -475,14 +478,10 @@
     <Compile Include="Assets\UFPS\VR\Scripts\vp_VRWeaponManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Enigma\Components\Base Classes\Building\Prefabs\BuildingShed\BuildingShedInfo.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Animations\_README_Animations.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Materials\InvisibleShadowCaster.shader" />
     <None Include="Assets\UFPS\Base\Content\Art\Weapons\Source\BasicArms\_README_BasicArms.txt" />
-    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\DiffuseVertexColor.shader" />
-    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped.shader" />
-    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped_Glass.shader" />
-    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\Scroll_Emissive.shader" />
-    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\SimpleEmissive.shader" />
     <None Include="Assets\UFPS\Base\Scripts\Gameplay\Player\Local\OldInventory\_OLD_INVENTORY_README_.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryCamera.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryController.txt" />
