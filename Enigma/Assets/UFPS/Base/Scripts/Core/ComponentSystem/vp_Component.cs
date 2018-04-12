@@ -119,15 +119,16 @@ public class vp_Component : MonoBehaviour
 
 	public Transform Parent
 	{
-		get
+	    get
 		{
 			if (m_Parent == null)
 				m_Parent = transform.parent;
 			return m_Parent;
 		}
+	    set { throw new NotImplementedException(); }
 	}
 
-	public Transform Root
+    public Transform Root
 	{
 		get
 		{

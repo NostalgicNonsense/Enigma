@@ -16,17 +16,66 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using System;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Enigma.Components.Base_Classes.Player;
+using Assets.Enigma.Enums;
+using UnityEngine.Experimental.UIElements;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class vp_CharacterController : vp_Controller
+public class vp_CharacterController : vp_Controller, IPlayer
 {
+    protected Collider collider;
+    private bool isInMount;
+    protected override void Update()
+    {
+        if (Input.GetKeyDown("e"))
+        {
+            Console.WriteLine("Player Hit E");
+            HandleVehicleMountingAndDismounting();
+        }
+        base.Update();
+    }
 
+    private void HandleVehicleMountingAndDismounting()
+    {
+        if (isInMount)
+        {
+            Dismount();
+        }
+        else
+        {
+            IfCloseEnoughToObject();
+        }
+    }
+    private void Dismount()
+    {
+        Parent = null;
+    }
 
-	private CharacterController m_CharacterController = null;
+    protected override void Start()
+    {
+        collider = GetComponent<Collider>();
+        base.Start();
+    }
+
+    private void IfCloseEnoughToObject()
+    {
+        RaycastHit hit;
+        var ray = Camera.ScreenPointToRay(new Vector3(0f, 0f, 0f));
+
+        if (collider.Raycast(ray, out hit, 0.5f))
+        {
+            if (hit.transform.tag == GameEntityType.Vehicle.ToString())
+            {
+                this.Parent = hit.transform;
+            }
+        }
+    }
+
+    public Button UseKey;
+    private CharacterController m_CharacterController = null;
 	public CharacterController CharacterController
 	{
 		get

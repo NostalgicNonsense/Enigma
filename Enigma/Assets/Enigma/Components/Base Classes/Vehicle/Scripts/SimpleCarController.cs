@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Assets.Enigma.Components.Base_Classes.Player;
 using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
 
 public class SimpleCarController : MonoBehaviour
@@ -8,6 +9,7 @@ public class SimpleCarController : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public Turret turret;
+    public IPlayer player;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -18,7 +20,7 @@ public class SimpleCarController : MonoBehaviour
             return;
         }
 
-        Transform visualWheel = collider.transform.GetChild(0);
+        var visualWheel = collider.transform.GetChild(0);
 
         Vector3 position;
         Quaternion rotation;
@@ -30,12 +32,16 @@ public class SimpleCarController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        if (player == null)
+        {
+            return;
+        }
+        var motor = maxMotorTorque * Input.GetAxis("Vertical");
+        var steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         turret.FixedUpdate();
 
-        foreach (AxleInfo axleInfo in axleInfos)
+        foreach (var axleInfo in axleInfos)
         {
             if (axleInfo.steering)
             {
