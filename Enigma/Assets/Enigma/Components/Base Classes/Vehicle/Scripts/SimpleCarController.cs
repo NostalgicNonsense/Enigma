@@ -9,7 +9,7 @@ public class SimpleCarController : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public Turret turret;
-    public IPlayer player;
+    private IPlayer Player;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -30,9 +30,14 @@ public class SimpleCarController : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+    public void SetPlayerOccupant(IPlayer player)
+    {
+        Player = player;
+    }
+
     public void FixedUpdate()
     {
-        if (player == null)
+        if (Player == null)
         {
             return;
         }

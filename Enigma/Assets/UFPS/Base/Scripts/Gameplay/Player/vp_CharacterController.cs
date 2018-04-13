@@ -63,13 +63,16 @@ public class vp_CharacterController : vp_Controller, IPlayer
     private void IfCloseEnoughToObject()
     {
         RaycastHit hit;
-        var ray = Camera.ScreenPointToRay(new Vector3(0f, 0f, 0f));
-
-        if (collider.Raycast(ray, out hit, 0.5f))
+        var camera = Camera;
+        var cameraPosition = Camera.transform;
+        var didHit = Physics.Raycast(cameraPosition.position, cameraPosition.forward, out hit, 0.5f);
+        //Physics.Raycast (cam.position, cam.forward, hit, 500))
+        if (didHit)
         {
             if (hit.transform.tag == GameEntityType.Vehicle.ToString())
             {
                 this.Parent = hit.transform;
+                Parent.gameObject.SendMessage("SetPlayerOccupant", this);
             }
         }
     }
