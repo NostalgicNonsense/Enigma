@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Enigma/Scenes/jakescene.unity
+- path: Assets/Enigma/Scenes/commanderScene.unity
   isLoaded: 1
   isActive: 1
