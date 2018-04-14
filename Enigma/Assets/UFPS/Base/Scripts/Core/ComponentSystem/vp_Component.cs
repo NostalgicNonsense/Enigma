@@ -158,12 +158,16 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 	
+
+
 	public Camera Camera
 	{
 		get
 		{
-			if (m_Camera == null)
-				m_Camera = GetComponent<Camera>();
+		    if (m_Camera == null)
+		    {
+		        m_Camera = GetComponent<Camera>();
+            }
 			return m_Camera;
 		}
 	}
