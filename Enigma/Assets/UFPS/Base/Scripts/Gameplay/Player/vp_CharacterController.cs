@@ -63,128 +63,138 @@ public class vp_CharacterController : vp_Controller, IPlayer
     private void IfCloseEnoughToObject()
     {
         RaycastHit hit;
-        var camera = m_Camera;
+        var camera = Camera;
         var cameraPosition = Camera.transform;
-        var didHit = Physics.Raycast(cameraPosition.position, cameraPosition.forward, out hit, 0.5f);
-        //Physics.Raycast (cam.position, cam.forward, hit, 500))
+        var didHit = Physics.Raycast(cameraPosition.position, cameraPosition.forward, out hit, 32f); //0.5f was just too small
+        Debug.DrawRay(cameraPosition.position, cameraPosition.forward, Color.red, 60f); //Press the gizmos button in the game preview,
+        //it's next to the maximize on play
+
         if (didHit)
         {
+            Debug.Log("hit tag: " + hit.transform.tag);
             if (hit.transform.tag == GameEntityType.Vehicle.ToString())
             {
-                this.Parent = hit.transform;
-                Parent.gameObject.SendMessage("SetPlayerOccupant", this);
+                Debug.Log("Enter vehicle");
+                //this.Parent = hit.transform; //The setter of Parent is not implemented yet
+                Debug.Log("Is parent Null?: " + (Parent == null).ToString());
+
+                if (Parent != null)
+                {
+                    Parent.gameObject.SendMessage("SetPlayerOccupant", this);
+
+                }
             }
         }
     }
 
     public Button UseKey;
     private CharacterController m_CharacterController = null;
-	public CharacterController CharacterController
-	{
-		get
-		{
-			if (m_CharacterController == null)
-				m_CharacterController = gameObject.GetComponent<CharacterController>();
-			return m_CharacterController;
-		}
-	}
+    public CharacterController CharacterController
+    {
+        get
+        {
+            if (m_CharacterController == null)
+                m_CharacterController = gameObject.GetComponent<CharacterController>();
+            return m_CharacterController;
+        }
+    }
 
 
-	/// <summary>
-	/// sets up various collider dimension variables for dynamic crouch
-	/// logic, depending on whether the collider is a capsule or a character
-	/// controller
-	/// </summary>
-	protected override void InitCollider()
-	{
+    /// <summary>
+    /// sets up various collider dimension variables for dynamic crouch
+    /// logic, depending on whether the collider is a capsule or a character
+    /// controller
+    /// </summary>
+    protected override void InitCollider()
+    {
 
-		// NOTES:
-		// 1) by default, collider width is half the height, with pivot at the feet
-		// 2) don't change radius in-game (it may cause missed wall collisions)
-		// 3) controller height can never be smaller than radius
+        // NOTES:
+        // 1) by default, collider width is half the height, with pivot at the feet
+        // 2) don't change radius in-game (it may cause missed wall collisions)
+        // 3) controller height can never be smaller than radius
 
-		m_NormalHeight = CharacterController.height;
-		CharacterController.center = m_NormalCenter = (m_NormalHeight * (Vector3.up * 0.5f));
-		CharacterController.radius = m_NormalHeight * DEFAULT_RADIUS_MULTIPLIER;
-		m_CrouchHeight = m_NormalHeight * PhysicsCrouchHeightModifier;
-		m_CrouchCenter = m_NormalCenter * PhysicsCrouchHeightModifier;
+        m_NormalHeight = CharacterController.height;
+        CharacterController.center = m_NormalCenter = (m_NormalHeight * (Vector3.up * 0.5f));
+        CharacterController.radius = m_NormalHeight * DEFAULT_RADIUS_MULTIPLIER;
+        m_CrouchHeight = m_NormalHeight * PhysicsCrouchHeightModifier;
+        m_CrouchCenter = m_NormalCenter * PhysicsCrouchHeightModifier;
 
-		//Collider.transform.localPosition = Vector3.zero;
+        //Collider.transform.localPosition = Vector3.zero;
 
-	}
-
-
-	/// <summary>
-	/// updates charactercontroller and physics trigger sizes
-	/// depending on player Crouch activity
-	/// </summary>
-	protected override void RefreshCollider()
-	{
-
-		if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))	// crouching & not flying
-		{
-			CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
-			CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
-		}
-		else	// standing up (whether flying or not)
-		{
-			CharacterController.height = m_NormalHeight;
-			CharacterController.center = m_NormalCenter;
-		}
-
-	}
+    }
 
 
-	/// <summary>
-	/// returns the current step offset
-	/// </summary>
-	protected virtual float OnValue_StepOffset
-	{
-		get { return CharacterController.stepOffset; }
-	}
+    /// <summary>
+    /// updates charactercontroller and physics trigger sizes
+    /// depending on player Crouch activity
+    /// </summary>
+    protected override void RefreshCollider()
+    {
+
+        if (Player.Crouch.Active && !(MotorFreeFly && !Grounded))   // crouching & not flying
+        {
+            CharacterController.height = m_NormalHeight * PhysicsCrouchHeightModifier;
+            CharacterController.center = m_NormalCenter * PhysicsCrouchHeightModifier;
+        }
+        else    // standing up (whether flying or not)
+        {
+            CharacterController.height = m_NormalHeight;
+            CharacterController.center = m_NormalCenter;
+        }
+
+    }
 
 
-	/// <summary>
-	/// returns the current slopeLimit
-	/// </summary>
-	protected virtual float OnValue_SlopeLimit
-	{
-		get { return CharacterController.slopeLimit; }
-	}
+    /// <summary>
+    /// returns the current step offset
+    /// </summary>
+    protected virtual float OnValue_StepOffset
+    {
+        get { return CharacterController.stepOffset; }
+    }
 
 
-	/// <summary>
-	/// moves the controller by 'direction'. the controller will be affected
-	/// by gravity, constrained by collisions and slide along colliders
-	/// </summary>
-	protected virtual void OnMessage_Move(Vector3 direction)
-	{
-		if (CharacterController.enabled)
-			CharacterController.Move(direction);
-	}
+    /// <summary>
+    /// returns the current slopeLimit
+    /// </summary>
+    protected virtual float OnValue_SlopeLimit
+    {
+        get { return CharacterController.slopeLimit; }
+    }
 
 
-	/// <summary>
-	/// returns the current collider radius
-	/// </summary>
-	protected override float OnValue_Radius
-	{
-		get	{	return CharacterController.radius;	}
-	}
+    /// <summary>
+    /// moves the controller by 'direction'. the controller will be affected
+    /// by gravity, constrained by collisions and slide along colliders
+    /// </summary>
+    protected virtual void OnMessage_Move(Vector3 direction)
+    {
+        if (CharacterController.enabled)
+            CharacterController.Move(direction);
+    }
 
 
-
-	/// <summary>
-	/// returns the current collider height
-	/// </summary>
-	protected override float OnValue_Height
-	{
-		get { return CharacterController.height; }
-	}
+    /// <summary>
+    /// returns the current collider radius
+    /// </summary>
+    protected override float OnValue_Radius
+    {
+        get { return CharacterController.radius; }
+    }
 
 
 
-	
+    /// <summary>
+    /// returns the current collider height
+    /// </summary>
+    protected override float OnValue_Height
+    {
+        get { return CharacterController.height; }
+    }
+
+
+
+
 }
 
 

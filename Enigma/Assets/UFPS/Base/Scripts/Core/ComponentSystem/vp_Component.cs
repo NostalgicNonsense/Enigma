@@ -167,6 +167,10 @@ public class vp_Component : MonoBehaviour
 		    if (m_Camera == null)
 		    {
 		        m_Camera = GetComponent<Camera>();
+                if (m_Camera == null)
+                {
+                    m_Camera = GetComponentInChildren<Camera>();
+                }
             }
 			return m_Camera;
 		}

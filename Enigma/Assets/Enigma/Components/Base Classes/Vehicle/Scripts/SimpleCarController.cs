@@ -32,6 +32,7 @@ public class SimpleCarController : MonoBehaviour
 
     public void SetPlayerOccupant(IPlayer player)
     {
+        Debug.Log("Simplecarcontroller, SettingPlayer");
         Player = player;
     }
 
