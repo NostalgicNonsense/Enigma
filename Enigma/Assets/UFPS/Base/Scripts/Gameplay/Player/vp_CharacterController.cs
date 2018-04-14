@@ -63,7 +63,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
     private void IfCloseEnoughToObject()
     {
         RaycastHit hit;
-        var camera = Camera;
+        var camera = m_Camera;
         var cameraPosition = Camera.transform;
         var didHit = Physics.Raycast(cameraPosition.position, cameraPosition.forward, out hit, 0.5f);
         //Physics.Raycast (cam.position, cam.forward, hit, 500))

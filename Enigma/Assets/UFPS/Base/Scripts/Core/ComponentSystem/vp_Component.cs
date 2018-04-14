@@ -158,6 +158,8 @@ public class vp_Component : MonoBehaviour
 		}
 	}
 	
+
+
 	public Camera Camera
 	{
 		get
