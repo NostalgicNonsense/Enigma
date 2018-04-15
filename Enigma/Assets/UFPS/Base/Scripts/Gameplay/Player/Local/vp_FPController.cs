@@ -224,8 +224,12 @@ public class vp_FPController : vp_CharacterController
 	/// </summary>
 	protected override void FixedUpdate()
 	{
-
-		if (Time.timeScale == 0.0f)
+        base.FixedUpdate();
+	    if (_isInMount)
+	    {
+	        return;
+	    }
+        if (Time.timeScale == 0.0f)
 			return;
 
 		// convert user input to motor throttle
