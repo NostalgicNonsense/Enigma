@@ -8,7 +8,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
     {
 
         public float cameraSpeedHorizontal;
-        public float cameraSpeedScroll;
+        public float cameraSpeedVertical;
         public float cameraSpeedZoom;
         public float cameraSpeedRotation;
 
@@ -35,15 +35,15 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         private void CheckInputs()
         {
             x = Input.GetAxis("Horizontal") * Time.deltaTime * cameraSpeedHorizontal;
-            z = Input.GetAxis("Vertical") * Time.deltaTime * cameraSpeedScroll;
-            y = Input.GetAxis("Scroll") * Time.deltaTime * cameraSpeedZoom;
+            z = Input.GetAxis("Vertical") * Time.deltaTime * cameraSpeedVertical;
+            y = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * cameraSpeedZoom;
             rotation = Input.GetAxis("Rotate") * Time.deltaTime * cameraSpeedRotation;
 
             transform.Translate(transform.right * x, Space.World);
             transform.Translate(transform.forward * z, Space.World);
-            transform.Translate(transform.up * y, Space.World);
-            transform.Rotate(new Vector3(0, transform.position.y, 0), rotation);
+            transform.Translate(transform.up * -y, Space.World); //Todo add min y
 
+            transform.Rotate(new Vector3(0, transform.position.y, 0), rotation);
         }
     }
 }
