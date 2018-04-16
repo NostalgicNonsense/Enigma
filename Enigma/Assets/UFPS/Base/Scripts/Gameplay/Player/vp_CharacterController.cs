@@ -52,7 +52,12 @@ public class vp_CharacterController : vp_Controller, IPlayer
     }
     private void Dismount()
     {
+        transform.position = Vector3.left * 5.0f;
+        Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(null);
+        Parent.GetComponentInChildren<Camera>().enabled = false;
+        Camera.enabled = true;
         Parent = null;
+        _isInMount = false;
     }
 
     protected override void Start()
@@ -80,7 +85,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
 
                 if (Parent != null)
                 {
-                    Parent.gameObject.SendMessage("SetPlayerOccupant", this);
+                    Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(this);
                     _isInMount = true;
                     Parent.GetComponentInChildren<Camera>().enabled = true;
                     Camera.enabled = false;
