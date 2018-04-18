@@ -10,11 +10,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
     public class BuildingPlacement : MonoBehaviour
     {
         private BuildingHologram selectedHologram;
-        public Building Barrack;
         private Camera cameraCommander;
-        MeshRenderer meshRenderer;
-        MeshCollider meshCollider;
-        Boolean isAllowedPlacement;
 
         void Start()
         {
@@ -23,11 +19,9 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         public void SetSelectedHologram(BuildingHologram type)
         {
+            BuildingStop();
             selectedHologram = type;
-            meshRenderer = selectedHologram.GetComponent<MeshRenderer>();
-            meshCollider = selectedHologram.GetComponent<MeshCollider>();
-
-            meshRenderer.enabled = true;
+            selectedHologram.Enable();
         }
 
         /// <summary>
@@ -35,9 +29,9 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         /// </summary>
         private void BuildingPlace()
         {
-            if (isAllowedPlacement)
+            if (selectedHologram != null && selectedHologram.IsAllowedPlacement)
             {
-                var building = Instantiate(Barrack, selectedHologram.transform.position, selectedHologram.transform.rotation);
+                var building = Instantiate(selectedHologram.BuildingCreate, selectedHologram.transform.position, selectedHologram.transform.rotation);
                 BuildingStop();
             }
         }
@@ -52,17 +46,28 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         private void BuildingStop()
         {
-            meshRenderer.enabled = false;
-            selectedHologram = null;
+            if (selectedHologram != null)
+            {
+                selectedHologram.Disable();
+                selectedHologram = null;
+            }
         }
-   
+
+        private void BuildingRotate()
+        {
+            if (selectedHologram != null)
+            {
+                var direction = Vector3.RotateTowards(selectedHologram.transform.position, MousePosToWorld(), 11 * Time.deltaTime, 0.0f);
+                selectedHologram.transform.rotation = Quaternion.LookRotation(direction);
+            }
+        }
+
 
         void Update()
         {
             if (selectedHologram != null)
             {
                 UpdateMovement();
-                CheckCollision();
                 CheckMouseInput();
             }
         }
@@ -76,7 +81,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         private Vector3 MousePosToWorld()
         {
-           // var pos = cameraCommander.ScreenToWorldPoint(Input.mousePosition);
+            // var pos = cameraCommander.ScreenToWorldPoint(Input.mousePosition);
             //Debug.Log(" Input.mousePosition: " + Input.mousePosition);
             //Debug.Log(" pos: " + pos);
             //why doesn't this work Jake!? :o
@@ -85,25 +90,18 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             return new Vector3(pos.x, y, pos.z);
         }
 
-        private void CheckCollision()
-        {
-            if (isAllowedPlacement == false)
-            {
-                meshRenderer.material.color = Color.red;
-            }
-            else
-            {
-                meshRenderer.material.color = Color.green;
-            }
-        }
-
         private void CheckMouseInput()
         {
             if (Input.GetButton("Fire1")) //Place
             {
+                BuildingRotate();
+            }
+            else if (Input.GetButtonUp("Fire1"))
+            {
                 BuildingPlace();
             }
-            else if (Input.GetButton("Fire2")) //Cancel
+
+            if (Input.GetButton("Fire2")) //Cancel
             {
                 BuildingCancel();
             }
