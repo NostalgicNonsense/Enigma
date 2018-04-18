@@ -125,7 +125,10 @@ public class vp_Component : MonoBehaviour
 				m_Parent = transform.parent;
 			return m_Parent;
 		}
-	    set { throw new NotImplementedException(); }
+	    set
+	    {
+            m_Parent = value;
+	    }
 	}
 
     public Transform Root
@@ -175,6 +178,11 @@ public class vp_Component : MonoBehaviour
 			return m_Camera;
 		}
 	}
+
+    public void SetCameraToParent(Camera parentCamera)
+    {
+        m_Camera = parentCamera;
+    }
 
 
 	/// <summary>

@@ -19,6 +19,7 @@
 using System;
 using UnityEngine;
 using Assets.Enigma.Components.Base_Classes.Player;
+using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
 using Assets.Enigma.Enums;
 using UnityEngine.Experimental.UIElements;
 
@@ -27,31 +28,36 @@ using UnityEngine.Experimental.UIElements;
 public class vp_CharacterController : vp_Controller, IPlayer
 {
     protected Collider collider;
-    private bool isInMount;
-    protected override void Update()
+    protected bool _isInMount;
+
+    protected override void FixedUpdate()
     {
         if (Input.GetKeyDown("e"))
         {
             Console.WriteLine("Player Hit E");
             HandleVehicleMountingAndDismounting();
         }
-        base.Update();
     }
 
     private void HandleVehicleMountingAndDismounting()
     {
-        if (isInMount)
+        if (_isInMount)
         {
             Dismount();
         }
         else
         {
-            IfCloseEnoughToObject();
+            MountIfCloseEnoughToObject();
         }
     }
     private void Dismount()
     {
+        transform.position = Vector3.left * 5.0f;
+        Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(null);
+        Parent.GetComponentInChildren<Camera>().enabled = false;
+        Camera.enabled = true;
         Parent = null;
+        _isInMount = false;
     }
 
     protected override void Start()
@@ -60,10 +66,9 @@ public class vp_CharacterController : vp_Controller, IPlayer
         base.Start();
     }
 
-    private void IfCloseEnoughToObject()
+    private void MountIfCloseEnoughToObject()
     {
         RaycastHit hit;
-        var camera = Camera;
         var cameraPosition = Camera.transform;
         var didHit = Physics.Raycast(cameraPosition.position, cameraPosition.forward, out hit, 32f); //0.5f was just too small
         Debug.DrawRay(cameraPosition.position, cameraPosition.forward, Color.red, 60f); //Press the gizmos button in the game preview,
@@ -75,13 +80,15 @@ public class vp_CharacterController : vp_Controller, IPlayer
             if (hit.transform.tag == GameEntityType.Vehicle.ToString())
             {
                 Debug.Log("Enter vehicle");
-                //this.Parent = hit.transform; //The setter of Parent is not implemented yet
+                Parent = hit.transform;
                 Debug.Log("Is parent Null?: " + (Parent == null).ToString());
 
                 if (Parent != null)
                 {
-                    Parent.gameObject.SendMessage("SetPlayerOccupant", this);
-
+                    Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(this);
+                    _isInMount = true;
+                    Parent.GetComponentInChildren<Camera>().enabled = true;
+                    Camera.enabled = false;
                 }
             }
         }
