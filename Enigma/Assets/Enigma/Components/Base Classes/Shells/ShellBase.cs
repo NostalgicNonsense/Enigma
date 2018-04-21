@@ -1,4 +1,5 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Assets.Enigma.Components.Basic_Items;
 using Assets.Enigma.Enums;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
             {
                 var DamageHandler = collision.gameObject.GetComponentInChildren<VehicleDamageHandler>();
                 DamageHandler.TakeDamage(DamageToInflict);
+                Instantiate<BasicExplosion>(this.transform);
             }
             else if (collision.gameObject.tag == GameEntityType.Player.ToString())
             {
