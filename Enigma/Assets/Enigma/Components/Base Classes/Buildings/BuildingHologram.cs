@@ -16,11 +16,13 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
         void Start()
         {
             meshRenderer = GetComponent<MeshRenderer>();
-
+            IsAllowedPlacement = true;
         }
 
         public void Enable()
         {
+            meshRenderer = GetComponent<MeshRenderer>();
+            IsAllowedPlacement = true;
             meshRenderer.enabled = true;
         }
 
@@ -31,9 +33,13 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 
         void OnTriggerEnter(Collider other)
         {
-            IsAllowedPlacement = false;
-            collisions++;
-            CheckCollision();
+            if (!other.isTrigger && other.tag != "Debris")
+            {
+                IsAllowedPlacement = false;
+                collisions++;
+                CheckCollision();
+            }
+            
         }
 
         void OnTriggerExit()
