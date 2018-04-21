@@ -7,8 +7,14 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
 {
     public class ShellBase : MonoBehaviour
     {
+        private BasicExplosion explosionToUse;
         public Rigidbody ShellBody;
         public float DamageToInflict;
+
+        public void Start()
+        {
+            explosionToUse = new BasicExplosion();//Todo: Make this mutable
+        }
 
         public void OnCollision(Collision collision)
         {
@@ -17,7 +23,7 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
             {
                 var DamageHandler = collision.gameObject.GetComponentInChildren<VehicleDamageHandler>();
                 DamageHandler.TakeDamage(DamageToInflict);
-                Instantiate<BasicExplosion>(this.transform);
+                Instantiate(explosionToUse);
             }
             else if (collision.gameObject.tag == GameEntityType.Player.ToString())
             {

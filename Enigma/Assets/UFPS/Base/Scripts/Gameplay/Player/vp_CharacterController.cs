@@ -92,8 +92,8 @@ public class vp_CharacterController : vp_Controller, IPlayer
                 {
                     Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(this);
                     _isInMount = true;
-                    
                     Parent.GetComponentInChildren<Camera>().enabled = true;
+                    GetComponent<Collider>().enabled = false;
                     Camera.enabled = false;
                 }
             }

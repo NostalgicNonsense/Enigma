@@ -326,7 +326,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Enigma\Components\Base Classes\Commander\CommanderControl.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingBarracks.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingVehicleFactory.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Building.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingHologram.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Enums\BuildingType.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Command\BuildingPlacement.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Command\CommanderControl.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Player\IPlayer.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Shells\ShellBase.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Enums\Team.cs" />
@@ -340,6 +346,10 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Scripts\SimpleCarController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
     <Compile Include="Assets\Enigma\Components\Basic Items\BasicExplosion.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuildingBarrack.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuildingVehicleFactory.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\Commander\UICommander.cs" />
     <Compile Include="Assets\Enigma\Enums\GameEntityType.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -504,7 +514,7 @@
     <Compile Include="Assets\UFPS\VR\Scripts\vp_VRWeaponManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Enigma\Components\Base Classes\Building\Barrack\BuildingShed\BuildingShedInfo.txt" />
+    <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

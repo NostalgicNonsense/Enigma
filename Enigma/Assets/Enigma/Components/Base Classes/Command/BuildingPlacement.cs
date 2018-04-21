@@ -85,6 +85,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             //Debug.Log(" Input.mousePosition: " + Input.mousePosition);
             //Debug.Log(" pos: " + pos);
             //why doesn't this work Jake!? :o
+            //I'd actually ask me these questions instead of leaving breadcrumbs
             var pos = cameraCommander.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraCommander.nearClipPlane));
             var y = 0;
             return new Vector3(pos.x, y, pos.z);

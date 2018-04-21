@@ -362,7 +362,7 @@
     <Compile Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.probuilder@3.0.1\ProBuilder\Editor\Addons\pb_Fbx.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Enigma\Components\Base Classes\Building\Barrack\BuildingShed\BuildingShedInfo.txt" />
+    <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
