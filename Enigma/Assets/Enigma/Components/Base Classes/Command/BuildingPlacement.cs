@@ -11,6 +11,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
     {
         private BuildingHologram selectedHologram;
         private Camera cameraCommander;
+        private Boolean isRotating = false;
 
         void Start()
         {
@@ -34,6 +35,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
                 var building = Instantiate(selectedHologram.BuildingCreate, selectedHologram.transform.position, selectedHologram.transform.rotation);
                 BuildingStop();
             }
+            isRotating = false;
         }
 
         /// <summary>
@@ -41,6 +43,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         /// </summary>
         private void BuildingCancel()
         {
+            //Todo: return cost
             BuildingStop();
         }
 
@@ -51,6 +54,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
                 selectedHologram.Disable();
                 selectedHologram = null;
             }
+            isRotating = false;
         }
 
         private void BuildingRotate()
@@ -69,6 +73,11 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             {
                 UpdateMovement();
                 CheckMouseInput();
+
+                if (isRotating)
+                {
+                    BuildingRotate();
+                }
             }
         }
 
@@ -92,11 +101,11 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         private void CheckMouseInput()
         {
-            if (Input.GetButton("Fire1")) //Place
+            if (Input.GetButtonDown("Fire1")) //Place
             {
-                BuildingRotate();
+                isRotating = true;
             }
-            else if (Input.GetButtonUp("Fire1"))
+            else if (isRotating == true && Input.GetButtonUp("Fire1"))
             {
                 BuildingPlace();
             }
