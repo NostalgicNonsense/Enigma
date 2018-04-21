@@ -22,7 +22,7 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
                 Cursor.lockState = CursorLockMode.None;
             }
             Cursor.lockState = CursorLockMode.Locked;
-            float speed = 3.0f;
+            float speed = 20.0f;
             var horitzontalTransform = Input.GetAxis(MouseX) * speed * Time.deltaTime;
             var verticalTransform = Input.GetAxis(MouseY) * speed * Time.deltaTime * - 1;
             turretBody.transform.Rotate(new Vector3(verticalTransform, horitzontalTransform, 0));

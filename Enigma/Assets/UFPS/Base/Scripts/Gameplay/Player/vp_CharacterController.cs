@@ -37,6 +37,11 @@ public class vp_CharacterController : vp_Controller, IPlayer
             Console.WriteLine("Player Hit E");
             HandleVehicleMountingAndDismounting();
         }
+
+        if (_isInMount)
+        {
+            transform.position = Parent.position;
+        }
     }
 
     private void HandleVehicleMountingAndDismounting()
@@ -87,6 +92,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
                 {
                     Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(this);
                     _isInMount = true;
+                    
                     Parent.GetComponentInChildren<Camera>().enabled = true;
                     Camera.enabled = false;
                 }

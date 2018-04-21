@@ -324,8 +324,17 @@
   <ItemGroup>
     <Compile Include="Assets\Enigma\Components\Base Classes\Commander\CommanderControl.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Player\IPlayer.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Shells\ShellBase.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Enums\Team.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Money.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Oil.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Resource.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceManager.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\TeamManager.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Scripts\SimpleCarController.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
     <Compile Include="Assets\Enigma\Enums\GameEntityType.cs" />
     <Compile Include="Assets\UFPS\Base\Scripts\Core\Attributes\vp_FloatFieldAttribute.cs" />
     <Compile Include="Assets\UFPS\Base\Scripts\Core\Attributes\vp_HelpBoxAttribute.cs" />
