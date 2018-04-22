@@ -10,12 +10,15 @@ public class SimpleCarController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    private VehicleDamageHandler _damageHandler;
     public Turret turret;
     private IPlayer Player;
 
     public void Start()
     {
         gameObject.tag = GameEntityType.Vehicle.ToString();
+        turret.GetComponentInChildren<Camera>().enabled = false;
+        _damageHandler = new VehicleDamageHandler();
     }
     // finds the corresponding visual wheel
     // correctly applies the transform

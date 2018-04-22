@@ -7,6 +7,8 @@ public class CannonBase : MonoBehaviour
 {
 
     private bool _isReloading;
+
+    private readonly ShellBase _shell;
 	// Use this for initialization
 	public void Start ()
 	{
@@ -25,8 +27,7 @@ public class CannonBase : MonoBehaviour
 
     private void Fire()
     {
-        var ShellBase = GetComponent<ShellBase>();
-        var shellInstance = Instantiate(ShellBase, this.transform);
+        var shellInstance = Instantiate(_shell, this.transform);
         shellInstance.GetComponent<Rigidbody>().velocity = new Vector3(400f, 400f);
     }
 }

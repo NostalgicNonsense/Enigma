@@ -23,12 +23,12 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
             {
                 var DamageHandler = collision.gameObject.GetComponentInChildren<VehicleDamageHandler>();
                 DamageHandler.TakeDamage(DamageToInflict);
-                Instantiate(explosionToUse);
             }
             else if (collision.gameObject.tag == GameEntityType.Player.ToString())
             {
                 Destroy(collision.gameObject); //TODO: make this better
             }
+            Instantiate(explosionToUse);
             Destroy(this);
         }
     }
