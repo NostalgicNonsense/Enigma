@@ -17,8 +17,9 @@ public class SimpleCarController : MonoBehaviour
     public void Start()
     {
         gameObject.tag = GameEntityType.Vehicle.ToString();
-        turret.GetComponentInChildren<Camera>().enabled = false;
+        turret.enabled = false;
         _damageHandler = new VehicleDamageHandler();
+        GetComponentInChildren<CannonBase>().enabled = false;
     }
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -43,6 +44,8 @@ public class SimpleCarController : MonoBehaviour
     {
         Debug.Log("Simplecarcontroller, SettingPlayer");
         Player = player;
+        turret.enabled = true;
+        GetComponentInChildren<CannonBase>().enabled = true;
     }
 
     public void FixedUpdate()

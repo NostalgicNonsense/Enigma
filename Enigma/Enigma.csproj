@@ -349,6 +349,7 @@
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuildingBarrack.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuildingVehicleFactory.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\Commander\Tooltip.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\UICommander.cs" />
     <Compile Include="Assets\Enigma\Enums\GameEntityType.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />

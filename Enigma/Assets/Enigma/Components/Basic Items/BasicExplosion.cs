@@ -10,6 +10,5 @@ namespace Assets.Enigma.Components.Basic_Items
             explosion.Play();
             Destroy(this, explosion.main.duration);
         }
-
     }
 }

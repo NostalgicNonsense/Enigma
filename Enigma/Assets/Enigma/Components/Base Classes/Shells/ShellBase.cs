@@ -7,16 +7,10 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
 {
     public class ShellBase : MonoBehaviour
     {
-        private BasicExplosion explosionToUse;
-        public Rigidbody ShellBody;
+        public BasicExplosion ExplosionToUse;
         public float DamageToInflict;
 
-        public void Start()
-        {
-            explosionToUse = new BasicExplosion();//Todo: Make this mutable
-        }
-
-        public void OnCollision(Collision collision)
+        public void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == GameEntityType.Vehicle.ToString() ||
                 collision.gameObject.tag == GameEntityType.Structure.ToString())
@@ -28,8 +22,9 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
             {
                 Destroy(collision.gameObject); //TODO: make this better
             }
-            Instantiate(explosionToUse);
-            Destroy(this);
+            var explosionInstance = Instantiate(ExplosionToUse);
+            explosionInstance.Explode();
+            Destroy(gameObject);
         }
     }
 }

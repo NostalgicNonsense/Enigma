@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Assets.Enigma.Components.Base_Classes.Shells;
 using UnityEngine;
 
 public class CannonBase : MonoBehaviour
 {
-
+    public GameObject Shell;
     private bool _isReloading;
 
     private readonly ShellBase _shell;
@@ -27,7 +26,16 @@ public class CannonBase : MonoBehaviour
 
     private void Fire()
     {
-        var shellInstance = Instantiate(_shell, this.transform);
-        shellInstance.GetComponent<Rigidbody>().velocity = new Vector3(400f, 400f);
+        var rotationToUse = new Quaternion(transform.rotation.x + 90f, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        var shellInstance = Instantiate(Shell, transform.position, rotationToUse);
+        shellInstance.GetComponent<Rigidbody>().velocity = new Vector3(4f, 4f, 0f);
+        _isReloading = true;
+        WaitForReload();
+    }
+
+    private IEnumerator WaitForReload()
+    {
+        yield return new WaitForSeconds(5);
+        _isReloading = false;
     }
 }
