@@ -8,6 +8,8 @@ public class CannonBase : MonoBehaviour
     private bool _isReloading;
 
     private readonly ShellBase _shell;
+
+    private float howMuchToRotateShellOnX = 90f;
 	// Use this for initialization
 	public void Start ()
 	{
@@ -26,10 +28,9 @@ public class CannonBase : MonoBehaviour
 
     private void Fire()
     {
-        var rotationToUse = new Quaternion(transform.rotation.x + 90f, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-        var shellInstance = Instantiate(Shell, transform.position, rotationToUse);
-        shellInstance.GetComponent<Rigidbody>().velocity = new Vector3(4f, 4f, 0f);
-        _isReloading = true;
+        var shellInstance = Instantiate(Shell, transform);
+        shellInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 4200f);
+        //_isReloading = true;
         WaitForReload();
     }
 
