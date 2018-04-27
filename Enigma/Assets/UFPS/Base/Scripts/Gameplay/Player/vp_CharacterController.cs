@@ -57,9 +57,10 @@ public class vp_CharacterController : vp_Controller, IPlayer
     }
     private void Dismount()
     {
-        transform.position = Vector3.left * 5.0f;
+        transform.position = transform.position + (Vector3.left * 5.0f);
         Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(null);
         Parent.GetComponentInChildren<Camera>().enabled = false;
+        collider.enabled = true;
         Camera.enabled = true;
         Parent = null;
         _isInMount = false;

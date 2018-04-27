@@ -6,7 +6,8 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
     [System.Serializable]
     public class Turret : MonoBehaviour
     {
-        public Collider turretBody;
+        public Collider TurretBody;
+        public Collider TurretBarrel;
         private const string MouseX = "Mouse X";
         private const string MouseY = "Mouse Y";
 
@@ -25,7 +26,9 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
             float speed = 20.0f;
             var horitzontalTransform = Input.GetAxis(MouseX) * speed * Time.deltaTime;
             var verticalTransform = Input.GetAxis(MouseY) * speed * Time.deltaTime * - 1;
-            turretBody.transform.Rotate(new Vector3(verticalTransform, horitzontalTransform, 0));
+            TurretBody.transform.Rotate(new Vector3(verticalTransform, horitzontalTransform, 0));
+            //TurretBody.transform.Rotate(new Vector3(TurretBody.transform.rotation.x, horitzontalTransform, 0));
+            //TurretBarrel.transform.Rotate(new Vector3(verticalTransform, TurretBarrel.transform.rotation.y, 0));
         }
 
     }
