@@ -10,7 +10,6 @@ public class SimpleCarController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
-    private VehicleDamageHandler _damageHandler;
     public Turret turret;
     private IPlayer Player;
 
@@ -18,7 +17,7 @@ public class SimpleCarController : MonoBehaviour
     {
         gameObject.tag = GameEntityType.Vehicle.ToString();
         turret.enabled = false;
-        _damageHandler = new VehicleDamageHandler();
+        GetComponentInChildren<Turret>().enabled = false;
         GetComponentInChildren<CannonBase>().enabled = false;
     }
     // finds the corresponding visual wheel
@@ -46,6 +45,7 @@ public class SimpleCarController : MonoBehaviour
         Player = player;
         turret.enabled = true;
         GetComponentInChildren<CannonBase>().enabled = true;
+        GetComponentInChildren<Turret>().enabled = true;
     }
 
     public void FixedUpdate()

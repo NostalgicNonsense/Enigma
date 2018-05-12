@@ -10,21 +10,29 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
         public BasicExplosion ExplosionToUse;
         public float DamageToInflict;
 
-        public void OnCollisionEnter(Collision collision)
+        public void FixedUpdate()
         {
-            if (collision.gameObject.tag == GameEntityType.Vehicle.ToString() ||
-                collision.gameObject.tag == GameEntityType.Structure.ToString())
+            RaycastHit rayCast;
+            Debug.DrawRay(transform.position, transform.forward , Color.magenta, GetComponent<Rigidbody>().velocity.magnitude * 10f);
+            //Debug.Break();
+            if (Physics.Raycast(transform.position, transform.forward, out rayCast,
+                GetComponent<Rigidbody>().velocity.magnitude * 10f))
             {
-                var DamageHandler = collision.gameObject.GetComponentInChildren<VehicleDamageHandler>();
-                DamageHandler.TakeDamage(DamageToInflict);
+                if (rayCast.collider.gameObject.tag == GameEntityType.Vehicle.ToString() ||
+                    rayCast.collider.gameObject.tag == GameEntityType.Structure.ToString())
+                {
+                    var damageHandler = rayCast.collider.gameObject.GetComponentInChildren<VehicleDamageHandler>();
+                    damageHandler.TakeDamage(DamageToInflict);
+                }
+                else if (rayCast.collider.gameObject.tag == GameEntityType.Player.ToString())
+                {
+                    Destroy(rayCast.collider.gameObject); //TODO: make this better
+                }
+                var explosionInstance = Instantiate(ExplosionToUse);
+                explosionInstance.Explode();
+                Destroy(gameObject);
+                Destroy(this);
             }
-            else if (collision.gameObject.tag == GameEntityType.Player.ToString())
-            {
-                Destroy(collision.gameObject); //TODO: make this better
-            }
-            var explosionInstance = Instantiate(ExplosionToUse);
-            explosionInstance.Explode();
-            Destroy(gameObject);
         }
     }
 }
