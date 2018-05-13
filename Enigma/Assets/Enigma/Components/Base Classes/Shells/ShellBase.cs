@@ -13,10 +13,9 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
         public void FixedUpdate()
         {
             RaycastHit rayCast;
-            Debug.DrawRay(transform.position, transform.forward , Color.magenta, GetComponent<Rigidbody>().velocity.magnitude * 10f);
-            //Debug.Break();
+            Debug.DrawRay(transform.position, transform.forward, Color.magenta, GetComponent<Rigidbody>().velocity.magnitude * 100f);
             if (Physics.Raycast(transform.position, transform.forward, out rayCast,
-                GetComponent<Rigidbody>().velocity.magnitude * 10f))
+                GetComponent<Rigidbody>().velocity.magnitude * 100f))
             {
                 if (rayCast.collider.gameObject.tag == GameEntityType.Vehicle.ToString() ||
                     rayCast.collider.gameObject.tag == GameEntityType.Structure.ToString())
@@ -28,11 +27,18 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
                 {
                     Destroy(rayCast.collider.gameObject); //TODO: make this better
                 }
-                var explosionInstance = Instantiate(ExplosionToUse);
-                explosionInstance.Explode();
-                Destroy(gameObject);
-                Destroy(this);
+                ExplodeAndTerminate();
             }
         }
+
+        private void ExplodeAndTerminate()
+        {
+            var explosionInstance = Instantiate(ExplosionToUse);
+            explosionInstance.Explode();
+            Destroy(gameObject);
+            Destroy(this);
+        }
     }
+
+
 }
