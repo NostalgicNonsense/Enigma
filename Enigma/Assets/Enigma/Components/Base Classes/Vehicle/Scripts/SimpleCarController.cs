@@ -10,15 +10,18 @@ public class SimpleCarController : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
-    public Turret turret;
+    private Turret turret;
     private IPlayer Player;
+    private CannonBase cannonBase;
 
     public void Start()
     {
         gameObject.tag = GameEntityType.Vehicle.ToString();
+        turret = GetComponentInChildren<Turret>();
         turret.enabled = false;
-        GetComponentInChildren<Turret>().enabled = false;
-        GetComponentInChildren<CannonBase>().enabled = false;
+
+        cannonBase = GetComponentInChildren<CannonBase>();
+        cannonBase.enabled = false;
     }
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -43,9 +46,18 @@ public class SimpleCarController : MonoBehaviour
     {
         Debug.Log("Simplecarcontroller, SettingPlayer");
         Player = player;
+        
         turret.enabled = true;
         GetComponentInChildren<CannonBase>().enabled = true;
         GetComponentInChildren<Turret>().enabled = true;
+    }
+
+    /// <summary>
+    /// Todo: Make person eject
+    /// </summary>
+    public void EjectPassangers()
+    {
+        
     }
 
     public void FixedUpdate()

@@ -40,7 +40,10 @@ public class vp_CharacterController : vp_Controller, IPlayer
 
         if (_isInMount)
         {
-            transform.position = Parent.position;
+            if (Parent != null)
+            {
+                transform.position = Parent.position;
+            }
         }
     }
 
@@ -55,7 +58,8 @@ public class vp_CharacterController : vp_Controller, IPlayer
             MountIfCloseEnoughToObject();
         }
     }
-    private void Dismount()
+
+    public void Dismount()
     {
         transform.position = transform.position + (Vector3.left * 5.0f);
         Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(null);
@@ -64,6 +68,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
         Camera.enabled = true;
         Parent = null;
         _isInMount = false;
+        WeaponsEnable();
     }
 
     protected override void Start()
@@ -96,8 +101,23 @@ public class vp_CharacterController : vp_Controller, IPlayer
                     Parent.GetComponentInChildren<Camera>().enabled = true;
                     GetComponent<Collider>().enabled = false;
                     Camera.enabled = false;
+                    WeaponsDisable();
                 }
             }
+        }
+    }
+
+    private void WeaponsEnable()
+    {
+
+    }
+
+    private void WeaponsDisable()
+    {
+        var weaponsHandler = GetComponent<vp_WeaponHandler>();
+        if (weaponsHandler != null)
+        {
+            weaponsHandler.OnMessage_Unwield();
         }
     }
 
@@ -197,7 +217,6 @@ public class vp_CharacterController : vp_Controller, IPlayer
     }
 
 
-
     /// <summary>
     /// returns the current collider height
     /// </summary>
@@ -205,15 +224,4 @@ public class vp_CharacterController : vp_Controller, IPlayer
     {
         get { return CharacterController.height; }
     }
-
-
-
-
 }
-
-
-
-
-
-
-

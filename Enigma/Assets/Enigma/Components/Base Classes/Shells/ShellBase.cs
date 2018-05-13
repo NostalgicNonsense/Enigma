@@ -33,12 +33,10 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
 
         private void ExplodeAndTerminate()
         {
-            var explosionInstance = Instantiate(ExplosionToUse);
+            var explosionInstance = Instantiate(ExplosionToUse, transform.position, transform.rotation);
             explosionInstance.Explode();
             Destroy(gameObject);
             Destroy(this);
         }
     }
-
-
 }

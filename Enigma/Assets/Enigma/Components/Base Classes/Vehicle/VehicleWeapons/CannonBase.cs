@@ -7,8 +7,9 @@ public class CannonBase : MonoBehaviour
     public GameObject Shell;
     private bool _isReloading;
 
-    private readonly ShellBase _shell;
+    public AudioSource SoundReload;
 
+    private readonly ShellBase _shell;
     private float howMuchToRotateShellOnX = 90f;
 	
 	// Update is called once per frame
@@ -18,20 +19,19 @@ public class CannonBase : MonoBehaviour
 	    {
             Fire();
 	    }
-
 	}
 
     private void Fire()
     {
-        var shellInstance = Instantiate(Shell, transform);
-        shellInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 4200f);
+        var shellInstance = Instantiate(Shell, transform.position, transform.rotation);
+        shellInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 12000f);
         //_isReloading = true;
-        WaitForReload();
+        FireDelay();
     }
 
-    private IEnumerator WaitForReload()
+    private IEnumerator FireDelay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         _isReloading = false;
     }
 }
