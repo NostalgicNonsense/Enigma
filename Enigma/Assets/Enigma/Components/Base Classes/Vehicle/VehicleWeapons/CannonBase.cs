@@ -10,11 +10,6 @@ public class CannonBase : MonoBehaviour
     private readonly ShellBase _shell;
 
     private float howMuchToRotateShellOnX = 90f;
-	// Use this for initialization
-	public void Start ()
-	{
-	    GetComponent<Collider>().enabled = false;
-	}
 	
 	// Update is called once per frame
 	public void FixedUpdate ()

@@ -8,7 +8,7 @@ namespace Assets.Enigma.Components.Basic_Items
         {
             var explosion = GetComponent<ParticleSystem>();
             explosion.Play();
-            Destroy(this, explosion.main.duration);
+            Destroy(this);
         }
     }
 }
