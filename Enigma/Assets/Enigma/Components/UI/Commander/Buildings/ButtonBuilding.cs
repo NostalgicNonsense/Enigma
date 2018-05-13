@@ -5,6 +5,7 @@ using Assets.Enigma.Components.UI;
 using Assets.Enigma.Components.Base_Classes.Buildings;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Assets.Enigma.Components.UI.Commander;
 
 namespace Assets.Enigma.Components.UI.Buildings
 {
@@ -13,6 +14,9 @@ namespace Assets.Enigma.Components.UI.Buildings
         public BuildingHologram buildingHologram;
         protected UICommander uICommander;
         private Image buttonImage;
+
+        protected BuildingStats buildingStats;
+
 
         // Use this for initialization
         void Start()
@@ -41,7 +45,7 @@ namespace Assets.Enigma.Components.UI.Buildings
             uICommander.BuildingPlacement.SetSelectedHologram(buildingHologram);
         }
 
-        private void ShowTooltip()
+        protected virtual void ShowTooltip()
         {
 
         }
@@ -49,7 +53,7 @@ namespace Assets.Enigma.Components.UI.Buildings
         public void OnPointerEnter(PointerEventData eventData)
         {
             buttonImage.color = Color.gray;
-            ShowTooltip();
+            uICommander.Tooltip.ShowTooltip(buildingStats);
         }
 
         public void OnPointerExit(PointerEventData eventData)
