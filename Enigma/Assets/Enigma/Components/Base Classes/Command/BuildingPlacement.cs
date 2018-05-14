@@ -85,6 +85,9 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         {
             var mousePos = MousePosToWorld();
             selectedHologram.transform.position = mousePos;
+            var y = 0;
+
+
             //Debug.Log("hologram pos: " + selectedHologram.transform.position);
         }
 
@@ -98,6 +101,18 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             var pos = cameraCommander.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraCommander.nearClipPlane));
             var y = 0;
             return new Vector3(pos.x, y, pos.z);
+        }
+
+        private void RaytraceDown()
+        {
+
+            RaycastHit rayCast;
+            Debug.DrawRay(transform.position, transform.forward, Color.blue, GetComponent<Rigidbody>().velocity.magnitude * 100f);
+            if (Physics.Raycast(transform.position, transform.forward, out rayCast,
+                GetComponent<Rigidbody>().velocity.magnitude * 100f))
+            {
+
+            }
         }
 
         private void CheckMouseInput()
