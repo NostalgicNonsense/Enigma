@@ -52,8 +52,6 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.Tank
         }
 
 
-
-
         private void OnDeath()
         {
             // Set the flag so that this function is only called once.

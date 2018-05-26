@@ -23,7 +23,7 @@ namespace Assets.Enigma.Components.UI.Commander
         public void ShowTooltip(BuildingStats stats)
         {
             Name.text = stats.Name;
-            Hotkey.text = "[ " + stats.Hotkey + " ]";
+            Hotkey.text = "[" + stats.Hotkey + "]";
             Description.text = stats.Description;
             CostMoney.text = stats.costMoney.ToString();
             CostOil.text = stats.costOil.ToString();

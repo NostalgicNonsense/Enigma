@@ -6,10 +6,6 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 {
     public class CommanderControl : MonoBehaviour
     {
-
-        private BuildingPlacement buildingPlacement;
-        public BuildingPlacement BuildingPlacement { get { return buildingPlacement; } }
-
         public float cameraSpeedHorizontal;
         public float cameraSpeedVertical;
         public float cameraSpeedZoom;
@@ -29,7 +25,6 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         void Start()
         {
             cameraCommander = GetComponent<Camera>();
-            buildingPlacement = new BuildingPlacement();
         }
 
         // Update is called once per frame

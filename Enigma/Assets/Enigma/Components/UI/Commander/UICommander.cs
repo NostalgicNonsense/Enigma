@@ -14,16 +14,11 @@ namespace Assets.Enigma.Components.UI
 
         void Start()
         {
-            BuildingPlacement = GetComponentInParent<BuildingPlacement>();
-            Tooltip = GetComponentInParent<Tooltip>();
+            BuildingPlacement = GetComponentInChildren<BuildingPlacement>();
+            Tooltip = GetComponentInChildren<Tooltip>();
         }
 
         void Update()
-        {
-
-        }
-
-        private void CheckRightClick()
         {
 
         }
