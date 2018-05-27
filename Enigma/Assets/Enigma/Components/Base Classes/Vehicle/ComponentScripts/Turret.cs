@@ -26,9 +26,9 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
             const float speed = 20.0f;
             var horitzontalTransform = Input.GetAxis(MouseX) * speed * Time.deltaTime;
             var verticalTransform = Input.GetAxis(MouseY) * speed * Time.deltaTime * - 1;
-            TurretBody.transform.Rotate(new Vector3(verticalTransform, horitzontalTransform, 0));
-            //TurretBody.transform.Rotate(new Vector3(TurretBody.transform.rotation.x, horitzontalTransform, 0));
-            //TurretBarrel.transform.Rotate(new Vector3(verticalTransform, TurretBarrel.transform.rotation.y, 0));
+            //TurretBody.transform.Rotate(new Vector3(TurretBody.transform.position.z, horitzontalTransform, 0));
+            TurretBody.transform.Rotate(new Vector3(transform.rotation.x, transform.rotation.y, horitzontalTransform));
+            TurretBarrel.transform.Rotate(verticalTransform, transform.rotation.y, transform.rotation.z);
         }
 
     }

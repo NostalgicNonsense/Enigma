@@ -328,8 +328,11 @@
   <ItemGroup>
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingBarracks.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingVehicleFactory.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\Stats\BuildingStatsBarrack.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\Stats\BuildingStatsVehicleFactory.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Building.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingHologram.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingStats.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Enums\BuildingType.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\BuildingPlacement.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\CommanderControl.cs" />
