@@ -1,4 +1,6 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Buildings;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
+using Assets.Enigma.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,10 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         public Camera cameraCommander;
         private Boolean isRotating = false;
 
+        public ResourceManager ResourceManager;
+
+        private RaycastHit rayY;
+
         void Start()
         {
         }
@@ -20,8 +26,12 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         public void SetSelectedHologram(BuildingHologram type)
         {
             BuildingStop();
+            
             selectedHologram = Instantiate(type, type.transform.position, type.transform.rotation);
             selectedHologram.Enable();
+            var stats = selectedHologram.BuildingCreate.BuildingStats;
+            ResourceManager.Money.Reduce(stats.costMoney);
+            ResourceManager.Oil.Reduce(stats.costOil);
         }
 
         /// <summary>
@@ -32,6 +42,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             if (selectedHologram != null && selectedHologram.IsAllowedPlacement)
             {
                 var building = Instantiate(selectedHologram.BuildingCreate, selectedHologram.transform.position, GetRotationForPlacement(selectedHologram.transform.rotation));
+                
                 BuildingStop();
             }
             isRotating = false;
@@ -50,7 +61,9 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         /// </summary>
         private void BuildingCancel()
         {
-            //Todo: return cost
+            var stats = selectedHologram.BuildingCreate.BuildingStats;
+            ResourceManager.Money.Add(stats.costMoney);
+            ResourceManager.Oil.Add(stats.costOil);
             BuildingStop();
         }
 
@@ -74,7 +87,6 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             }
         }
 
-
         void Update()
         {
             if (selectedHologram != null)
@@ -91,22 +103,21 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         private void UpdateMovement()
         {
-            var mousePos = MousePosToWorld();
-            selectedHologram.transform.position = mousePos;
-
-            //Debug.Log("hologram pos: " + selectedHologram.transform.position);
+            selectedHologram.transform.position = MousePosToWorld();
         }
 
         private Vector3 MousePosToWorld()
         {
-            // var pos = cameraCommander.ScreenToWorldPoint(Input.mousePosition);
-            //Debug.Log(" Input.mousePosition: " + Input.mousePosition);
-            //Debug.Log(" pos: " + pos);
-            //why doesn't this work Jake!? :o
-            //I'd actually ask me these questions instead of leaving breadcrumbs
-            var pos = cameraCommander.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraCommander.nearClipPlane));
-            var y = GetYPos(pos);
-            return new Vector3(pos.x, y, pos.z);
+            Plane plane = new Plane(Vector3.up, 0);
+
+            float dist;
+            Ray ray = cameraCommander.ScreenPointToRay(Input.mousePosition);
+            if (plane.Raycast(ray, out dist))
+            {
+                Vector3 point = ray.GetPoint(dist);
+                return new Vector3(point.x, GetYPos(point), point.z);
+            }
+            return Vector3.zero;
         }
 
         private float GetYPos(Vector3 pos)
@@ -114,16 +125,12 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             RaycastHit rayCast;
             Debug.DrawRay(pos, -transform.up, Color.cyan, 300f);
             Physics.Raycast(pos, -transform.up, out rayCast);
-            Debug.Log("rayCast hit: " + rayCast.collider.name);
 
-            //Todo: Add for loop here that checks for corners
-
-            //Debug.Log("raycast Y: " + rayCast.point.y);
+            rayY = rayCast;
             return rayCast.point.y;
-
         }
 
-    private void CheckMouseInput()
+        private void CheckMouseInput()
         {
             if (Input.GetButtonDown("Fire1")) //Place
             {

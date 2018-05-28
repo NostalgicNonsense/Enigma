@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Enigma.Components.Base_Classes.TeamSettings;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +26,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         // Use this for initialization
         void Start()
         {
-            cameraCommander = GetComponent<Camera>();
+            cameraCommander = GetComponentInChildren<Camera>();
         }
 
         // Update is called once per frame
@@ -43,6 +45,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             transform.Translate(transform.right * x, Space.World);
             transform.Translate(transform.forward * z, Space.World);
             transform.Translate(transform.up * -y, Space.World); //Todo add min y
+            //cameraCommander.orthographicSize = cameraCommander.orthographicSize - y;
 
             transform.Rotate(new Vector3(0, transform.position.y, 0), rotation);
         }

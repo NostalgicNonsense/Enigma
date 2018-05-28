@@ -8,7 +8,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Barrack.Stats
     public class BuildingStatsVehicleFactory : BuildingStats
     {
         public BuildingStatsVehicleFactory()
-            : base("Factory", "F", "The factory produces all vehicles for the faction.", 400, 400, 0)
+            : base("Factory", "F", "The factory produces all vehicles for the faction.", 600, 200, 50)
         {
 
         }

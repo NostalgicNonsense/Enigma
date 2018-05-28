@@ -1,4 +1,6 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Buildings;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
+using Assets.HelpClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +22,22 @@ namespace Assets.Enigma.Components.UI.Commander
         public Image IconMoney;
         public Image IconOil;
 
-        public void ShowTooltip(BuildingStats stats)
+        public void ShowTooltip(BuildingStats stats, Color colorMoney, Color colorOil)
         {
             Name.text = stats.Name;
             Hotkey.text = "[" + stats.Hotkey + "]";
             Description.text = stats.Description;
             CostMoney.text = stats.costMoney.ToString();
             CostOil.text = stats.costOil.ToString();
+
+            CostMoney.color = colorMoney;
+            CostOil.color = colorOil;
+        }
+
+        public void UpdateColors(Color colorMoney, Color colorOil)
+        {
+            CostMoney.color = colorMoney;
+            CostOil.color = colorOil;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Assets.Enigma.Components.UI.Buildings
     {
         protected override void Init()
         {
-            buildingStats = new BuildingStatsVehicleFactory();
+            stats = new BuildingStatsVehicleFactory();
             base.Init();
         }
     }

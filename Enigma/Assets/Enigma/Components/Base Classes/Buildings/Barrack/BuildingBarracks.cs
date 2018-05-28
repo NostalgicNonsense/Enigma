@@ -8,9 +8,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 {
     public class BuildingBarracks : Building
     {
-        void Start()
+        public override void Init()
         {
             BuildingStats = new BuildingStatsBarrack();
+
+            base.Init();
         }
     }
 }
