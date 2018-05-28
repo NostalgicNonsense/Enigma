@@ -69,7 +69,7 @@ public class SimpleCarController : MonoBehaviour
         var motor = maxMotorTorque * Input.GetAxis("Vertical");
         var steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
-        turret.FixedUpdate();
+        //turret.FixedUpdate(); //FixedUpdate is a Unity built in function, it calls itself from the monoBehaviour
 
         foreach (var axleInfo in axleInfos)
         {
