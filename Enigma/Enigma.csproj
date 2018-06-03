@@ -338,6 +338,7 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\CommanderControl.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Player\IPlayer.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Shells\ShellBase.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Shells\ShellExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Enums\Team.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Money.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Oil.cs" />
@@ -347,6 +348,10 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Scripts\SimpleCarController.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Tank\TankHealth.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Tank\TankMovement.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Tank\TankShooting.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Tank\Weapon.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
     <Compile Include="Assets\Enigma\Components\Basic Items\BasicExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />
@@ -783,6 +788,7 @@
     <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverZoom.txt" />
     <None Include="Assets\UFPS\VR\Content\Scenes\_VR_SCENE_SETUP_README_.txt" />
     <None Include="Assets\UFPS\VR\_VR_README_.txt" />
+    <None Include="Assets\race-track-lake\readmore.txt" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Templates\Alert.uxml" />

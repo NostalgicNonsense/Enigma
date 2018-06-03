@@ -684,6 +684,7 @@
     <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverZoom.txt" />
     <None Include="Assets\UFPS\VR\Content\Scenes\_VR_SCENE_SETUP_README_.txt" />
     <None Include="Assets\UFPS\VR\_VR_README_.txt" />
+    <None Include="Assets\race-track-lake\readmore.txt" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Templates\Alert.uxml" />
