@@ -322,11 +322,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
-    <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
-    <Compile Include="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
-    <Compile Include="Assets\Standard Assets\2D\Scripts\Restarter.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />

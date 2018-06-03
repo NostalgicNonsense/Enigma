@@ -8,9 +8,10 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 {
     public class BuildingVehicleFactory : Building
     {
-        void Start()
+        public override void Init()
         {
             BuildingStats = new BuildingStatsVehicleFactory();
+            base.Init();
         }
     }
 }

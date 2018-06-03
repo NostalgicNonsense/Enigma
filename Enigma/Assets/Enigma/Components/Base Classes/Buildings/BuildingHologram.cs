@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Enigma.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,36 +11,37 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
     {
         public Building BuildingCreate;
         public Boolean IsAllowedPlacement { get; private set; }
-        public MeshRenderer meshRenderer { get; private set; }
+        public MeshRenderer MeshRenderer { get; private set; }
         private int collisions = 0;
 
         void Start()
         {
-            meshRenderer = GetComponent<MeshRenderer>();
+            MeshRenderer = GetComponent<MeshRenderer>();
             IsAllowedPlacement = true;
         }
 
         public void Enable()
         {
-            meshRenderer = GetComponent<MeshRenderer>();
+            MeshRenderer = GetComponent<MeshRenderer>();
             IsAllowedPlacement = true;
-            meshRenderer.enabled = true;
+            MeshRenderer.enabled = true;
+            BuildingCreate.Init();
         }
 
         public void Disable()
         {
-            meshRenderer.enabled = false;
+            MeshRenderer.enabled = false;
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if (!other.isTrigger && other.tag != "Debris")
+            Debug.Log("other tag: " + other.tag);
+            if (!other.isTrigger && other.tag != EnigmaTags.Water.ToString() && other.tag != EnigmaTags.Debris.ToString())
             {
                 IsAllowedPlacement = false;
                 collisions++;
-                CheckCollision();
+                SetCollisionColor();
             }
-            
         }
 
         void OnTriggerExit()
@@ -48,19 +50,19 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
             if (collisions <= 0)
             {
                 IsAllowedPlacement = true;
-                CheckCollision();
+                SetCollisionColor();
             }
         }
 
-        private void CheckCollision()
+        private void SetCollisionColor()
         {
             if (IsAllowedPlacement == false)
             {
-                meshRenderer.material.color = Color.red;
+                MeshRenderer.material.color = Color.red;
             }
             else
             {
-                meshRenderer.material.color = Color.green;
+                MeshRenderer.material.color = Color.green;
             }
         }
     }

@@ -9,5 +9,10 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
     public class Building : MonoBehaviour
     {
         public BuildingStats BuildingStats;
+
+        public virtual void Init()
+        {
+
+        }
     }
 }

@@ -6,6 +6,7 @@ using Assets.Enigma.Components.Base_Classes.Buildings;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Assets.Enigma.Components.UI.Commander;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
 
 namespace Assets.Enigma.Components.UI.Buildings
 {
@@ -15,7 +16,17 @@ namespace Assets.Enigma.Components.UI.Buildings
         protected UICommander uICommander;
         private Image buttonImage;
 
-        protected BuildingStats buildingStats;
+        protected BuildingStats stats;
+
+        private static Color colorAfford = Color.white;
+        private static Color colorTooLow = Color.red;
+
+        private Color colorTextMoney;
+        private Color colorTextOil;
+
+        private bool isHighLighted = false;
+
+        private AudioSource soundCantAfford;
 
 
         // Use this for initialization
@@ -23,6 +34,7 @@ namespace Assets.Enigma.Components.UI.Buildings
         {
             buttonImage = GetComponent<Button>().GetComponent<Image>();
             uICommander = GetComponentInParent<UICommander>();
+            soundCantAfford = GetComponentInParent<AudioSource>();
             Init();
         }
 
@@ -37,28 +49,70 @@ namespace Assets.Enigma.Components.UI.Buildings
         // Update is called once per frame
         void Update()
         {
-
+            if (isHighLighted)
+            {
+                CheckResources();
+            }
         }
 
         public void Click()
         {
-            uICommander.BuildingPlacement.SetSelectedHologram(buildingHologram);
+            if (colorTextMoney == colorAfford && colorTextOil == colorAfford)
+            {
+                uICommander.BuildingPlacement.SetSelectedHologram(buildingHologram);
+            }
+            else
+            {
+                if (soundCantAfford != null && soundCantAfford.isPlaying == false)
+                {
+                    soundCantAfford.Play();
+                }
+            }
         }
-
-        protected virtual void ShowTooltip()
-        {
-
-        }
-
+    
         public void OnPointerEnter(PointerEventData eventData)
         {
             buttonImage.color = Color.gray;
-            uICommander.Tooltip.ShowTooltip(buildingStats);
+            isHighLighted = true;
+            uICommander.Tooltip.ShowTooltip(stats, colorTextMoney, colorTextOil);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             buttonImage.color = Color.white;
+            isHighLighted = false;
+        }
+
+        private void CheckResources()
+        {
+            var resources = uICommander.ResourceManager.GetResources();
+            CheckMoney(resources.First);
+            CheckOil(resources.Second);
+            uICommander.Tooltip.UpdateColors(colorTextMoney, colorTextOil);
+        }
+
+        private void CheckMoney(Money current)
+        {
+            if (stats.costMoney <= current.Current)
+            {
+               colorTextMoney = colorAfford;
+            }
+            else
+            {
+                colorTextMoney = colorTooLow;
+            }
+        }
+
+        private void CheckOil(Oil current)
+        {
+            if (stats.costOil <= current.Current)
+            {
+                colorTextOil = colorAfford;
+            }
+            else
+            {
+                colorTextOil = colorTooLow;
+            }
         }
     }
 }
