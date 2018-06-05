@@ -20,6 +20,7 @@ using System;
 using UnityEngine;
 using Assets.Enigma.Components.Base_Classes.Player;
 using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Assets.Enigma.Components.Base_Classes.Vehicle.VehicleScripts;
 using Assets.Enigma.Enums;
 using UnityEngine.Experimental.UIElements;
 
@@ -62,7 +63,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
     public void Dismount()
     {
         transform.position = transform.position + (Vector3.left * 5.0f);
-        Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(null);
+        Parent.gameObject.GetComponentInChildren<IVehicle>().SetPlayerOccupant(null);
         Parent.GetComponentInChildren<Camera>().enabled = false;
         collider.enabled = true;
         Camera.enabled = true;
@@ -96,7 +97,7 @@ public class vp_CharacterController : vp_Controller, IPlayer
 
                 if (Parent != null)
                 {
-                    Parent.gameObject.GetComponentInChildren<SimpleCarController>().SetPlayerOccupant(this);
+                    Parent.gameObject.GetComponentInChildren<IVehicle>().SetPlayerOccupant(this);
                     _isInMount = true;
                     Parent.GetComponentInChildren<Camera>().enabled = true;
                     GetComponent<Collider>().enabled = false;

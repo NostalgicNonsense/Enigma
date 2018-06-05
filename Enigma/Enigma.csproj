@@ -345,7 +345,9 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceManager.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\Scripts\SimpleCarController.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\SimpleCarController.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\TankController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
     <Compile Include="Assets\Enigma\Components\Basic Items\BasicExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />

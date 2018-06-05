@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using Assets.Enigma.Components.Base_Classes.Player;
 using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Assets.Enigma.Components.Base_Classes.Vehicle.VehicleScripts;
 using Assets.Enigma.Enums;
 
-public class SimpleCarController : MonoBehaviour
+public class SimpleCarController : MonoBehaviour , IVehicle
 {
     // Currently this is specifically geared towards Tanks. in v2 I'll fix
     public List<AxleInfo> axleInfos;
