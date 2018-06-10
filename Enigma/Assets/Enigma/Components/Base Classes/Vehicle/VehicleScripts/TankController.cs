@@ -49,35 +49,45 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.VehicleScripts
             var steering = Input.GetAxis("Horizontal");
             if (motor == 0 && steering != 0)
             {
-                motor = MaxMotorTorque; // To turn left/right without going forward
+                if (steering > 0)
+                {
+                    LeftTrack.ApplyTorque(motor);
+                }
+                else
+                {
+                    RightTrack.ApplyTorque(motor);
+                }
+                // To turn left/right without going forward
             }
-            var leftSteer = motor;
-            var rightSteer = motor;
-            if (steering > 0)
+
+            else if (motor != 0)
             {
-                rightSteer = motor * -1;
+                var leftSteer = motor;
+                var rightSteer = motor;
+                if (steering > 0)
+                {
+                    rightSteer = motor * -1;
+                }
+                else if (steering < 0)
+                {
+                    leftSteer = motor * -1;
+                }
+
+                LeftTrack.ApplyTorque(leftSteer);
+                RightTrack.ApplyTorque(rightSteer);
             }
-            else if (steering < 0)
-            {
-                leftSteer = motor * -1;
-            }
-            
-            LeftTrack.ApplyTorque(leftSteer);
-            RightTrack.ApplyTorque(rightSteer);
         }
     }
 
     [Serializable]
     public class Track
     {
-        public List<WheelCollider> WheelColliders;
+        public Collider TrackBody;
 
-        public void ApplyTorque(float torque)
+        public void ApplyTorque(float torqueAmount)
         {
-            foreach (var wheelCollider in WheelColliders)
-            {
-                wheelCollider.motorTorque = torque;
-            }
+            TrackBody.attachedRigidbody.AddForce(new Vector3(0, 0, -1) * torqueAmount, ForceMode.Acceleration); // Because tracks are facing up
         }
+        //TODO: Add the ability to destroy these with shells!
     }
 }

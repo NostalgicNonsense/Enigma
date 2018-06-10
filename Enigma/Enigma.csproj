@@ -343,6 +343,7 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Oil.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Resource.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceManager.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Passengers.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
