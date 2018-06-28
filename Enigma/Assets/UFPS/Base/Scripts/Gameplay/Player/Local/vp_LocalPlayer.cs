@@ -33,6 +33,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 #if UNITY_5_4_OR_NEWER
 using UnityEngine.SceneManagement;
@@ -787,16 +788,13 @@ public static class vp_LocalPlayer
 	/// applies damage to the player in simple float format, sends a damage
 	/// flash message to the HUD and twists the camera briefly
 	/// </summary>
-	public static void Damage(float damage)
+	public static void Damage(float damage, Team teamOwner)
 	{
-
 		if (m_FPDamageHandler == null)
 			return;
 
-		m_FPDamageHandler.Damage(damage);
-
+		m_FPDamageHandler.Damage(damage, teamOwner);
 	}
-
 
 	/// <summary>
 	/// assembles damage in UFPS format from individual parameters and sends it to
@@ -805,7 +803,6 @@ public static class vp_LocalPlayer
 	/// </summary>
 	public static void Damage(float damage, Transform source, vp_DamageInfo.DamageType type = vp_DamageInfo.DamageType.Unknown)
 	{
-
 		if (m_FPDamageHandler == null)
 			return;
 
@@ -815,7 +812,6 @@ public static class vp_LocalPlayer
 		vp_DamageInfo damageInfo = new vp_DamageInfo(damage, source, type);
 
 		m_FPDamageHandler.Damage(damageInfo);
-
 	}
 
 
@@ -826,7 +822,6 @@ public static class vp_LocalPlayer
 	/// </summary>
 	public static void Damage(vp_DamageInfo damageInfo)
 	{
-
 		if (m_FPDamageHandler == null)
 			return;
 
@@ -834,7 +829,6 @@ public static class vp_LocalPlayer
 			return;
 
 		m_FPDamageHandler.Damage(damageInfo);
-
 	}
 
 
@@ -846,7 +840,6 @@ public static class vp_LocalPlayer
 	/// </summary>
 	public static void Die(float painHUDIntensity = 0.0f)
 	{
-
 		// can't kill dead players
 		if (m_FPEventHandler.Dead.Active)
 			return;
@@ -859,7 +852,6 @@ public static class vp_LocalPlayer
 			m_FPEventHandler.HUDDamageFlash.Send(null);	// mute pain HUD fx
 		else	// show pain HUD fx
 			m_FPEventHandler.HUDDamageFlash.Send(new vp_DamageInfo(painHUDIntensity, null));
-
 	}
 
 
@@ -869,9 +861,7 @@ public static class vp_LocalPlayer
 	/// </summary>
 	public static void AddForce(Vector3 force)
 	{
-
 		m_FPEventHandler.ForceImpact.Send(force);
-
 	}
 
 
