@@ -1,15 +1,23 @@
 ﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Assets.Enigma.Components.Network;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Assets.Enigma.Components.UI.MenuSelection
 {
     public class TeamSelection : MonoBehaviour
     {
         public GameObject UIObject;
+        public NetworkManagerExtension NetworkManagerExtension;
+
+        void Start()
+        {
+            HideMenu();
+        }
 
         void Update()
         {
@@ -32,14 +40,15 @@ namespace Assets.Enigma.Components.UI.MenuSelection
         private void TeamSelected(TeamName teamName)
         {
             HideMenu();
+            NetworkManagerExtension.SpawnPlayer(teamName);
         }
 
-        private void ShowMenu()
+        public void ShowMenu()
         {
             UIObject.SetActive(true);
         }
 
-        private void HideMenu()
+        public void HideMenu()
         {
             UIObject.SetActive(false);
         }

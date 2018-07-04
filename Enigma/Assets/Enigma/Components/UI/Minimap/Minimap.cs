@@ -15,17 +15,17 @@ namespace Assets.Enigma.Components.UI.Minimap
         public float ZoomSpeed = 50f;
         public bool rotateWithTarget;
 
-        private RectTransform MinimapUI;
+        public RectTransform MinimapUI;
         private Camera cameraMinimap;
         private bool isMaximized = false;
 
         public float MinimizedScale = 1f;
-        public float MaximizedScale = 4f;
+        public float MaximizedScale = 1.5f;
 
         void Start()
         {
             cameraMinimap = GetComponent<Camera>();
-            MinimapUI = GetComponentInParent<RectTransform>();
+            //MinimapUI = GetComponentInParent<RectTransform>();
 
             if (rotateWithTarget)
             {

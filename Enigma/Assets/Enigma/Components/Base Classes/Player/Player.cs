@@ -14,35 +14,13 @@ namespace Assets.Enigma.Components.Base_Classes.Player
         void Start()
         {
             team = GetComponent<Team>();
-            Respawn();
         }
 
         void Update()
         {
-            if (Input.GetButtonDown("General_MapToggle"))
+            if (Input.GetButtonDown("General_Respawn"))
             {
-                Respawn();
             }
-        }
-
-        public void Respawn()
-        {
-            Debug.Log("Respawning player");
-            var spawnPoints = NetworkManager.FindObjectsOfType<NetworkStartPosition>();
-            foreach(var spawn in spawnPoints)
-            {
-                var teamSpawn = spawn.GetComponentInParent<Team>();
-                if (teamSpawn.TeamName == team.TeamName)
-                {
-                    SpawnPlayerAtPosition(spawn);
-                    break;
-                }
-            }
-        }
-
-        private void SpawnPlayerAtPosition(NetworkStartPosition pos)
-        {
-            transform.position = pos.transform.position;
         }
     }
 }
