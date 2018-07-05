@@ -52,8 +52,8 @@ public class RTC_CreateAudioSource : MonoBehaviour {
 				Destroy(audioSourceObject);
 		}
 
-		if (go.transform.FindChild ("All Audio Sources")) {
-			audioSourceObject.transform.SetParent (go.transform.FindChild ("All Audio Sources"));
+		if (go.transform.Find ("All Audio Sources")) {
+			audioSourceObject.transform.SetParent (go.transform.Find ("All Audio Sources"));
 		} else {
 			GameObject allAudioSources = new GameObject ("All Audio Sources");
 			allAudioSources.transform.SetParent (go.transform, false);
