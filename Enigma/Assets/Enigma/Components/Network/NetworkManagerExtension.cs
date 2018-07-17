@@ -28,6 +28,23 @@ namespace Assets.Enigma.Components.Network
         public void SpawnPlayer(TeamName teamName)
         {
             CreatePlayer(teamName);
+            KillSpectatorPlayer();
+        }
+
+        /// <summary>
+        /// Temporary function until we only have a better spectator and player system.
+        /// </summary>
+        private void KillSpectatorPlayer()
+        {
+            var specator = NetworkManager.FindObjectsOfType<PlayerSpectator>().First();
+            if (specator != null)
+            {
+                Destroy(specator.gameObject);
+            }
+            else
+            {
+                Debug.Log("No spectator players for KillSpectatorPlayer function");
+            }
         }
 
         private void CreatePlayer(TeamName teamName)

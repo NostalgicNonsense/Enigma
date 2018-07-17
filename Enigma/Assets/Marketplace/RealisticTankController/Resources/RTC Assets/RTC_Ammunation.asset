@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cde244a7efaa2144a82614a3f98e78b, type: 3}
+  m_Name: RTC_Ammunation
+  m_EditorClassIdentifier: 
+  ammunations:
+  - projectile: {fileID: 100000, guid: f2fefdf7e67beb744bc6674450810a82, type: 2}
+    reloadTime: 3
+    velocity: 250
+    recoilForce: 50000
+    explosionPrefab: {fileID: 100010, guid: 6c465cae97e0145469c98aa9ad580a6d, type: 2}
+    explosionForce: 20000
+    explosionRadius: 5
+    lifeTimeOfTheProjectile: 5
+    fireSoundClip: {fileID: 8300000, guid: f4577b6ab5693e446bcf9765748510dd, type: 3}
+    groundSmoke: {fileID: 100000, guid: 27914f66693b2d24da7afe53f531714a, type: 2}
+    fireSmoke: {fileID: 1000010605375090, guid: 51d3289d952b26644a3cd42164ce3945,
+      type: 2}
+  - projectile: {fileID: 100000, guid: 1adbf35e7dd6b35458264809e9e6b24c, type: 2}
+    reloadTime: 3
+    velocity: 250
+    recoilForce: 50000
+    explosionPrefab: {fileID: 100010, guid: 6c465cae97e0145469c98aa9ad580a6d, type: 2}
+    explosionForce: 30000
+    explosionRadius: 5
+    lifeTimeOfTheProjectile: 5
+    fireSoundClip: {fileID: 8300000, guid: f4577b6ab5693e446bcf9765748510dd, type: 3}
+    groundSmoke: {fileID: 100000, guid: 27914f66693b2d24da7afe53f531714a, type: 2}
+    fireSmoke: {fileID: 1000010605375090, guid: 51d3289d952b26644a3cd42164ce3945,
+      type: 2}
+  - projectile: {fileID: 100000, guid: 302d5a1ef0b67e44a990a8e4b7fee0ea, type: 2}
+    reloadTime: 3
+    velocity: 100
+    recoilForce: 50000
+    explosionPrefab: {fileID: 100010, guid: 6c465cae97e0145469c98aa9ad580a6d, type: 2}
+    explosionForce: 20000
+    explosionRadius: 5
+    lifeTimeOfTheProjectile: 5
+    fireSoundClip: {fileID: 8300000, guid: f4577b6ab5693e446bcf9765748510dd, type: 3}
+    groundSmoke: {fileID: 100000, guid: 27914f66693b2d24da7afe53f531714a, type: 2}
+    fireSmoke: {fileID: 1000010605375090, guid: 51d3289d952b26644a3cd42164ce3945,
+      type: 2}

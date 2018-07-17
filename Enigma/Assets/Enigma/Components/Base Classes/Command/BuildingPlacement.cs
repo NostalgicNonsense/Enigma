@@ -15,7 +15,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         public Camera cameraCommander;
         private Boolean isRotating = false;
 
-        public ResourceManager ResourceManager;
+        public ResourceTeam ResourceManager;
 
         private RaycastHit rayY;
 

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417a605deb0c619439448e6249150ab5, type: 3}
+  m_Name: RTC_GroundMaterials
+  m_EditorClassIdentifier: 
+  frictions:
+  - groundMaterial: {fileID: 13400000, guid: af4afd7a3bb98af40bc4dbc283350b60, type: 2}
+    forwardStiffness: 1.5
+    sidewaysStiffness: 1.5
+    slip: 0
+    minimumDamp: 50
+    maximumDamp: 500
+    groundParticles: {fileID: 193070, guid: 0f87fc9fbe360c54c91fe85958e6c5f3, type: 2}
+  - groundMaterial: {fileID: 13400000, guid: 2c9662117ea1ed448969f408440a0712, type: 2}
+    forwardStiffness: 1.5
+    sidewaysStiffness: 1.5
+    slip: 0.25
+    minimumDamp: 100
+    maximumDamp: 1000
+    groundParticles: {fileID: 193070, guid: 3c5ab3a01fb74a04c925ea81418040af, type: 2}
+  - groundMaterial: {fileID: 13400000, guid: 87478d861923ecf44b50f33505198498, type: 2}
+    forwardStiffness: 1.5
+    sidewaysStiffness: 1.5
+    slip: 0.25
+    minimumDamp: 1000
+    maximumDamp: 10000
+    groundParticles: {fileID: 193070, guid: 3c5ab3a01fb74a04c925ea81418040af, type: 2}
+  useTerrainSplatMapForGroundFrictions: 1
+  terrainPhysicMaterial: {fileID: 13400000, guid: c9cd7e0ff68db1141b3838cce640168d,
+    type: 2}
+  terrainSplatMapIndex: 0000000000000000000000000000000002000000
