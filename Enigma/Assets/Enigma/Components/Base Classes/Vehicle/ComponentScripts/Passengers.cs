@@ -25,6 +25,7 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
         {
             var seatLocation = _playerHashCodeLookUp[player.GetHashCode()];
             RemovePlayer(seatLocation);
+            RemoveFromHashLookUp(player);
         }
 
         private void RemoveFromHashLookUp(IPlayer player)
@@ -44,6 +45,7 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
         {
             _players[_seatIndex] = player;
             _playerHashCodeLookUp.Add(player.GetHashCode(), _seatIndex);
+            HandleSeatIndexEmbark();
         }
 
         private void HandleSeatIndexEmbark()

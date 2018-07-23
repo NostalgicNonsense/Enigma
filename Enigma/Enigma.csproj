@@ -334,6 +334,9 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingHologram.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingStats.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Enums\BuildingType.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\GunTurret.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretBase.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretGun.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\BuildingPlacement.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\CommanderControl.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Player\IPlayer.cs" />
