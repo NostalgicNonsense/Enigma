@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assets.Enigma.Enums;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
@@ -20,7 +15,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
             }
         }
 
-        public void OnCollisionEnter(Collision collision)
+        public void OnTriggerEnter(Collider collision)
         {
             if (Target == null && IsValidTarget(collision))
             {
@@ -28,12 +23,12 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
             }
         }
 
-        private bool IsValidTarget(Collision collision)
+        private bool IsValidTarget(Collider collision)
         {
             return IsCorrectTargetType(collision.transform.gameObject) && TurretHasLineOfSight(collision.transform);
         }
 
-        public void OnCollisionExit(Collision collision)
+        public void OnTriggerExit(Collider collision)
         {
             if (collision.gameObject == Target)
             {

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
     public class TurretGun : MonoBehaviour
     {
+        //TODO: A turret shouldn't have its own class of weapon. So probably need a refactor.
         public float Inaccuray;
         public float Damage;
         private float _timeToSleep = 60 / 600f;
@@ -25,6 +27,8 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
                 ShootRay(target);
                 yield return new WaitForSeconds(_timeToSleep);
             }
+
+            yield return new WaitForSeconds(Random.Range(2, 5.5f));
         }
 
         private void ShootRay(GameObject target)
