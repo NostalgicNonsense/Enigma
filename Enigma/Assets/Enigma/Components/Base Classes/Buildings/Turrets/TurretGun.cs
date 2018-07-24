@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +12,12 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
         public float Damage;
         private float _timeToSleep = 60 / 600f;
         private const float Z = 10f; // wtf does this do
+        private Team _team;
 
+        public void SetTeam(Team team)
+        {
+            _team = team;
+        }
 
         public void FireAtTarget(GameObject target)
         {
@@ -53,7 +59,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
         {
             var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
             var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
-            damageHandler.Damage(Damage);
+            damageHandler.Damage(Damage, _team);
         }
 
         private Vector3 GetDirectionToTarget(Transform targeTransform)

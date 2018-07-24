@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
@@ -6,6 +7,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
     {
         public Collider ColliderSphere;
         protected GameObject Target;
+        public Team TeamOfTurret;
 
         public void FixedUpdate()
         {

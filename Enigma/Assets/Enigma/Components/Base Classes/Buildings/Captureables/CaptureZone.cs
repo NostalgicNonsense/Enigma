@@ -110,7 +110,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
                     progress = -progressMax;
                     SetTeam(teamName);
                 }
-                textMesh.text = "Team 1: " + (progress * -1).ToString("F0") + " / " + progressMax;
+                textMesh.text = "TeamOfTurret 1: " + (progress * -1).ToString("F0") + " / " + progressMax;
             }
 
             if (teamName == TeamName.Team_2_TheOrder && progress < progressMax)
@@ -123,7 +123,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
                     progress = progressMax;
                     SetTeam(teamName);
                 }
-                textMesh.text = "Team 2: " + progress.ToString("F0") + " / " + progressMax;
+                textMesh.text = "TeamOfTurret 2: " + progress.ToString("F0") + " / " + progressMax;
             }
         }
 

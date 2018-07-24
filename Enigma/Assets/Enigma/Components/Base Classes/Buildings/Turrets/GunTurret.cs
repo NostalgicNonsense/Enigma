@@ -8,6 +8,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
         public Collider GunCollider;
         public TurretGun Gun;
 
+        public void Start()
+        {
+            Gun.SetTeam(TeamOfTurret);
+        }
+
         protected override bool IsCorrectTargetType(GameObject targetObject)
         {
             return targetObject.tag == GameEntityType.Player.ToString();
