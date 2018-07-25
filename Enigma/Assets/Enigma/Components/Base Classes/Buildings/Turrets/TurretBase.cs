@@ -5,7 +5,6 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
     public abstract class TurretBase : MonoBehaviour
     {
-        public Collider ColliderSphere;
         protected GameObject Target;
         public Team TeamOfTurret;
 
@@ -19,6 +18,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 
         public void OnTriggerEnter(Collider collision)
         {
+            Debug.Log("new target? collision: " + collision.name);
             if (Target == null && IsValidTarget(collision))
             {
                 Target = collision.gameObject;
