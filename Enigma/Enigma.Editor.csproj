@@ -368,10 +368,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Enigma.Plugins.csproj">
-      <Project>{EC16749F-201E-6FB3-6F5E-022E1A4D1E84}</Project>
-      <Name>Enigma.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Enigma.csproj">
       <Project>{65447FB1-C8FF-C327-E384-FBE741A814F8}</Project>
       <Name>Enigma</Name>
@@ -379,10 +375,6 @@
     <ProjectReference Include="Enigma.unityproj">
       <Project>{65447FB1-C8FF-C327-E384-FBE741A814F8}</Project>
       <Name>Enigma</Name>
-    </ProjectReference>
-    <ProjectReference Include="Enigma.Editor.Plugins.csproj">
-      <Project>{D63EEAF6-FF18-983A-204E-9DCC5BFB827D}</Project>
-      <Name>Enigma.Editor.Plugins</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
       <Project>{E8F6AEC7-C558-7A8C-1B77-5EF90B9AD9FD}</Project>
@@ -398,6 +390,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_AmmunationEditor.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_Editor.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_EditorWindows.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_GroundMaterialsEditor.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_GunEditor.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_InitLoad.cs" />
+    <Compile Include="Assets\Marketplace\RealisticTankController\Editor\RTC_SettingsEditor.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
+    <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
     <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_AboutBox.cs" />
     <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_AddonBrowser.cs" />
     <Compile Include="Assets\UFPS\Base\Scripts\Core\Editor\Menu\vp_UFPSMenu.cs" />
@@ -435,41 +440,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
-    <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
-    <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
-    <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
-    <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
-    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
-    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
-    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
-    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
-    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
-    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
-    <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-    <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-    <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
-    <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
-    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\Marketplace\SampleScenes\Shaders\Skybox-Procedural.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Cameras\CameraGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\ImageEffects\Readme.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Marketplace\Standard Assets\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
+    <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
+    <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\Marketplace\race-track-lake\readmore.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Animations\_README_Animations.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Materials\InvisibleShadowCaster.shader" />
     <None Include="Assets\UFPS\Base\Content\Art\Weapons\Source\BasicArms\_README_BasicArms.txt" />
@@ -699,7 +705,6 @@
     <None Include="Assets\UFPS\VR\Content\Presets\VRRevolverZoom.txt" />
     <None Include="Assets\UFPS\VR\Content\Scenes\_VR_SCENE_SETUP_README_.txt" />
     <None Include="Assets\UFPS\VR\_VR_README_.txt" />
-    <None Include="Assets\race-track-lake\readmore.txt" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\ProgramData\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.2\Editor\Resources\Templates\Alert.uxml" />
