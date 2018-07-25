@@ -40,6 +40,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.ide-shm
+*.ide-wal
 Enigma/.vs/Enigma/v15/.suo
 Enigma/.vs/Enigma/v15/sqlite3/storage.ide
 Enigma/.vs/Enigma/v15/Server/sqlite3/storage.ide
