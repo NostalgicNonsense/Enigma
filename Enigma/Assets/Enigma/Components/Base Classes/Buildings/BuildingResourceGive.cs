@@ -20,13 +20,13 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 
         private Team team;
 
-        private ResourceTeam resourceTeam;
+        private ResourceTeams resourceTeam;
 
         void Start()
         {
             cooldown = secondsPerGive;
             team = GetComponent<Team>();
-            resourceTeam = GetComponent<ResourceTeam>();
+            resourceTeam = GameObject.FindObjectOfType<ResourceTeams>();
         }
 
         private float cooldown = 0;
@@ -48,9 +48,9 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 
         private void GiveResources()
         {
-            if (resourceTeam != null && (resourceTeam.team == TeamSettings.Enums.TeamName.Team_1_People || resourceTeam.team == TeamSettings.Enums.TeamName.Team_2_TheOrder))
+            if (resourceTeam != null)
             {
-                resourceTeam.Add(creditsToGive, oilToGive);
+                resourceTeam.Add(creditsToGive, oilToGive, team.TeamName);
             }
         }
     }

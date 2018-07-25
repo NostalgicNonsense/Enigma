@@ -19,9 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4282146517088052}
-  - component: {fileID: 114319465715977278}
-  - component: {fileID: 114324598437032254}
   - component: {fileID: 114634061130576958}
+  - component: {fileID: 114058670954497822}
   m_Layer: 0
   m_Name: ResourceTeam
   m_TagString: Untagged
@@ -42,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114319465715977278
+--- !u!114 &114058670954497822
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,21 +49,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785013545452134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af67069f3f908424e939517d55b4ff5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 22e9cd522b059ba4ba9a47b42274c3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114324598437032254
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1785013545452134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f141de2cf07417f49982c5455e55c60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TeamName: 2
 --- !u!114 &114634061130576958
 MonoBehaviour:
   m_ObjectHideFlags: 1

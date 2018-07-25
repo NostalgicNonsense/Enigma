@@ -13,7 +13,7 @@ namespace Assets.Enigma.Components.UI
     {
         public Tooltip Tooltip { get; private set; }
         public BuildingPlacement BuildingPlacement { get; private set; }
-        public ResourceTeam ResourceManager;
+        public ResourceTeams ResourceManager;
 
         void Start()
         {

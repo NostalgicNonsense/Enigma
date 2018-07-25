@@ -1,4 +1,5 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Buildings;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
 using Assets.Enigma.Enums;
 using System;
@@ -14,13 +15,15 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         private BuildingHologram selectedHologram;
         public Camera cameraCommander;
         private Boolean isRotating = false;
+        private Team team;
 
-        public ResourceTeam ResourceManager;
+        public ResourceTeams ResourceTeam;
 
         private RaycastHit rayY;
 
         void Start()
         {
+            team = GetComponentInParent<Team>();
         }
 
         public void SetSelectedHologram(BuildingHologram type)
@@ -30,8 +33,7 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
             selectedHologram = Instantiate(type, type.transform.position, type.transform.rotation);
             selectedHologram.Enable();
             var stats = selectedHologram.BuildingCreate.BuildingStats;
-            ResourceManager.Money.Reduce(stats.costMoney);
-            ResourceManager.Oil.Reduce(stats.costOil);
+            ResourceTeam.Reduce(stats.costMoney, stats.costOil, team.TeamName);
         }
 
         /// <summary>
@@ -62,8 +64,8 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         private void BuildingCancel()
         {
             var stats = selectedHologram.BuildingCreate.BuildingStats;
-            ResourceManager.Money.Add(stats.costMoney);
-            ResourceManager.Oil.Add(stats.costOil);
+            ResourceTeam.Add(stats.costMoney, stats.costOil, team.TeamName);
+
             BuildingStop();
         }
 

@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Assets.Enigma.Components.UI.Commander;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 namespace Assets.Enigma.Components.UI.Buildings
 {
@@ -28,6 +29,8 @@ namespace Assets.Enigma.Components.UI.Buildings
 
         private AudioSource soundCantAfford;
 
+        private Team team;
+
 
         // Use this for initialization
         void Start()
@@ -35,6 +38,7 @@ namespace Assets.Enigma.Components.UI.Buildings
             buttonImage = GetComponent<Button>().GetComponent<Image>();
             uICommander = GetComponentInParent<UICommander>();
             soundCantAfford = GetComponentInParent<AudioSource>();
+            team = GetComponentInParent<Team>();
             Init();
         }
 
@@ -85,7 +89,7 @@ namespace Assets.Enigma.Components.UI.Buildings
 
         private void CheckResources()
         {
-            var resources = uICommander.ResourceManager.GetResources();
+            var resources = uICommander.ResourceManager.GetResources(team.TeamName);
             CheckMoney(resources.First);
             CheckOil(resources.Second);
             uICommander.Tooltip.UpdateColors(colorTextMoney, colorTextOil);
