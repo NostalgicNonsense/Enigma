@@ -1,10 +1,22 @@
 fileFormatVersion: 2
 guid: 3a6a14c35e34a97468cfebfdac16b488
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: oiltank
+    400000: //RootNode
+    400002: oiltank
+    2300000: oiltank
+    3300000: oiltank
     4300000: oiltank
-  externalObjects: {}
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__Untitled.tga
+    second: {fileID: 2100000, guid: d4c77e8edf222c74db345e6d2d328151, type: 2}
   materials:
     importMaterials: 1
     materialName: 3
@@ -55,6 +67,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
