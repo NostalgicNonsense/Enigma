@@ -18,9 +18,9 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Enums
                     return new Color32(100, 100, 100, 255);
                 case TeamName.Critters:
                     return new Color32(255, 255, 0, 255);
-                case TeamName.Team_1_People:
+                case TeamName.Team1:
                     return new Color32(255, 100, 0, 255);
-                case TeamName.Team_2_TheOrder:
+                case TeamName.Team2:
                     return new Color32(0, 100, 255, 255);
                 default:
                     return new Color32(50, 50, 50, 255);
@@ -32,7 +32,7 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Enums
     {
         Neutral,
         Critters,
-        Team_1_People,
-        Team_2_TheOrder
+        Team1,
+        Team2,
     }
 }

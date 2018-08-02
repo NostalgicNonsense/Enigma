@@ -17,11 +17,8 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
         private float y;
         private float z;
 
-
         private float rotation;
-
         private Camera cameraCommander;
-
 
         // Use this for initialization
         void Start()
@@ -37,10 +34,10 @@ namespace Assets.Enigma.Components.Base_Classes.Commander
 
         private void CheckInputs()
         {
-            x = Input.GetAxis("Horizontal") * Time.deltaTime * cameraSpeedHorizontal;
-            z = Input.GetAxis("Vertical") * Time.deltaTime * cameraSpeedVertical;
-            y = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * cameraSpeedZoom;
-            rotation = Input.GetAxis("Rotate") * Time.deltaTime * cameraSpeedRotation;
+
+            x = Input.GetAxis("Horizontal") * cameraSpeedHorizontal * Time.deltaTime;
+            z = Input.GetAxis("Vertical") * cameraSpeedVertical * Time.deltaTime;
+            y = Input.GetAxis("Mouse ScrollWheel") * cameraSpeedZoom * Time.deltaTime;
 
             transform.Translate(transform.right * x, Space.World);
             transform.Translate(transform.forward * z, Space.World);

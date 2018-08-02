@@ -48,19 +48,19 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
 
         private void CheckCapture()
         {
-            if (ListTeam1.Count > 0 && team.TeamName != TeamName.Team_1_People)
+            if (ListTeam1.Count > 0 && team.TeamName != TeamName.Team1)
             {
                 if (ListTeam1.Count > ListTeam2.Count)
                 {
-                    StartCapturing(TeamName.Team_1_People);
+                    StartCapturing(TeamName.Team1);
                 }
             }
 
-            if (ListTeam2.Count > 0 && team.TeamName != TeamName.Team_2_TheOrder)
+            if (ListTeam2.Count > 0 && team.TeamName != TeamName.Team2)
             {
                 if (ListTeam2.Count > ListTeam1.Count)
                 {
-                    StartCapturing(TeamName.Team_2_TheOrder);
+                    StartCapturing(TeamName.Team2);
                 }
             }
         }
@@ -72,12 +72,12 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
             {
 
                 var otherName = teamOther.TeamName;
-                if (otherName == TeamName.Team_1_People && ListTeam1.Contains(other) == false)
+                if (otherName == TeamName.Team1 && ListTeam1.Contains(other) == false)
                 {
                     ListTeam1.Add(other);
                 }
 
-                if (otherName == TeamName.Team_2_TheOrder && ListTeam2.Contains(other) == false)
+                if (otherName == TeamName.Team2 && ListTeam2.Contains(other) == false)
                 {
                     ListTeam2.Add(other);
                 }
@@ -101,7 +101,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
         private void StartCapturing(TeamName teamName)
         {
 
-            if (teamName == TeamName.Team_1_People && progress > -progressMax)
+            if (teamName == TeamName.Team1 && progress > -progressMax)
             {
                 progress -= progressSpeed * ListTeam1.Count * Time.deltaTime;
 
@@ -113,7 +113,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
                 textMesh.text = "TeamOfTurret 1: " + (progress * -1).ToString("F0") + " / " + progressMax;
             }
 
-            if (teamName == TeamName.Team_2_TheOrder && progress < progressMax)
+            if (teamName == TeamName.Team2 && progress < progressMax)
             {
                 progress += progressSpeed * ListTeam2.Count * Time.deltaTime;
 

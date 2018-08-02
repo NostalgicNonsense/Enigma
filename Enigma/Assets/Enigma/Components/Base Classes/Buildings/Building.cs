@@ -8,11 +8,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 {
     public class Building : MonoBehaviour
     {
-        public BuildingStats BuildingStats;
+        public BuildingStats BuildingStats { get { return GetComponentInChildren<BuildingStats>(); } }
 
-        public virtual void Init()
+        void Start()
         {
-
+            //BuildingStats = GetComponentInChildren<BuildingStats>();
         }
     }
 }

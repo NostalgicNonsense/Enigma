@@ -21,6 +21,9 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
             MoneyTeam1 = new Money();
             OilTeam1 = new Oil();
 
+            MoneyTeam1.Add(653);
+            OilTeam1.Add(55);
+
             MoneyTeam2 = new Money();
             OilTeam2 = new Oil();
 
@@ -32,12 +35,12 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
         {
             switch (teamName)
             {
-                case TeamName.Team_1_People:
+                case TeamName.Team1:
                     MoneyTeam1.Add(money);
                     OilTeam1.Add(oil);
                     break;
 
-                case TeamName.Team_2_TheOrder:
+                case TeamName.Team2:
                     MoneyTeam2.Add(money);
                     OilTeam2.Add(oil);
                     break;
@@ -48,12 +51,12 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
         {
             switch (teamName)
             {
-                case TeamName.Team_1_People:
+                case TeamName.Team1:
                     MoneyTeam1.Reduce(money);
                     OilTeam1.Reduce(oil);
                     break;
 
-                case TeamName.Team_2_TheOrder:
+                case TeamName.Team2:
                     MoneyTeam2.Reduce(money);
                     OilTeam2.Reduce(oil);
                     break;
@@ -64,10 +67,10 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
         {
             switch (teamName)
             {
-                case TeamName.Team_1_People:
+                case TeamName.Team1:
                     return new Tuple<Money, Oil>(MoneyTeam1, OilTeam1);
 
-                case TeamName.Team_2_TheOrder:
+                case TeamName.Team2:
                     return new Tuple<Money, Oil>(MoneyTeam2, OilTeam2);
             }
             return null;

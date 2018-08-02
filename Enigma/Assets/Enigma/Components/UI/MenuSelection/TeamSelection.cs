@@ -29,12 +29,12 @@ namespace Assets.Enigma.Components.UI.MenuSelection
 
         public void SelectTeam1()
         {
-            TeamSelected(TeamName.Team_1_People);
+            TeamSelected(TeamName.Team1);
         }
 
         public void SelectTeam2()
         {
-            TeamSelected(TeamName.Team_2_TheOrder);
+            TeamSelected(TeamName.Team2);
         }
 
         private void TeamSelected(TeamName teamName)

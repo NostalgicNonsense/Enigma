@@ -22,10 +22,9 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings
 
         public void Enable()
         {
-            MeshRenderer = GetComponent<MeshRenderer>();
             IsAllowedPlacement = true;
+            MeshRenderer = GetComponent<MeshRenderer>();
             MeshRenderer.enabled = true;
-            BuildingCreate.Init();
         }
 
         public void Disable()

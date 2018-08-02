@@ -23,14 +23,14 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
 
         public void SetTeam(TeamName teamName)
         {
-            if (teamName == TeamName.Team_1_People)
+            if (teamName == TeamName.Team1)
             {
                 foreach (var rend in flagRenders)
                 {
                     rend.material = Team1;
                 }
             }
-            else if (teamName == TeamName.Team_2_TheOrder)
+            else if (teamName == TeamName.Team2)
             {
                 foreach (var rend in flagRenders)
                 {

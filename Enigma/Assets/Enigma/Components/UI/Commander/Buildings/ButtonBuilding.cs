@@ -17,7 +17,7 @@ namespace Assets.Enigma.Components.UI.Buildings
         protected UICommander uICommander;
         private Image buttonImage;
 
-        protected BuildingStats stats;
+        private BuildingStats stats;
 
         private static Color colorAfford = Color.white;
         private static Color colorTooLow = Color.red;
@@ -28,7 +28,6 @@ namespace Assets.Enigma.Components.UI.Buildings
         private bool isHighLighted = false;
 
         private AudioSource soundCantAfford;
-
         private Team team;
 
 
@@ -39,15 +38,7 @@ namespace Assets.Enigma.Components.UI.Buildings
             uICommander = GetComponentInParent<UICommander>();
             soundCantAfford = GetComponentInParent<AudioSource>();
             team = GetComponentInParent<Team>();
-            Init();
-        }
-
-        /// <summary>
-        /// To be called from the children who inheritance from this class.
-        /// </summary>
-        protected virtual void Init()
-        {
-
+            stats = GetComponentInChildren<BuildingStats>();
         }
 
         // Update is called once per frame
