@@ -15,13 +15,18 @@ namespace Assets.Enigma.Components.Network
     {
         public GameObject SpectatorPrefab;
         public GameObject SpectatorSpawn;
-        public List<MultiplayerSpawnType> ListPrePlaced;
         public override void OnServerConnect(NetworkConnection conn)
         {
             Debug.Log("OnServerConnect");
-            var test = conn.connectionId;
+
+            SpawnPreplaced();
             SpawnSpectator();
-            foreach (MultiplayerSpawnType spawnType in ListPrePlaced)
+        }
+
+        private void SpawnPreplaced()
+        {
+            MultiplayerSpawnType[] prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
+            foreach (MultiplayerSpawnType spawnType in prePlacedObjects)
             {
                 spawnType.SpawnObject();
             }
@@ -35,8 +40,7 @@ namespace Assets.Enigma.Components.Network
 
         private void SpawnSpectator()
         {
-            var spectatorObj = Instantiate(SpectatorPrefab, SpectatorSpawn.transform.position,
-                SpectatorPrefab.transform.rotation);
+            var spectatorObj = Instantiate(SpectatorPrefab, SpectatorSpawn.transform.position, SpectatorPrefab.transform.rotation);
             NetworkServer.Spawn(spectatorObj);
         }
 

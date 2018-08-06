@@ -12,10 +12,11 @@ namespace Assets.Enigma.Components.UI.MenuSelection
     public class TeamSelection : MonoBehaviour
     {
         public GameObject UIObject;
-        public NetworkManagerExtension NetworkManagerExtension;
+        private NetworkManagerExtension netWorkManagerExtension;
 
         void Start()
         {
+            netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
             HideMenu();
         }
 
@@ -40,7 +41,7 @@ namespace Assets.Enigma.Components.UI.MenuSelection
         private void TeamSelected(TeamName teamName)
         {
             HideMenu();
-            NetworkManagerExtension.SpawnPlayer(teamName);
+            netWorkManagerExtension.SpawnPlayer(teamName);
         }
 
         public void ShowMenu()
