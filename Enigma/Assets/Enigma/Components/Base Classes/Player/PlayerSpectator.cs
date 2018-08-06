@@ -1,8 +1,4 @@
 ﻿using Assets.Enigma.Components.UI.MenuSelection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Player
@@ -12,7 +8,7 @@ namespace Assets.Enigma.Components.Base_Classes.Player
         private bool isInit = false;
         public TeamSelection TeamSelection;
 
-        void Update()
+        public void Start()
         {
             if (isInit == false)
             {
@@ -22,6 +18,11 @@ namespace Assets.Enigma.Components.Base_Classes.Player
                     TeamSelection.ShowMenu();
                 }
             }
+        }
+
+        void Update()
+        {
+
         }
     }
 }

@@ -4933,7 +4933,7 @@ MonoBehaviour:
   DisableSpin: 0
   TossSounds: []
   ExtraPickups: []
-  surfaceTypeHelp: 139
+  surfaceTypeHelp: 106
 --- !u!114 &114671772881185814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5143,7 +5143,7 @@ MonoBehaviour:
   SpawnOnAwake: 0
   SpawnSound: {fileID: 8300000, guid: c6ffb5ccbd00a114494143e33e747a05, type: 3}
   SpawnFXPrefabs: []
-  helpbox: 177
+  helpbox: 122
 --- !u!114 &114797058404817482
 MonoBehaviour:
   m_ObjectHideFlags: 1

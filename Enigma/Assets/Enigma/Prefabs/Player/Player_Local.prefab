@@ -5647,7 +5647,7 @@ MonoBehaviour:
   DisableSpin: 0
   TossSounds: []
   ExtraPickups: []
-  surfaceTypeHelp: 139
+  surfaceTypeHelp: 106
 --- !u!114 &114945515113381424
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Enigma.Components.UI.MenuSelection;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -12,13 +13,14 @@ namespace Assets.Enigma.Components.Network
 {
     public class NetworkManagerExtension : NetworkManager
     {
-        public GameObject PlayerPrefab;
+        public GameObject SpectatorPrefab;
+        public GameObject SpectatorSpawn;
         public List<MultiplayerSpawnType> ListPrePlaced;
         public override void OnServerConnect(NetworkConnection conn)
         {
             Debug.Log("OnServerConnect");
             var test = conn.connectionId;
-
+            SpawnSpectator();
             foreach (MultiplayerSpawnType spawnType in ListPrePlaced)
             {
                 spawnType.SpawnObject();
@@ -29,6 +31,13 @@ namespace Assets.Enigma.Components.Network
         {
             CreatePlayer(teamName);
             KillSpectatorPlayer();
+        }
+
+        private void SpawnSpectator()
+        {
+            var spectatorObj = Instantiate(SpectatorPrefab, SpectatorSpawn.transform.position,
+                SpectatorPrefab.transform.rotation);
+            NetworkServer.Spawn(spectatorObj);
         }
 
         /// <summary>
@@ -49,13 +58,13 @@ namespace Assets.Enigma.Components.Network
 
         private void CreatePlayer(TeamName teamName)
         {
-            var spawnPoints = NetworkManager.FindObjectsOfType<SpawnPos>();
+            var spawnPoints = FindObjectsOfType<SpawnPos>();
             foreach (var spawn in spawnPoints)
             {
                 var teamSpawn = spawn.GetTeam();
                 if (teamSpawn.TeamName == teamName)
                 {
-                    var spawnObj = (GameObject)Instantiate(PlayerPrefab, spawn.transform.position, spawn.transform.rotation);
+                    var spawnObj = Instantiate(playerPrefab, spawn.transform.position, spawn.transform.rotation);
                     spawnObj.GetComponent<Team>().TeamName = teamSpawn.TeamName;
                     NetworkServer.Spawn(spawnObj);
                     break;
