@@ -65,6 +65,5 @@ namespace Assets.Enigma.Components.UI.MenuSelection
                 HideMenu();
             }
         }
-
     }
 }

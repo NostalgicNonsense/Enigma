@@ -1,8 +1,7 @@
+using System;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityStandardAssets.Vehicles.Car;
 
-namespace Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts
+namespace UnityStandardAssets.Vehicles.Car
 {
     internal enum CarDriveType
     {
@@ -17,7 +16,7 @@ namespace Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts
         KPH
     }
 
-    public class CarController : NetworkBehaviour
+    public class CarController : MonoBehaviour
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];

@@ -1,5 +1,4 @@
 using System;
-using Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts;
 using UnityEngine;
 
 namespace UnityStandardAssets.Vehicles.Car
