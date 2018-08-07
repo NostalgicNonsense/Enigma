@@ -385,7 +385,6 @@ MonoBehaviour:
   SpectatorPrefab: {fileID: 1705550416032254, guid: 287d11959fd65c24697bc0fedb61e202,
     type: 2}
   SpectatorSpawn: {fileID: 200074943}
-  ListPrePlaced: []
 --- !u!4 &398752212
 Transform:
   m_ObjectHideFlags: 0
@@ -595,6 +594,7 @@ GameObject:
   - component: {fileID: 1352799000}
   - component: {fileID: 1352798999}
   - component: {fileID: 1352799001}
+  - component: {fileID: 1352799002}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -645,6 +645,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1352799002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352798998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c76dd0722f15842b19d3d453d0295f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetType: 1
 --- !u!1 &1598488351
 GameObject:
   m_ObjectHideFlags: 0

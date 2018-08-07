@@ -332,6 +332,8 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Captureables\CaptureZone.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Enums\BuildingType.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\GunTurret.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\Targeting\ITargeter.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\Targeting\ProximityTargeter.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretBase.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretGun.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Command\BuildingPlacement.cs" />
