@@ -764,11 +764,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400040, guid: 8709e7cf54b902b48ae9543bc3a41cbe, type: 2}
       propertyPath: helpbox
-      value: 177
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 11416738, guid: 8709e7cf54b902b48ae9543bc3a41cbe, type: 2}
       propertyPath: surfaceTypeHelp
-      value: 139
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 8709e7cf54b902b48ae9543bc3a41cbe, type: 2}
       propertyPath: helpbox

@@ -1,5 +1,4 @@
-﻿using Assets.Enigma.Enums;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
@@ -13,15 +12,10 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
             Gun.SetTeam(TeamOfTurret);
         }
 
-        protected override bool IsCorrectTargetType(GameObject targetObject)
+        protected override void Attack(GameObject target)
         {
-            return targetObject.tag == GameEntityType.Player.ToString();
-        }
-
-        protected override void Attack()
-        {
-            GunCollider.transform.LookAt(Target.transform);
-            Gun.FireAtTarget(Target);
+            GunCollider.transform.LookAt(target.transform);
+            Gun.FireAtTarget(target);
         }
     }
 }
