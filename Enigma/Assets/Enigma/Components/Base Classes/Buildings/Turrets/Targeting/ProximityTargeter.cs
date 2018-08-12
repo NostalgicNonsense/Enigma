@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Enigma.Enums;
 using UnityEngine;
+
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
 {
     public class ProximityTargeter : MonoBehaviour, ITargeter
@@ -41,20 +42,23 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         {
             foreach (var target in _targetsInZone)
             {
-                if (HasLineOfSight(target.transform))
+                if (HasLineOfSight(target))
                 {
                     Target = target;
                     break;
                 }
             }
         }
-        private bool HasLineOfSight(Transform target)
+        private bool HasLineOfSight(GameObject target)
         {
-            if (Physics.Linecast(transform.position, target.position))
+            RaycastHit hit;
+            Physics.Linecast(transform.position, target.transform.position, out hit);
+            if (hit.collider.gameObject.Equals(target))
             {
-                return false;
+                return true;
             }
-            return true;
+
+            return false;
         }
     }
 }

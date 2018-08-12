@@ -1,10 +1,11 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
+using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
-    public abstract class TurretBase : MonoBehaviour
+    public class Turret : MonoBehaviour
     {
         public Team TeamOfTurret;
 
@@ -17,6 +18,9 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
             }
         }
 
-        protected abstract void Attack(GameObject target);
+        private void Attack(GameObject target)
+        {
+            GetComponent<ITurretWeapon>().Attack(target);
+        }
     }
 }

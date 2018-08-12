@@ -15,7 +15,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
 
         public MeshRenderer[] flagRenders;
 
-        void Start()
+        public void Start()
         {
             Team team = GetComponentInParent<Team>();
             SetTeam(team.TeamName);

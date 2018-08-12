@@ -26,7 +26,7 @@ public class CannonBase : MonoBehaviour
         var shellInstance = Instantiate(Shell, transform.position, transform.rotation);
         shellInstance.GetComponent<Rigidbody>().AddForce(transform.forward * 12000f);
         //_isReloading = true;
-        FireDelay();
+        StartCoroutine(FireDelay());
     }
 
     private IEnumerator FireDelay()
