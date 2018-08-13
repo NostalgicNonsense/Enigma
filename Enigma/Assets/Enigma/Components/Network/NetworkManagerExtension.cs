@@ -2,6 +2,10 @@
 using Assets.Enigma.Components.Base_Classes.Player;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 using System.Linq;
+
+using System.Text;
+using Assets.Enigma.Components.UI.MenuSelection;
+
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -21,8 +25,9 @@ namespace Assets.Enigma.Components.Network
 
         private void SpawnPreplaced()
         {
-            var prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
-            foreach (var spawnType in prePlacedObjects)
+            MultiplayerSpawnType[] prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
+            foreach (MultiplayerSpawnType spawnType in prePlacedObjects)
+
             {
                 spawnType.SpawnObject();
             }
