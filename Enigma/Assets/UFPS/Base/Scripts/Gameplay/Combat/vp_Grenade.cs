@@ -15,8 +15,6 @@
 ///////////////////////////////////////////////////////////////////////////////// 
 
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(vp_DamageHandler))]

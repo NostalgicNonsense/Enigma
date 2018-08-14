@@ -11,7 +11,6 @@
 
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
 
 [CustomEditor(typeof(vp_DecalManager))]
 

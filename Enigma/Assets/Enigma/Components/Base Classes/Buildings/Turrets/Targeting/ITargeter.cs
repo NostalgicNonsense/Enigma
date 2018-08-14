@@ -7,3 +7,4 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         GameObject Target { get; }
     }
 }
+

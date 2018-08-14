@@ -8,8 +8,7 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
+
 #if RTC_REWIRED
 using Rewired;
 #endif

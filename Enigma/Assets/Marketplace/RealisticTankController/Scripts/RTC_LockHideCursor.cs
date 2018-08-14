@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Lock Cursor")]
 public class RTC_LockHideCursor : MonoBehaviour {

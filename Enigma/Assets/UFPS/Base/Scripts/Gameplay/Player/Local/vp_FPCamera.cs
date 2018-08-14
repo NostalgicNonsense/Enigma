@@ -15,8 +15,6 @@
 ///////////////////////////////////////////////////////////////////////////////// 
 
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
 
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(AudioListener))]

@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// RTC Camera will be parented to this gameobject when current camera mode is Hood Camera.

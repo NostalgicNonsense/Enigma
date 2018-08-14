@@ -9,9 +9,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         private List<GameObject> _targetsInZone;
 
         public GameEntityType TargetType;
-
         private string _targetTag;
-
         public GameObject Target { get; private set; }
 
         public void Start()
@@ -27,7 +25,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
                 FindNewTarget();
             }
         }
-        
+
         public void OnTriggerEnter(Collider collision)
         {
             Debug.Log("new target? collision: " + collision.name);
@@ -36,7 +34,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
                 _targetsInZone.Add(collision.gameObject);
             }
         }
-
+        
         public void OnTriggerExit(Collider collision)
         {
             if (collision.gameObject.tag == _targetTag)
@@ -49,7 +47,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         {
             foreach (var target in _targetsInZone)
             {
-                if (HasLineOfSight(target.transform))
+                if (HasLineOfSight(target))
                 {
                     Target = target;
                     break;
@@ -57,14 +55,15 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
             }
         }
 
-        private bool HasLineOfSight(Transform target)
+        private bool HasLineOfSight(GameObject target)
         {
-            if (Physics.Linecast(transform.position, target.position))
+            RaycastHit hit;
+            Physics.Linecast(transform.position, target.transform.position, out hit);
+            if (hit.collider.gameObject.Equals(target))
             {
-                return false;
+                return true;
             }
-
-            return true;
+            return false;
         }
     }
 }

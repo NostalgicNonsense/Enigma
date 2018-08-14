@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Assets.Enigma.Components.UI;
+﻿using UnityEngine;
 using Assets.Enigma.Components.Base_Classes.Buildings;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Assets.Enigma.Components.UI.Commander;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 

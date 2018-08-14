@@ -10,7 +10,6 @@
 #pragma warning disable 0414
 
 using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 #if RTC_REWIRED

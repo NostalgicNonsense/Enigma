@@ -1,11 +1,7 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Maps.Preplaced;
 using Assets.Enigma.Components.Base_Classes.Player;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Assets.Enigma.Components.UI.MenuSelection;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -27,6 +23,7 @@ namespace Assets.Enigma.Components.Network
         {
             MultiplayerSpawnType[] prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
             foreach (MultiplayerSpawnType spawnType in prePlacedObjects)
+
             {
                 spawnType.SpawnObject();
             }
@@ -47,9 +44,9 @@ namespace Assets.Enigma.Components.Network
         /// <summary>
         /// Temporary function until we only have a better spectator and player system.
         /// </summary>
-        private void KillSpectatorPlayer()
+        private static void KillSpectatorPlayer()
         {
-            var specator = NetworkManager.FindObjectsOfType<PlayerSpectator>().First();
+            var specator = FindObjectsOfType<PlayerSpectator>().First();
             if (specator != null)
             {
                 Destroy(specator.gameObject);

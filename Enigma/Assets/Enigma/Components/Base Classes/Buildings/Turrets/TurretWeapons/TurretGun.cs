@@ -1,25 +1,28 @@
 ﻿using System.Collections;
+using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
+namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 {
-    public class TurretGun : MonoBehaviour
+    public class TurretGun : MonoBehaviour, ITurretWeapon
     {
         //TODO: A turret shouldn't have its own class of weapon. So probably need a refactor.
+        public Collider GunCollider;
         public float Inaccuray;
         public float Damage;
         private float _timeToSleep = 60 / 600f;
         private const float Z = 10f; // wtf does this do
         private Team _team;
+        private bool _reloading;
 
-        public void SetTeam(Team team)
+        public void FixedUpdate()
         {
-            _team = team;
+            GunCollider.transform.LookAt(GetComponent<ITargeter>().Target.transform);
         }
 
-        public void FireAtTarget(GameObject target)
+        private void FireAtTarget(GameObject target)
         {
             var coroutine = HandleFiring(target);
             StartCoroutine(coroutine);
@@ -27,6 +30,10 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 
         private IEnumerator HandleFiring(GameObject target)
         {
+            if (_reloading)
+            {
+                yield return null;
+            }
             var randomNumberForBurst = Random.Range(4, 9);
             for (var i = 0; i < randomNumberForBurst; i++)
             {
@@ -34,7 +41,9 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
                 yield return new WaitForSeconds(_timeToSleep);
             }
 
+            _reloading = true;
             yield return new WaitForSeconds(Random.Range(2, 5.5f));
+            _reloading = false;
         }
 
         private void ShootRay(GameObject target)
@@ -65,6 +74,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
         private Vector3 GetDirectionToTarget(Transform targeTransform)
         {
             return targeTransform.position - transform.position;
+        }
+
+        public void Attack(GameObject target)
+        {
+            FireAtTarget(target);
         }
     }
 }
