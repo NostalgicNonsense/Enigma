@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Dashboard")]

@@ -1,9 +1,4 @@
 ﻿using Assets.Enigma.Components.Base_Classes.Buildings;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 

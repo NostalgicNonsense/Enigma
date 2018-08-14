@@ -16,7 +16,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using System.Collections;
 
 public class vp_Regenerator : MonoBehaviour
 {

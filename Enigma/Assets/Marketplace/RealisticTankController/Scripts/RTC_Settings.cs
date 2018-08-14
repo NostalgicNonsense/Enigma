@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Stored all general shared RTC settings here.

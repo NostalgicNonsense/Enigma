@@ -16,11 +16,6 @@ using UnityEngine;
 using System.Text;
 using System.Collections.Generic;
 
-
-using System.Collections;
-using System.Linq;
-using System;
-
 public class vp_ItemDrawer : PropertyDrawer
 {
 

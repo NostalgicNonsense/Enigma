@@ -13,7 +13,6 @@
 
 
 using UnityEngine;
-using System.Collections.Generic;
 
 public class vp_SimpleHUD : MonoBehaviour
 {

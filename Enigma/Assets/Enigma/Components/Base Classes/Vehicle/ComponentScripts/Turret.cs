@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
 {

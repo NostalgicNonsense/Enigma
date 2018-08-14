@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Exhaust based on Particle System. Based on tank controller's throttle situation.

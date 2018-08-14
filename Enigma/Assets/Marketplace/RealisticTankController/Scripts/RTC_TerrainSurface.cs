@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 public class RTC_TerrainSurface : MonoBehaviour {
 
