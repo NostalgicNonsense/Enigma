@@ -8,8 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 /// <summary>
 /// UI buttons used in options panel. It has an enum for all kind of buttons. 

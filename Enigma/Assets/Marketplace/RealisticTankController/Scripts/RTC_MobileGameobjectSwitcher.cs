@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Mobile Gameobject Switcher")]
 public class RTC_MobileGameobjectSwitcher : MonoBehaviour {

@@ -25,8 +25,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 public class vp_DamageTransfer : MonoBehaviour

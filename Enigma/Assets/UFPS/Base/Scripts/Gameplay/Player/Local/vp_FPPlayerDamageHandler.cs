@@ -12,8 +12,6 @@
 ///////////////////////////////////////////////////////////////////////////////// 
 
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 [RequireComponent(typeof(vp_FPPlayerEventHandler))]

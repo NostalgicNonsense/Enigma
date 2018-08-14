@@ -39,7 +39,6 @@
 
 
 using UnityEngine;
-using System.Collections;
 
 public class vp_ParticleFXPooler : MonoBehaviour
 {

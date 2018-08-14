@@ -8,8 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 // Class was used for creating new WheelColliders on Editor.
 public class RTC_CreateWheelCollider : MonoBehaviour {

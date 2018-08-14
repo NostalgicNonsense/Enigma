@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 [System.Serializable]
 public class RTC_GroundMaterials : ScriptableObject {

@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 [RequireComponent (typeof (Rigidbody))]
 [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Ammunation/Projectile")]

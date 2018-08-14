@@ -11,7 +11,6 @@
 
 using UnityEngine;
 using UnityEditor;
-using System.Collections.Generic;
 
 [CustomEditor(typeof(vp_FPWeapon))]
 

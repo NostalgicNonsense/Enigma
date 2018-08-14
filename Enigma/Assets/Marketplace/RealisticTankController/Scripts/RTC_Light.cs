@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// General lighting system for RTC tanks. Headlight and brake light.

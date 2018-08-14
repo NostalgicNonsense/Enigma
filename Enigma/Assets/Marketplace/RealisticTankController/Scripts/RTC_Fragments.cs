@@ -8,7 +8,6 @@
 //----------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Fragments")]
 public class RTC_Fragments : MonoBehaviour {

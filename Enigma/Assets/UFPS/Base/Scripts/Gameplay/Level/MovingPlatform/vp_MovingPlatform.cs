@@ -19,7 +19,6 @@
 
 using UnityEngine;
 using System.Collections.Generic;
-using System;
 using System.Collections;
 
 #if UNITY_5_4_OR_NEWER

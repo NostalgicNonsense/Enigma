@@ -57,7 +57,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 #if UNITY_5_4_OR_NEWER
 using UnityEngine.SceneManagement;

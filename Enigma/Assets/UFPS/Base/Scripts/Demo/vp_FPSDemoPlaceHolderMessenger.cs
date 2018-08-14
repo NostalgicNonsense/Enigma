@@ -10,7 +10,6 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using System;
 
 public class vp_FPSDemoPlaceHolderMessenger : MonoBehaviour
 {

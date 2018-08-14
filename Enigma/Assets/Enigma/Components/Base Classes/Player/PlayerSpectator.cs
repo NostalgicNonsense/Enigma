@@ -19,5 +19,10 @@ namespace Assets.Enigma.Components.Base_Classes.Player
                 }
             }
         }
+
+        void Update()
+        {
+
+        }
     }
 }

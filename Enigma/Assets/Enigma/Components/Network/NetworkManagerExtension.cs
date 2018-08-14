@@ -21,8 +21,9 @@ namespace Assets.Enigma.Components.Network
 
         private void SpawnPreplaced()
         {
-            var prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
-            foreach (var spawnType in prePlacedObjects)
+            MultiplayerSpawnType[] prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
+            foreach (MultiplayerSpawnType spawnType in prePlacedObjects)
+
             {
                 spawnType.SpawnObject();
             }

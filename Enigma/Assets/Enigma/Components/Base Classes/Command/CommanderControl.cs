@@ -1,8 +1,4 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Enigma.Components.Base_Classes.Commander
 {
