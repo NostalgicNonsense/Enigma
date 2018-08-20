@@ -6,15 +6,13 @@ namespace Assets.Enigma.Components.UI.MenuSelection
 {
     public class TeamSelection : MonoBehaviour
     {
-
-        public GameObject UIObject;
+        private GameObject uiBackground;
         private NetworkManagerExtension netWorkManagerExtension;
-
 
         public void Start()
         {
-
             netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
+            uiBackground = GetComponentInChildren<CanvasRenderer>().gameObject;
 
             HideMenu();
         }
@@ -47,17 +45,17 @@ namespace Assets.Enigma.Components.UI.MenuSelection
 
         public void ShowMenu()
         {
-            UiObject.SetActive(true);
+            uiBackground.SetActive(true);
         }
 
         public void HideMenu()
         {
-            UiObject.SetActive(false);
+            uiBackground.SetActive(false);
         }
 
         private void ToggleMenu()
         {
-            if (UiObject.activeSelf == false)
+            if (uiBackground.activeSelf == false)
             {
                 ShowMenu();
             }
