@@ -9,12 +9,14 @@ namespace Assets.Enigma.Components.UI
     {
         public Tooltip Tooltip { get; private set; }
         public BuildingPlacement BuildingPlacement { get; private set; }
-        public ResourceTeams ResourceManager;
+
+        public ResourceTeams ResourceManager { get; private set; }
 
         void Start()
         {
             BuildingPlacement = GetComponentInChildren<BuildingPlacement>();
             Tooltip = GetComponentInChildren<Tooltip>();
+            ResourceManager = GameObject.FindObjectOfType<ResourceTeams>();
         }
 
         void Update()
