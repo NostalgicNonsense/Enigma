@@ -10,20 +10,20 @@ namespace Assets.Enigma.Components.Base_Classes.Player
 
         public void Start()
         {
-            
-        }
-
-        void Update()
-        {
             if (isInit == false)
             {
-                teamSelection = GameObject.FindObjectOfType<TeamSelection>();
+                teamSelection = FindObjectOfType<TeamSelection>();
                 isInit = true;
                 if (teamSelection != null)
                 {
                     teamSelection.ShowMenu();
                 }
             }
+        }
+
+        public void Update()
+        {
+
         }
     }
 }

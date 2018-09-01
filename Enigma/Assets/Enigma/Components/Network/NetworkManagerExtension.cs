@@ -14,19 +14,7 @@ namespace Assets.Enigma.Components.Network
         public override void OnServerConnect(NetworkConnection conn)
         {
             Debug.Log("OnServerConnect");
-
-            SpawnPreplaced();
             SpawnSpectator();
-        }
-
-        private void SpawnPreplaced()
-        {
-            MultiplayerSpawnType[] prePlacedObjects = GameObject.FindObjectsOfType<MultiplayerSpawnType>();
-            foreach (MultiplayerSpawnType spawnType in prePlacedObjects)
-
-            {
-                spawnType.SpawnObject();
-            }
         }
 
         public void SpawnPlayer(TeamName teamName)
