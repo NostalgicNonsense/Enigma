@@ -366,7 +366,7 @@ MonoBehaviour:
   RespawnCheckRadius: -99999
   RespawnSound: {fileID: 0}
   DeathEffect: {fileID: 0}
-  helpbox: 106
+  helpbox: 73
 --- !u!114 &114108994740977502
 MonoBehaviour:
   m_ObjectHideFlags: 1
