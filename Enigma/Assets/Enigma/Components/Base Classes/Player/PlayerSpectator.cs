@@ -6,23 +6,24 @@ namespace Assets.Enigma.Components.Base_Classes.Player
     public class PlayerSpectator : MonoBehaviour
     {
         private bool isInit = false;
-        public TeamSelection TeamSelection;
+        private TeamSelection teamSelection;
 
         public void Start()
         {
-            if (isInit == false)
-            {
-                isInit = true;
-                if (TeamSelection != null)
-                {
-                    TeamSelection.ShowMenu();
-                }
-            }
+            
         }
 
         void Update()
         {
-
+            if (isInit == false)
+            {
+                teamSelection = GameObject.FindObjectOfType<TeamSelection>();
+                isInit = true;
+                if (teamSelection != null)
+                {
+                    teamSelection.ShowMenu();
+                }
+            }
         }
     }
 }
