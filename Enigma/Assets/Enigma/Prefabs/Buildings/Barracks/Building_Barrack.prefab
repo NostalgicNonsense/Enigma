@@ -393,7 +393,7 @@ MonoBehaviour:
   RespawnCheckRadius: -99999
   RespawnSound: {fileID: 0}
   DeathEffect: {fileID: 0}
-  helpbox: 106
+  helpbox: 73
 --- !u!114 &114277962550473614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,7 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9453fd0353a12ec4993f2315656111c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingStats: {fileID: 0}
 --- !u!114 &114297348545538998
 MonoBehaviour:
   m_ObjectHideFlags: 1
