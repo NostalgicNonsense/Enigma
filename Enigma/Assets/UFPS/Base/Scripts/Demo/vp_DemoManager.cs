@@ -11,9 +11,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-#if UNITY_5_4_OR_NEWER
 using UnityEngine.SceneManagement;
-#endif
 
 
 public class vp_DemoManager
@@ -636,14 +634,9 @@ public class vp_DemoManager
 		m_FadeState = FadeState.FadeOut;
 		CurrentFullScreenFadeTime = Time.time + m_FullScreenFadeOutDuration;
 
-		vp_Timer.In(m_FullScreenFadeOutDuration, delegate()
-		{
-#if UNITY_5_4_OR_NEWER
-			SceneManager.LoadScene(level);
-#else
-			Application.LoadLevel(level);
-#endif
-		});
+		vp_Timer.In(m_FullScreenFadeOutDuration, delegate() {
+            SceneManager.LoadScene(level);
+        });
 
 	}
 

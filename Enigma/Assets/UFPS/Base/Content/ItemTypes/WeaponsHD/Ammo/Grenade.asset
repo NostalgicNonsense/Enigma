@@ -16,5 +16,5 @@ MonoBehaviour:
   Description: 
   Icon: {fileID: 2800000, guid: 61133c9d383f3764bb714ef99ae8dc37, type: 3}
   Space: 1
-  itemTypeHelp: 216
-  unitTypeHelp: 210
+  itemTypeHelp: 161
+  unitTypeHelp: 155

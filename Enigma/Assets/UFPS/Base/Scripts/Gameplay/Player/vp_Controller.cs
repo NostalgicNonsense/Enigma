@@ -15,6 +15,8 @@
 
 
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public abstract class vp_Controller : vp_Component
 {
@@ -690,4 +692,13 @@ public abstract class vp_Controller : vp_Component
 	{
 		get { return m_Grounded; }
 	}
+
+
 }
+
+
+
+
+
+
+

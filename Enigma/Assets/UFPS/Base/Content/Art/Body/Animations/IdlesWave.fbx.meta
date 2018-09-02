@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c387a0e47b4244f2b86c50372341024a
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: LeftEye
     100002: Character_Ctrl:Reference
@@ -625,7 +625,7 @@ ModelImporter:
     4300110: l_ankleProxy_geo
     4300112: l_kneeProxy_geo
     4300114: l_hipProxy_geo
-    7400002: Idle
+    7400002: Wave
     7400004: Wave
     11100000: //RootNode
     2186277476908879412: ImportLogs
@@ -688,7 +688,7 @@ ModelImporter:
       name: Wave
       takeName: Idle
       firstFrame: 120
-      lastFrame: 222
+      lastFrame: 229
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -699,7 +699,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -735,6 +735,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

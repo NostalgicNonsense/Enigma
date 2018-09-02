@@ -6,7 +6,7 @@ namespace Assets.Enigma.Components.Base_Classes.Maps.Preplaced
     /// <summary>
     /// The Network manager spawns a prefab at the position of this.
     /// </summary>
-    public class MultiplayerSpawnType : MonoBehaviour
+    public class MultiplayerSpawnType : NetworkBehaviour
     {
         public GameObject SpawnEntity;
 

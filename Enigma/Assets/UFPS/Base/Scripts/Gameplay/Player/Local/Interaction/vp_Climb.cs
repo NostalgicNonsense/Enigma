@@ -49,6 +49,7 @@ public class vp_Climb : vp_Interactable
 	protected vp_Timer.Handle m_ClimbingSoundTimer = new vp_Timer.Handle();
 	protected AudioClip m_SoundToPlay = null;				// the current sound to be played
 	protected AudioClip m_LastPlayedSound = null;			// used to make sure we don't place the same sound twice in a row
+    protected bool m_ReverseInput;
 
 	vp_FPPlayerEventHandler m_FPPlayer = null;
 	vp_FPPlayerEventHandler FPPlayer
@@ -176,9 +177,11 @@ public class vp_Climb : vp_Interactable
 
 		if (m_Controller.Transform.GetComponent<Collider>().enabled && Collider.enabled)
 			Physics.IgnoreCollision(m_Controller.Transform.GetComponent<Collider>(), Collider, true); // ignore collisions with this object
-		
-		// start the initial mounting of the climbable object
-		StartCoroutine("LineUp");
+
+        m_ReverseInput = Vector3.Dot(m_Player.transform.forward, m_Transform.forward) > 0;
+
+        // start the initial mounting of the climbable object
+        StartCoroutine("LineUp");
 		
 	}
 
@@ -419,18 +422,10 @@ public class vp_Climb : vp_Interactable
 		Vector3 newPosition = GetNewPosition();
 		
 		// get our move vector from controls and camera direction
-		Vector3 moveVector = Vector3.zero;
-		float pitch = m_Player.Rotation.Get().x / 90;
-		
-		float minimumClimbSpeed = MinimumClimbSpeed / ClimbSpeed;
-		
-		if(Mathf.Abs( pitch ) < minimumClimbSpeed)
-			pitch = pitch > 0 ? minimumClimbSpeed : minimumClimbSpeed * -1;
-		
-		if(pitch < 0)
-			moveVector = Vector3.up * -pitch;
-		else if(pitch > 0)
-			moveVector = Vector3.down * pitch;
+		Vector3 moveVector = Vector3.up;
+        if (m_ReverseInput) {
+            moveVector *= -1;
+        }
 		
 		float speed = ClimbSpeed;
 		float testDirection = (moveVector * m_Player.InputClimbVector.Get()).y;
@@ -461,11 +456,11 @@ public class vp_Climb : vp_Interactable
 				PlaySound(Sounds.ClimbingSounds);
 			}, m_ClimbingSoundTimer);
 		}
-			
-		// Move our player by the climbSpeed
-		newPosition += moveVector * speed * Time.deltaTime * m_Player.InputClimbVector.Get();
-		
-		m_Player.Position.Set( Vector3.Slerp( m_Controller.Transform.position, newPosition, Time.deltaTime * speed) );
+
+        // Move our player by the climbSpeed
+        newPosition += moveVector * speed * Time.deltaTime * m_Player.InputClimbVector.Get();
+
+        m_Player.Position.Set( Vector3.Slerp( m_Controller.Transform.position, newPosition, Time.deltaTime * speed) );
 			
 
 	}

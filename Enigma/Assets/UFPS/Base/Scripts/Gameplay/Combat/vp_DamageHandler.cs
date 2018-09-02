@@ -14,11 +14,9 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 #if UNITY_EDITOR
 using UnityEditor;
-
 #endif
 
 #if UNITY_5_4_OR_NEWER
@@ -44,8 +42,6 @@ public class vp_DamageHandler : MonoBehaviour
 	// sounds
 	public AudioClip DeathSound = null;					// sound to play upon death
 	protected AudioSource m_Audio = null;
-
-	protected Team m_Team = null;
 	
 	// impact damage
 	public float ImpactDamageThreshold = 10;
@@ -181,7 +177,6 @@ public class vp_DamageHandler : MonoBehaviour
 	{
 		
 		m_Audio = GetComponent<AudioSource>();
-		m_Team = GetComponent<Team>();
 
 		CurrentHealth = MaxHealth;
 
@@ -225,14 +220,8 @@ public class vp_DamageHandler : MonoBehaviour
 	/// reduces current health by 'damage' points and kills the
 	/// object if health runs out
 	/// </summary>
-	public virtual void Damage(float damage, Assets.Enigma.Components.Base_Classes.TeamSettings.Enums.Team teamOwner)
+	public virtual void Damage(float damage)
 	{
-        if (teamOwner.TeamName == m_Team.TeamName && damage > 0)
-        {
-            //Same team, only damage that is allowed is healing
-            return;
-        }
-
 		Damage(new vp_DamageInfo(damage, null));
 	}
 	public virtual void Damage(vp_DamageInfo damageInfo)

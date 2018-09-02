@@ -58,7 +58,7 @@ public class vp_AddonBrowser : EditorWindow
 		{
 			Name = name;
 			Id = id;
-			IconPath = "http://www.opsive.com/assets/UFPS/content/assets/ufps/editor/addonicons/" + Id + ".png";
+			IconPath = "http://legacy.opsive.com/assets/UFPS/content/assets/ufps/editor/addonicons/" + Id + ".png";
 			www = new WWW(IconPath);
 			Open = delegate() {
                 if (!name.Contains("Opsive")) {
@@ -92,7 +92,7 @@ public class vp_AddonBrowser : EditorWindow
 
 		m_ProductsReady = false;
 		m_IconsReady = false;
-		m_ProductFile = new WWW("http://www.opsive.com/assets/UFPS/content/assets/ufps/editor/addons.txt");
+		m_ProductFile = new WWW("http://legacy.opsive.com/assets/UFPS/content/assets/ufps/editor/addons.txt");
 
 	}
 

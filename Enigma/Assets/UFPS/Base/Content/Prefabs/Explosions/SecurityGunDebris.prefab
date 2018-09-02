@@ -45,11 +45,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 145420ef000785a4f87c5c49bdb205ed, type: 2}
   m_StaticBatchInfo:
@@ -62,7 +60,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -145,7 +142,7 @@ MonoBehaviour:
   SurfaceType: {fileID: 11400000, guid: 13ec8cc62ee667645b976a0eb333e45a, type: 2}
   AllowDecals: 1
   SurfaceID: 0
-  surfaceTypeHelp: 183
+  surfaceTypeHelp: 128
 --- !u!114 &11449210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImpactEvent: {fileID: 11400000, guid: a637b86c9c95fed44b75003f05454bee, type: 2}
-  impactEventHelp: 84
+  impactEventHelp: 51
   ImpactThreshold: 1
   MinCameraDistance: 20
   CollisionSounds:

@@ -53,22 +53,18 @@ public class vp_Debris : MonoBehaviour
 
 	protected bool m_Destroy = false;
 	protected Collider[] m_Colliders = null;
-    private MeshRenderer[] meshRenderers;
 	protected Dictionary<Collider, Dictionary<string, object>> m_PiecesInitial = new Dictionary<Collider, Dictionary<string, object>>();
 
-    public bool ShouldFadeAway = true;
-    private float fadePerUpdate = 0.25f;
 
 	/// <summary>
 	/// 
 	/// </summary>
 	void Awake()
 	{
+	
+		m_Colliders = GetComponentsInChildren<Collider>();
 
-        m_Colliders = GetComponentsInChildren<Collider>();
-        meshRenderers = GetComponentsInChildren<MeshRenderer>();
-
-        foreach (Collider col in m_Colliders)
+		foreach (Collider col in m_Colliders)
 		{
 			if (col.GetComponent<Rigidbody>())
 				m_PiecesInitial.Add(col, new Dictionary<string, object>() { { "Position", col.transform.localPosition }, { "Rotation", col.transform.localRotation } });
@@ -130,26 +126,7 @@ public class vp_Debris : MonoBehaviour
 	/// </summary>
 	void Update()
 	{
-        //Dz fadeaway effect, needs math fix
-        if (ShouldFadeAway)
-        {
-            foreach (MeshRenderer mesh in meshRenderers)
-            {
-                Color color = mesh.material.color;
-                if (mesh.material.color.a > 0)
-                {
-                    mesh.material.color = new Color(color.r, color.b, color.g, color.a -= fadePerUpdate * Time.deltaTime);
-                    if (mesh.material.color.a < 0)
-                    {
-                        new Color(color.r, color.b, color.g, 0);
-                    }
-                }
-                else
-                {
-                    mesh.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-                }
-            }
-        }
+
 		// the effect should be removed as soon as the 'm_Destroy' flag
 		// has been set and the sound has stopped playing
 		if (m_Destroy && (Audio != null) && (!Audio.isPlaying))

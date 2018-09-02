@@ -16,9 +16,9 @@ MonoBehaviour:
   Description: 
   Icon: {fileID: 2800000, guid: 435211a123255834d8dbd986692317b8, type: 3}
   Space: 1
-  itemTypeHelp: 216
+  itemTypeHelp: 161
   Unit: {fileID: 11400000, guid: 324ca7eed539b8144ba9097e62aefd8a, type: 2}
   Capacity: 19
   Reloadable: 1
   RemoveWhenDepleted: 0
-  h3: 221
+  h3: 177

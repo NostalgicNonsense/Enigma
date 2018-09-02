@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cae7640b971af4a869742e03eb8f43, type: 3}
   m_Name: Footstep
   m_EditorClassIdentifier: 
-  itemTypeHelp: 271
+  itemTypeHelp: 238

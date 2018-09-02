@@ -23,6 +23,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class vp_ImpactEvent : ScriptableObject

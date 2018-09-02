@@ -9,6 +9,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -71,9 +73,9 @@ public class vp_UpdateDialog : EditorWindow
 
 		window.m_Icon = m_UFPSIcon;
 
-		m_ReleaseNotesPath = "http://www.opsive.com/assets/UFPS/hub/assets/" + m_AssetCode + "/releasenotes";
+		m_ReleaseNotesPath = "http://legacy.opsive.com/assets/UFPS/hub/assets/" + m_AssetCode + "/releasenotes";
 
-		m_InfoFile = new WWW("http://www.opsive.com/assets/UFPS/content/assets/" + m_AssetCode + "/info.txt");
+		m_InfoFile = new WWW("http://legacy.opsive.com/assets/UFPS/content/assets/" + m_AssetCode + "/info.txt");
 		
 	}
 		

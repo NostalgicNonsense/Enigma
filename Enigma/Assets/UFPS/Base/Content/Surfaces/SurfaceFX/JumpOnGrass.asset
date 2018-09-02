@@ -17,18 +17,18 @@ MonoBehaviour:
     MinPitch: 1
     MaxPitch: 1
     MaxOnePerFrame: 0
-    soundsHelp: 84
+    soundsHelp: 106
   Objects:
     m_Objects:
     - Prefab: {fileID: 100000, guid: cf5bc3ccdbdad0440800445911899e34, type: 2}
       Probability: 0.5
-    objectsHelp: 73
+    objectsHelp: 62
   Decal:
     m_Prefabs:
     - {fileID: 186514, guid: c0dd01be62baef949a1b27deb8145fdc, type: 2}
-    prefabsHelp: 128
+    prefabsHelp: 106
     MinScale: 1
     MaxScale: 1
     AllowEdgeOverlap: 0
     edgeOverlapHelp: 161
-  surfaceEffectHelp: 150
+  surfaceEffectHelp: 139

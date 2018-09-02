@@ -25,7 +25,8 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using System.Collections;
+using System.Collections.Generic;
 
 public class vp_DamageTransfer : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class vp_DamageTransfer : MonoBehaviour
 	/// <summary>
 	/// forwards damage in UFPS format to a damagehandler on the target object
 	/// </summary>
-	public virtual void Damage(vp_DamageInfo damageInfo, Team teamOwner)
+	public virtual void Damage(vp_DamageInfo damageInfo)
 	{
 
 		if (!enabled)
@@ -76,7 +77,7 @@ public class vp_DamageTransfer : MonoBehaviour
 		if (m_TargetDamageHandler != null)
 			m_TargetDamageHandler.Damage(damageInfo);
 		else
-			Damage(damageInfo.Damage, teamOwner);
+			Damage(damageInfo.Damage);
 
 	}
 	
@@ -85,16 +86,20 @@ public class vp_DamageTransfer : MonoBehaviour
 	/// forwards damage in float format by executing the method 'Damage(float)'
 	/// on the target object
 	/// </summary>
-	public virtual void Damage(float damage, Team teamOwner)
+	public virtual void Damage(float damage)
 	{
+
 		if (!enabled)
 			return;
 
 		if (m_TargetDamageHandler != null)
-			m_TargetDamageHandler.Damage(damage, teamOwner);
+			m_TargetDamageHandler.Damage(damage);
 		else if(TargetObject != null)
 			TargetObject.SendMessage("Damage", damage, SendMessageOptions.DontRequireReceiver);
 		else
 			gameObject.SendMessageUpwards("Damage", damage, SendMessageOptions.DontRequireReceiver);
+
 	}
+
+
 }

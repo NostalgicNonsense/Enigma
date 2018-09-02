@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 665a030bd0eda4073b9a696237b5af76
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: LeftEye
     100002: r_UNI_eye
@@ -583,6 +583,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

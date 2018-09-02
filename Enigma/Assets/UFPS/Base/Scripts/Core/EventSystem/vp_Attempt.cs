@@ -33,7 +33,7 @@ public class vp_Attempt : vp_Event			// non-generic version for 0 arguments
 
 	/// <summary>
 	///
-	/// </summary>D
+	/// </summary>
 	public vp_Attempt(string name) : base(name)
 	{
 		InitFields();

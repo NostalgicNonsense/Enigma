@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e9d12f8d14139cb48b7d3400202abab9
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - LogoUFPS: {fileID: 2800000, guid: 4b677d36b28884d4bbc2dc535cc4a6f7, type: 3}
+  - LogoPhoton: {fileID: 2800000, guid: 4d2aa23524f7cd94cbd72fa57003261b, type: 3}
+  - LogoProCore: {fileID: 2800000, guid: a7889e7d79cf9fa4eb3658f618b8ce33, type: 3}
+  - LogoGameTextures: {fileID: 2800000, guid: b53ed461a616fa64f975de4c5a3d4739, type: 3}
+  - Splash: {fileID: 2800000, guid: cbb361f4db2a35845bcaf025ae44062f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

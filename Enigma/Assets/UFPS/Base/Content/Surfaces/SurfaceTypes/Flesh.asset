@@ -20,6 +20,6 @@ MonoBehaviour:
     SurfaceEffect: {fileID: 11400000, guid: 0547444aaa6cfbf40a47975c66e54851, type: 2}
   - ImpactEvent: {fileID: 11400000, guid: 5c22d075508c16a4fbfb9736b15913ff, type: 2}
     SurfaceEffect: {fileID: 11400000, guid: 0547444aaa6cfbf40a47975c66e54851, type: 2}
-  itemTypeHelp: 139
+  itemTypeHelp: 128
   AllowFootprints: 0
-  footPrintHelp: 139
+  footPrintHelp: 128

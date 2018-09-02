@@ -12,7 +12,8 @@
 ///////////////////////////////////////////////////////////////////////////////// 
 
 using UnityEngine;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(vp_FPPlayerEventHandler))]
 
@@ -103,7 +104,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 	/// applies damage to the player in simple float format, sends a damage
 	/// flash message to the HUD and twists the camera briefly
 	/// </summary>
-	public override void Damage(float damage, Team teamOwner)
+	public override void Damage(float damage)
 	{
 
 		if (!enabled)
@@ -112,7 +113,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		if (!vp_Utility.IsActive(gameObject))
 			return;
 
-		base.Damage(damage, teamOwner);
+		base.Damage(damage);
 
 		FPPlayer.HUDDamageFlash.Send(new vp_DamageInfo(damage, null));
 

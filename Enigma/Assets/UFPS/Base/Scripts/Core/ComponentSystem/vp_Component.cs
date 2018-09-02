@@ -16,9 +16,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using UnityEngine.Networking;
 
-public class vp_Component : NetworkBehaviour
+public class vp_Component : MonoBehaviour
 {
 
 	public bool Persist = false;
@@ -120,19 +119,15 @@ public class vp_Component : NetworkBehaviour
 
 	public Transform Parent
 	{
-	    get
+		get
 		{
 			if (m_Parent == null)
 				m_Parent = transform.parent;
 			return m_Parent;
 		}
-	    set
-	    {
-            m_Parent = value;
-	    }
 	}
 
-    public Transform Root
+	public Transform Root
 	{
 		get
 		{
@@ -162,28 +157,15 @@ public class vp_Component : NetworkBehaviour
 		}
 	}
 	
-
-
 	public Camera Camera
 	{
 		get
 		{
-		    if (m_Camera == null)
-		    {
-		        m_Camera = GetComponent<Camera>();
-                if (m_Camera == null)
-                {
-                    m_Camera = GetComponentInChildren<Camera>();
-                }
-            }
+			if (m_Camera == null)
+				m_Camera = GetComponent<Camera>();
 			return m_Camera;
 		}
 	}
-
-    public void SetCameraToParent(Camera parentCamera)
-    {
-        m_Camera = parentCamera;
-    }
 
 
 	/// <summary>

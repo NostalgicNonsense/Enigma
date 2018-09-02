@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////// 
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -512,7 +513,10 @@ public class vp_ItemPickup : MonoBehaviour
 		else
 			msg = string.Format(m_Messages.SuccessMultiple, m_Item.Type.IndefiniteArticle, m_Item.Type.DisplayName, m_Item.Type.DisplayNameFull, m_Item.Type.Description, m_PickedUpAmount.ToString());
 
-        vp_LocalPlayer.EventHandler.HUDText.Send(msg);
+        vp_FPPlayerEventHandler localPlayer = recipient.transform.root.GetComponentInChildren<vp_FPPlayerEventHandler>();
+        if (localPlayer != null)
+            localPlayer.HUDText.Send(msg);
+
 
         if (vp_Gameplay.IsMultiplayer && vp_Gameplay.IsMaster)
 			vp_GlobalEvent<vp_ItemPickup, Transform>.Send("TransmitPickup", this, recipient);	// will only execute on the master in multiplayer

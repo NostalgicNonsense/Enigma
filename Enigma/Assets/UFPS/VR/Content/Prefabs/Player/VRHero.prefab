@@ -5,9 +5,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 484704}
+  - 4: {fileID: 484704}
   m_Layer: 22
   m_Name: LeftHandMiddle2
   m_TagString: Untagged
@@ -20,9 +20,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 470670}
+  - 4: {fileID: 470670}
   m_Layer: 22
   m_Name: RightHandThumb2
   m_TagString: Untagged
@@ -35,9 +35,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 475752}
+  - 4: {fileID: 475752}
   m_Layer: 22
   m_Name: LeftHandPinky1
   m_TagString: Untagged
@@ -50,14 +50,14 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 425658}
-  - component: {fileID: 8299474}
-  - component: {fileID: 11487682}
-  - component: {fileID: 11406590}
-  - component: {fileID: 11451956}
-  - component: {fileID: 11453980}
+  - 4: {fileID: 425658}
+  - 82: {fileID: 8299474}
+  - 114: {fileID: 11487682}
+  - 114: {fileID: 11406590}
+  - 114: {fileID: 11451956}
+  - 114: {fileID: 11453980}
   m_Layer: 0
   m_Name: 1Pistol
   m_TagString: Untagged
@@ -70,11 +70,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 472864}
-  - component: {fileID: 3350350}
-  - component: {fileID: 2333932}
+  - 4: {fileID: 472864}
+  - 33: {fileID: 3350350}
+  - 23: {fileID: 2333932}
   m_Layer: 0
   m_Name: 4Mace
   m_TagString: Untagged
@@ -87,9 +87,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 444198}
+  - 4: {fileID: 444198}
   m_Layer: 22
   m_Name: LeftHandPinky4
   m_TagString: Untagged
@@ -102,10 +102,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 473276}
-  - component: {fileID: 2018186}
+  - 4: {fileID: 473276}
+  - 20: {fileID: 2018186}
   m_Layer: 0
   m_Name: WeaponCamera
   m_TagString: Untagged
@@ -118,9 +118,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 498116}
+  - 4: {fileID: 498116}
   m_Layer: 22
   m_Name: LeftHand
   m_TagString: Untagged
@@ -133,12 +133,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 483196}
-  - component: {fileID: 13667706}
-  - component: {fileID: 5491406}
-  - component: {fileID: 14450170}
+  - 4: {fileID: 483196}
+  - 136: {fileID: 13667706}
+  - 54: {fileID: 5491406}
+  - 144: {fileID: 14450170}
   m_Layer: 22
   m_Name: RightUpLeg
   m_TagString: Untagged
@@ -151,9 +151,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 499678}
+  - 4: {fileID: 499678}
   m_Layer: 22
   m_Name: LeftHandRing3
   m_TagString: Untagged
@@ -166,9 +166,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 431658}
+  - 4: {fileID: 431658}
   m_Layer: 22
   m_Name: LeftFoot
   m_TagString: Untagged
@@ -181,9 +181,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 428694}
+  - 4: {fileID: 428694}
   m_Layer: 22
   m_Name: RightHandThumb3
   m_TagString: Untagged
@@ -196,9 +196,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 415134}
+  - 4: {fileID: 415134}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -211,12 +211,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 462802}
-  - component: {fileID: 3304288}
-  - component: {fileID: 2319494}
-  - component: {fileID: 11451842}
+  - 4: {fileID: 462802}
+  - 33: {fileID: 3304288}
+  - 23: {fileID: 2319494}
+  - 114: {fileID: 11451842}
   m_Layer: 0
   m_Name: 3Machinegun
   m_TagString: Untagged
@@ -229,9 +229,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 449170}
+  - 4: {fileID: 449170}
   m_Layer: 22
   m_Name: HeadTop
   m_TagString: Untagged
@@ -244,9 +244,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 461998}
+  - 4: {fileID: 461998}
   m_Layer: 22
   m_Name: LeftToeTop
   m_TagString: Untagged
@@ -259,9 +259,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 440166}
+  - 4: {fileID: 440166}
   m_Layer: 22
   m_Name: LeftForearmRoll
   m_TagString: Untagged
@@ -274,13 +274,13 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448074}
-  - component: {fileID: 13578512}
-  - component: {fileID: 5424682}
-  - component: {fileID: 14485792}
-  - component: {fileID: 11432728}
+  - 4: {fileID: 448074}
+  - 135: {fileID: 13578512}
+  - 54: {fileID: 5424682}
+  - 144: {fileID: 14485792}
+  - 114: {fileID: 11432728}
   m_Layer: 22
   m_Name: Head
   m_TagString: Untagged
@@ -293,9 +293,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 481410}
+  - 4: {fileID: 481410}
   m_Layer: 22
   m_Name: RightShoulder
   m_TagString: Untagged
@@ -308,9 +308,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 435340}
+  - 4: {fileID: 435340}
   m_Layer: 22
   m_Name: LeftHandIndex4
   m_TagString: Untagged
@@ -323,9 +323,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 433140}
+  - 4: {fileID: 433140}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -338,9 +338,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 412172}
+  - 4: {fileID: 412172}
   m_Layer: 22
   m_Name: RightHandIndex2
   m_TagString: Untagged
@@ -353,12 +353,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 485314}
-  - component: {fileID: 13672406}
-  - component: {fileID: 5417368}
-  - component: {fileID: 14464132}
+  - 4: {fileID: 485314}
+  - 136: {fileID: 13672406}
+  - 54: {fileID: 5417368}
+  - 144: {fileID: 14464132}
   m_Layer: 22
   m_Name: LeftForeArm
   m_TagString: Untagged
@@ -371,14 +371,14 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 446964}
-  - component: {fileID: 8210304}
-  - component: {fileID: 11413818}
-  - component: {fileID: 11411718}
-  - component: {fileID: 11497122}
-  - component: {fileID: 11419318}
+  - 4: {fileID: 446964}
+  - 82: {fileID: 8210304}
+  - 114: {fileID: 11413818}
+  - 114: {fileID: 11411718}
+  - 114: {fileID: 11497122}
+  - 114: {fileID: 11419318}
   m_Layer: 0
   m_Name: 3Machinegun
   m_TagString: Untagged
@@ -391,9 +391,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 454870}
+  - 4: {fileID: 454870}
   m_Layer: 22
   m_Name: RightToeTop
   m_TagString: Untagged
@@ -406,11 +406,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 462080}
-  - component: {fileID: 6546920}
-  - component: {fileID: 5426674}
+  - 4: {fileID: 462080}
+  - 65: {fileID: 6546920}
+  - 54: {fileID: 5426674}
   m_Layer: 22
   m_Name: Hips
   m_TagString: Untagged
@@ -423,9 +423,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 439926}
+  - 4: {fileID: 439926}
   m_Layer: 22
   m_Name: RightHandPinky1
   m_TagString: Untagged
@@ -438,28 +438,28 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 409454}
-  - component: {fileID: 14302512}
-  - component: {fileID: 11451992}
-  - component: {fileID: 11499314}
-  - component: {fileID: 11463292}
-  - component: {fileID: 11460520}
-  - component: {fileID: 8211020}
-  - component: {fileID: 11461222}
-  - component: {fileID: 8118658}
-  - component: {fileID: 11449682}
-  - component: {fileID: 11402512}
-  - component: {fileID: 11435932}
-  - component: {fileID: 11498206}
-  - component: {fileID: 11424616}
-  - component: {fileID: 11406708}
-  - component: {fileID: 11418062}
-  - component: {fileID: 11417416}
-  - component: {fileID: 11417338}
-  - component: {fileID: 11483842}
-  - component: {fileID: 11485604}
+  - 4: {fileID: 409454}
+  - 143: {fileID: 14302512}
+  - 114: {fileID: 11451992}
+  - 114: {fileID: 11499314}
+  - 114: {fileID: 11463292}
+  - 114: {fileID: 11460520}
+  - 82: {fileID: 8211020}
+  - 114: {fileID: 11461222}
+  - 81: {fileID: 8118658}
+  - 114: {fileID: 11449682}
+  - 114: {fileID: 11402512}
+  - 114: {fileID: 11435932}
+  - 114: {fileID: 11498206}
+  - 114: {fileID: 11424616}
+  - 114: {fileID: 11406708}
+  - 114: {fileID: 11418062}
+  - 114: {fileID: 11417416}
+  - 114: {fileID: 11417338}
+  - 114: {fileID: 11483842}
+  - 114: {fileID: 11485604}
   m_Layer: 30
   m_Name: VRHero
   m_TagString: Player
@@ -472,9 +472,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 482488}
+  - 4: {fileID: 482488}
   m_Layer: 22
   m_Name: RightFoot
   m_TagString: Untagged
@@ -487,9 +487,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 464268}
+  - 4: {fileID: 464268}
   m_Layer: 22
   m_Name: Weapons
   m_TagString: Untagged
@@ -502,9 +502,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 475212}
+  - 4: {fileID: 475212}
   m_Layer: 22
   m_Name: RightHandThumb1
   m_TagString: Untagged
@@ -517,10 +517,10 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 487596}
-  - component: {fileID: 13712020}
+  - 4: {fileID: 487596}
+  - 137: {fileID: 13712020}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -533,9 +533,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 463066}
+  - 4: {fileID: 463066}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -548,9 +548,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 467552}
+  - 4: {fileID: 467552}
   m_Layer: 22
   m_Name: LeftHandRing4
   m_TagString: Untagged
@@ -563,12 +563,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 460996}
-  - component: {fileID: 13654928}
-  - component: {fileID: 5435402}
-  - component: {fileID: 14489972}
+  - 4: {fileID: 460996}
+  - 136: {fileID: 13654928}
+  - 54: {fileID: 5435402}
+  - 144: {fileID: 14489972}
   m_Layer: 22
   m_Name: LeftArm
   m_TagString: Untagged
@@ -581,14 +581,14 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 401288}
-  - component: {fileID: 8259688}
-  - component: {fileID: 11429962}
-  - component: {fileID: 11440976}
-  - component: {fileID: 11403486}
-  - component: {fileID: 11426276}
+  - 4: {fileID: 401288}
+  - 82: {fileID: 8259688}
+  - 114: {fileID: 11429962}
+  - 114: {fileID: 11440976}
+  - 114: {fileID: 11403486}
+  - 114: {fileID: 11426276}
   m_Layer: 0
   m_Name: 4Mace
   m_TagString: Untagged
@@ -601,9 +601,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 421002}
+  - 4: {fileID: 421002}
   m_Layer: 22
   m_Name: RightForearmRoll
   m_TagString: Untagged
@@ -616,9 +616,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 404622}
+  - 4: {fileID: 404622}
   m_Layer: 22
   m_Name: Reference
   m_TagString: Untagged
@@ -631,9 +631,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 401538}
+  - 4: {fileID: 401538}
   m_Layer: 22
   m_Name: RightFootstep
   m_TagString: Untagged
@@ -646,9 +646,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448334}
+  - 4: {fileID: 448334}
   m_Layer: 22
   m_Name: LeftHandThumb1
   m_TagString: Untagged
@@ -661,9 +661,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 498110}
+  - 4: {fileID: 498110}
   m_Layer: 22
   m_Name: LeftHandIndex1
   m_TagString: Untagged
@@ -676,9 +676,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491978}
+  - 4: {fileID: 491978}
   m_Layer: 22
   m_Name: RightHandIndex4
   m_TagString: Untagged
@@ -691,9 +691,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 451320}
+  - 4: {fileID: 451320}
   m_Layer: 22
   m_Name: RightHandRing3
   m_TagString: Untagged
@@ -706,9 +706,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 426074}
+  - 4: {fileID: 426074}
   m_Layer: 22
   m_Name: LeftHandIndex3
   m_TagString: Untagged
@@ -721,9 +721,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 457510}
+  - 4: {fileID: 457510}
   m_Layer: 22
   m_Name: LeftHandMiddle1
   m_TagString: Untagged
@@ -736,9 +736,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 482498}
+  - 4: {fileID: 482498}
   m_Layer: 22
   m_Name: Spine2
   m_TagString: Untagged
@@ -751,12 +751,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 413880}
-  - component: {fileID: 3324718}
-  - component: {fileID: 2368596}
-  - component: {fileID: 11444776}
+  - 4: {fileID: 413880}
+  - 33: {fileID: 3324718}
+  - 23: {fileID: 2368596}
+  - 114: {fileID: 11444776}
   m_Layer: 0
   m_Name: 2Revolver
   m_TagString: Untagged
@@ -769,12 +769,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 477088}
-  - component: {fileID: 3363528}
-  - component: {fileID: 2392804}
-  - component: {fileID: 11486944}
+  - 4: {fileID: 477088}
+  - 33: {fileID: 3363528}
+  - 23: {fileID: 2392804}
+  - 114: {fileID: 11486944}
   m_Layer: 0
   m_Name: 1Pistol
   m_TagString: Untagged
@@ -787,9 +787,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422912}
+  - 4: {fileID: 422912}
   m_Layer: 22
   m_Name: LeftHandRing2
   m_TagString: Untagged
@@ -802,12 +802,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 490936}
-  - component: {fileID: 13682360}
-  - component: {fileID: 5410786}
-  - component: {fileID: 14454548}
+  - 4: {fileID: 490936}
+  - 136: {fileID: 13682360}
+  - 54: {fileID: 5410786}
+  - 144: {fileID: 14454548}
   m_Layer: 22
   m_Name: RightForeArm
   m_TagString: Untagged
@@ -820,9 +820,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 487782}
+  - 4: {fileID: 487782}
   m_Layer: 22
   m_Name: RightHandMiddle2
   m_TagString: Untagged
@@ -835,13 +835,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 474736}
-  - component: {fileID: 9557168}
-  - component: {fileID: 11445158}
-  - component: {fileID: 11456376}
-  - component: {fileID: 11434662}
+  - 4: {fileID: 474736}
+  - 95: {fileID: 9557168}
+  - 114: {fileID: 11445158}
+  - 114: {fileID: 11456376}
+  - 114: {fileID: 11434662}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -854,9 +854,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 403074}
+  - 4: {fileID: 403074}
   m_Layer: 22
   m_Name: LeftHandMiddle4
   m_TagString: Untagged
@@ -869,9 +869,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 400112}
+  - 4: {fileID: 400112}
   m_Layer: 22
   m_Name: LeftHandMiddle3
   m_TagString: Untagged
@@ -884,9 +884,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 491064}
+  - 4: {fileID: 491064}
   m_Layer: 22
   m_Name: RightHandRing2
   m_TagString: Untagged
@@ -899,9 +899,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 451856}
+  - 4: {fileID: 451856}
   m_Layer: 22
   m_Name: LeftShoulder
   m_TagString: Untagged
@@ -914,12 +914,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 482846}
-  - component: {fileID: 13688958}
-  - component: {fileID: 5413262}
-  - component: {fileID: 14407386}
+  - 4: {fileID: 482846}
+  - 136: {fileID: 13688958}
+  - 54: {fileID: 5413262}
+  - 144: {fileID: 14407386}
   m_Layer: 22
   m_Name: LeftUpLeg
   m_TagString: Untagged
@@ -932,9 +932,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 476478}
+  - 4: {fileID: 476478}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -947,9 +947,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 430244}
+  - 4: {fileID: 430244}
   m_Layer: 22
   m_Name: LeftHandThumb3
   m_TagString: Untagged
@@ -962,9 +962,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 487508}
+  - 4: {fileID: 487508}
   m_Layer: 22
   m_Name: RightHandIndex1
   m_TagString: Untagged
@@ -977,9 +977,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 475736}
+  - 4: {fileID: 475736}
   m_Layer: 22
   m_Name: RightHandMiddle1
   m_TagString: Untagged
@@ -992,12 +992,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422916}
-  - component: {fileID: 13655182}
-  - component: {fileID: 5418032}
-  - component: {fileID: 14473812}
+  - 4: {fileID: 422916}
+  - 136: {fileID: 13655182}
+  - 54: {fileID: 5418032}
+  - 144: {fileID: 14473812}
   m_Layer: 22
   m_Name: RightLeg
   m_TagString: Untagged
@@ -1010,9 +1010,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 404342}
+  - 4: {fileID: 404342}
   m_Layer: 22
   m_Name: RightHandMiddle3
   m_TagString: Untagged
@@ -1025,9 +1025,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 434750}
+  - 4: {fileID: 434750}
   m_Layer: 22
   m_Name: LeftHandThumb2
   m_TagString: Untagged
@@ -1040,9 +1040,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 410722}
+  - 4: {fileID: 410722}
   m_Layer: 22
   m_Name: RightHandPinky3
   m_TagString: Untagged
@@ -1055,9 +1055,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 406730}
+  - 4: {fileID: 406730}
   m_Layer: 22
   m_Name: RightHandPinky2
   m_TagString: Untagged
@@ -1070,9 +1070,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 403246}
+  - 4: {fileID: 403246}
   m_Layer: 22
   m_Name: RightHandMiddle4
   m_TagString: Untagged
@@ -1085,9 +1085,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 444192}
+  - 4: {fileID: 444192}
   m_Layer: 22
   m_Name: RightToeBase
   m_TagString: Untagged
@@ -1100,9 +1100,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 453704}
+  - 4: {fileID: 453704}
   m_Layer: 22
   m_Name: Spine3
   m_TagString: Untagged
@@ -1115,12 +1115,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 419988}
-  - component: {fileID: 13604432}
-  - component: {fileID: 5495054}
-  - component: {fileID: 14471622}
+  - 4: {fileID: 419988}
+  - 136: {fileID: 13604432}
+  - 54: {fileID: 5495054}
+  - 144: {fileID: 14471622}
   m_Layer: 22
   m_Name: RightArm
   m_TagString: Untagged
@@ -1133,9 +1133,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422700}
+  - 4: {fileID: 422700}
   m_Layer: 22
   m_Name: RightHandRing4
   m_TagString: Untagged
@@ -1148,9 +1148,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 454848}
+  - 4: {fileID: 454848}
   m_Layer: 22
   m_Name: LeftFootstep
   m_TagString: Untagged
@@ -1163,9 +1163,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 478682}
+  - 4: {fileID: 478682}
   m_Layer: 22
   m_Name: Spine
   m_TagString: Untagged
@@ -1178,9 +1178,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 449060}
+  - 4: {fileID: 449060}
   m_Layer: 22
   m_Name: Neck
   m_TagString: Untagged
@@ -1193,12 +1193,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 413150}
-  - component: {fileID: 6510910}
-  - component: {fileID: 5436844}
-  - component: {fileID: 14440438}
+  - 4: {fileID: 413150}
+  - 65: {fileID: 6510910}
+  - 54: {fileID: 5436844}
+  - 144: {fileID: 14440438}
   m_Layer: 22
   m_Name: Spine1
   m_TagString: Untagged
@@ -1211,9 +1211,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 439346}
+  - 4: {fileID: 439346}
   m_Layer: 22
   m_Name: LeftToeBase
   m_TagString: Untagged
@@ -1226,9 +1226,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 490046}
+  - 4: {fileID: 490046}
   m_Layer: 22
   m_Name: LeftHandPinky2
   m_TagString: Untagged
@@ -1241,9 +1241,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 437434}
+  - 4: {fileID: 437434}
   m_Layer: 22
   m_Name: RightHandThumb4
   m_TagString: Untagged
@@ -1256,9 +1256,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 424138}
+  - 4: {fileID: 424138}
   m_Layer: 22
   m_Name: RightHand
   m_TagString: Untagged
@@ -1271,12 +1271,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422350}
-  - component: {fileID: 13677336}
-  - component: {fileID: 5400378}
-  - component: {fileID: 14495484}
+  - 4: {fileID: 422350}
+  - 136: {fileID: 13677336}
+  - 54: {fileID: 5400378}
+  - 144: {fileID: 14495484}
   m_Layer: 22
   m_Name: LeftLeg
   m_TagString: Untagged
@@ -1289,14 +1289,14 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 416880}
-  - component: {fileID: 8255806}
-  - component: {fileID: 11478376}
-  - component: {fileID: 11463232}
-  - component: {fileID: 11447626}
-  - component: {fileID: 11450858}
+  - 4: {fileID: 416880}
+  - 82: {fileID: 8255806}
+  - 114: {fileID: 11478376}
+  - 114: {fileID: 11463232}
+  - 114: {fileID: 11447626}
+  - 114: {fileID: 11450858}
   m_Layer: 0
   m_Name: 2Revolver
   m_TagString: Untagged
@@ -1309,9 +1309,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 428502}
+  - 4: {fileID: 428502}
   m_Layer: 22
   m_Name: RightHandIndex3
   m_TagString: Untagged
@@ -1324,9 +1324,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 429320}
+  - 4: {fileID: 429320}
   m_Layer: 22
   m_Name: RightHandPinky4
   m_TagString: Untagged
@@ -1339,9 +1339,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 468352}
+  - 4: {fileID: 468352}
   m_Layer: 22
   m_Name: RightHandRing1
   m_TagString: Untagged
@@ -1354,9 +1354,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 439816}
+  - 4: {fileID: 439816}
   m_Layer: 22
   m_Name: LeftHandRing1
   m_TagString: Untagged
@@ -1369,9 +1369,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 497858}
+  - 4: {fileID: 497858}
   m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
@@ -1384,9 +1384,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422400}
+  - 4: {fileID: 422400}
   m_Layer: 22
   m_Name: LeftHandThumb4
   m_TagString: Untagged
@@ -1399,9 +1399,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 448270}
+  - 4: {fileID: 448270}
   m_Layer: 22
   m_Name: LeftHandPinky3
   m_TagString: Untagged
@@ -1414,9 +1414,9 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 412742}
+  - 4: {fileID: 412742}
   m_Layer: 22
   m_Name: LeftHandIndex2
   m_TagString: Untagged
@@ -1429,12 +1429,12 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 441422}
-  - component: {fileID: 8130976}
-  - component: {fileID: 2022750}
-  - component: {fileID: 11483746}
+  - 4: {fileID: 441422}
+  - 81: {fileID: 8130976}
+  - 20: {fileID: 2022750}
+  - 114: {fileID: 11483746}
   m_Layer: 0
   m_Name: FPSCamera
   m_TagString: MainCamera
@@ -1455,7 +1455,6 @@ Transform:
   - {fileID: 403074}
   m_Father: {fileID: 484704}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &401288
 Transform:
   m_ObjectHideFlags: 1
@@ -1468,7 +1467,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441422}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &401538
 Transform:
   m_ObjectHideFlags: 1
@@ -1481,7 +1479,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 482488}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &403074
 Transform:
   m_ObjectHideFlags: 1
@@ -1494,7 +1491,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400112}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &403246
 Transform:
   m_ObjectHideFlags: 1
@@ -1507,7 +1503,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 404342}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &404342
 Transform:
   m_ObjectHideFlags: 1
@@ -1521,7 +1516,6 @@ Transform:
   - {fileID: 403246}
   m_Father: {fileID: 487782}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &404622
 Transform:
   m_ObjectHideFlags: 1
@@ -1535,7 +1529,6 @@ Transform:
   - {fileID: 462080}
   m_Father: {fileID: 474736}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &406730
 Transform:
   m_ObjectHideFlags: 1
@@ -1549,7 +1542,6 @@ Transform:
   - {fileID: 410722}
   m_Father: {fileID: 439926}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &409454
 Transform:
   m_ObjectHideFlags: 1
@@ -1564,7 +1556,6 @@ Transform:
   - {fileID: 474736}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &410722
 Transform:
   m_ObjectHideFlags: 1
@@ -1578,7 +1569,6 @@ Transform:
   - {fileID: 429320}
   m_Father: {fileID: 406730}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &412172
 Transform:
   m_ObjectHideFlags: 1
@@ -1592,7 +1582,6 @@ Transform:
   - {fileID: 428502}
   m_Father: {fileID: 487508}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &412742
 Transform:
   m_ObjectHideFlags: 1
@@ -1606,7 +1595,6 @@ Transform:
   - {fileID: 426074}
   m_Father: {fileID: 498110}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &413150
 Transform:
   m_ObjectHideFlags: 1
@@ -1620,7 +1608,6 @@ Transform:
   - {fileID: 482498}
   m_Father: {fileID: 478682}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &413880
 Transform:
   m_ObjectHideFlags: 1
@@ -1634,7 +1621,6 @@ Transform:
   - {fileID: 497858}
   m_Father: {fileID: 464268}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &415134
 Transform:
   m_ObjectHideFlags: 1
@@ -1647,7 +1633,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477088}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &416880
 Transform:
   m_ObjectHideFlags: 1
@@ -1660,7 +1645,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441422}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &419988
 Transform:
   m_ObjectHideFlags: 1
@@ -1674,7 +1658,6 @@ Transform:
   - {fileID: 490936}
   m_Father: {fileID: 481410}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &421002
 Transform:
   m_ObjectHideFlags: 1
@@ -1688,7 +1671,6 @@ Transform:
   - {fileID: 424138}
   m_Father: {fileID: 490936}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422350
 Transform:
   m_ObjectHideFlags: 1
@@ -1702,7 +1684,6 @@ Transform:
   - {fileID: 431658}
   m_Father: {fileID: 482846}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422400
 Transform:
   m_ObjectHideFlags: 1
@@ -1715,7 +1696,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 430244}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422700
 Transform:
   m_ObjectHideFlags: 1
@@ -1728,7 +1708,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 451320}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422912
 Transform:
   m_ObjectHideFlags: 1
@@ -1742,7 +1721,6 @@ Transform:
   - {fileID: 499678}
   m_Father: {fileID: 439816}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422916
 Transform:
   m_ObjectHideFlags: 1
@@ -1756,7 +1734,6 @@ Transform:
   - {fileID: 482488}
   m_Father: {fileID: 483196}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &424138
 Transform:
   m_ObjectHideFlags: 1
@@ -1775,7 +1752,6 @@ Transform:
   - {fileID: 464268}
   m_Father: {fileID: 421002}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &425658
 Transform:
   m_ObjectHideFlags: 1
@@ -1788,7 +1764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441422}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &426074
 Transform:
   m_ObjectHideFlags: 1
@@ -1802,7 +1777,6 @@ Transform:
   - {fileID: 435340}
   m_Father: {fileID: 412742}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &428502
 Transform:
   m_ObjectHideFlags: 1
@@ -1816,7 +1790,6 @@ Transform:
   - {fileID: 491978}
   m_Father: {fileID: 412172}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &428694
 Transform:
   m_ObjectHideFlags: 1
@@ -1830,7 +1803,6 @@ Transform:
   - {fileID: 437434}
   m_Father: {fileID: 470670}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &429320
 Transform:
   m_ObjectHideFlags: 1
@@ -1843,7 +1815,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 410722}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &430244
 Transform:
   m_ObjectHideFlags: 1
@@ -1857,7 +1828,6 @@ Transform:
   - {fileID: 422400}
   m_Father: {fileID: 434750}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &431658
 Transform:
   m_ObjectHideFlags: 1
@@ -1872,7 +1842,6 @@ Transform:
   - {fileID: 454848}
   m_Father: {fileID: 422350}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &433140
 Transform:
   m_ObjectHideFlags: 1
@@ -1885,7 +1854,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477088}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &434750
 Transform:
   m_ObjectHideFlags: 1
@@ -1899,7 +1867,6 @@ Transform:
   - {fileID: 430244}
   m_Father: {fileID: 448334}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &435340
 Transform:
   m_ObjectHideFlags: 1
@@ -1912,7 +1879,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 426074}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &437434
 Transform:
   m_ObjectHideFlags: 1
@@ -1925,7 +1891,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428694}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &439346
 Transform:
   m_ObjectHideFlags: 1
@@ -1939,7 +1904,6 @@ Transform:
   - {fileID: 461998}
   m_Father: {fileID: 431658}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &439816
 Transform:
   m_ObjectHideFlags: 1
@@ -1953,7 +1917,6 @@ Transform:
   - {fileID: 422912}
   m_Father: {fileID: 498116}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &439926
 Transform:
   m_ObjectHideFlags: 1
@@ -1967,7 +1930,6 @@ Transform:
   - {fileID: 406730}
   m_Father: {fileID: 424138}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &440166
 Transform:
   m_ObjectHideFlags: 1
@@ -1981,7 +1943,6 @@ Transform:
   - {fileID: 498116}
   m_Father: {fileID: 485314}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &441422
 Transform:
   m_ObjectHideFlags: 1
@@ -1999,7 +1960,6 @@ Transform:
   - {fileID: 401288}
   m_Father: {fileID: 409454}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &444192
 Transform:
   m_ObjectHideFlags: 1
@@ -2013,7 +1973,6 @@ Transform:
   - {fileID: 454870}
   m_Father: {fileID: 482488}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &444198
 Transform:
   m_ObjectHideFlags: 1
@@ -2026,7 +1985,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448270}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &446964
 Transform:
   m_ObjectHideFlags: 1
@@ -2039,7 +1997,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441422}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448074
 Transform:
   m_ObjectHideFlags: 1
@@ -2053,7 +2010,6 @@ Transform:
   - {fileID: 449170}
   m_Father: {fileID: 449060}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448270
 Transform:
   m_ObjectHideFlags: 1
@@ -2067,7 +2023,6 @@ Transform:
   - {fileID: 444198}
   m_Father: {fileID: 490046}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &448334
 Transform:
   m_ObjectHideFlags: 1
@@ -2081,7 +2036,6 @@ Transform:
   - {fileID: 434750}
   m_Father: {fileID: 498116}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &449060
 Transform:
   m_ObjectHideFlags: 1
@@ -2095,7 +2049,6 @@ Transform:
   - {fileID: 448074}
   m_Father: {fileID: 453704}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &449170
 Transform:
   m_ObjectHideFlags: 1
@@ -2108,7 +2061,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448074}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &451320
 Transform:
   m_ObjectHideFlags: 1
@@ -2122,7 +2074,6 @@ Transform:
   - {fileID: 422700}
   m_Father: {fileID: 491064}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &451856
 Transform:
   m_ObjectHideFlags: 1
@@ -2136,7 +2087,6 @@ Transform:
   - {fileID: 460996}
   m_Father: {fileID: 453704}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &453704
 Transform:
   m_ObjectHideFlags: 1
@@ -2152,7 +2102,6 @@ Transform:
   - {fileID: 481410}
   m_Father: {fileID: 482498}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &454848
 Transform:
   m_ObjectHideFlags: 1
@@ -2165,7 +2114,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431658}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &454870
 Transform:
   m_ObjectHideFlags: 1
@@ -2178,7 +2126,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 444192}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &457510
 Transform:
   m_ObjectHideFlags: 1
@@ -2192,7 +2139,6 @@ Transform:
   - {fileID: 484704}
   m_Father: {fileID: 498116}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &460996
 Transform:
   m_ObjectHideFlags: 1
@@ -2206,7 +2152,6 @@ Transform:
   - {fileID: 485314}
   m_Father: {fileID: 451856}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &461998
 Transform:
   m_ObjectHideFlags: 1
@@ -2219,7 +2164,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 439346}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &462080
 Transform:
   m_ObjectHideFlags: 1
@@ -2235,7 +2179,6 @@ Transform:
   - {fileID: 478682}
   m_Father: {fileID: 404622}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &462802
 Transform:
   m_ObjectHideFlags: 1
@@ -2250,7 +2193,6 @@ Transform:
   - {fileID: 476478}
   m_Father: {fileID: 464268}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &463066
 Transform:
   m_ObjectHideFlags: 1
@@ -2264,7 +2206,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 462802}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &464268
 Transform:
   m_ObjectHideFlags: 1
@@ -2281,7 +2222,6 @@ Transform:
   - {fileID: 472864}
   m_Father: {fileID: 424138}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &467552
 Transform:
   m_ObjectHideFlags: 1
@@ -2294,7 +2234,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 499678}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &468352
 Transform:
   m_ObjectHideFlags: 1
@@ -2308,7 +2247,6 @@ Transform:
   - {fileID: 491064}
   m_Father: {fileID: 424138}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &470670
 Transform:
   m_ObjectHideFlags: 1
@@ -2322,7 +2260,6 @@ Transform:
   - {fileID: 428694}
   m_Father: {fileID: 475212}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &472864
 Transform:
   m_ObjectHideFlags: 1
@@ -2335,7 +2272,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 464268}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &473276
 Transform:
   m_ObjectHideFlags: 1
@@ -2348,7 +2284,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441422}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &474736
 Transform:
   m_ObjectHideFlags: 1
@@ -2363,7 +2298,6 @@ Transform:
   - {fileID: 404622}
   m_Father: {fileID: 409454}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &475212
 Transform:
   m_ObjectHideFlags: 1
@@ -2377,7 +2311,6 @@ Transform:
   - {fileID: 470670}
   m_Father: {fileID: 424138}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &475736
 Transform:
   m_ObjectHideFlags: 1
@@ -2391,7 +2324,6 @@ Transform:
   - {fileID: 487782}
   m_Father: {fileID: 424138}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &475752
 Transform:
   m_ObjectHideFlags: 1
@@ -2405,7 +2337,6 @@ Transform:
   - {fileID: 490046}
   m_Father: {fileID: 498116}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &476478
 Transform:
   m_ObjectHideFlags: 1
@@ -2418,7 +2349,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 462802}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &477088
 Transform:
   m_ObjectHideFlags: 1
@@ -2433,7 +2363,6 @@ Transform:
   - {fileID: 433140}
   m_Father: {fileID: 464268}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &478682
 Transform:
   m_ObjectHideFlags: 1
@@ -2447,7 +2376,6 @@ Transform:
   - {fileID: 413150}
   m_Father: {fileID: 462080}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &481410
 Transform:
   m_ObjectHideFlags: 1
@@ -2461,7 +2389,6 @@ Transform:
   - {fileID: 419988}
   m_Father: {fileID: 453704}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482488
 Transform:
   m_ObjectHideFlags: 1
@@ -2476,7 +2403,6 @@ Transform:
   - {fileID: 401538}
   m_Father: {fileID: 422916}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482498
 Transform:
   m_ObjectHideFlags: 1
@@ -2490,7 +2416,6 @@ Transform:
   - {fileID: 453704}
   m_Father: {fileID: 413150}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482846
 Transform:
   m_ObjectHideFlags: 1
@@ -2504,7 +2429,6 @@ Transform:
   - {fileID: 422350}
   m_Father: {fileID: 462080}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &483196
 Transform:
   m_ObjectHideFlags: 1
@@ -2518,7 +2442,6 @@ Transform:
   - {fileID: 422916}
   m_Father: {fileID: 462080}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &484704
 Transform:
   m_ObjectHideFlags: 1
@@ -2532,7 +2455,6 @@ Transform:
   - {fileID: 400112}
   m_Father: {fileID: 457510}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &485314
 Transform:
   m_ObjectHideFlags: 1
@@ -2546,7 +2468,6 @@ Transform:
   - {fileID: 440166}
   m_Father: {fileID: 460996}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &487508
 Transform:
   m_ObjectHideFlags: 1
@@ -2560,7 +2481,6 @@ Transform:
   - {fileID: 412172}
   m_Father: {fileID: 424138}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &487596
 Transform:
   m_ObjectHideFlags: 1
@@ -2573,7 +2493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 474736}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &487782
 Transform:
   m_ObjectHideFlags: 1
@@ -2587,7 +2506,6 @@ Transform:
   - {fileID: 404342}
   m_Father: {fileID: 475736}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &490046
 Transform:
   m_ObjectHideFlags: 1
@@ -2601,7 +2519,6 @@ Transform:
   - {fileID: 448270}
   m_Father: {fileID: 475752}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &490936
 Transform:
   m_ObjectHideFlags: 1
@@ -2615,7 +2532,6 @@ Transform:
   - {fileID: 421002}
   m_Father: {fileID: 419988}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491064
 Transform:
   m_ObjectHideFlags: 1
@@ -2629,7 +2545,6 @@ Transform:
   - {fileID: 451320}
   m_Father: {fileID: 468352}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491978
 Transform:
   m_ObjectHideFlags: 1
@@ -2642,7 +2557,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428502}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &497858
 Transform:
   m_ObjectHideFlags: 1
@@ -2655,7 +2569,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 413880}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &498110
 Transform:
   m_ObjectHideFlags: 1
@@ -2669,7 +2582,6 @@ Transform:
   - {fileID: 412742}
   m_Father: {fileID: 498116}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &498116
 Transform:
   m_ObjectHideFlags: 1
@@ -2687,7 +2599,6 @@ Transform:
   - {fileID: 448334}
   m_Father: {fileID: 440166}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &499678
 Transform:
   m_ObjectHideFlags: 1
@@ -2701,7 +2612,6 @@ Transform:
   - {fileID: 467552}
   m_Father: {fileID: 422912}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2018186
 Camera:
   m_ObjectHideFlags: 1
@@ -2732,12 +2642,10 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!20 &2022750
 Camera:
   m_ObjectHideFlags: 1
@@ -2768,12 +2676,10 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!23 &2319494
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2783,33 +2689,24 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 8faf736f4ce024ef9984aa5e35323081, type: 2}
   - {fileID: 2100000, guid: cf1fb5dbc734b46d6ab2acaa1e814c20, type: 2}
   - {fileID: 2100000, guid: e72e88111731f4647861ca4ea8abc53c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2333932
 MeshRenderer:
@@ -2820,31 +2717,22 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 01e97e48b309b5241a79016b633f5e31, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2368596
 MeshRenderer:
@@ -2855,31 +2743,22 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: fabd0ad6be0b342ce81721382bd55f3c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2392804
 MeshRenderer:
@@ -2890,33 +2769,24 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 8b452baaba8f346bb8669184f989c8be, type: 2}
   - {fileID: 2100000, guid: 786fb56ba2ba0454c9152779aad7b1b8, type: 2}
   - {fileID: 2100000, guid: 786fb56ba2ba0454c9152779aad7b1b8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3304288
 MeshFilter:
@@ -3165,7 +3035,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -3178,69 +3047,49 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3260,7 +3109,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -3273,69 +3121,49 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3355,7 +3183,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -3368,69 +3195,49 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3450,7 +3257,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
   MinDistance: 3
@@ -3463,69 +3269,49 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3545,7 +3331,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -3558,69 +3343,49 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3641,7 +3406,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &11402512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5410,38 +5174,28 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 0250a74433ea1415cbfeee3d7be7eea9, type: 2}
   - {fileID: 2100000, guid: cfacfbc2b631c49338aff883f6fed9cd, type: 2}
   - {fileID: 2100000, guid: a1f7269746c3741c0abf91d87becb96b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: ece539b2abd7040c3b3a773590276b8b, type: 3}
   m_Bones:
   - {fileID: 448074}
@@ -5564,8 +5318,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14440438
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5608,8 +5360,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14450170
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5652,8 +5402,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14454548
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5696,8 +5444,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14464132
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5740,8 +5486,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14471622
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5784,8 +5528,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14473812
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5828,8 +5570,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14485792
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5872,8 +5612,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14489972
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5916,8 +5654,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!144 &14495484
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -5960,8 +5696,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

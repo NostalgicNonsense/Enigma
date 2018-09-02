@@ -19,7 +19,7 @@ public class vp_InputWindow : EditorWindow
 	public vp_Input m_Component;
 
 	public static vp_InputWindow m_Window = null;
-	public static Texture2D m_Icon = (Texture2D)Resources.Load("Icons/UFPS32x32", typeof(Texture2D));
+    public static Texture2D m_Icon;
 
 	// foldouts
 	public static bool m_ButtonsFoldout = true;
@@ -38,8 +38,9 @@ public class vp_InputWindow : EditorWindow
 	/// </summary>
 	public static void Init()
 	{
+        m_Icon = (Texture2D)Resources.Load("Icons/UFPS32x32", typeof(Texture2D));
         // Get existing open window or if none, make a new one:
-		m_Window = (vp_InputWindow)EditorWindow.GetWindow(typeof(vp_InputWindow), false, "UFPS InputMgr");
+        m_Window = (vp_InputWindow)EditorWindow.GetWindow(typeof(vp_InputWindow), false, "UFPS InputMgr");
 	}
 
 

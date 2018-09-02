@@ -68,7 +68,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
         {
             var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
             var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
-            damageHandler.Damage(Damage, _team);
+            damageHandler.Damage(Damage);
         }
 
         private Vector3 GetDirectionToTarget(Transform targeTransform)

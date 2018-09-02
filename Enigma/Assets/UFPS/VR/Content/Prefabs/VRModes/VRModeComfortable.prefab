@@ -5,14 +5,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 472556}
-  - component: {fileID: 11447346}
-  - component: {fileID: 11419778}
-  - component: {fileID: 11405348}
-  - component: {fileID: 11451508}
-  - component: {fileID: 11456184}
+  - 4: {fileID: 472556}
+  - 114: {fileID: 11447346}
+  - 114: {fileID: 11419778}
+  - 114: {fileID: 11405348}
+  - 114: {fileID: 11451508}
+  - 114: {fileID: 11456184}
   m_Layer: 0
   m_Name: VRModeComfortable
   m_TagString: Untagged
@@ -32,7 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11405348
 MonoBehaviour:
   m_ObjectHideFlags: 1

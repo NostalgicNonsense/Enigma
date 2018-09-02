@@ -24,15 +24,15 @@ MonoBehaviour:
     MinPitch: 1
     MaxPitch: 1
     MaxOnePerFrame: 0
-    soundsHelp: 172
+    soundsHelp: 106
   Objects:
     m_Objects: []
-    objectsHelp: 95
+    objectsHelp: 62
   Decal:
     m_Prefabs: []
-    prefabsHelp: 205
+    prefabsHelp: 106
     MinScale: 1
     MaxScale: 1
     AllowEdgeOverlap: 0
-    edgeOverlapHelp: 238
-  surfaceEffectHelp: 205
+    edgeOverlapHelp: 161
+  surfaceEffectHelp: 139

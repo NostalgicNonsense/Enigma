@@ -14,11 +14,11 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-#if UNITY_5_4_OR_NEWER
-using System;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 using UnityEngine.SceneManagement;
-#endif
 
 public class vp_Gameplay
 {
@@ -91,13 +91,9 @@ public class vp_Gameplay
 	public static int CurrentLevel
 	{
 		get
-		{
-#if UNITY_5_4_OR_NEWER
-			return SceneManager.GetActiveScene().buildIndex;
-#else
-			return Application.loadedLevel;
-#endif
-		}
+        {
+            return SceneManager.GetActiveScene().buildIndex;
+        }
 	}
 
 
@@ -107,13 +103,9 @@ public class vp_Gameplay
 	public static string CurrentLevelName
 	{
 		get
-		{
-#if UNITY_5_4_OR_NEWER
-			return SceneManager.GetActiveScene().name;
-#else
-			return Application.loadedLevelName;
-#endif
-		}
+        {
+            return SceneManager.GetActiveScene().name;
+        }
 	}
 
 
@@ -128,17 +120,16 @@ public class vp_Gameplay
 #if UNITY_EDITOR
 		vp_GlobalEvent.Send("EditorApplicationQuit");
 #elif UNITY_STANDALONE
-            Application.Quit();
+			Application.Quit();
 #elif UNITY_WEBPLAYER
-			//Application.OpenURL(webplayerQuitURL);
+			Application.OpenURL(webplayerQuitURL);
 #endif
 
+		// NOTES:
+		//  1) web player is not supported by Unity 5.4+
+		//	2) on iOS, an app should only be terminated by the user
+		//	3) at time of writing OpenURL does not work on WebGL
 
-        // NOTES:
-        //  1) web player is not supported by Unity 5.4+
-        //	2) on iOS, an app should only be terminated by the user
-        //	3) at time of writing OpenURL does not work on WebGL
-
-    }
+	}
 
 }

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 1279cf3dfb3234eaa9a0f98c0dc624f8
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: LLegToe1
     100002: LLegCalf
@@ -229,6 +229,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

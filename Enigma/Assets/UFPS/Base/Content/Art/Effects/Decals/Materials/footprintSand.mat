@@ -9,33 +9,60 @@ Material:
   m_Name: footprintSand
   m_Shader: {fileID: 31, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 39fbf24614f62c14198c81fce50691ad, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f25e5efcfe316c844940131490c98f52, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 9c4dbc2ed4fa4564fb611310695ab7ad, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: f25e5efcfe316c844940131490c98f52, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 39fbf24614f62c14198c81fce50691ad, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 9c4dbc2ed4fa4564fb611310695ab7ad, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Cutoff: 0.14821428
-    - _InvFade: 3
-    - _Parallax: 0.08
-    - _Shininess: 0.14095718
+      data:
+        first:
+          name: _Cutoff
+        second: 0.14821428
+      data:
+        first:
+          name: _Shininess
+        second: 0.14095718
+      data:
+        first:
+          name: _Parallax
+        second: 0.08
+      data:
+        first:
+          name: _InvFade
+        second: 3
     m_Colors:
-    - _Color: {r: 0.87058824, g: 0.80414224, b: 0.6964706, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - _TintColor: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Color
+        second: {r: 0.87058824, g: 0.80414224, b: 0.6964706, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: 0, g: 0, b: 0, a: 1}

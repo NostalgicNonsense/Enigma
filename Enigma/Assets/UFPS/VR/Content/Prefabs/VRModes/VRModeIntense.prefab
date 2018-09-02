@@ -5,13 +5,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 445100}
-  - component: {fileID: 11478652}
-  - component: {fileID: 11446696}
-  - component: {fileID: 11445474}
-  - component: {fileID: 11459588}
+  - 4: {fileID: 445100}
+  - 114: {fileID: 11478652}
+  - 114: {fileID: 11446696}
+  - 114: {fileID: 11445474}
+  - 114: {fileID: 11459588}
   m_Layer: 0
   m_Name: VRModeIntense
   m_TagString: Untagged
@@ -31,7 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11445474
 MonoBehaviour:
   m_ObjectHideFlags: 1

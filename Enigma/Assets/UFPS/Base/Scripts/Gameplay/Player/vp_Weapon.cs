@@ -10,6 +10,8 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class vp_Weapon : vp_Component
 {

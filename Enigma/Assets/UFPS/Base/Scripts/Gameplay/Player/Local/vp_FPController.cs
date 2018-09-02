@@ -14,6 +14,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -199,12 +200,11 @@ public class vp_FPController : vp_CharacterController
 	}
 
 
+	/// <summary>
+	/// 
+	/// </summary>
 	protected override void Update()
 	{
-	    if (!isLocalPlayer)
-	    {
-            return;
-	    }
 
 		base.Update();
 
@@ -224,12 +224,8 @@ public class vp_FPController : vp_CharacterController
 	/// </summary>
 	protected override void FixedUpdate()
 	{
-        base.FixedUpdate();
-	    if (_isInMount)
-	    {
-	        return;
-	    }
-        if (Time.timeScale == 0.0f)
+
+		if (Time.timeScale == 0.0f)
 			return;
 
 		// convert user input to motor throttle

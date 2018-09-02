@@ -5,10 +5,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 446862}
-  - component: {fileID: 11467618}
+  - 4: {fileID: 446862}
+  - 114: {fileID: 11467618}
   m_Layer: 0
   m_Name: SurfaceManager
   m_TagString: Untagged
@@ -21,10 +21,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 480494}
-  - component: {fileID: 11431996}
+  - 4: {fileID: 480494}
+  - 114: {fileID: 11431996}
   m_Layer: 0
   m_Name: DecalManager
   m_TagString: Untagged
@@ -37,9 +37,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 442738}
+  - 4: {fileID: 442738}
   m_Layer: 0
   m_Name: SceneManagers
   m_TagString: Untagged
@@ -52,10 +52,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 463608}
-  - component: {fileID: 11456898}
+  - 4: {fileID: 463608}
+  - 114: {fileID: 11456898}
   m_Layer: 0
   m_Name: PoolManager
   m_TagString: Untagged
@@ -78,7 +78,6 @@ Transform:
   - {fileID: 463608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &446862
 Transform:
   m_ObjectHideFlags: 1
@@ -91,7 +90,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 442738}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &463608
 Transform:
   m_ObjectHideFlags: 1
@@ -104,7 +102,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 442738}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &480494
 Transform:
   m_ObjectHideFlags: 1
@@ -117,7 +114,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 442738}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11431996
 MonoBehaviour:
   m_ObjectHideFlags: 1
