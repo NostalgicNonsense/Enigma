@@ -7,16 +7,16 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/DemoScene3/UFPS_DemoScene3.unity
-    guid: 00000000000000000000000000000000
+    guid: 61f7e4566a906a7489527707297aa7c1
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/DemoScene1/UFPS_DemoScene1.unity
-    guid: 00000000000000000000000000000000
+    guid: 3cee29b1a89f344f2b197c7349233aac
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/DemoScene2/UFPS_DemoScene2.unity
-    guid: 00000000000000000000000000000000
+    guid: 81d1fcb2f1405244c876c13c8fbef2f7
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/CleanScene/UFPS_CleanScene.unity
-    guid: 00000000000000000000000000000000
+    guid: 71bb532372ac42e4d896b25f1d04a5a6
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/SkyCity/UFPS_SkyCity.unity
     guid: 00000000000000000000000000000000
@@ -31,7 +31,7 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/UFPS/Base/Content/Levels/DemoScene3/UFPS_DemoScene3.unity
-    guid: 00000000000000000000000000000000
+    guid: 61f7e4566a906a7489527707297aa7c1
   - enabled: 0
     path: Assets/UFPS/Multiplayer/Content/Levels/HelipadEscape/UFPSMP_HelipadEscape_Menu.unity
     guid: 00000000000000000000000000000000
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UFPS/Multiplayer/Content/Levels/Examples/UFPSMP_TestMap.unity
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Enigma/Scenes/0.0.1.unity
+    guid: 1229673755a90604993bbc100a45e8cd
   m_configObjects: {}

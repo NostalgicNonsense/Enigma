@@ -16,8 +16,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Networking;
 
-public class vp_Component : MonoBehaviour
+public class vp_Component : NetworkBehaviour
 {
 
 	public bool Persist = false;

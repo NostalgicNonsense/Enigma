@@ -6,10 +6,6 @@ namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
     {
         public float Health;
 
-        void Start()
-        {
-        }
-
         public void TakeDamage(float damageToTake)
         {
             Health = -damageToTake;

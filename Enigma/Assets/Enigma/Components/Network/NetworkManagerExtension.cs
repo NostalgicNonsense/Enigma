@@ -48,6 +48,7 @@ namespace Assets.Enigma.Components.Network
         private void CreatePlayer(TeamName teamName)
         {
             var spawnPoints = FindObjectsOfType<SpawnPos>();
+            Debug.Log("# of Spawn Points found: " + spawnPoints.Length + " for team: " + teamName);
             foreach (var spawn in spawnPoints)
             {
                 var teamSpawn = spawn.GetTeam();

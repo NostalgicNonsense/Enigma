@@ -41,7 +41,6 @@ namespace Assets.Enigma.Components.UI.MenuSelection
             HideMenu();
 
             netWorkManagerExtension.SpawnPlayer(teamName);
-
         }
 
         public void ShowMenu()

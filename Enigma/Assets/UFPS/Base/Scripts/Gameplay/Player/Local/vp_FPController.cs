@@ -199,11 +199,12 @@ public class vp_FPController : vp_CharacterController
 	}
 
 
-	/// <summary>
-	/// 
-	/// </summary>
 	protected override void Update()
 	{
+	    if (!isLocalPlayer)
+	    {
+            return;
+	    }
 
 		base.Update();
 

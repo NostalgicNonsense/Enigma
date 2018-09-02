@@ -14,10 +14,11 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
 #if UNITY_EDITOR
 using UnityEditor;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+
 #endif
 
 #if UNITY_5_4_OR_NEWER
