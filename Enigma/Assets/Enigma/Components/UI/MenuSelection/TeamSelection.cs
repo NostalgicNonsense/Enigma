@@ -13,7 +13,7 @@ namespace Assets.Enigma.Components.UI.MenuSelection
         {
             netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
             uiBackground = GetComponentInChildren<CanvasRenderer>();
-            Debug.Log("UI Background not null: " + (uiBackground == null));
+            Debug.Log("UI Background: " + uiBackground.name);
 
             HideMenu();
         }
