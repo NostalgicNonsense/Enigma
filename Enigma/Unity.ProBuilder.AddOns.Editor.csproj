@@ -286,6 +286,15 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>Assets/Plugins/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -394,9 +403,19 @@
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
     <None Include="Assets\Marketplace\race-track-lake\readmore.txt" />
+    <None Include="Assets\Photon Unity Networking\changelog.txt" />
+    <None Include="Assets\Photon Unity Networking\link.xml" />
+    <None Include="Assets\Photon Unity Networking\readme.txt" />
+    <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+    <None Include="Assets\Plugins\release_history.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Animations\_README_Animations.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Materials\InvisibleShadowCaster.shader" />
     <None Include="Assets\UFPS\Base\Content\Art\Weapons\Source\BasicArms\_README_BasicArms.txt" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\DiffuseVertexColor.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\ReflectiveCubeMapped_Glass.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\Scroll_Emissive.shader" />
+    <None Include="Assets\UFPS\Base\Content\Levels\SkyCity\CustomShaders\SimpleEmissive.shader" />
     <None Include="Assets\UFPS\Base\Scripts\Gameplay\Player\Local\OldInventory\_OLD_INVENTORY_README_.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryCamera.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\ArtilleryController.txt" />
@@ -606,6 +625,38 @@
     <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Reload.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Run.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Shotgun01\WeaponShotgun01Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\Controller_MPHero_Crouch.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\Controller_MPHero_Dead.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\Controller_MPHero_Freeze.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\Controller_MPHero_MegaSpeed.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\Controller_MPHero_Run.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\WeaponShooter_2Revolver_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\Hero\RemotePlayerPresets\WeaponShooter_3Machinegun_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\Controller_MPHeroHDWeapons_Crouch.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\Controller_MPHeroHDWeapons_Dead.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\Controller_MPHeroHDWeapons_Freeze.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\Controller_MPHeroHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\Controller_MPHeroHDWeapons_Run.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\HeroHDWeapons\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\Controller_MPRobberHDWeapons_Crouch.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\Controller_MPRobberHDWeapons_Dead.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\Controller_MPRobberHDWeapons_Freeze.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\Controller_MPRobberHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\Controller_MPRobberHDWeapons_Run.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\RobberHDWeapons\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_Crouch.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_Dead.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_Freeze.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_Run.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
     <None Include="Assets\UFPS\VR\Content\Presets\VRCameraDead.txt" />
     <None Include="Assets\UFPS\VR\Content\Presets\VRMaceDefault.txt" />
     <None Include="Assets\UFPS\VR\Content\Presets\VRMachinegunDefault.txt" />

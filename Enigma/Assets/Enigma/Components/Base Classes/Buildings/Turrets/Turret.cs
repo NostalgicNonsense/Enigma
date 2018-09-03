@@ -7,8 +7,6 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
 {
     public class Turret : MonoBehaviour
     {
-        public Team TeamOfTurret;
-
         public void FixedUpdate()
         {
             var target = GetComponent<ITargeter>().Target;

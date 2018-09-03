@@ -11,6 +11,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         public GameEntityType TargetType;
         private string _targetTag;
         public GameObject Target { get; private set; }
+        private static LayerMask LayerMask = ~(1 << 20);
 
         public void Start()
         {
@@ -41,6 +42,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
             {
                 _targetsInZone.Remove(collision.gameObject);
             }
+
+            if (collision.gameObject == Target)
+            {
+                Target = null;
+            }
         }
 
         private void FindNewTarget()
@@ -58,7 +64,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         private bool HasLineOfSight(GameObject target)
         {
             RaycastHit hit;
-            Physics.Linecast(transform.position, target.transform.position, out hit);
+            Physics.Linecast(transform.position, target.transform.position, out hit, LayerMask.value);
             if (hit.collider.gameObject.Equals(target))
             {
                 return true;
