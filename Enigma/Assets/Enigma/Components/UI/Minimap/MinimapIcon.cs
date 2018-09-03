@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Enigma.Components.UI.Minimap
 {
-    public class MinimapIcon : MonoBehaviour
+    public class MinimapIcon : Photon.MonoBehaviour
     {
         private Team team;
 

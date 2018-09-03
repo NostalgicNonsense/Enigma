@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c4bf741f5d95841833f412997e90fa, type: 3}
+  m_Name: GrenadeThrower
+  m_EditorClassIdentifier: 
+  IndefiniteArticle: 
+  DisplayName: 
+  Description: 
+  Icon: {fileID: 2800000, guid: 61133c9d383f3764bb714ef99ae8dc37, type: 3}
+  Space: 0
+  itemTypeHelp: 183
+  Unit: {fileID: 11400000, guid: 8b01507bf3c4f444b9b72c6b99331f84, type: 2}
+  Capacity: 1
+  Reloadable: 1
+  RemoveWhenDepleted: 0
+  h3: 199
