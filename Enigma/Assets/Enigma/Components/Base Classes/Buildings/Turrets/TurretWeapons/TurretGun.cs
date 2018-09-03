@@ -19,7 +19,11 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 
         public void FixedUpdate()
         {
-            GunCollider.transform.LookAt(GetComponent<ITargeter>().Target.transform);
+            var target = GetComponent<ITargeter>().Target;
+            if (target != null)
+            {
+                GunCollider.transform.LookAt(target.transform);
+            }
         }
 
         private void FireAtTarget(GameObject target)
