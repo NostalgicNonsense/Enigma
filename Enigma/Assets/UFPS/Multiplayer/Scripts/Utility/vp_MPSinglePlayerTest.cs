@@ -69,7 +69,7 @@ public class vp_MPSinglePlayerTest : MonoBehaviour
 		// to code in the demo folder
 		vp_GlobalEvent.Send("DisableMultiplayerGUI", vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
 
-		vp_SpawnPoint p = vp_SpawnPoint.GetRandomSpawnPoint();
+		vp_SpawnPoint p = vp_SpawnPoint.GetRandomSpawnPoint("Team1");
 
 		switch (m_SpawnMode)
 		{

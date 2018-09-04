@@ -244,7 +244,7 @@ public class vp_Respawner : MonoBehaviour
 			return;
 
 		// if mode is 'SamePosition' or the level has no spawnpoints, go to initial position
-		if ((m_SpawnMode == SpawnMode.SamePosition) || (vp_SpawnPoint.SpawnPoints.Count < 1))
+		if ((m_SpawnMode == SpawnMode.SamePosition))
 		{
 
 			Placement.Position = m_InitialPosition;

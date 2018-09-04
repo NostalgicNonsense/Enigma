@@ -16,6 +16,7 @@ using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
+using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 #endif
 
 #if UNITY_5_4_OR_NEWER
@@ -31,27 +32,70 @@ public class vp_SpawnPoint : MonoBehaviour
 	public float GroundSnapThreshold = 2.5f;
 	public bool LockGroundSnapToRadius = true;
 
-	protected static List<vp_SpawnPoint> m_MatchingSpawnPoints = new List<vp_SpawnPoint>(50);	// work variable
-
 	protected static List<vp_SpawnPoint> m_SpawnPoints = null;
-	public static List<vp_SpawnPoint> SpawnPoints
-	{
-		get
-		{
-			// if we have no list of spawnpoints (which is the case if the
-			// game just booted up or a new level was loaded) - attempt to
-			// populate a new one by scanning the scene for vp_SpawnPoints
-			if (m_SpawnPoints == null)
-				m_SpawnPoints = new List<vp_SpawnPoint>(FindObjectsOfType(typeof(vp_SpawnPoint)) as vp_SpawnPoint[]);
-			return m_SpawnPoints;
-		}
-	}
+	protected static List<vp_SpawnPoint> m_spawnTeam1 = null;
+	protected static List<vp_SpawnPoint> m_spawnTeam2 = null;
+	protected static List<vp_SpawnPoint> m_spawnNeutral = null;
+
+    public static List<vp_SpawnPoint> SpawnTeam1
+    {
+        get
+        {
+            // if we have no list of spawnpoints (which is the case if the
+            // game just booted up or a new level was loaded) - attempt to
+            // populate a new one by scanning the scene for vp_SpawnPoints
+            if (m_SpawnPoints == null)
+                m_SpawnPoints = new List<vp_SpawnPoint>(FindObjectsOfType(typeof(vp_SpawnPoint)) as vp_SpawnPoint[]);
+
+            if (m_spawnTeam1 == null || m_spawnTeam1.Count == 0)
+            {
+                m_spawnTeam1 = m_SpawnPoints.FindAll(w => w.GetComponent<Team>().TeamName == TeamName.Team1);
+            }
+            return m_spawnTeam1;
+        }
+    }
+
+    public static List<vp_SpawnPoint> SpawnTeam2
+    {
+        get
+        {
+            // if we have no list of spawnpoints (which is the case if the
+            // game just booted up or a new level was loaded) - attempt to
+            // populate a new one by scanning the scene for vp_SpawnPoints
+            if (m_SpawnPoints == null)
+                m_SpawnPoints = new List<vp_SpawnPoint>(FindObjectsOfType(typeof(vp_SpawnPoint)) as vp_SpawnPoint[]);
+
+            if (m_spawnTeam2 == null || m_spawnTeam2.Count == 0)
+            {
+                m_spawnTeam2 = m_SpawnPoints.FindAll(w => w.GetComponent<Team>().TeamName == TeamName.Team2);
+            }
+            return m_spawnTeam2;
+        }
+    }
+
+    public static List<vp_SpawnPoint> SpawnNeutral
+    {
+        get
+        {
+            // if we have no list of spawnpoints (which is the case if the
+            // game just booted up or a new level was loaded) - attempt to
+            // populate a new one by scanning the scene for vp_SpawnPoints
+            if (m_SpawnPoints == null)
+                m_SpawnPoints = new List<vp_SpawnPoint>(FindObjectsOfType(typeof(vp_SpawnPoint)) as vp_SpawnPoint[]);
+
+            if (m_spawnNeutral == null || m_spawnNeutral.Count == 0)
+            {
+                m_spawnNeutral = m_SpawnPoints.FindAll(w => w.GetComponent<Team>().TeamName == TeamName.Neutral);
+            }
+            return m_spawnNeutral;
+        }
+    }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	private void OnEnable()
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnEnable()
 	{
 
 #if UNITY_5_4_OR_NEWER
@@ -94,35 +138,19 @@ public class vp_SpawnPoint : MonoBehaviour
 	}
 	public static vp_Placement GetRandomPlacement(float physicsCheckRadius, string tag)
 	{
-
-		// abort if scene contains no spawnpoints
-		if((SpawnPoints == null) || (SpawnPoints.Count < 1))
-			return null;
-
-		// fetch a random spawnpoint
-		vp_SpawnPoint spawnPoint = null;
-		if (string.IsNullOrEmpty(tag))
-			spawnPoint = GetRandomSpawnPoint();
-		else
-		{
-			spawnPoint = GetRandomSpawnPoint(tag);
-			if (spawnPoint == null)
-			{
-				spawnPoint = GetRandomSpawnPoint();
-				Debug.LogWarning("Warning (vp_SpawnPoint --> GetRandomPlacement) Could not find a spawnpoint tagged '" + tag + "'. Falling back to 'any random spawnpoint'.");
-			}
-		}
 		
-		// if no spawnpoint was found, revert to world origin
-		if (spawnPoint == null)
-		{
-			Debug.LogError("Error (vp_SpawnPoint --> GetRandomPlacement) Could not find a spawnpoint" + (!string.IsNullOrEmpty(tag) ? (" tagged '" + tag + "'") : ".") + " Reverting to world origin.");
-			return null;
-		}
+        // fetch a random spawnpoint
+        vp_SpawnPoint spawnPoint = GetRandomSpawnPoint(tag);
 
-		// found a spawnpoint! use it to create a placement
-		return spawnPoint.GetPlacement(physicsCheckRadius);
+        // if no spawnpoint was found, revert to world origin
+        if (spawnPoint == null)
+        {
+            Debug.LogError("Error (vp_SpawnPoint --> GetRandomPlacement) Could not find a spawnpoint" + (!string.IsNullOrEmpty(tag) ? (" tagged '" + tag + "'") : ".") + " Reverting to world origin.");
+            return null;
+        }
 
+        // found a spawnpoint! use it to create a placement
+        return spawnPoint.GetPlacement(physicsCheckRadius);
 	}
 
 
@@ -166,40 +194,30 @@ public class vp_SpawnPoint : MonoBehaviour
 	/// <summary>
 	/// 
 	/// </summary>
-	public static vp_SpawnPoint GetRandomSpawnPoint()
-	{
-
-		if (SpawnPoints.Count < 1)
-			return null;
-
-		return SpawnPoints[Random.Range(0, SpawnPoints.Count)];
-
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
 	public static vp_SpawnPoint GetRandomSpawnPoint(string tag)
 	{
-
-		m_MatchingSpawnPoints.Clear();
-
-		for (int v = 0; v < SpawnPoints.Count; v++)
-		{
-			if(m_SpawnPoints[v].tag == tag)
-				m_MatchingSpawnPoints.Add(m_SpawnPoints[v]);
-		}
-
-		if (m_MatchingSpawnPoints.Count < 1)
-			return null;
-
-		if (m_MatchingSpawnPoints.Count == 1)
-			return m_MatchingSpawnPoints[0];
-
-		return m_MatchingSpawnPoints[Random.Range(0, m_MatchingSpawnPoints.Count)];
+        var spawnPoints = GetSpawnPoints(tag);
+        if (spawnPoints.Count == 1)
+            return spawnPoints[0];
+		return spawnPoints[Random.Range(0, spawnPoints.Count)];
 
 	}
+
+    public static List<vp_SpawnPoint> GetSpawnPoints(string tag)
+    {
+        Debug.Log("Team tag: " + tag);
+        switch(tag)
+        {
+            case "NF":
+                return SpawnTeam1;
+            case "BE":
+                return SpawnTeam2;
+            case "Neutral":
+                return SpawnNeutral;
+            default:
+                return SpawnTeam1;
+        }
+    }
 
 	
 	/// <summary>
