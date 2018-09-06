@@ -70,9 +70,9 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 
         private void HandleHit(RaycastHit hit)
         {
-            if (hit.collider.gameObject == GetComponent<ITargeter>().Target)
+            var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
+            if (playerHit != null)
             {
-                var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
                 var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
                 damageHandler.Damage(Damage);
             }
