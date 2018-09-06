@@ -18,6 +18,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using Assets.Enigma.Components.UI.Minimap;
 
 public class vp_MPLocalPlayer : vp_MPNetworkPlayer
 {
@@ -99,7 +100,12 @@ public class vp_MPLocalPlayer : vp_MPNetworkPlayer
 
 		vp_GlobalEvent<Transform, string>.Register("HUDText", OnHUDText);
 
-	}
+        var map = GameObject.FindObjectOfType<Minimap>();
+        if (map != null)
+        {
+            map.targetFollow = this.gameObject.transform;
+        }
+    }
 
 
 	/// <summary>
