@@ -648,16 +648,15 @@ public class vp_MPMaster : Photon.MonoBehaviour
 	/// </summary>
 	public void TransmitInitialSpawnInfo(PhotonPlayer player, int id, string name)
 	{
-		
-		// allocate team number, player type and spawnpoint
-		int teamNumber = 0;
+        // allocate team number, player type and spawnpoint
+        int teamNumber = 0;
 		string playerTypeName = null;
 		vp_Placement placement = null;
 
 		if (vp_MPTeamManager.Exists)
 		{
-			teamNumber = ((vp_MPTeamManager.Instance.Teams.Count <= 1) ? 0 : vp_MPTeamManager.Instance.GetSmallestTeam());
-			playerTypeName = vp_MPTeamManager.Instance.GetTeamPlayerTypeName(teamNumber);
+            teamNumber = ((vp_MPTeamManager.Instance.Teams.Count <= 1) ? 0 : vp_MPTeamManager.Instance.GetSmallestTeam());
+            playerTypeName = vp_MPTeamManager.Instance.GetTeamPlayerTypeName(teamNumber);
 			placement = vp_MPPlayerSpawner.GetRandomPlacement(vp_MPTeamManager.GetTeamName(teamNumber));
 		}
 

@@ -4,18 +4,19 @@ using UnityEngine;
 
 namespace Assets.Enigma.Components.UI.MenuSelection
 {
-    public class TeamSelection : MonoBehaviour
+    public class TeamSelection : UISelection
     {
-        private CanvasRenderer uiBackground;
         private NetworkManagerExtension netWorkManagerExtension;
+
+        private vp_MPMaster vp_master;
 
         public void Start()
         {
             netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
-            uiBackground = GetComponentInChildren<CanvasRenderer>();
-            Debug.Log("UI Background: " + uiBackground.name);
+            
+            vp_master = FindObjectOfType<vp_MPMaster>();
 
-            HideMenu();
+            Init();
         }
 
         public void Update()
@@ -23,6 +24,18 @@ namespace Assets.Enigma.Components.UI.MenuSelection
             if (Input.GetButtonDown("General_TeamSelection"))
             {
                 ToggleMenu();
+            }
+
+            if (IsVisible)
+            {
+                if (Input.GetKeyDown("1"))
+                {
+                    SelectTeam1();
+                }
+                else if (Input.GetKeyDown("2"))
+                {
+                    SelectTeam2();
+                }
             }
         }
 
@@ -39,31 +52,27 @@ namespace Assets.Enigma.Components.UI.MenuSelection
         private void TeamSelected(TeamName teamName)
         {
             HideMenu();
+            int teamNumber = GetTeamNumber(teamName);
 
-            netWorkManagerExtension.SpawnPlayer(teamName);
+            var playerTypeName = vp_MPTeamManager.Instance.GetTeamPlayerTypeName(teamNumber);
+            var placement = vp_MPPlayerSpawner.GetRandomPlacement(vp_MPTeamManager.GetTeamName(teamNumber));
+
+            //vp_master.photonView.RPC("ReceiveInitialSpawnInfo", PhotonTargets.All, PhotonNetwork.player.ID, PhotonNetwork.player, placement.Position, placement.Rotation, playerTypeName, teamNumber);
+
+
+            //netWorkManagerExtension.SpawnPlayer(teamName);
         }
 
-        public void ShowMenu()
-        {
-            uiBackground.gameObject.SetActive(true);
-        }
-
-        public void HideMenu()
-        {
-            uiBackground.gameObject.SetActive(false);
-        }
-
-        private void ToggleMenu()
-        {
-            if (uiBackground.gameObject.activeSelf == false)
+        private int GetTeamNumber(TeamName teamName) {
+            switch (teamName)
             {
-                ShowMenu();
-            }
-            else
-            {
-                HideMenu();
+                case TeamName.Team1:
+                    return 0;
+                case TeamName.Team2:
+                    return 1;
+                default:
+                    return -1;
             }
         }
-
     }
 }
