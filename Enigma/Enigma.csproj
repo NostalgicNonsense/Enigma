@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.2.5f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -364,12 +366,13 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceTeams.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Passengers.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\EnigmaDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDeath.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\SimpleCarController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\TankController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Weapons\Calculator\CalculatorHitScan.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\BasicExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibFadeout.cs" />
@@ -1130,6 +1133,7 @@
     <None Include="Packages\com.unity.textmeshpro\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef" />
     <None Include="Packages\com.unity.textmeshpro\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

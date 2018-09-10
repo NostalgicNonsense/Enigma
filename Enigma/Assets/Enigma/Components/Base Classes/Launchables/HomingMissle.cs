@@ -26,7 +26,7 @@ namespace Assets.Enigma.Components.Base_Classes.Launchables
         {
             var explosionInstance = Instantiate(ExplosionToUse, transform.position, transform.rotation);
             explosionInstance.Explode();
-            collsion.gameObject.GetComponent<VehicleDamageHandler>().TakeDamage(Damage);
+            collsion.gameObject.GetComponent<EnigmaDamageHandler>().TakeDamage(Damage);
             Destroy(this);
         }
 

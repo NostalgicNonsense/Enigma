@@ -157,7 +157,6 @@ public class vp_Bullet : MonoBehaviour
 		DoHit();
 
 		return true;
-
 	}
 
 	

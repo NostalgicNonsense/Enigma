@@ -20,7 +20,7 @@ namespace Assets.Enigma.Components.Base_Classes.Shells
                 if (rayCast.collider.gameObject.tag == GameEntityType.Vehicle.ToString() ||
                     rayCast.collider.gameObject.tag == GameEntityType.Structure.ToString())
                 {
-                    var damageHandler = rayCast.collider.gameObject.GetComponentInChildren<VehicleDamageHandler>();
+                    var damageHandler = rayCast.collider.gameObject.GetComponentInChildren<EnigmaDamageHandler>();
                     damageHandler.TakeDamage(DamageToInflict);
                 }
                 else if (rayCast.collider.gameObject.tag == GameEntityType.Player.ToString())
