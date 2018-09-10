@@ -335,6 +335,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
     <None Include="Assets\Marketplace\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

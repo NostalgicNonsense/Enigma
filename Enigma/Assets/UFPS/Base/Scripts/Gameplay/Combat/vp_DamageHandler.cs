@@ -224,6 +224,7 @@ public class vp_DamageHandler : MonoBehaviour
 	{
 		Damage(new vp_DamageInfo(damage, null));
 	}
+
 	public virtual void Damage(vp_DamageInfo damageInfo)
 	{
 

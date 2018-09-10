@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Enigma.Components.HelpClasses.ExtensionMethods;
 using Assets.Enigma.Enums;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         public GameEntityType TargetType;
         private string _targetTag;
         public GameObject Target { get; private set; }
-        private static LayerMask LayerMask = ~(1 << 20);
+        private static LayerMask LayerMask = ~(1 << 8);
 
         public void Start()
         {
@@ -22,6 +23,10 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         public void FixedUpdate()
         {
             if (Target == null && _targetsInZone.Count > 0)
+            {
+                FindNewTarget();
+            }
+            else if (_targetsInZone.Count > 1 && !HasLineOfSight(Target))
             {
                 FindNewTarget();
             }
@@ -64,7 +69,8 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
         private bool HasLineOfSight(GameObject target)
         {
             RaycastHit hit;
-            Physics.Linecast(transform.position, target.transform.position, out hit, LayerMask.value);
+            Physics.Linecast(transform.position, target.transform.position.GetPlayerAdjustedVector3(), out hit, LayerMask.value);
+            Debug.DrawLine(transform.position, target.transform.position.GetPlayerAdjustedVector3());
             if (hit.collider.gameObject.Equals(target))
             {
                 return true;

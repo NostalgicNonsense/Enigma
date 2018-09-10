@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.2.5f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -364,15 +366,18 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceTeams.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Passengers.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDamageHandler.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\EnigmaDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDeath.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\SimpleCarController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\TankController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Weapons\Calculator\CalculatorHitScan.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\BasicExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibFadeout.cs" />
+    <Compile Include="Assets\Enigma\Components\HelpClasses\Builders\InaccurateRayBuilder.cs" />
+    <Compile Include="Assets\Enigma\Components\HelpClasses\ExtensionMethods\Vector3Extensions.cs" />
     <Compile Include="Assets\Enigma\Components\HelpClasses\Tuple.cs" />
     <Compile Include="Assets\Enigma\Components\Network\NetworkManagerExtension.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />
@@ -758,6 +763,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Crouch.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Dead.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Freeze.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Run.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
+    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
     <None Include="Assets\Marketplace\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
@@ -1104,6 +1133,7 @@
     <None Include="Packages\com.unity.textmeshpro\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef" />
     <None Include="Packages\com.unity.textmeshpro\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

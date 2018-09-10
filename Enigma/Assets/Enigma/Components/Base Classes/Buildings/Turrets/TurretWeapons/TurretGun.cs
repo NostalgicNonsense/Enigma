@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
 using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Assets.Enigma.Components.HelpClasses.Builders;
+using Assets.Enigma.Components.HelpClasses.ExtensionMethods;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -53,7 +55,7 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
         private void ShootRay(GameObject target)
         {
             var directionToTarget = GetDirectionToTarget(target.transform);
-            var ray = GetInaccurateRay(directionToTarget);
+            var ray = GetInaccurateRay(directionToTarget.GetPlayerAdjustedVector3());
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
@@ -63,16 +65,17 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 
         private Ray GetInaccurateRay(Vector3 directionToTarget)
         {
-            directionToTarget.x = Random.Range(directionToTarget.x - Inaccuray, directionToTarget.x + Inaccuray);
-            directionToTarget.y = Random.Range(directionToTarget.y - Inaccuray, directionToTarget.y + Inaccuray);
-            return new Ray(transform.position, directionToTarget);
+            return InaccurateRayBuilder.GetInaccurateRay(transform.position, directionToTarget, Inaccuray);
         }
 
         private void HandleHit(RaycastHit hit)
         {
             var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
-            var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
-            damageHandler.Damage(Damage);
+            if (playerHit != null)
+            {
+                var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
+                damageHandler.Damage(Damage);
+            }
         }
 
         private Vector3 GetDirectionToTarget(Transform targeTransform)

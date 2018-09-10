@@ -22,7 +22,13 @@ namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Enums
                     return new Color32(50, 50, 50, 255);
             }
         }
+
+        public bool SameTeam(Team otherTeam)
+        {
+            return TeamName == otherTeam.TeamName;
+        }
     }
+
 
     public enum TeamName
     {
