@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.2.5f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -265,19 +263,19 @@
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderCore">
-      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.1/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
+      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderCore.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderMeshOps">
-      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.1/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
+      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ProBuilderMeshOps.dll</HintPath>
     </Reference>
     <Reference Include="KdTreeLib">
-      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.1/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
     </Reference>
     <Reference Include="pb_Stl">
-      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.1/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
     </Reference>
     <Reference Include="Poly2Tri">
-      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.1/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+      <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.probuilder@3.0.9/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
@@ -364,15 +362,16 @@
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Oil.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Resource.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceTeams.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\EnigmaDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Passengers.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\EnigmaDamageHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDeath.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\SimpleCarController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\TankController.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
     <Compile Include="Assets\Enigma\Components\Base Classes\Weapons\Calculator\CalculatorHitScan.cs" />
+    <Compile Include="Assets\Enigma\Components\Base Classes\Weapons\Calculator\CalculatorReloader.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\BasicExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibExplosion.cs" />
     <Compile Include="Assets\Enigma\Components\Gibs\GibFadeout.cs" />
@@ -384,6 +383,7 @@
     <Compile Include="Assets\Enigma\Components\UI\Commander\Tooltip.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Commander\UICommander.cs" />
     <Compile Include="Assets\Enigma\Components\UI\MenuSelection\TeamSelection.cs" />
+    <Compile Include="Assets\Enigma\Components\UI\MenuSelection\UISelection.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Minimap\Minimap.cs" />
     <Compile Include="Assets\Enigma\Components\UI\Minimap\MinimapIcon.cs" />
     <Compile Include="Assets\Enigma\Enums\EnigmaTags.cs" />
@@ -1116,7 +1116,9 @@
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_FaceHighlight.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_FacePicker.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_HideVertices.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_LineBillboard.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_NormalPreview.shader" />
+    <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_PointBillboard.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_ReferenceUnlit.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_ScrollHighlight.shader" />
     <None Include="Packages\com.unity.probuilder\ProBuilder\Shader\pb_SelectionPicker.shader" />
@@ -1133,7 +1135,6 @@
     <None Include="Packages\com.unity.textmeshpro\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef" />
     <None Include="Packages\com.unity.textmeshpro\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
