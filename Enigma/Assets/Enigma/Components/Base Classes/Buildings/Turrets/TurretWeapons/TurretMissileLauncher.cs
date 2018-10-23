@@ -37,6 +37,8 @@ namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
             var missile = Instantiate(MissilePrefab, MissileSpawnPoint.transform.position,
                                       MissileSpawnPoint.transform.rotation);
             missile.GetComponent<HomingMissle>().SetTarget(target);
+            missile.GetComponent<HomingMissle>().Start();
+            missile.gameObject.SetActive(true);
             StartCoroutine(Reload());
         }
 

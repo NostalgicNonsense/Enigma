@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections;
 using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
-using Assets.Enigma.Components.Basic_Items;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -10,24 +10,36 @@ namespace Assets.Enigma.Components.Base_Classes.Launchables
     {
         public float Speed;
         public float FlightTime;
-        public float RotationSpeed;
+        public float MaximumRadiansOfRotation;
         public float Damage;
-        public BasicExplosion ExplosionToUse;
+        public float InitialForce;
+        //public BasicExplosion ExplosionToUse;
         private GameObject _target;
         private DateTime _startTime;
+        private bool _timeExceeded;
 
         public void Start()
         {
+            Debug.Log("Instantiating homing missile");
             _startTime = DateTime.UtcNow;
-            GetComponent<Rigidbody>().AddForce(transform.forward * 12000f);
+            GetComponent<Rigidbody>().AddForce(transform.forward * InitialForce);
+            StartCoroutine(CountDownTime());
         }
 
         public void OnCollisionEnter(Collision collsion)
         {
-            var explosionInstance = Instantiate(ExplosionToUse, transform.position, transform.rotation);
-            explosionInstance.Explode();
-            collsion.gameObject.GetComponent<EnigmaDamageHandler>().TakeDamage(Damage);
-            Destroy(this);
+            HandleExploding(collsion.gameObject);
+        }
+
+        private void HandleExploding(GameObject thingMissileHit)
+        {
+            //var explosionInstance = Instantiate(ExplosionToUse, transform.position, transform.rotation);
+            //explosionInstance.Explode();
+            if (thingMissileHit != null)
+            {
+                thingMissileHit.GetComponent<EnigmaDamageHandler>().TakeDamage(Damage);
+            }
+            //Destroy(this);
         }
 
         public void SetTarget(GameObject target)
@@ -37,15 +49,19 @@ namespace Assets.Enigma.Components.Base_Classes.Launchables
 
         public void FixedUpdate()
         {
-            var timeElapsed = (_startTime - DateTime.UtcNow).TotalSeconds;
-            if (timeElapsed > FlightTime)
+            if (_timeExceeded)
             {
-                // end;
+                HandleExploding(null);
             }
-            var newRotation = Vector3.RotateTowards(transform.forward, _target.transform.position, RotationSpeed, 0.0f);
-            Debug.DrawRay(transform.position, newRotation, Color.green);
 
-            transform.rotation = Quaternion.LookRotation(newRotation);
+            var step = Speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, step);
+        }
+
+        private IEnumerator CountDownTime()
+        {
+            yield return new WaitForSeconds(FlightTime);
+            _timeExceeded = true;
         }
     }
 }
