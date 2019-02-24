@@ -1,5 +1,6 @@
 ﻿using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using UnityEngine;
 
 namespace Enigma.Components.Networking
@@ -30,14 +31,30 @@ namespace Enigma.Components.Networking
         {
             _tcpClient.Connect(_serverInfo.IpAddress, _serverInfo.Port);
             _udpClient.Connect(_serverInfo.IpAddress, _serverInfo.Port);
+
+
+            // start two new background threads.
+            new Thread(ListenTcp).IsBackground = true;
+            new Thread(ListenUdp).IsBackground = true;
         }
 
-        /// <exception cref="SocketException">An error occurred when accessing the socket. See the Remarks section for more information. </exception>
-        /// <exception cref="ArgumentNullException">
-        ///               <paramref name="dgram" /> is <see langword="null" />. </exception>
+        private void ListenUdp()
+        {
+
+        }
+
+        private void ListenTcp()
+        {
+
+        }
+
         public void SendUdpUpdate(object value)
         {
-            if(_udpClient.Client.Connected) { InitalizeConnections(); }
+            if (_udpClient.Client.Connected)
+            {
+                InitalizeConnections();
+            }
+
             Debug.Assert(value != null);
             var contentAsBytes = GetStringAtUtf8Bytes(JsonUtility.ToJson(value));
             _udpClient.Send(contentAsBytes, contentAsBytes.Length);
@@ -45,7 +62,11 @@ namespace Enigma.Components.Networking
 
         public void SendTcpUpdate(object value)
         {
-            if (_udpClient.Client.Connected) { InitalizeConnections(); }
+            if (_udpClient.Client.Connected)
+            {
+                InitalizeConnections();
+            }
+
             Debug.Assert(value != null);
             var contentAsBytes = GetStringAtUtf8Bytes(JsonUtility.ToJson(value));
             _tcpClient.Client.Send(contentAsBytes);

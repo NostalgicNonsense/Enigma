@@ -15,7 +15,7 @@ namespace Enigma.Components.Networking
         public void UpdateIpAddress(IPAddress ipAddress, int port)
         {
             IpAddress = ipAddress;
-            port = port;
+            Port = port;
         }
 
         public IPAddress IpAddress { get; private set; }

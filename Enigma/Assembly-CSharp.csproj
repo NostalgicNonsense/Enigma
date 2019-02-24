@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{BAF4E6C2-C1E0-CFEE-14AC-2A04B0177AD8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -52,6 +53,9 @@
     <UnityVersion>2018.2.5f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2018.2.5f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -103,6 +107,9 @@
     <Compile Include="Assets\Enigma\Components\HelpClasses\Builders\InaccurateRayBuilder.cs" />
     <Compile Include="Assets\Enigma\Components\HelpClasses\ExtensionMethods\Vector3Extensions.cs" />
     <Compile Include="Assets\Enigma\Components\HelpClasses\Tuple.cs" />
+    <Compile Include="Assets\Enigma\Components\Networking\Serialization\ISerializer.cs" />
+    <Compile Include="Assets\Enigma\Components\Networking\Serialization\SerializationTarget.cs" />
+    <Compile Include="Assets\Enigma\Components\Networking\Serialization\Serializer.cs" />
     <Compile Include="Assets\Enigma\Components\Network\NetworkManagerExtension.cs" />
     <Compile Include="Assets\Enigma\Components\Networking\ConnectionHandler.cs" />
     <Compile Include="Assets\Enigma\Components\Networking\NetworkEntity.cs" />
@@ -488,6 +495,7 @@
     <Compile Include="Assets\UFPS\VR\Scripts\vp_VRPainFlash.cs" />
     <Compile Include="Assets\UFPS\VR\Scripts\vp_VRTeleporter.cs" />
     <Compile Include="Assets\UFPS\VR\Scripts\vp_VRWeaponManager.cs" />
+    <Compile Include="UtilityCode\Extensions\IEnumerableExtensions.cs" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Shooter\ShooterPistolOutOfControl.txt" />
     <None Include="Assets\UFPS\Multiplayer\Content\Prefabs\Players\SwatHDWeapons\RemotePlayerPresets\Controller_MPSwatHDWeapons_Crouch.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\WeaponsHD\Pistol01\ShooterPistol01OutOfControl.txt" />
@@ -818,6 +826,7 @@
     <None Include="Assets\UFPS\Base\Scripts\Presets\Demo\MeleeAttackToDownRight.txt" />
     <None Include="Assets\UFPS\Base\Scripts\Presets\Standard\Controller\ControllerDefault.txt" />
     <None Include="Assets\UFPS\Base\Content\Art\Body\Materials\InvisibleShadowCaster.shader" />
+    <None Include="packages.config" />
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>C:/Enigma/Enigma/Enigma/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
@@ -1410,6 +1419,7 @@
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
