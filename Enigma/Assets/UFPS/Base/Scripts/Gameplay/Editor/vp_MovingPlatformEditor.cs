@@ -12,6 +12,8 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Level.MovingPlatform;
 
 [CustomEditor(typeof(vp_MovingPlatform))]
 

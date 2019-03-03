@@ -16,94 +16,97 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Player;
 
-public class vp_StatePowerup : vp_Powerup
+namespace UFPS.Base.Scripts.Gameplay.Powerups
 {
+    public class vp_StatePowerup : vp_Powerup
+    {
 
-	public string State = "MegaSpeed";
-	public float Duration = 0.0f;
+        public string State = "MegaSpeed";
+        public float Duration = 0.0f;
 
-	// timer handle to manage multiple timers
-	protected vp_Timer.Handle m_Timer = new vp_Timer.Handle();
+        // timer handle to manage multiple timers
+        protected vp_Timer.Handle m_Timer = new vp_Timer.Handle();
 
 
-	/// <summary>
-	///
-	/// </summary>
-	protected override void Update()
-	{
+        /// <summary>
+        ///
+        /// </summary>
+        protected override void Update()
+        {
 
-		// handle rotation and bob, if enabled
-		UpdateMotion();
+            // handle rotation and bob, if enabled
+            UpdateMotion();
 
-		// remove powerup if depleted and silent
-		if (m_Depleted)
-		{
+            // remove powerup if depleted and silent
+            if (m_Depleted)
+            {
 
-			if (!m_Audio.isPlaying)
-				Remove();
+                if (!m_Audio.isPlaying)
+                    Remove();
 
-		}
+            }
 		
-	}
+        }
 
 
-	/// <summary>
-	/// tries to enable 'State' on the player
-	/// </summary>
-	protected override bool TryGive(vp_PlayerEventHandler player)
-	{
+        /// <summary>
+        /// tries to enable 'State' on the player
+        /// </summary>
+        protected override bool TryGive(vp_PlayerEventHandler player)
+        {
 
-		// prevent the player from picking up the item again until any
-		// currently running speed timer has run its course
-		if (m_Timer.Active)
-			return false;
+            // prevent the player from picking up the item again until any
+            // currently running speed timer has run its course
+            if (m_Timer.Active)
+                return false;
 
-		if (string.IsNullOrEmpty(State))
-			return false;
+            if (string.IsNullOrEmpty(State))
+                return false;
 
-		// --- proper way of doing speed ---
+            // --- proper way of doing speed ---
 
-		// for something like this we use the State Manager and vp_Timer!
-		// in the powerup demo folder you will find a controller preset
-		// named 'ControllerMegaSpeed.txt' which boosts player acceleration
-		// and increases its push force on rigidbodies.
-		// in the demo scene this has been added as a state named 'MegaSpeed'
-		// to the controller component
+            // for something like this we use the State Manager and vp_Timer!
+            // in the powerup demo folder you will find a controller preset
+            // named 'ControllerMegaSpeed.txt' which boosts player acceleration
+            // and increases its push force on rigidbodies.
+            // in the demo scene this has been added as a state named 'MegaSpeed'
+            // to the controller component
 
-		player.SetState(State);
+            player.SetState(State);
 
-		// restore state after 'Duration' seconds. if that's not set, uses
-		// the powerup's 'RespawnDuration'
-		vp_Timer.In(((Duration <= 0.0f) ? RespawnDuration : Duration), delegate()
-		{
-			player.SetState(State, false);
-		}, m_Timer);
+            // restore state after 'Duration' seconds. if that's not set, uses
+            // the powerup's 'RespawnDuration'
+            vp_Timer.In(((Duration <= 0.0f) ? RespawnDuration : Duration), delegate()
+            {
+                player.SetState(State, false);
+            }, m_Timer);
 
-		// NOTE: binding the 'm_Timer' handle above makes sure this timer
-		// is canceled and restarted if it's already running. if you allow
-		// players to pick up multiple powerups, this will prevent a depleted
-		// powerup from disabling the state if the player has enabled a new one
-		// while the previous one is active (i.e. the timer will be restarted)
+            // NOTE: binding the 'm_Timer' handle above makes sure this timer
+            // is canceled and restarted if it's already running. if you allow
+            // players to pick up multiple powerups, this will prevent a depleted
+            // powerup from disabling the state if the player has enabled a new one
+            // while the previous one is active (i.e. the timer will be restarted)
 
-		// --- buggy way of doing speed ---
+            // --- buggy way of doing speed ---
 
-		// the below would also be a way of adding speed, but it would get messed up
-		// if player pressed or released the 'Run' modifier key. speed would multiply
-		// in case of several powerups and we would have to store the original controller
-		// acceleration value in a 'Start' method. messy and error-prone. use states.
+            // the below would also be a way of adding speed, but it would get messed up
+            // if player pressed or released the 'Run' modifier key. speed would multiply
+            // in case of several powerups and we would have to store the original controller
+            // acceleration value in a 'Start' method. messy and error-prone. use states.
 
-		//Player.Controller.MotorAcceleration *= 4.0f;
-		//vp_Timer.In(Value, delegate()
-		//{
-		//    Player.Controller.MotorAcceleration *= 0.25f;	// ... or a stored original speed
-		//});
+            //Player.Controller.MotorAcceleration *= 4.0f;
+            //vp_Timer.In(Value, delegate()
+            //{
+            //    Player.Controller.MotorAcceleration *= 0.25f;	// ... or a stored original speed
+            //});
 
-		return true;
+            return true;
 
-	}
+        }
 
 
+    }
 }

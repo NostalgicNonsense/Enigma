@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UnityStandardAssets.Effects
+namespace Marketplace.Standard_Assets.ParticleSystems.Scripts
 {
     public class ExplosionPhysicsForce : MonoBehaviour
     {

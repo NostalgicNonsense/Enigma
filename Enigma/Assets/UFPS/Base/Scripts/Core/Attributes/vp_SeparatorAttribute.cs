@@ -10,48 +10,48 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 #if UNITY_EDITOR
-
 using UnityEditor;
 using UnityEngine;
 
-
-/// <summary>
-/// 
-/// </summary>
-[System.Serializable]
-public class vp_Separator
+namespace UFPS.Base.Scripts.Core.Attributes
 {
-}
+    /// <summary>
+    /// 
+    /// </summary>
+    [System.Serializable]
+    public class vp_Separator
+    {
+    }
 
 
-/// <summary>
-/// 
-/// </summary>
-public class vp_SeparatorAttribute : PropertyAttribute
-{
-	public vp_SeparatorAttribute(){	}
-}
+    /// <summary>
+    /// 
+    /// </summary>
+    public class vp_SeparatorAttribute : PropertyAttribute
+    {
+        public vp_SeparatorAttribute(){	}
+    }
 
 
-/// <summary>
-/// 
-/// </summary>
-[CustomPropertyDrawer(typeof(vp_SeparatorAttribute))]
-public class vp_SeparatorDrawer : PropertyDrawer
-{
+    /// <summary>
+    /// 
+    /// </summary>
+    [CustomPropertyDrawer(typeof(vp_SeparatorAttribute))]
+    public class vp_SeparatorDrawer : PropertyDrawer
+    {
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public override void OnGUI(Rect pos, SerializedProperty prop, GUIContent label)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void OnGUI(Rect pos, SerializedProperty prop, GUIContent label)
+        {
 
-		vp_PropertyDrawerUtility.Separator(pos);
+            vp_PropertyDrawerUtility.Separator(pos);
 
-	}
+        }
 
-}
+    }
 
 
 #endif
-
+}

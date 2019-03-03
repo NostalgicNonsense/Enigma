@@ -1,7 +1,7 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
+namespace Enigma.Components.Base_Classes.Buildings.Captureables
 {
     public class CaptureFlag : MonoBehaviour
     {

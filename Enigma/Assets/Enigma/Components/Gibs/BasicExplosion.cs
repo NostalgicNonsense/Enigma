@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Basic_Items
+namespace Enigma.Components.Gibs
 {
     public class BasicExplosion : MonoBehaviour
     {

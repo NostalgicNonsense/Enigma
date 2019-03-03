@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Gibs
+namespace Enigma.Components.Gibs
 {
     public class GibFadeout : MonoBehaviour
     {

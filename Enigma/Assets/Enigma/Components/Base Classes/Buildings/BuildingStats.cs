@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings
+namespace Enigma.Components.Base_Classes.Buildings
 {
     public class BuildingStats : MonoBehaviour
     {

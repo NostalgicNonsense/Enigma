@@ -12,6 +12,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Gameplay.Player.Local.FootstepManager;
 
 [CustomEditor(typeof(vp_FootstepManager))]
 

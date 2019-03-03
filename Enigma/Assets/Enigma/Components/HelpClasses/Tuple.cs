@@ -1,4 +1,4 @@
-﻿namespace Assets.Enigma.Components.HelpClasses
+﻿namespace Enigma.Components.HelpClasses
 {
     public class Tuple<T1, T2>
     {

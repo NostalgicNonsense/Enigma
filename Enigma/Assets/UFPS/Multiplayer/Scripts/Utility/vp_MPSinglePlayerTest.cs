@@ -17,77 +17,85 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UFPS.Base.Scripts.Core.EventSystem;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay;
+using UFPS.Base.Scripts.Gameplay.Level.Spawning;
+using UFPS.Base.Scripts.Gameplay.Player;
+using UFPS.Multiplayer.Scripts.Master;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-
-public class vp_MPSinglePlayerTest : MonoBehaviour
+namespace UFPS.Multiplayer.Scripts.Utility
 {
+    public class vp_MPSinglePlayerTest : MonoBehaviour
+    {
 
-	public GameObject LocalPlayerPrefab = null;
-	public SpawnMode m_SpawnMode = SpawnMode.Prefab;
+        public GameObject LocalPlayerPrefab = null;
+        public SpawnMode m_SpawnMode = SpawnMode.Prefab;
 
-	public enum SpawnMode
-	{
-		Scene,
-		Prefab
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void Start()
-	{
-
-		if (PhotonNetwork.connected)
-		{
-			Debug.LogWarning("Warning (" + this + ") This script should not be used when connected. Disabling self. (Did you forget to disable a vp_MPSinglePlayerTest object in a multiplayer map?)");
-			enabled = false;
-			return;
-		}
-
-		PhotonNetwork.offlineMode = true;
-		vp_Gameplay.IsMultiplayer = false;
-		vp_Gameplay.IsMaster = true;
-
-		vp_PlayerEventHandler[] players = FindObjectsOfType<vp_PlayerEventHandler>();
-		foreach (vp_PlayerEventHandler player in players)
-		{
-			vp_Utility.Activate(player.gameObject, false);
-		}
-
-		vp_MPMaster[] masters = Component.FindObjectsOfType<vp_MPMaster>() as vp_MPMaster[];
-		foreach (vp_MPMaster g in masters)
-		{
-			if (g.gameObject != gameObject)
-				vp_Utility.Activate(g.gameObject, false);
-		}
-
-		// disable demo gui via globalevent since we don't want hard references
-		// to code in the demo folder
-		vp_GlobalEvent.Send("DisableMultiplayerGUI", vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
-
-		vp_SpawnPoint p = vp_SpawnPoint.GetRandomSpawnPoint("Team1");
-
-		switch (m_SpawnMode)
-		{
-			case SpawnMode.Prefab:
-				GameObject l = (GameObject)GameObject.Instantiate(LocalPlayerPrefab, p.transform.position, p.transform.rotation);
-				l.GetComponent<vp_PlayerEventHandler>().Rotation.Set(p.transform.eulerAngles);
-				break;
-			case SpawnMode.Scene:
-				vp_Utility.Activate(LocalPlayerPrefab, true);
-				if (p != null)
-				{
-					LocalPlayerPrefab.transform.position = p.transform.position;
-					LocalPlayerPrefab.GetComponent<vp_PlayerEventHandler>().Rotation.Set(p.transform.eulerAngles);
-				}
-				break;
-		}
-
-	}
+        public enum SpawnMode
+        {
+            Scene,
+            Prefab
+        }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void Start()
+        {
+
+            if (PhotonNetwork.connected)
+            {
+                Debug.LogWarning("Warning (" + this + ") This script should not be used when connected. Disabling self. (Did you forget to disable a vp_MPSinglePlayerTest object in a multiplayer map?)");
+                enabled = false;
+                return;
+            }
+
+            PhotonNetwork.offlineMode = true;
+            vp_Gameplay.IsMultiplayer = false;
+            vp_Gameplay.IsMaster = true;
+
+            vp_PlayerEventHandler[] players = FindObjectsOfType<vp_PlayerEventHandler>();
+            foreach (vp_PlayerEventHandler player in players)
+            {
+                vp_Utility.Activate(player.gameObject, false);
+            }
+
+            vp_MPMaster[] masters = Component.FindObjectsOfType<vp_MPMaster>() as vp_MPMaster[];
+            foreach (vp_MPMaster g in masters)
+            {
+                if (g.gameObject != gameObject)
+                    vp_Utility.Activate(g.gameObject, false);
+            }
+
+            // disable demo gui via globalevent since we don't want hard references
+            // to code in the demo folder
+            vp_GlobalEvent.Send("DisableMultiplayerGUI", vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
+
+            vp_SpawnPoint p = vp_SpawnPoint.GetRandomSpawnPoint("Team1");
+
+            switch (m_SpawnMode)
+            {
+                case SpawnMode.Prefab:
+                    GameObject l = (GameObject)GameObject.Instantiate(LocalPlayerPrefab, p.transform.position, p.transform.rotation);
+                    l.GetComponent<vp_PlayerEventHandler>().Rotation.Set(p.transform.eulerAngles);
+                    break;
+                case SpawnMode.Scene:
+                    vp_Utility.Activate(LocalPlayerPrefab, true);
+                    if (p != null)
+                    {
+                        LocalPlayerPrefab.transform.position = p.transform.position;
+                        LocalPlayerPrefab.GetComponent<vp_PlayerEventHandler>().Rotation.Set(p.transform.eulerAngles);
+                    }
+                    break;
+            }
+
+        }
+
+
+    }
 }

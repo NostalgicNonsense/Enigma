@@ -1,9 +1,8 @@
-﻿using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
-using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+﻿using Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
+using Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets
+namespace Enigma.Components.Base_Classes.Buildings.Turrets
 {
     public class Turret : MonoBehaviour
     {

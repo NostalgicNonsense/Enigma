@@ -1,10 +1,11 @@
 ﻿using System;
-using Assets.Enigma.Components.Base_Classes.Player;
-using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
-using Assets.Enigma.Enums;
+using Enigma.Components.Base_Classes.Player;
+using Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Enigma.Components.Base_Classes.Vehicle.VehicleWeapons;
+using Enigma.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Vehicle.VehicleScripts
+namespace Enigma.Components.Base_Classes.Vehicle.VehicleScripts
 {
     public class TankController : MonoBehaviour, IVehicle
     {

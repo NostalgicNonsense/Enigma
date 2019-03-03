@@ -1,17 +1,20 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using UnityEngine;
 
-namespace Enigma.Components.Networking
+namespace Networking
 {
     public class ConnectionHandler
     {
         //todo: WE need exception handling
-        public static ConnectionHandler ConnectionHandlerInstance;
+        public static readonly ConnectionHandler ConnectionHandlerInstance;
         private ServerInfo _serverInfo;
         private TcpClient _tcpClient;
         private UdpClient _udpClient;
+        private Dictionary<Guid, NetworkEntity> _networkedEntitiesByGuid;
 
         static ConnectionHandler()
         {
@@ -20,7 +23,13 @@ namespace Enigma.Components.Networking
                 _serverInfo = ServerInfo.CurrentServerInfo,
                 _tcpClient = new TcpClient(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily),
                 _udpClient = new UdpClient(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily),
+                _networkedEntitiesByGuid = new Dictionary<Guid, NetworkEntity>()
             };
+        }
+
+        public void AddListener(NetworkEntity networkEntity)
+        {
+            _networkedEntitiesByGuid.Add(networkEntity.Guid, networkEntity);
         }
 
         /// <summary>

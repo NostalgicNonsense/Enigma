@@ -1,45 +1,49 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UnityEngine;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-public class ShowStatusWhenConnecting : MonoBehaviour 
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    public GUISkin Skin;
-
-    void OnGUI()
+    public class ShowStatusWhenConnecting : MonoBehaviour 
     {
-        if( Skin != null )
+        public GUISkin Skin;
+
+        void OnGUI()
         {
-            GUI.skin = Skin;
+            if( Skin != null )
+            {
+                GUI.skin = Skin;
+            }
+
+            float width = 400;
+            float height = 100;
+
+            Rect centeredRect = new Rect( ( Screen.width - width ) / 2, ( Screen.height - height ) / 2, width, height );
+
+            GUILayout.BeginArea( centeredRect, GUI.skin.box );
+            {
+                GUILayout.Label( "Connecting" + GetConnectingDots(), GUI.skin.customStyles[ 0 ] );
+                GUILayout.Label( "Status: " + PhotonNetwork.connectionStateDetailed );
+            }
+            GUILayout.EndArea();
+
+            if( PhotonNetwork.inRoom )
+            {
+                enabled = false;
+            }
         }
 
-        float width = 400;
-        float height = 100;
-
-        Rect centeredRect = new Rect( ( Screen.width - width ) / 2, ( Screen.height - height ) / 2, width, height );
-
-        GUILayout.BeginArea( centeredRect, GUI.skin.box );
+        string GetConnectingDots()
         {
-            GUILayout.Label( "Connecting" + GetConnectingDots(), GUI.skin.customStyles[ 0 ] );
-            GUILayout.Label( "Status: " + PhotonNetwork.connectionStateDetailed );
+            string str = "";
+            int numberOfDots = Mathf.FloorToInt( Time.timeSinceLevelLoad * 3f % 4 );
+
+            for( int i = 0; i < numberOfDots; ++i )
+            {
+                str += " .";
+            }
+
+            return str;
         }
-        GUILayout.EndArea();
-
-        if( PhotonNetwork.inRoom )
-        {
-            enabled = false;
-        }
-    }
-
-    string GetConnectingDots()
-    {
-        string str = "";
-        int numberOfDots = Mathf.FloorToInt( Time.timeSinceLevelLoad * 3f % 4 );
-
-        for( int i = 0; i < numberOfDots; ++i )
-        {
-            str += " .";
-        }
-
-        return str;
     }
 }

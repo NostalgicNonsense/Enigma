@@ -1,7 +1,7 @@
+using Marketplace.Standard_Assets.CrossPlatformInput.Scripts;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Vehicles.Aeroplane
+namespace Marketplace.Standard_Assets.Vehicles.Aircraft.Scripts
 {
     [RequireComponent(typeof (AeroplaneController))]
     public class AeroplaneUserControl2Axis : MonoBehaviour

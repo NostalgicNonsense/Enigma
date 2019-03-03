@@ -9,48 +9,51 @@
 
 using UnityEngine;
 
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Lock Cursor")]
-public class RTC_LockHideCursor : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Lock Cursor")]
+    public class RTC_LockHideCursor : MonoBehaviour {
 
-	CursorLockMode wantedMode;
+        CursorLockMode wantedMode;
 
-	void SetCursorState (){
+        void SetCursorState (){
 		
-		Cursor.lockState = wantedMode;
-		Cursor.visible = (CursorLockMode.Locked != wantedMode);
+            Cursor.lockState = wantedMode;
+            Cursor.visible = (CursorLockMode.Locked != wantedMode);
 
-	}
+        }
 	
-	void OnGUI (){
+        void OnGUI (){
 		
-		GUILayout.BeginVertical ();
+            GUILayout.BeginVertical ();
 
-		if (Input.GetKeyDown (KeyCode.Escape))
-			Cursor.lockState = wantedMode = CursorLockMode.None;
+            if (Input.GetKeyDown (KeyCode.Escape))
+                Cursor.lockState = wantedMode = CursorLockMode.None;
 		
-		switch (Cursor.lockState)
-		{
-		case CursorLockMode.None:
-			GUILayout.Label ("Cursor is normal");
-			if (GUILayout.Button ("Lock cursor"))
-				wantedMode = CursorLockMode.Locked;
-			break;
-		case CursorLockMode.Confined:
-			GUILayout.Label ("Cursor is confined");
-			if (GUILayout.Button ("Lock cursor"))
-				wantedMode = CursorLockMode.Locked;
-			break;
-		case CursorLockMode.Locked:
-			GUILayout.Label ("Cursor is locked");
-			if (GUILayout.Button ("ESC to unlock cursor"))
-				wantedMode = CursorLockMode.None;
-			break;
-		}
+            switch (Cursor.lockState)
+            {
+                case CursorLockMode.None:
+                    GUILayout.Label ("Cursor is normal");
+                    if (GUILayout.Button ("Lock cursor"))
+                        wantedMode = CursorLockMode.Locked;
+                    break;
+                case CursorLockMode.Confined:
+                    GUILayout.Label ("Cursor is confined");
+                    if (GUILayout.Button ("Lock cursor"))
+                        wantedMode = CursorLockMode.Locked;
+                    break;
+                case CursorLockMode.Locked:
+                    GUILayout.Label ("Cursor is locked");
+                    if (GUILayout.Button ("ESC to unlock cursor"))
+                        wantedMode = CursorLockMode.None;
+                    break;
+            }
 		
-		GUILayout.EndVertical ();
+            GUILayout.EndVertical ();
 		
-		SetCursorState ();
+            SetCursorState ();
 
-	}
+        }
 
+    }
 }

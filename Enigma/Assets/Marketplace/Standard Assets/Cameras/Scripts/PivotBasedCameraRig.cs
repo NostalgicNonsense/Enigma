@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-namespace UnityStandardAssets.Cameras
+namespace Marketplace.Standard_Assets.Cameras.Scripts
 {
     public abstract class PivotBasedCameraRig : AbstractTargetFollower
     {

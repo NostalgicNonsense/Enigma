@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Photon_Unity_Networking.Plugins.PhotonNetwork.Views;
+using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof (PhotonRigidbody2DView))]

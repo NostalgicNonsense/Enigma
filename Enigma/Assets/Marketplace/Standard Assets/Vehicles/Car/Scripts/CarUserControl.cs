@@ -1,8 +1,7 @@
-using Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts;
+using Marketplace.Standard_Assets.CrossPlatformInput.Scripts;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Marketplace.Standard_Assets.Vehicles.Car.Scripts
 {
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour

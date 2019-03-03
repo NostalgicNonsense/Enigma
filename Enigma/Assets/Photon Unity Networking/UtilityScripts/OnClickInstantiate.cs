@@ -1,42 +1,46 @@
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEngine;
-using System.Collections;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-public class OnClickInstantiate : MonoBehaviour
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    public GameObject Prefab;
-    public int InstantiateType;
-    private string[] InstantiateTypeNames = {"Mine", "Scene"};
-
-    public bool showGui;
-
-    void OnClick()
+    public class OnClickInstantiate : MonoBehaviour
     {
-        if (!PhotonNetwork.inRoom)
+        public GameObject Prefab;
+        public int InstantiateType;
+        private string[] InstantiateTypeNames = {"Mine", "Scene"};
+
+        public bool showGui;
+
+        void OnClick()
         {
-            // only use PhotonNetwork.Instantiate while in a room.
-            return;
+            if (!PhotonNetwork.inRoom)
+            {
+                // only use PhotonNetwork.Instantiate while in a room.
+                return;
+            }
+
+            switch (InstantiateType)
+            {
+                case 0:
+                    PhotonNetwork.Instantiate(Prefab.name, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity, 0);
+                    break;
+                case 1:
+                    PhotonNetwork.InstantiateSceneObject(Prefab.name, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity, 0, null);
+                    break;
+            }
         }
 
-        switch (InstantiateType)
+        void OnGUI()
         {
-            case 0:
-                PhotonNetwork.Instantiate(Prefab.name, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity, 0);
-                break;
-            case 1:
-                PhotonNetwork.InstantiateSceneObject(Prefab.name, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity, 0, null);
-                break;
+            if (showGui)
+            {
+                GUILayout.BeginArea(new Rect(Screen.width - 180, 0, 180, 50));
+                InstantiateType = GUILayout.Toolbar(InstantiateType, InstantiateTypeNames);
+                GUILayout.EndArea();
+            }
         }
+
+
     }
-
-    void OnGUI()
-    {
-        if (showGui)
-        {
-            GUILayout.BeginArea(new Rect(Screen.width - 180, 0, 180, 50));
-            InstantiateType = GUILayout.Toolbar(InstantiateType, InstantiateTypeNames);
-            GUILayout.EndArea();
-        }
-    }
-
-
 }

@@ -1,4 +1,4 @@
-﻿namespace Enigma.Components.Networking.Serialization
+﻿namespace Networking.Serialization
 {
     public interface ISerializer
     {

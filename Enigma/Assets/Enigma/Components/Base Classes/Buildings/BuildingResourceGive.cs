@@ -1,8 +1,8 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.Base_Classes.TeamSettings.Resources;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings
+namespace Enigma.Components.Base_Classes.Buildings
 {
     public class BuildingResourceGive : MonoBehaviour
     {

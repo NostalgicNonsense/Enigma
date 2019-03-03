@@ -10,6 +10,7 @@
 
 using System;
 using ExitGames.Client.Photon;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEditor;
 using UnityEngine;
 

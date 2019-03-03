@@ -1,7 +1,6 @@
-using Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts;
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Marketplace.Standard_Assets.Vehicles.Car.Scripts
 {
     // this script is specific to the supplied Sample Assets car, which has mudguards over the front wheels
     // which have to turn with the wheels when steering is applied.

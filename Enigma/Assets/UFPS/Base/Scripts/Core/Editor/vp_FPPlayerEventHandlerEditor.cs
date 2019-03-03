@@ -10,6 +10,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.EventSystem;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
 using UnityEngine;
 using UnityEditor;
 

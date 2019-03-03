@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Assets.Enigma.Components.Base_Classes.Maps.Preplaced
+namespace Enigma.Components.Base_Classes.Maps.Preplaced
 {
     /// <summary>
     /// The Network manager spawns a prefab at the position of this.

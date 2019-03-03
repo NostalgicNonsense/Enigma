@@ -1,8 +1,9 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.Network;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.Network;
+using UFPS.Multiplayer.Scripts.Master;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.UI.MenuSelection
+namespace Enigma.Components.UI.MenuSelection
 {
     public class TeamSelection : UISelection
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Commander
+namespace Enigma.Components.Base_Classes.Command
 {
     public class CommanderControl : MonoBehaviour
     {

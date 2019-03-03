@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace UnityStandardAssets.Utility
+namespace Marketplace.Standard_Assets.Utility
 {
     public class ParticleSystemDestroyer : MonoBehaviour
     {

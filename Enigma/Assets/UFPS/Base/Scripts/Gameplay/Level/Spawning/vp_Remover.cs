@@ -10,38 +10,41 @@
 //					
 ///////////////////////////////////////////////////////////////////////////////// 
 
+using UFPS.Base.Scripts.Core.Utility;
 using UnityEngine;
-using System.Collections;
 
-public class vp_Remover : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Level.Spawning
 {
+    public class vp_Remover : MonoBehaviour
+    {
 
-	public float LifeTime = 10.0f;
+        public float LifeTime = 10.0f;
 
-	protected vp_Timer.Handle m_DestroyTimer = new vp_Timer.Handle();
+        protected vp_Timer.Handle m_DestroyTimer = new vp_Timer.Handle();
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void OnEnable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnEnable()
+        {
 
-		vp_Timer.In(Mathf.Max(LifeTime, 0.1f), () =>
-		{
-			vp_Utility.Destroy(gameObject);
-		}, m_DestroyTimer);
+            vp_Timer.In(Mathf.Max(LifeTime, 0.1f), () =>
+            {
+                vp_Utility.Destroy(gameObject);
+            }, m_DestroyTimer);
 
-	}
+        }
 
 	
-	/// <summary>
-	/// 
-	/// </summary>
-	void OnDisable()
-	{
-		m_DestroyTimer.Cancel();
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnDisable()
+        {
+            m_DestroyTimer.Cancel();
+        }
 	
 
+    }
 }

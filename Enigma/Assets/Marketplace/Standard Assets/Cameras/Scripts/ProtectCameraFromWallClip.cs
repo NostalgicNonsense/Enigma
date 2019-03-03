@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace UnityStandardAssets.Cameras
+namespace Marketplace.Standard_Assets.Cameras.Scripts
 {
     public class ProtectCameraFromWallClip : MonoBehaviour
     {

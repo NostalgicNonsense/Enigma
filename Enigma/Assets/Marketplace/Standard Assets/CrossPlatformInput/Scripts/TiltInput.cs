@@ -1,12 +1,12 @@
 using System;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
+
+namespace Marketplace.Standard_Assets.CrossPlatformInput.Scripts
+{
 #endif
 
-namespace UnityStandardAssets.CrossPlatformInput
-{
-    // helps with managing tilt input on mobile devices
+// helps with managing tilt input on mobile devices
     public class TiltInput : MonoBehaviour
     {
         // options for the various orientations
@@ -95,11 +95,8 @@ namespace UnityStandardAssets.CrossPlatformInput
             m_SteerAxis.Remove();
         }
     }
-}
 
 
-namespace UnityStandardAssets.CrossPlatformInput.Inspector
-{
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof (TiltInput.AxisMapping))]
     public class TiltInputAxisStylePropertyDrawer : PropertyDrawer

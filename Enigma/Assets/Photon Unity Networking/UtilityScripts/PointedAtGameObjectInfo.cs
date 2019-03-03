@@ -1,19 +1,23 @@
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEngine;
-using System.Collections;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-[RequireComponent(typeof(InputToEvent))]
-public class PointedAtGameObjectInfo : MonoBehaviour 
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    void OnGUI()
+    [RequireComponent(typeof(InputToEvent))]
+    public class PointedAtGameObjectInfo : MonoBehaviour 
     {
-        if (InputToEvent.goPointedAt != null)
+        void OnGUI()
         {
-            PhotonView pv = InputToEvent.goPointedAt.GetPhotonView();
-            if (pv != null)
+            if (InputToEvent.goPointedAt != null)
             {
-                GUI.Label(new Rect(Input.mousePosition.x + 5, Screen.height - Input.mousePosition.y - 15, 300, 30), string.Format("ViewID {0} {1}{2}", pv.viewID, (pv.isSceneView) ? "scene " : "", (pv.isMine) ? "mine" : "owner: " + pv.ownerId));
+                PhotonView pv = InputToEvent.goPointedAt.GetPhotonView();
+                if (pv != null)
+                {
+                    GUI.Label(new Rect(Input.mousePosition.x + 5, Screen.height - Input.mousePosition.y - 15, 300, 30), string.Format("ViewID {0} {1}{2}", pv.viewID, (pv.isSceneView) ? "scene " : "", (pv.isMine) ? "mine" : "owner: " + pv.ownerId));
+                }
             }
         }
-    }
 
+    }
 }

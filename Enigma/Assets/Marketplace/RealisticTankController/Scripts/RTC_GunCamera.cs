@@ -9,11 +9,14 @@
 
 using UnityEngine;
 
-/// <summary>
-/// RTC Camera will be parented to this gameobject when current camera mode is Hood Camera.
-/// </summary>
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Camera/Gun Camera")]
-public class RTC_GunCamera : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    /// <summary>
+    /// RTC Camera will be parented to this gameobject when current camera mode is Hood Camera.
+    /// </summary>
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Camera/Gun Camera")]
+    public class RTC_GunCamera : MonoBehaviour {
 
+    }
 }
 

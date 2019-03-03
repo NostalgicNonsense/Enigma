@@ -14,17 +14,19 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Multiplayer.Scripts.Master;
+using UFPS.Multiplayer.Scripts.Player;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-
-[System.Serializable]
-public class vp_DMTeam : vp_MPTeam
+namespace UFPS.Multiplayer.Scripts.Demo.Deathmatch
 {
+    [System.Serializable]
+    public class vp_DMTeam : vp_MPTeam
+    {
 
-	public vp_DMTeam(string name, Color color, vp_MPPlayerType playerType = null) : base(name, color, playerType) { }
+        public vp_DMTeam(string name, Color color, vp_MPPlayerType playerType = null) : base(name, color, playerType) { }
 
-	public int Score = 0;
+        public int Score = 0;
 	
+    }
 }

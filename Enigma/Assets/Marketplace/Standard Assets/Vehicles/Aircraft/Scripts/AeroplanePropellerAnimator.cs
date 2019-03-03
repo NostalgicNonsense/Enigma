@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Aeroplane
+namespace Marketplace.Standard_Assets.Vehicles.Aircraft.Scripts
 {
     public class AeroplanePropellerAnimator : MonoBehaviour
     {

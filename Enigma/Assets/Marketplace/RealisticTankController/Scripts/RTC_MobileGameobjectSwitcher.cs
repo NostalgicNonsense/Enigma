@@ -9,36 +9,39 @@
 
 using UnityEngine;
 
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Mobile Gameobject Switcher")]
-public class RTC_MobileGameobjectSwitcher : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Mobile Gameobject Switcher")]
+    public class RTC_MobileGameobjectSwitcher : MonoBehaviour {
 
-	public GameObject[] gameobjectsForMobile;
-	public GameObject[] gameobjectsForNotMobile;
+        public GameObject[] gameobjectsForMobile;
+        public GameObject[] gameobjectsForNotMobile;
 
-	void Start () {
+        void Start () {
 
-		if (Application.isMobilePlatform) {
+            if (Application.isMobilePlatform) {
 
-			for (int i = 0; i < gameobjectsForMobile.Length; i++) {
-				gameobjectsForMobile [i].SetActive (true);
-			}
+                for (int i = 0; i < gameobjectsForMobile.Length; i++) {
+                    gameobjectsForMobile [i].SetActive (true);
+                }
 
-			for (int i = 0; i < gameobjectsForNotMobile.Length; i++) {
-				gameobjectsForNotMobile [i].SetActive (false);
-			}
+                for (int i = 0; i < gameobjectsForNotMobile.Length; i++) {
+                    gameobjectsForNotMobile [i].SetActive (false);
+                }
 
-		} else {
+            } else {
 
-			for (int i = 0; i < gameobjectsForMobile.Length; i++) {
-				gameobjectsForMobile [i].SetActive (false);
-			}
+                for (int i = 0; i < gameobjectsForMobile.Length; i++) {
+                    gameobjectsForMobile [i].SetActive (false);
+                }
 
-			for (int i = 0; i < gameobjectsForNotMobile.Length; i++) {
-				gameobjectsForNotMobile [i].SetActive (true);
-			}
+                for (int i = 0; i < gameobjectsForNotMobile.Length; i++) {
+                    gameobjectsForNotMobile [i].SetActive (true);
+                }
 
-		}
+            }
 	
-	}
+        }
 
+    }
 }

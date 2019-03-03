@@ -15,23 +15,25 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Attributes;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-public class vp_SurfaceIdentifier : MonoBehaviour
+namespace UFPS.Base.Scripts.Effects.SurfaceSystem
 {
+    public class vp_SurfaceIdentifier : MonoBehaviour
+    {
 
-	public vp_SurfaceType SurfaceType;
-	public bool AllowDecals = true;
-	// NOTE: This parameter is only provided for backwards compatibility with the
-	// old UFPS 'vp_FootStepManager'. it has no function in the new surface system
-	public int SurfaceID;
+        public vp_SurfaceType SurfaceType;
+        public bool AllowDecals = true;
+        // NOTE: This parameter is only provided for backwards compatibility with the
+        // old UFPS 'vp_FootStepManager'. it has no function in the new surface system
+        public int SurfaceID;
 
 #if UNITY_EDITOR
-	[vp_HelpBox("• 'SurfaceType' determines what the object's surface is made of, and what vp_SurfaceEffect it will trigger when it gets hit by something.\n\n• 'Allow Decals' determines whether bullet holes and footprints can stick to the surface of the object. It will override any SurfaceManager settings for this particular object.\n\n• NOTE: 'SurfaceID' is only provided for backwards compatibility with the old UFPS 'vp_FootStepManager'. it is not used by vp_SurfaceManager", UnityEditor.MessageType.None, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
-	public float surfaceTypeHelp;
+        [vp_HelpBox("• 'SurfaceType' determines what the object's surface is made of, and what vp_SurfaceEffect it will trigger when it gets hit by something.\n\n• 'Allow Decals' determines whether bullet holes and footprints can stick to the surface of the object. It will override any SurfaceManager settings for this particular object.\n\n• NOTE: 'SurfaceID' is only provided for backwards compatibility with the old UFPS 'vp_FootStepManager'. it is not used by vp_SurfaceManager", UnityEditor.MessageType.None, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
+        public float surfaceTypeHelp;
 #endif
 
 
+    }
 }

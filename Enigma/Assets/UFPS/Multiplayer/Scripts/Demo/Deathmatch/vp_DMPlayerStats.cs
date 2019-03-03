@@ -21,47 +21,47 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
+using UFPS.Multiplayer.Scripts.Player;
 
-public class vp_DMPlayerStats : vp_MPPlayerStats
+namespace UFPS.Multiplayer.Scripts.Demo.Deathmatch
 {
+    public class vp_DMPlayerStats : vp_MPPlayerStats
+    {
 
-	protected int Frags = 0;
-	protected int Deaths = 0;
-	protected int Score = 0;
+        protected int Frags = 0;
+        protected int Deaths = 0;
+        protected int Score = 0;
 	
-	public override void InitStats()
-	{
+        public override void InitStats()
+        {
 
-		base.InitStats();
+            base.InitStats();
 
-		Getters.Add("Deaths", delegate() { return Deaths; });
-		Getters.Add("Frags", delegate() { return Frags; });
-		Getters.Add("Score", delegate() { return Score; });
+            Getters.Add("Deaths", delegate() { return Deaths; });
+            Getters.Add("Frags", delegate() { return Frags; });
+            Getters.Add("Score", delegate() { return Score; });
 
-		Setters.Add("Deaths", delegate(object val) { Deaths = (int)val; });
-		Setters.Add("Frags", delegate(object val) { Frags = (int)val; });
-		Setters.Add("Score", delegate(object val) { Score = (int)val; });
+            Setters.Add("Deaths", delegate(object val) { Deaths = (int)val; });
+            Setters.Add("Frags", delegate(object val) { Frags = (int)val; });
+            Setters.Add("Score", delegate(object val) { Score = (int)val; });
 
-	}
+        }
 
 
-	/// <summary>
-	/// resets health, shots and inventory to default + resurrects
-	/// this player (if dead)
-	/// </summary>
-	public override void FullReset()
-	{
+        /// <summary>
+        /// resets health, shots and inventory to default + resurrects
+        /// this player (if dead)
+        /// </summary>
+        public override void FullReset()
+        {
 
-		base.FullReset();		// always remember to call base in subsequent overrides
+            base.FullReset();		// always remember to call base in subsequent overrides
 		
-		Frags = 0;
-		Deaths = 0;
-		Score = 0;
+            Frags = 0;
+            Deaths = 0;
+            Score = 0;
 
-	}	
+        }	
 
+    }
 }

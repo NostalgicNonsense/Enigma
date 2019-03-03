@@ -1,7 +1,7 @@
+using Marketplace.Standard_Assets.Utility;
 using UnityEngine;
-using UnityStandardAssets.Utility;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+namespace Marketplace.Standard_Assets.Characters.FirstPersonCharacter.Scripts
 {
     public class HeadBob : MonoBehaviour
     {

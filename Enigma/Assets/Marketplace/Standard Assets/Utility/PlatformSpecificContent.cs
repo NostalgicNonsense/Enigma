@@ -1,9 +1,10 @@
+using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
-using UnityEditor;
+
 #endif
 
-namespace UnityStandardAssets.Utility
+namespace Marketplace.Standard_Assets.Utility
 {
 #if UNITY_EDITOR
 

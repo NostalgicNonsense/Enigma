@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Assets.Enigma.Components.Base_Classes.Player;
+using Enigma.Components.Base_Classes.Player;
 
-namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
+namespace Enigma.Components.Base_Classes.Vehicle.ComponentScripts
 {
     public class Passengers
     {

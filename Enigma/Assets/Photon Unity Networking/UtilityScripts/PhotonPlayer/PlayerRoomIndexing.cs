@@ -8,18 +8,14 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-
-using Photon;
-using ExitGames.Client.Photon;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UnityEngine;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 
 
-namespace ExitGames.UtilityScripts
+namespace Photon_Unity_Networking.UtilityScripts.PhotonPlayer
 {
 	/// <summary>
 	/// Implements consistent indexing in a room/game with help of room properties. Access them by PhotonPlayer.GetRoomIndex() extension.
@@ -72,7 +68,7 @@ namespace ExitGames.UtilityScripts
 		object _indexes;
 		Dictionary<int,int> _indexesLUT;
 		List<bool> _indexesPool;
-		PhotonPlayer _p;
+		Plugins.PhotonNetwork.PhotonPlayer _p;
 
 		#endregion
 
@@ -113,7 +109,7 @@ namespace ExitGames.UtilityScripts
 			RefreshData();
 		}
 
-		public override void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
+		public override void OnPhotonPlayerConnected (Plugins.PhotonNetwork.PhotonPlayer newPlayer)
 		{
 			if (PhotonNetwork.isMasterClient)
 			{
@@ -122,7 +118,7 @@ namespace ExitGames.UtilityScripts
 
 		}
 
-		public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
+		public override void OnPhotonPlayerDisconnected(Plugins.PhotonNetwork.PhotonPlayer otherPlayer)
 		{
 			if (PhotonNetwork.isMasterClient)
 			{
@@ -139,7 +135,7 @@ namespace ExitGames.UtilityScripts
 		}
 
 
-		public override void OnMasterClientSwitched(PhotonPlayer newMasterClient)
+		public override void OnMasterClientSwitched(Plugins.PhotonNetwork.PhotonPlayer newMasterClient)
 		{
 			if (PhotonNetwork.isMasterClient)
 			{
@@ -151,7 +147,7 @@ namespace ExitGames.UtilityScripts
 
 		/// <summary>Get the room index of a particular PhotonPlayer. You can also use <PhotonPlayer>.GetRoomIndex() </summary>
 		/// <returns>persistent index in room. -1 for none</returns>
-		public int GetRoomIndex( PhotonPlayer player)
+		public int GetRoomIndex( Plugins.PhotonNetwork.PhotonPlayer player)
 		{
 			if (_indexesLUT!=null && _indexesLUT.ContainsKey(player.ID))
 			{
@@ -186,7 +182,7 @@ namespace ExitGames.UtilityScripts
 			// check if we need to assign
 			if (_indexesLUT_local.Count != PhotonNetwork.room.PlayerCount)
 			{
-			 	foreach(PhotonPlayer _p in	PhotonNetwork.playerList)
+			 	foreach(Plugins.PhotonNetwork.PhotonPlayer _p in	PhotonNetwork.playerList)
 				{
 					if (!_indexesLUT_local.ContainsKey(_p.ID))
 					{
@@ -214,7 +210,7 @@ namespace ExitGames.UtilityScripts
 					foreach(KeyValuePair<int,int> _entry in _indexesLUT)
 					{
 						//Debug.Log("Entry; "+_entry.Key+":"+_entry.Value);
-						_p = PhotonPlayer.Find(_entry.Key);
+						_p = Plugins.PhotonNetwork.PhotonPlayer.Find(_entry.Key);
 						_playerIds[_entry.Value] = _p.ID;
 					}
 				}
@@ -227,7 +223,7 @@ namespace ExitGames.UtilityScripts
 		}
 
 
-		void AssignIndex(PhotonPlayer player)
+		void AssignIndex(Plugins.PhotonNetwork.PhotonPlayer player)
 		{
 			if (PhotonNetwork.room.CustomProperties.TryGetValue(PlayerRoomIndexing.RoomPlayerIndexedProp, out _indexes))
 			{
@@ -251,7 +247,7 @@ namespace ExitGames.UtilityScripts
 		}
 
 
-		void UnAssignIndex(PhotonPlayer player)
+		void UnAssignIndex(Plugins.PhotonNetwork.PhotonPlayer player)
 		{
 			if (PhotonNetwork.room.CustomProperties.TryGetValue(PlayerRoomIndexing.RoomPlayerIndexedProp, out _indexes))
 			{
@@ -273,7 +269,7 @@ namespace ExitGames.UtilityScripts
 	{
 		/// <summary>Extension for PhotonPlayer class to wrap up access to the player's custom property.</summary>
 		/// <returns>persistent index in room. -1 for no indexing</returns>
-		public static int GetRoomIndex(this PhotonPlayer player)
+		public static int GetRoomIndex(this Plugins.PhotonNetwork.PhotonPlayer player)
 		{
 			if (PlayerRoomIndexing.instance == null)
 			{

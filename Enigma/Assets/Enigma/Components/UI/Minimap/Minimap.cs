@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.UI.Minimap
+namespace Enigma.Components.UI.Minimap
 {
     public class Minimap : MonoBehaviour
     {

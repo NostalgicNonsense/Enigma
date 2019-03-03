@@ -10,6 +10,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using Marketplace.RealisticTankController.Scripts;
 
 [CustomEditor(typeof(RTC_TankController)), CanEditMultipleObjects]
 public class RTC_Editor : Editor {

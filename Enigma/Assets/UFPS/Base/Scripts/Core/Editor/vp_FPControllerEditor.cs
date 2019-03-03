@@ -12,6 +12,8 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Gameplay.Player;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
 
 [CustomEditor(typeof(vp_FPController))]
 

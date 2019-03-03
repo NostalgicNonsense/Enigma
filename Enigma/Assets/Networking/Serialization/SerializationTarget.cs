@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Enigma.Components.Networking.Serialization
+namespace Networking.Serialization
 {
     public class SerializationTarget
     {

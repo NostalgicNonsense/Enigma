@@ -9,14 +9,17 @@
 
 using UnityEngine;
 
-public class RTC_SetCom : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    public class RTC_SetCom : MonoBehaviour {
 
-	public Vector3 COM;
+        public Vector3 COM;
 
-	void Start () {
+        void Start () {
 
-		GetComponent<Rigidbody>().centerOfMass = COM;
+            GetComponent<Rigidbody>().centerOfMass = COM;
 	
-	}
+        }
 
+    }
 }

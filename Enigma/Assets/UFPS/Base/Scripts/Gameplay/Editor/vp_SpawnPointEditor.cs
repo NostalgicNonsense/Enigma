@@ -19,6 +19,8 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Level.Spawning;
 
 [CustomEditor(typeof(vp_SpawnPoint))]
 public class vp_SpawnPointEditor : Editor

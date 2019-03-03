@@ -23,60 +23,62 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Gameplay.Inventory;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-public class vp_ItemGrab : vp_Interactable
+namespace UFPS.Base.Scripts.Gameplay.Player.Local.Interaction
 {
+    public class vp_ItemGrab : vp_Interactable
+    {
 
-	vp_ItemPickup m_ItemPickup = null;
-	vp_ItemPickup ItemPickup
-	{
-		get
-		{
-			if (m_ItemPickup == null)
-				m_ItemPickup = transform.GetComponent<vp_ItemPickup>();
-			if (m_ItemPickup == null)
-			{
-				Debug.LogError("Error ("+this+") This component requires a vp_ItemPickup (disabling self).");
-			}
-			return m_ItemPickup;
-		}
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected override void Start()
-	{
-
-		base.Start();
-
-		if(InteractDistance == 0.0f)
-			InteractDistance = 2.5f;
-
-	}
+        vp_ItemPickup m_ItemPickup = null;
+        vp_ItemPickup ItemPickup
+        {
+            get
+            {
+                if (m_ItemPickup == null)
+                    m_ItemPickup = transform.GetComponent<vp_ItemPickup>();
+                if (m_ItemPickup == null)
+                {
+                    Debug.LogError("Error ("+this+") This component requires a vp_ItemPickup (disabling self).");
+                }
+                return m_ItemPickup;
+            }
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public override bool TryInteract(vp_PlayerEventHandler player)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void Start()
+        {
 
-		if(ItemPickup == null)
-			return false;
+            base.Start();
+
+            if(InteractDistance == 0.0f)
+                InteractDistance = 2.5f;
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool TryInteract(vp_PlayerEventHandler player)
+        {
+
+            if(ItemPickup == null)
+                return false;
 		
-		if(m_Player == null)
-			m_Player = player;
+            if(m_Player == null)
+                m_Player = player;
 
-		ItemPickup.TryGiveTo(m_Player.GetComponent<Collider>());
+            ItemPickup.TryGiveTo(m_Player.GetComponent<Collider>());
 
-		return true;
+            return true;
 
-	}
+        }
 	
 
+    }
 }

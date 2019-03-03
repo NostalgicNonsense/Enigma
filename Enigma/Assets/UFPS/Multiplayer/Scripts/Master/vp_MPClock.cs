@@ -12,110 +12,109 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-
-public static class vp_MPClock
+namespace UFPS.Multiplayer.Scripts.Master
 {
+    public static class vp_MPClock
+    {
 
-	private static float m_EndTime = 0.0f;		// when the ongoing game is going to end
-	private static float m_Duration = 0.0f;		// duration of a typical game. change with the 'Set' methods
-
-
-	/// <summary>
-	/// returns whether there is time left in the current game
-	/// </summary>
-	public static bool Running
-	{
-		get
-		{
-			return (Duration == 0.0f) || (m_EndTime > LocalTime);
-		}
-	}
+        private static float m_EndTime = 0.0f;		// when the ongoing game is going to end
+        private static float m_Duration = 0.0f;		// duration of a typical game. change with the 'Set' methods
 
 
-	/// <summary>
-	/// returns the standard total duration of a game with the current
-	/// setting
-	/// </summary>
-	public static float Duration
-	{
-		get
-		{
-			return m_Duration;
-		}
-	}
+        /// <summary>
+        /// returns whether there is time left in the current game
+        /// </summary>
+        public static bool Running
+        {
+            get
+            {
+                return (Duration == 0.0f) || (m_EndTime > LocalTime);
+            }
+        }
 
 
-	/// <summary>
-	/// returns time left of the current game
-	/// </summary>
-	public static float TimeLeft
-	{
-		get
-		{
-			return (m_EndTime - LocalTime);
-		}
-	}
+        /// <summary>
+        /// returns the standard total duration of a game with the current
+        /// setting
+        /// </summary>
+        public static float Duration
+        {
+            get
+            {
+                return m_Duration;
+            }
+        }
 
 
-	/// <summary>
-	/// returns the real time in seconds since the game started
-	/// on this machine
-	/// </summary>
-	public static float LocalTime
-	{
-		get
-		{
-			return UnityEngine.Time.realtimeSinceStartup;
-		}
-	}
+        /// <summary>
+        /// returns time left of the current game
+        /// </summary>
+        public static float TimeLeft
+        {
+            get
+            {
+                return (m_EndTime - LocalTime);
+            }
+        }
 
 
-	/// <summary>
-	/// starts a new timer from zero with the previous duration
-	/// </summary>
-	public static void Reset()
-	{
-
-		m_EndTime = LocalTime + m_Duration;
-
-	}
-
-
-	/// <summary>
-	/// starts a new timer from zero. for starting a game as master
-	/// </summary>
-	public static void Set(float duration)
-	{
-
-		m_EndTime = LocalTime + duration;
-		m_Duration = duration;
-
-	}
+        /// <summary>
+        /// returns the real time in seconds since the game started
+        /// on this machine
+        /// </summary>
+        public static float LocalTime
+        {
+            get
+            {
+                return UnityEngine.Time.realtimeSinceStartup;
+            }
+        }
 
 
-	/// <summary>
-	/// sets a timer to inside a duration. for joining mid-game
-	/// </summary>
-	public static void Set(float timeLeft, float totalDuration)
-	{
+        /// <summary>
+        /// starts a new timer from zero with the previous duration
+        /// </summary>
+        public static void Reset()
+        {
 
-		m_EndTime = LocalTime + timeLeft;
-		m_Duration = totalDuration;
+            m_EndTime = LocalTime + m_Duration;
+
+        }
+
+
+        /// <summary>
+        /// starts a new timer from zero. for starting a game as master
+        /// </summary>
+        public static void Set(float duration)
+        {
+
+            m_EndTime = LocalTime + duration;
+            m_Duration = duration;
+
+        }
+
+
+        /// <summary>
+        /// sets a timer to inside a duration. for joining mid-game
+        /// </summary>
+        public static void Set(float timeLeft, float totalDuration)
+        {
+
+            m_EndTime = LocalTime + timeLeft;
+            m_Duration = totalDuration;
 	
-	}
+        }
 	
 
-	/// <summary>
-	/// sets the time to zero. this is for when a game is not running
-	/// </summary>
-	public static void Stop()
-	{
+        /// <summary>
+        /// sets the time to zero. this is for when a game is not running
+        /// </summary>
+        public static void Stop()
+        {
 
-		m_EndTime = 0.0f;
+            m_EndTime = 0.0f;
 
-	}
+        }
 
+    }
 }

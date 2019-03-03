@@ -1,8 +1,8 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Captureables
+namespace Enigma.Components.Base_Classes.Buildings.Captureables
 {
     public class CaptureZone : MonoBehaviour
     {

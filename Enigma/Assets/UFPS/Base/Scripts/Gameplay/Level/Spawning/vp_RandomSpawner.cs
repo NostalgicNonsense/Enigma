@@ -9,54 +9,58 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-
-public class vp_RandomSpawner : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Level.Spawning
 {
+    [RequireComponent(typeof(AudioSource))]
 
-	// sound
-	AudioSource m_Audio = null;
-	public AudioClip Sound = null;
-	public float SoundMinPitch = 0.8f;
-	public float SoundMaxPitch = 1.2f;
-	public bool RandomAngle = true;
+    public class vp_RandomSpawner : MonoBehaviour
+    {
 
-	public List<GameObject> SpawnObjects = null;
+        // sound
+        AudioSource m_Audio = null;
+        public AudioClip Sound = null;
+        public float SoundMinPitch = 0.8f;
+        public float SoundMaxPitch = 1.2f;
+        public bool RandomAngle = true;
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void Awake()
-	{
+        public List<GameObject> SpawnObjects = null;
 
-		if (SpawnObjects == null)
-			return;
+        /// <summary>
+        /// 
+        /// </summary>
+        void Awake()
+        {
 
-		int i = (int)Random.Range(0, (SpawnObjects.Count));
+            if (SpawnObjects == null)
+                return;
 
-		if(SpawnObjects[i] == null)
-			return;
+            int i = (int)Random.Range(0, (SpawnObjects.Count));
 
-		GameObject obj = (GameObject)vp_Utility.Instantiate(SpawnObjects[i], transform.position, transform.rotation);
+            if(SpawnObjects[i] == null)
+                return;
 
-		obj.transform.Rotate(Random.rotation.eulerAngles);
-		m_Audio = GetComponent<AudioSource>();
-		m_Audio.playOnAwake = true;
+            GameObject obj = (GameObject)vp_Utility.Instantiate(SpawnObjects[i], transform.position, transform.rotation);
+
+            obj.transform.Rotate(Random.rotation.eulerAngles);
+            m_Audio = GetComponent<AudioSource>();
+            m_Audio.playOnAwake = true;
 		
-		// play sound
-		if (Sound != null)
-		{
-			m_Audio.rolloffMode = AudioRolloffMode.Linear;
-			m_Audio.clip = Sound;
-			m_Audio.pitch = Random.Range(SoundMinPitch, SoundMaxPitch) * Time.timeScale;
-			m_Audio.Play();
-		}
+            // play sound
+            if (Sound != null)
+            {
+                m_Audio.rolloffMode = AudioRolloffMode.Linear;
+                m_Audio.clip = Sound;
+                m_Audio.pitch = Random.Range(SoundMinPitch, SoundMaxPitch) * Time.timeScale;
+                m_Audio.Play();
+            }
 
-	}
+        }
 
 
+    }
 }
 

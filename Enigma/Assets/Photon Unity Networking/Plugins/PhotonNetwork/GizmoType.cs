@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ExitGames.Client.GUI
+namespace Photon_Unity_Networking.Plugins.PhotonNetwork
 {
     public enum GizmoType
     {

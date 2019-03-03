@@ -12,6 +12,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
 
 [CustomEditor(typeof(vp_Input))]
 

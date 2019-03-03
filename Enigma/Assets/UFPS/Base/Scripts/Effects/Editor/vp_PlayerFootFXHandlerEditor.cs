@@ -9,6 +9,9 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Effects;
+using UFPS.Base.Scripts.Effects.SurfaceSystem;
 using UnityEngine;
 using UnityEditor;
 

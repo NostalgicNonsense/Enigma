@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Enigma.Components.HelpClasses.Builders
+namespace Enigma.Components.HelpClasses.Builders
 {
     public static class InaccurateRayBuilder
     {

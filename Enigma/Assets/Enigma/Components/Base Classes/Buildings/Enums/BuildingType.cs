@@ -1,4 +1,4 @@
-﻿namespace Assets.Enigma.Components.Base_Classes.Buildings
+﻿namespace Enigma.Components.Base_Classes.Buildings.Enums
 {
     public enum BuildingType
     {

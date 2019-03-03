@@ -26,337 +26,342 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.EventSystem;
+using UFPS.Base.Scripts.Gameplay;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
+using UFPS.Multiplayer.Scripts.Demo.GUI;
 using UnityEngine;
-using System;
-using System.Diagnostics;
 
-public class vp_CrashPopup : MonoBehaviour
+namespace UFPS.Multiplayer.Scripts.Utility
 {
+    public class vp_CrashPopup : MonoBehaviour
+    {
 
-	// editor pause detection
-	protected int m_PauseFrameCounter = 0;
-	protected bool m_IsPaused { get { return m_PauseFrameCounter > 0; } }
+        // editor pause detection
+        protected int m_PauseFrameCounter = 0;
+        protected bool m_IsPaused { get { return m_PauseFrameCounter > 0; } }
 
-	// error message / exception
-	protected string m_Message = "";
-	protected string m_LineInfo = "";
+        // error message / exception
+        protected string m_Message = "";
+        protected string m_LineInfo = "";
 
-	// gui
-	protected Rect m_WindowRect = new Rect(0, 0, 600, 400);
-	protected float m_Padding = 20;
-	protected Texture2D m_BlackTexture = null;
+        // gui
+        protected Rect m_WindowRect = new Rect(0, 0, 600, 400);
+        protected float m_Padding = 20;
+        protected Texture2D m_BlackTexture = null;
 
-	// logic
-	protected static bool m_ThereHasBeenACrash = false;
-	protected bool m_CursorWasForced = false;
-	protected bool m_InputWasAllowed = false;
-	protected bool m_ChatWasEnabled = false;
-	protected float m_NextAllowedShowKeepPlayingButtonTime = 0.0f;
-	protected bool m_CanShowKeepPlayingButton = true;
+        // logic
+        protected static bool m_ThereHasBeenACrash = false;
+        protected bool m_CursorWasForced = false;
+        protected bool m_InputWasAllowed = false;
+        protected bool m_ChatWasEnabled = false;
+        protected float m_NextAllowedShowKeepPlayingButtonTime = 0.0f;
+        protected bool m_CanShowKeepPlayingButton = true;
 
-	// applicable environments
-	public bool ShowInEditor = false;
-	public bool ShowInStandalone = true;
+        // applicable environments
+        public bool ShowInEditor = false;
+        public bool ShowInStandalone = true;
 #if UNITY_5_3 || UNITY_5_4 || UNITY_5_5 || UNITY_5_6 || UNITY_2017_1
     public bool ShowInWebplayer = true;
 #endif
-    public bool ShowOnConsole = true;
-	public bool ShowOnMobile = true;
+        public bool ShowOnConsole = true;
+        public bool ShowOnMobile = true;
 
-	// --- external components that need to be suppressed ---
+        // --- external components that need to be suppressed ---
 
-	protected vp_FPInput m_FPInput = null;
-	protected vp_FPInput FPInput
-	{
-		get
-		{
-			if (m_FPInput == null)
-				m_FPInput = FindObjectOfType<vp_FPInput>();
-			return m_FPInput;
-		}
-	}
+        protected vp_FPInput m_FPInput = null;
+        protected vp_FPInput FPInput
+        {
+            get
+            {
+                if (m_FPInput == null)
+                    m_FPInput = FindObjectOfType<vp_FPInput>();
+                return m_FPInput;
+            }
+        }
 
-	// TODO: can't reference chat since it's not in Base
-	protected vp_MPDemoChat m_Chat = null;
-	protected vp_MPDemoChat Chat
-	{
-		get
-		{
-			if ((m_Chat == null) && !m_TriedToFindChat)
-				m_Chat = FindObjectOfType<vp_MPDemoChat>();
-			return m_Chat;
-		}
-	}
-	protected bool m_TriedToFindChat = false;
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void OnEnable()
-	{
-
-		if (Active)
-			Application.logMessageReceived += HandleLog;
-
-		vp_GlobalEvent<bool>.Register("EnableErrorDialog", (bool enable)=> { enabled = enable;  });
-
-	}
+        // TODO: can't reference chat since it's not in Base
+        protected vp_MPDemoChat m_Chat = null;
+        protected vp_MPDemoChat Chat
+        {
+            get
+            {
+                if ((m_Chat == null) && !m_TriedToFindChat)
+                    m_Chat = FindObjectOfType<vp_MPDemoChat>();
+                return m_Chat;
+            }
+        }
+        protected bool m_TriedToFindChat = false;
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void OnDisable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void OnEnable()
+        {
 
-		if (Active)
-			Application.logMessageReceived -= HandleLog;
+            if (Active)
+                Application.logMessageReceived += HandleLog;
 
-		vp_GlobalEvent<bool>.Unregister("EnableErrorDialog", (bool enable) => { enabled = enable; });
+            vp_GlobalEvent<bool>.Register("EnableErrorDialog", (bool enable)=> { enabled = enable;  });
 
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void Start()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void OnDisable()
+        {
 
-		m_BlackTexture = new Texture2D(1, 1);
-		m_BlackTexture.SetPixel(0, 0, new Color(0, 0, 0, 1));
+            if (Active)
+                Application.logMessageReceived -= HandleLog;
 
-	}
+            vp_GlobalEvent<bool>.Unregister("EnableErrorDialog", (bool enable) => { enabled = enable; });
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void Start()
+        {
+
+            m_BlackTexture = new Texture2D(1, 1);
+            m_BlackTexture.SetPixel(0, 0, new Color(0, 0, 0, 1));
+
+        }
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public void HandleLog(string logString, string stackTrace, LogType type)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        public void HandleLog(string logString, string stackTrace, LogType type)
+        {
 
-		if (m_ThereHasBeenACrash)
-			return;
+            if (m_ThereHasBeenACrash)
+                return;
 
-		m_CanShowKeepPlayingButton = (Time.time > m_NextAllowedShowKeepPlayingButtonTime);	// don't allow 'keep playing' if unity keeps crashing every frame
+            m_CanShowKeepPlayingButton = (Time.time > m_NextAllowedShowKeepPlayingButtonTime);	// don't allow 'keep playing' if unity keeps crashing every frame
 
-		if ((type != LogType.Error) && (type != LogType.Exception))
-			return;
+            if ((type != LogType.Error) && (type != LogType.Exception))
+                return;
 
-		// init window rect with current screen res
-		m_WindowRect.x = (Screen.width * 0.5f) - (m_WindowRect.width * 0.5f);
-		m_WindowRect.y = (Screen.height * 0.5f) - (m_WindowRect.height * 0.5f);
+            // init window rect with current screen res
+            m_WindowRect.x = (Screen.width * 0.5f) - (m_WindowRect.width * 0.5f);
+            m_WindowRect.y = (Screen.height * 0.5f) - (m_WindowRect.height * 0.5f);
 
-		// handle editor pause
-		m_PauseFrameCounter = 2;
-		m_ThereHasBeenACrash = true;
+            // handle editor pause
+            m_PauseFrameCounter = 2;
+            m_ThereHasBeenACrash = true;
 
-		// store error message
-		m_Message = logString;
-		m_LineInfo = stackTrace;
-		if (!string.IsNullOrEmpty(m_LineInfo))
-		{
-			m_LineInfo = m_LineInfo.Remove(0, m_LineInfo.LastIndexOf("/") + 1);
+            // store error message
+            m_Message = logString;
+            m_LineInfo = stackTrace;
+            if (!string.IsNullOrEmpty(m_LineInfo))
+            {
+                m_LineInfo = m_LineInfo.Remove(0, m_LineInfo.LastIndexOf("/") + 1);
 #if UNITY_EDITOR
-			m_LineInfo = m_LineInfo.Remove(m_LineInfo.LastIndexOf(")"));
+                m_LineInfo = m_LineInfo.Remove(m_LineInfo.LastIndexOf(")"));
 #endif
-		}
+            }
 
-		// suppress external components
-		if (FPInput != null)
-		{
-			m_CursorWasForced = FPInput.MouseCursorForced;
-			m_InputWasAllowed = FPInput.AllowGameplayInput;
-		}
-		if (Chat != null)
-			m_ChatWasEnabled = Chat.enabled;
+            // suppress external components
+            if (FPInput != null)
+            {
+                m_CursorWasForced = FPInput.MouseCursorForced;
+                m_InputWasAllowed = FPInput.AllowGameplayInput;
+            }
+            if (Chat != null)
+                m_ChatWasEnabled = Chat.enabled;
 
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public bool Active
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Active
+        {
 
-		get
-		{
-			if ((Application.isEditor && !ShowInEditor)
+            get
+            {
+                if ((Application.isEditor && !ShowInEditor)
 #if UNITY_5_3 || UNITY_5_4 || UNITY_5_5 || UNITY_5_6 || UNITY_2017_1
                 || (Application.isWebPlayer && !ShowInWebplayer)
 #endif
-                || (Application.isMobilePlatform && !ShowOnMobile)
-				|| (Application.isConsolePlatform && !ShowOnConsole))
-				return false;
+                    || (Application.isMobilePlatform && !ShowOnMobile)
+                    || (Application.isConsolePlatform && !ShowOnConsole))
+                    return false;
 
-			if ((!Application.isEditor)
+                if ((!Application.isEditor)
 #if UNITY_5_3 || UNITY_5_4 || UNITY_5_5 || UNITY_5_6 || UNITY_2017_1
                 && (!Application.isWebPlayer)
 #endif
-                && (!Application.isMobilePlatform)
-				&& (!Application.isConsolePlatform)
-				&& !ShowInStandalone)
-				return false;
+                    && (!Application.isMobilePlatform)
+                    && (!Application.isConsolePlatform)
+                    && !ShowInStandalone)
+                    return false;
 
-			return true;
-		}
+                return true;
+            }
 
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void Update()
-	{
-
-		// this is needed to detect the editor pause state from outside an editor class
-		if (m_IsPaused)
-			m_PauseFrameCounter--;
-
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void OnGUI()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void Update()
+        {
 
-		GUI.depth = 100;
-		if (!m_ThereHasBeenACrash)
-			return;
+            // this is needed to detect the editor pause state from outside an editor class
+            if (m_IsPaused)
+                m_PauseFrameCounter--;
 
-		GUI.color = Color.black;
-		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), m_BlackTexture);
-		GUI.color = Color.white;
-		m_WindowRect = GUI.Window(0, m_WindowRect, WindowFunc, "BOOM!");
-
-		if (FPInput != null)
-		{
-			FPInput.MouseCursorForced = true;
-			FPInput.AllowGameplayInput = false;
-		}
-		if (Chat != null)
-			Chat.enabled = false;
-
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void WindowFunc(int windowID)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void OnGUI()
+        {
 
-		string errorMessage = m_Message + (!string.IsNullOrEmpty(m_LineInfo) ? " --> " + m_LineInfo : "");
+            GUI.depth = 100;
+            if (!m_ThereHasBeenACrash)
+                return;
 
-		GUI.Label(new Rect(m_Padding, m_Padding, m_WindowRect.width - (m_Padding * 2), m_WindowRect.height - (m_Padding * 2) + 10),
-			"There has been a CRASH and the game is running in a BAD STATE!\n\n" +
-			"Message:\n" + errorMessage);
+            GUI.color = Color.black;
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), m_BlackTexture);
+            GUI.color = Color.white;
+            m_WindowRect = GUI.Window(0, m_WindowRect, WindowFunc, "BOOM!");
 
-		float x = m_Padding;
-		float buttonwidth = ((m_WindowRect.width - (m_Padding)) / 3);
+            if (FPInput != null)
+            {
+                FPInput.MouseCursorForced = true;
+                FPInput.AllowGameplayInput = false;
+            }
+            if (Chat != null)
+                Chat.enabled = false;
 
-#if UNITY_EDITOR
-		if (m_IsPaused)
-		{
-			GUI.Label(new Rect(x, m_WindowRect.height - (m_Padding * 3) - 10, m_WindowRect.width, 20), "(Unpause Editor to activate buttons)");
-			GUI.color = new Color(1, 1, 1, 0.7f);
-			GUI.enabled = false;
-		}
-#endif
+        }
 
-		// --- button: 'Copy to Clipboard' ---
-		if (DrawButton(x, buttonwidth, "Copy to Clipboard"))
-			CopyToClipboard(errorMessage);
-		x += buttonwidth;
 
-		// --- button: 'Keep Playing' ---
-		if (m_CanShowKeepPlayingButton)
-		{
-			if (DrawButton(x, buttonwidth * 1.3f, "Keep Playing (not recommended)"))
-			{
-				m_NextAllowedShowKeepPlayingButtonTime = Time.time + 0.1f;	// any crash dialog spawning within this timeframe will be unable to keep playing
-				Reset();
-			}
-		}
-		else
-			DrawLabel(x, buttonwidth * 1.3f, "Unable to keep playing.");
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void WindowFunc(int windowID)
+        {
 
-		x += buttonwidth * 1.3f;
+            string errorMessage = m_Message + (!string.IsNullOrEmpty(m_LineInfo) ? " --> " + m_LineInfo : "");
 
-		// --- button: 'Quit' ---
-		if (DrawButton(x, buttonwidth * 0.7f, "Quit"))
-			vp_Gameplay.Quit();
+            GUI.Label(new Rect(m_Padding, m_Padding, m_WindowRect.width - (m_Padding * 2), m_WindowRect.height - (m_Padding * 2) + 10),
+                      "There has been a CRASH and the game is running in a BAD STATE!\n\n" +
+                      "Message:\n" + errorMessage);
+
+            float x = m_Padding;
+            float buttonwidth = ((m_WindowRect.width - (m_Padding)) / 3);
 
 #if UNITY_EDITOR
-		GUI.color = Color.white;
-		GUI.enabled = true;
+            if (m_IsPaused)
+            {
+                GUI.Label(new Rect(x, m_WindowRect.height - (m_Padding * 3) - 10, m_WindowRect.width, 20), "(Unpause Editor to activate buttons)");
+                GUI.color = new Color(1, 1, 1, 0.7f);
+                GUI.enabled = false;
+            }
 #endif
 
-	}
+            // --- button: 'Copy to Clipboard' ---
+            if (DrawButton(x, buttonwidth, "Copy to Clipboard"))
+                CopyToClipboard(errorMessage);
+            x += buttonwidth;
+
+            // --- button: 'Keep Playing' ---
+            if (m_CanShowKeepPlayingButton)
+            {
+                if (DrawButton(x, buttonwidth * 1.3f, "Keep Playing (not recommended)"))
+                {
+                    m_NextAllowedShowKeepPlayingButtonTime = Time.time + 0.1f;	// any crash dialog spawning within this timeframe will be unable to keep playing
+                    Reset();
+                }
+            }
+            else
+                DrawLabel(x, buttonwidth * 1.3f, "Unable to keep playing.");
+
+            x += buttonwidth * 1.3f;
+
+            // --- button: 'Quit' ---
+            if (DrawButton(x, buttonwidth * 0.7f, "Quit"))
+                vp_Gameplay.Quit();
+
+#if UNITY_EDITOR
+            GUI.color = Color.white;
+            GUI.enabled = true;
+#endif
+
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void CopyToClipboard(string s)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void CopyToClipboard(string s)
+        {
 
-		TextEditor te = new TextEditor();
-        te.text = s;
-        te.SelectAll();
-		te.Copy();
+            TextEditor te = new TextEditor();
+            te.text = s;
+            te.SelectAll();
+            te.Copy();
 	
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public void Reset()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Reset()
+        {
 
-		m_ThereHasBeenACrash = false;
+            m_ThereHasBeenACrash = false;
 		
-		if (FPInput != null)
-		{
-			FPInput.AllowGameplayInput = true; // m_InputWasAllowed		// ('true' probably works better in most cases)
-			FPInput.MouseCursorForced = m_CursorWasForced;
-		}
+            if (FPInput != null)
+            {
+                FPInput.AllowGameplayInput = true; // m_InputWasAllowed		// ('true' probably works better in most cases)
+                FPInput.MouseCursorForced = m_CursorWasForced;
+            }
 
-		if (Chat != null)
-			Chat.enabled = true; // m_ChatWasEnabled		// ('true' probably works better in most cases)
+            if (Chat != null)
+                Chat.enabled = true; // m_ChatWasEnabled		// ('true' probably works better in most cases)
 
-		m_TriedToFindChat = false;
+            m_TriedToFindChat = false;
 
-	}
-
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected bool DrawButton(float x, float buttonWidth, string caption)
-	{
-		return GUI.Button(new Rect(x, m_WindowRect.height - (m_Padding * 2), buttonWidth - m_Padding, 20), caption);
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void DrawLabel(float x, float buttonWidth, string caption)
-	{
-		GUIStyle style = new GUIStyle("Label");
-		style.alignment = TextAnchor.MiddleCenter;
-		GUI.Label(new Rect(x, m_WindowRect.height - (m_Padding * 2), buttonWidth - m_Padding, 20), caption, style);
-	}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected bool DrawButton(float x, float buttonWidth, string caption)
+        {
+            return GUI.Button(new Rect(x, m_WindowRect.height - (m_Padding * 2), buttonWidth - m_Padding, 20), caption);
+        }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void DrawLabel(float x, float buttonWidth, string caption)
+        {
+            GUIStyle style = new GUIStyle("Label");
+            style.alignment = TextAnchor.MiddleCenter;
+            GUI.Label(new Rect(x, m_WindowRect.height - (m_Padding * 2), buttonWidth - m_Padding, 20), caption, style);
+        }
+
+
+    }
 }
 
 

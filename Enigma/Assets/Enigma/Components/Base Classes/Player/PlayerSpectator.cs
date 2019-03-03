@@ -1,7 +1,7 @@
-﻿using Assets.Enigma.Components.UI.MenuSelection;
+﻿using Enigma.Components.UI.MenuSelection;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Player
+namespace Enigma.Components.Base_Classes.Player
 {
     public class PlayerSpectator : MonoBehaviour
     {

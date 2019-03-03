@@ -20,35 +20,39 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Attributes;
 using UnityEngine;
 
-[System.Serializable]
-public class vp_MPPlayerType : ScriptableObject
+namespace UFPS.Multiplayer.Scripts.Player
 {
+    [System.Serializable]
+    public class vp_MPPlayerType : ScriptableObject
+    {
 
-	public vp_MPPlayerType()
-	{
-	}
-
-#if UNITY_EDITOR
-	[vp_Separator]	public vp_Separator s1;
-#endif
-	public string DisplayName;
-	public string Description;
-	public Texture2D Icon;
+        public vp_MPPlayerType()
+        {
+        }
 
 #if UNITY_EDITOR
-	[vp_Separator]	public vp_Separator s2;
+        [vp_Separator]	public vp_Separator s1;
 #endif
-
-	public GameObject LocalPrefab;
-	public GameObject RemotePrefab;
+        public string DisplayName;
+        public string Description;
+        public Texture2D Icon;
 
 #if UNITY_EDITOR
-	[vp_HelpBox("This object declares a visual player type for multiplayer. It determines what local- and remote player prefab to spawn for a certain type of player.\n", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
-	public float mpPlayerTypeHelp;
+        [vp_Separator]	public vp_Separator s2;
+#endif
+
+        public GameObject LocalPrefab;
+        public GameObject RemotePrefab;
+
+#if UNITY_EDITOR
+        [vp_HelpBox("This object declares a visual player type for multiplayer. It determines what local- and remote player prefab to spawn for a certain type of player.\n", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
+        public float mpPlayerTypeHelp;
 #endif
 
 
+    }
 }
 

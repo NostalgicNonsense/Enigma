@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityStandardAssets.Water
+namespace Marketplace.Standard_Assets.Environment.Water.Water.Scripts
 {
     public class MeshContainer
     {

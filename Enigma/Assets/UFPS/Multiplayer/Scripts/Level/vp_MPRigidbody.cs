@@ -36,258 +36,266 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
 using System.Collections.Generic;
-
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay;
+using UFPS.Multiplayer.Scripts.Player;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 #if UNITY_5_4_OR_NEWER
-	using UnityEngine.SceneManagement;
+
 #endif
 
-[RequireComponent(typeof(PhotonView))]
-[RequireComponent(typeof(Rigidbody))]
-
-public class vp_MPRigidbody : Photon.MonoBehaviour
+namespace UFPS.Multiplayer.Scripts.Level
 {
+    [RequireComponent(typeof(PhotonView))]
+    [RequireComponent(typeof(Rigidbody))]
 
-	protected Vector3 m_LastPosition = Vector3.zero;
-	protected Quaternion m_LastRotation = Quaternion.identity;
+    public class vp_MPRigidbody : MonoBehaviour
+    {
 
-	protected Rigidbody m_Rigidbody = null;
-	protected Rigidbody Rigidbody
-	{
-		get
-		{
-			m_Rigidbody = GetComponent<Rigidbody>();
-			return m_Rigidbody;
-		}
-	}
+        protected Vector3 m_LastPosition = Vector3.zero;
+        protected Quaternion m_LastRotation = Quaternion.identity;
 
-	// NOTE: for use by derived classes
-	protected Collider m_Collider = null;
-	protected Collider Collider
-	{
-		get
-		{
-			if ((m_Collider == null) && (Rigidbody != null))
-				m_Collider = Rigidbody.GetComponent<Collider>();
-			return m_Collider;
-		}
-	}
+        protected Rigidbody m_Rigidbody = null;
+        protected Rigidbody Rigidbody
+        {
+            get
+            {
+                m_Rigidbody = GetComponent<Rigidbody>();
+                return m_Rigidbody;
+            }
+        }
 
-	protected Transform m_Transform = null;
-	protected Transform Transform
-	{
-		get
-		{
-			if (m_Transform == null)
-				m_Transform = transform;
-			return m_Transform;
-		}
-	}
+        // NOTE: for use by derived classes
+        protected Collider m_Collider = null;
+        protected Collider Collider
+        {
+            get
+            {
+                if ((m_Collider == null) && (Rigidbody != null))
+                    m_Collider = Rigidbody.GetComponent<Collider>();
+                return m_Collider;
+            }
+        }
 
-	// list of every vp_MPRigidbody in the scene
-	public static List<vp_MPRigidbody> Instances = new List<vp_MPRigidbody>();
+        protected Transform m_Transform = null;
+        protected Transform Transform
+        {
+            get
+            {
+                if (m_Transform == null)
+                    m_Transform = transform;
+                return m_Transform;
+            }
+        }
 
-
-	/// <summary>
-	/// 
-	/// </summary>
-	void Awake()
-	{
-		// add every vp_MPRigidbody to this list so we can refresh master
-		// control whether it's enabled / active or not
-		Instances.Add(this);
-	}
+        // list of every vp_MPRigidbody in the scene
+        public static List<vp_MPRigidbody> Instances = new List<vp_MPRigidbody>();
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	private void OnEnable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        void Awake()
+        {
+            // add every vp_MPRigidbody to this list so we can refresh master
+            // control whether it's enabled / active or not
+            Instances.Add(this);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void OnEnable()
+        {
 
 #if UNITY_5_4_OR_NEWER
-		SceneManager.sceneLoaded += OnLevelLoad;
+            SceneManager.sceneLoaded += OnLevelLoad;
 #endif
 
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	private void OnDisable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        private void OnDisable()
+        {
 
 #if UNITY_5_4_OR_NEWER
-		SceneManager.sceneLoaded -= OnLevelLoad;
+            SceneManager.sceneLoaded -= OnLevelLoad;
 #endif
 
-	}
+        }
 
 	
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void Start()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void Start()
+        {
 
-		// set up the photonview to observe this monobehaviour
-        photonView.ObservedComponents.Add(this);
-		photonView.synchronization = ViewSynchronization.UnreliableOnChange;
+            // set up the photonview to observe this monobehaviour
+            photonView.ObservedComponents.Add(this);
+            photonView.synchronization = ViewSynchronization.UnreliableOnChange;
 
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void FixedUpdate()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void FixedUpdate()
+        {
 
-		if (vp_Gameplay.IsMaster)	// NOTE: instead of 'photonView.isMine', which in this case would result in erratic object movement at start of game
-			return;
+            if (vp_Gameplay.IsMaster)	// NOTE: instead of 'photonView.isMine', which in this case would result in erratic object movement at start of game
+                return;
 
-		// NOTE: the below must all happen in FixedUpdate or non-master clients will
-		// be knocked off platforms
+            // NOTE: the below must all happen in FixedUpdate or non-master clients will
+            // be knocked off platforms
 
-		// smooth out movement by performing a plain lerp of the last incoming position and rotation
-		Transform.position = Vector3.Lerp(Transform.position, m_LastPosition, Time.deltaTime * 15.0f);
-		Transform.rotation = Quaternion.Lerp(Transform.rotation, m_LastRotation, Time.deltaTime * 15.0f);
+            // smooth out movement by performing a plain lerp of the last incoming position and rotation
+            Transform.position = Vector3.Lerp(Transform.position, m_LastPosition, Time.deltaTime * 15.0f);
+            Transform.rotation = Quaternion.Lerp(Transform.rotation, m_LastRotation, Time.deltaTime * 15.0f);
 
-		if (vp_Gameplay.IsMultiplayer && !vp_Gameplay.IsMaster && vp_MPLocalPlayer.Instance != null)
-		{
-			if (vp_MPLocalPlayer.Instance.Player.Platform.Get() == transform)
-			{
-				vp_MPLocalPlayer.Instance.Player.Move.Send(vp_MathUtility.NaNSafeVector3(transform.TransformPoint(vp_MPLocalPlayer.Instance.Controller.PositionOnPlatform) -
-																			vp_MPLocalPlayer.Instance.transform.position));
-			}
-		}
+            if (vp_Gameplay.IsMultiplayer && !vp_Gameplay.IsMaster && vp_MPLocalPlayer.Instance != null)
+            {
+                if (vp_MPLocalPlayer.Instance.Player.Platform.Get() == transform)
+                {
+                    vp_MPLocalPlayer.Instance.Player.Move.Send(vp_MathUtility.NaNSafeVector3(transform.TransformPoint(vp_MPLocalPlayer.Instance.Controller.PositionOnPlatform) -
+                                                                                             vp_MPLocalPlayer.Instance.transform.position));
+                }
+            }
 
-	}
+        }
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
 
-		if (stream.isWriting)
-		{
-			stream.SendNext((Vector3)Transform.position);
-			stream.SendNext((Quaternion)Transform.rotation);
-		}
-		else
-		{
-			m_LastPosition = (Vector3)stream.ReceiveNext();
-			m_LastRotation = (Quaternion)stream.ReceiveNext();
-		}
+            if (stream.isWriting)
+            {
+                stream.SendNext((Vector3)Transform.position);
+                stream.SendNext((Quaternion)Transform.rotation);
+            }
+            else
+            {
+                m_LastPosition = (Vector3)stream.ReceiveNext();
+                m_LastRotation = (Quaternion)stream.ReceiveNext();
+            }
 
-	}
+        }
 	
 
-	/// <summary>
-	/// refreshes master control whenever a master client handover occurs
-	/// </summary>
-	protected virtual void OnPhotonPlayerDisconnected(PhotonPlayer player)
-	{
+        /// <summary>
+        /// refreshes master control whenever a master client handover occurs
+        /// </summary>
+        protected virtual void OnPhotonPlayerDisconnected(PhotonPlayer player)
+        {
 
-		RefreshMasterControl();
+            RefreshMasterControl();
 
-		Nudge();
+            Nudge();
 
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void OnPhotonPlayerConnected(PhotonPlayer player)
-	{
-
-		Nudge();
-
-	}
+        }
 
 
-	/// <summary>
-	/// TEMP: nudges all platforms with players on them to force player
-	/// positions in sync for when someone joins or leaves
-	/// </summary>
-	void Nudge()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnPhotonPlayerConnected(PhotonPlayer player)
+        {
 
-		if (!vp_Gameplay.IsMaster)
-			return;
+            Nudge();
 
-		foreach (vp_MPNetworkPlayer p in vp_MPNetworkPlayer.Players.Values)
-		{
-			if (p == null)
-				continue;
-			if (p.Player.Platform.Get() == Transform)
-			{
-				Transform.position += (Vector3.down * 0.1f);
-				vp_Timer.In(1.0f, () => { Transform.localEulerAngles -= (Vector3.down * 0.1f); });
-			}
-		}
-
-	}
+        }
 
 
-	/// <summary>
-	/// refreshes master control every time you join a room
-	/// </summary>
-	protected virtual void OnJoinedRoom()
-	{
-		RefreshMasterControl();
-	}
+        /// <summary>
+        /// TEMP: nudges all platforms with players on them to force player
+        /// positions in sync for when someone joins or leaves
+        /// </summary>
+        void Nudge()
+        {
+
+            if (!vp_Gameplay.IsMaster)
+                return;
+
+            foreach (vp_MPNetworkPlayer p in vp_MPNetworkPlayer.Players.Values)
+            {
+                if (p == null)
+                    continue;
+                if (p.Player.Platform.Get() == Transform)
+                {
+                    Transform.position += (Vector3.down * 0.1f);
+                    vp_Timer.In(1.0f, () => { Transform.localEulerAngles -= (Vector3.down * 0.1f); });
+                }
+            }
+
+        }
 
 
-	/// <summary>
-	/// enables rigidbody physics on the master client and disables
-	/// it on all other machines
-	/// </summary>
-	protected virtual void RefreshMasterControl()
-	{
+        /// <summary>
+        /// refreshes master control every time you join a room
+        /// </summary>
+        protected virtual void OnJoinedRoom()
+        {
+            RefreshMasterControl();
+        }
 
-		Rigidbody.isKinematic = !PhotonNetwork.isMasterClient;
 
-	}
+        /// <summary>
+        /// enables rigidbody physics on the master client and disables
+        /// it on all other machines
+        /// </summary>
+        protected virtual void RefreshMasterControl()
+        {
+
+            Rigidbody.isKinematic = !PhotonNetwork.isMasterClient;
+
+        }
 	
 
-	/// <summary>
-	/// call this to make the master take over all vp_MPRigidbodies in the
-	/// scene, regardless of whether they are enabled / active or not
-	/// </summary>
-	public static void RefreshMasterControlAll()
-	{
+        /// <summary>
+        /// call this to make the master take over all vp_MPRigidbodies in the
+        /// scene, regardless of whether they are enabled / active or not
+        /// </summary>
+        public static void RefreshMasterControlAll()
+        {
 
-		foreach (vp_MPRigidbody r in Instances)
-		{
-			r.RefreshMasterControl();
-		}
+            foreach (vp_MPRigidbody r in Instances)
+            {
+                r.RefreshMasterControl();
+            }
 
-	}
+        }
 
 
-	/// <summary>
-	/// clears list of scene vp_MPRigidbodies in the event of a level load
-	/// </summary>
+        /// <summary>
+        /// clears list of scene vp_MPRigidbodies in the event of a level load
+        /// </summary>
 #if UNITY_5_4_OR_NEWER
-	protected void OnLevelLoad(Scene scene, LoadSceneMode mode)
+        protected void OnLevelLoad(Scene scene, LoadSceneMode mode)
 #else
 	protected void OnLevelWasLoaded()
 #endif
-	{
+        {
 
-		RefreshMasterControl();
+            RefreshMasterControl();
 
-		Instances.Clear();
+            Instances.Clear();
 
-	}
+        }
 	
 
+    }
 }
 
 

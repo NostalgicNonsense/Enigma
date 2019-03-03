@@ -8,22 +8,22 @@
 // <author>developer@exitgames.com</author>
 // ----------------------------------------------------------------------------
 
-using UnityEngine;
-using System.Collections;
-
-[System.Serializable]
-public class PhotonTransformViewScaleModel 
+namespace Photon_Unity_Networking.Plugins.PhotonNetwork.Views
 {
-    public enum InterpolateOptions
+    [System.Serializable]
+    public class PhotonTransformViewScaleModel 
     {
-        Disabled,
-        MoveTowards,
-        Lerp,
+        public enum InterpolateOptions
+        {
+            Disabled,
+            MoveTowards,
+            Lerp,
+        }
+
+        public bool SynchronizeEnabled;
+
+        public InterpolateOptions InterpolateOption = InterpolateOptions.Disabled;
+        public float InterpolateMoveTowardsSpeed = 1f;
+        public float InterpolateLerpSpeed;
     }
-
-    public bool SynchronizeEnabled;
-
-    public InterpolateOptions InterpolateOption = InterpolateOptions.Disabled;
-    public float InterpolateMoveTowardsSpeed = 1f;
-    public float InterpolateLerpSpeed;
 }

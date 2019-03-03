@@ -30,26 +30,29 @@
 
 using UnityEngine;
 
-public class vp_ParticleFXPooler : MonoBehaviour
+namespace UFPS.Base.Scripts.Core.Utility
 {
-
-	ParticleSystem m_ShurikenParticleSystem = null;
-
-	/// <summary>
-	/// 
-	/// </summary>
-	void Awake()
-	{
-		m_ShurikenParticleSystem = GetComponent<ParticleSystem>();
-	}
-
-    /// <summary>
-    /// 
-    /// </summary>
-    void Update()
+    public class vp_ParticleFXPooler : MonoBehaviour
     {
-        if (!m_ShurikenParticleSystem.IsAlive())
-            vp_Utility.Destroy(gameObject);
 
+        ParticleSystem m_ShurikenParticleSystem = null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void Awake()
+        {
+            m_ShurikenParticleSystem = GetComponent<ParticleSystem>();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void Update()
+        {
+            if (!m_ShurikenParticleSystem.IsAlive())
+                vp_Utility.Destroy(gameObject);
+
+        }
     }
 }

@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using Assets.Enigma.Components.Base_Classes.Commander;
-using Assets.Enigma.Components.UI.Commander;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
+﻿using Enigma.Components.Base_Classes.Command;
+using Enigma.Components.Base_Classes.TeamSettings.Resources;
+using UnityEngine;
 
-namespace Assets.Enigma.Components.UI
+namespace Enigma.Components.UI.Commander
 {
     public class UICommander : MonoBehaviour
     {
