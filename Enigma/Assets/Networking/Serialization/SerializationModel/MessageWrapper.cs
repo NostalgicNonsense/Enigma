@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UtilityCode.Extensions;
 
 namespace Networking.Serialization.SerializationModel
 {
@@ -10,17 +9,17 @@ namespace Networking.Serialization.SerializationModel
     {
         public Guid Guid { get; }
 
-        public IEnumerable<Component> GameObjects { get; }
+        public IEnumerable<object> GameObjects { get; }
 
         public NetworkWrapper(NetworkEntity entity)
         {
             Guid = entity.Guid;
-            GameObjects = entity.GetAllComponents();
+            GameObjects = entity.GetComponents(typeof(NetworkedComponent));
         }
 
-        public NetworkWrapper(NetworkEntity entity, IEnumerable<Component> gameObjectsToSend)
+        public NetworkWrapper(Guid guid, IEnumerable<object> gameObjectsToSend)
         {
-            Guid = entity.Guid;
+            Guid = guid;
             GameObjects = gameObjectsToSend;
         }
     }

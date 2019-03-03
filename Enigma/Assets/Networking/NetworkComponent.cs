@@ -15,12 +15,12 @@ namespace Networking.Serialization
 
         protected void SendAsync()
         {
-            
+            _networkEntity.SendAsync(this);
         }
 
         protected void SendSync()
         {
-
+            _networkEntity.SendAsync(this);
         }
 
         protected void Update()

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Networking.Serialization;
+using Networking.Serialization.SerializationModel;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Networking
 {
@@ -19,16 +19,19 @@ namespace Networking
             _connectHandlerInstance = ConnectionHandler.ConnectionHandlerInstance;
             _networkedComponentsInGameObject = components.ToDictionary(c => c.GetType(), v => new UpdateEvent<Component>(v));
             _connectHandlerInstance.AddListener(this);
+            _connectHandlerInstance.SendTcpUpdate(new NetworkWrapper(this));
         }
 
         public void SendAsync(object obj)
         {
-            _connectHandlerInstance.SendUdpUpdate(obj);
+            var message = new NetworkWrapper(this.Guid, new[] {obj});
+            _connectHandlerInstance.SendUdpUpdate(message);
         }
 
         public void SendSync(object obj)
         {
-            _connectHandlerInstance.SendTcpUpdate(obj);
+            var message = new NetworkWrapper(this.Guid, new[] { obj });
+            _connectHandlerInstance.SendTcpUpdate(message);
         }
 
         /// <summary>
