@@ -23,14 +23,17 @@ namespace Networking.Serialization
             }); 
         }
 
+        public object Deserialize(JObject value)
+        {
+            var bestMatchedType =
+                _serializationTargets
+                    .OrderByDescending(c => c.GetNumberOfParameterNameMatches(JObject.FromObject(value))).First();
+            return bestMatchedType.ReturnObjectOfType(value);
+        }
 
         public object Deserialize(string value)
         {
-            var jObject = JsonConvert.DeserializeObject(value);
-            var bestMatchedType =
-                _serializationTargets
-                    .OrderByDescending(c => c.GetNumberOfParameterNameMatches(JObject.FromObject(jObject))).First();
-            return bestMatchedType.ReturnObjectOfType(value);
+            return Deserialize(JObject.Parse(value));
         }
 
         public string Serialize(object value)
