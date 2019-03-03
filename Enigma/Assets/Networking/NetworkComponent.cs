@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
-namespace Networking.Serialization
+namespace Networking
 {
     [RequireComponent(typeof(NetworkEntity))]
     public abstract class NetworkedComponent : MonoBehaviour
     {
         private NetworkEntity _networkEntity;
+        private bool HasNetworkAuthority { get; } // haven't decided how to do this yet.
 
         public void Start()
         {
@@ -28,5 +28,6 @@ namespace Networking.Serialization
             var obj = this; // have to create a reference value to pass 
             _networkEntity.TryGetUpdates(ref obj);
         }
+        
     }
 }
