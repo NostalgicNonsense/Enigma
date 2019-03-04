@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Marketplace.Standard_Assets.Vehicles.Car.Scripts
 {
     [RequireComponent(typeof (AudioSource))]
     public class WheelEffects : MonoBehaviour

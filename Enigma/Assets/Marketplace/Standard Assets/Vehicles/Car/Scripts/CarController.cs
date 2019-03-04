@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityStandardAssets.Vehicles.Car;
 
-namespace Assets.Marketplace.Standard_Assets.Vehicles.Car.Scripts
+namespace Marketplace.Standard_Assets.Vehicles.Car.Scripts
 {
     internal enum CarDriveType
     {

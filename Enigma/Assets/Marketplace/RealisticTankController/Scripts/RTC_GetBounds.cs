@@ -9,37 +9,40 @@
 
 using UnityEngine;
 
-/// <summary>
-/// Getting total bound size of a gameobject.
-/// </summary>
-public class RTC_GetBounds : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    /// <summary>
+    /// Getting total bound size of a gameobject.
+    /// </summary>
+    public class RTC_GetBounds : MonoBehaviour {
 	
-	public static Vector3 GetBoundsCenter(Transform obj){
+        public static Vector3 GetBoundsCenter(Transform obj){
 		
-		// get the maximum bounds extent of object, including all child renderers,
-		// but excluding particles and trails, for FOV zooming effect.
+            // get the maximum bounds extent of object, including all child renderers,
+            // but excluding particles and trails, for FOV zooming effect.
 
-		var renderers = obj.GetComponentsInChildren<Renderer>();
+            var renderers = obj.GetComponentsInChildren<Renderer>();
 
-		Bounds bounds = new Bounds();
-		bool initBounds = false;
-		foreach (Renderer r in renderers){
+            Bounds bounds = new Bounds();
+            bool initBounds = false;
+            foreach (Renderer r in renderers){
 			
-			if (!((r is TrailRenderer) || (r is ParticleSystemRenderer))){
+                if (!((r is TrailRenderer) || (r is ParticleSystemRenderer))){
 				
-				if (!initBounds){
-					initBounds = true;
-					bounds = r.bounds;
-				}else{
-					bounds.Encapsulate(r.bounds);
-				}
-			}
+                    if (!initBounds){
+                        initBounds = true;
+                        bounds = r.bounds;
+                    }else{
+                        bounds.Encapsulate(r.bounds);
+                    }
+                }
 
-		}
+            }
 
-		Vector3 center = bounds.center;
-		return center;
+            Vector3 center = bounds.center;
+            return center;
 
-	}
+        }
 
+    }
 }

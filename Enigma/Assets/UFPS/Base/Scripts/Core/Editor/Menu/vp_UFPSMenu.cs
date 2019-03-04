@@ -9,6 +9,10 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.EventSystem;
+using UFPS.Base.Scripts.Effects.SurfaceSystem;
+using UFPS.Base.Scripts.Gameplay.Combat;
+using UFPS.Base.Scripts.Gameplay.Inventory.ItemTypes;
 using UnityEngine;
 using UnityEditor;
 

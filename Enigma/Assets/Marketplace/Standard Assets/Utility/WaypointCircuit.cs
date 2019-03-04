@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 
+namespace Marketplace.Standard_Assets.Utility
+{
 #endif
 
-namespace UnityStandardAssets.Utility
-{
     public class WaypointCircuit : MonoBehaviour
     {
         public WaypointList waypointList = new WaypointList();
@@ -217,10 +216,7 @@ namespace UnityStandardAssets.Utility
             }
         }
     }
-}
 
-namespace UnityStandardAssets.Utility.Inspector
-{
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof (WaypointCircuit.WaypointList))]
     public class WaypointListDrawer : PropertyDrawer

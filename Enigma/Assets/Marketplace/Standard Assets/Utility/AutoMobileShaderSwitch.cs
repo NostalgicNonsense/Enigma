@@ -1,11 +1,11 @@
 using System;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
+
+namespace Marketplace.Standard_Assets.Utility
+{
 #endif
 
-namespace UnityStandardAssets.Utility
-{
     public class AutoMobileShaderSwitch : MonoBehaviour
     {
         [SerializeField] private ReplacementList m_ReplacementList;
@@ -78,10 +78,7 @@ namespace UnityStandardAssets.Utility
             public ReplacementDefinition[] items = new ReplacementDefinition[0];
         }
     }
-}
 
-namespace UnityStandardAssets.Utility.Inspector
-{
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof (AutoMobileShaderSwitch.ReplacementList))]
     public class ReplacementListDrawer : PropertyDrawer

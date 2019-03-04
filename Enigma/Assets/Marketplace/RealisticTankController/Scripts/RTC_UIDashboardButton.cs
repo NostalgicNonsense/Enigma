@@ -9,78 +9,81 @@
 
 using UnityEngine;
 
-/// <summary>
-/// UI buttons used in options panel. It has an enum for all kind of buttons. 
-/// </summary>
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Dashboard Button")]
-public class RTC_UIDashboardButton : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    /// <summary>
+    /// UI buttons used in options panel. It has an enum for all kind of buttons. 
+    /// </summary>
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Dashboard Button")]
+    public class RTC_UIDashboardButton : MonoBehaviour {
 
-	public ButtonType _buttonType;
-	public enum ButtonType{Fire, Start, Headlights, ChangeCamera, ChangeAmmunation};
+        public ButtonType _buttonType;
+        public enum ButtonType{Fire, Start, Headlights, ChangeCamera, ChangeAmmunation};
 
-	private RTC_TankController[] tankControllers;
+        private RTC_TankController[] tankControllers;
 
-	public void OnClicked () {
+        public void OnClicked () {
 
-		tankControllers = GameObject.FindObjectsOfType<RTC_TankController>();
+            tankControllers = GameObject.FindObjectsOfType<RTC_TankController>();
 
-		switch(_buttonType){
+            switch(_buttonType){
 
-		case ButtonType.Fire:
+                case ButtonType.Fire:
 
-			for(int i = 0; i < tankControllers.Length; i++){
+                    for(int i = 0; i < tankControllers.Length; i++){
 
-				if(tankControllers[i].canControl && !tankControllers[i].externalController)
-					tankControllers[i].GetComponent<RTC_TankGunController>().Fire();
+                        if(tankControllers[i].canControl && !tankControllers[i].externalController)
+                            tankControllers[i].GetComponent<RTC_TankGunController>().Fire();
 
-			}
+                    }
 			
-			break;
+                    break;
 
-		case ButtonType.Start:
+                case ButtonType.Start:
 
-			for(int i = 0; i < tankControllers.Length; i++){
+                    for(int i = 0; i < tankControllers.Length; i++){
 
-				if (tankControllers [i].canControl && !tankControllers [i].externalController) {
-					if(!tankControllers [i].engineRunning)
-						tankControllers [i].StartEngine ();
-					else
-						tankControllers [i].KillEngine ();
-				}
+                        if (tankControllers [i].canControl && !tankControllers [i].externalController) {
+                            if(!tankControllers [i].engineRunning)
+                                tankControllers [i].StartEngine ();
+                            else
+                                tankControllers [i].KillEngine ();
+                        }
 
-			}
+                    }
 
-			break;
+                    break;
 
-		case ButtonType.Headlights:
+                case ButtonType.Headlights:
 
-			for(int i = 0; i < tankControllers.Length; i++){
+                    for(int i = 0; i < tankControllers.Length; i++){
 
-				tankControllers[i].headLightsOn = !tankControllers[i].headLightsOn;
+                        tankControllers[i].headLightsOn = !tankControllers[i].headLightsOn;
 
-			}
+                    }
 
-			break;
+                    break;
 
-		case ButtonType.ChangeCamera:
+                case ButtonType.ChangeCamera:
 
-			GameObject.FindObjectOfType<RTC_MainCamera> ().ChangeCamera ();
+                    GameObject.FindObjectOfType<RTC_MainCamera> ().ChangeCamera ();
 
-			break;
+                    break;
 
-		case ButtonType.ChangeAmmunation:
+                case ButtonType.ChangeAmmunation:
 
-			for(int i = 0; i < tankControllers.Length; i++){
+                    for(int i = 0; i < tankControllers.Length; i++){
 
-				if(tankControllers[i].canControl && !tankControllers[i].externalController)
-					tankControllers[i].GetComponent<RTC_TankGunController>().ChangeAmmunation();
+                        if(tankControllers[i].canControl && !tankControllers[i].externalController)
+                            tankControllers[i].GetComponent<RTC_TankGunController>().ChangeAmmunation();
 
-			}
+                    }
 
-			break;
+                    break;
 
-		}
+            }
 
-	}
+        }
 
+    }
 }

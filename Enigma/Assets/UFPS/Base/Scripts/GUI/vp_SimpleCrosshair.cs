@@ -10,88 +10,92 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Gameplay.Player.Local;
 using UnityEngine;
 
-public class vp_SimpleCrosshair : MonoBehaviour
+namespace UFPS.Base.Scripts.GUI
 {
+    public class vp_SimpleCrosshair : MonoBehaviour
+    {
 
-	// crosshair texture
-	public Texture m_ImageCrosshair = null;
+        // crosshair texture
+        public Texture m_ImageCrosshair = null;
 
-	public bool Hide = false;					// use this if you want to hide the crosshair without disabling it (crosshair needs to be enabled for interaction to work)
-	public bool HideOnFirstPersonZoom = true;
-	public bool HideOnDeath = true;
+        public bool Hide = false;					// use this if you want to hide the crosshair without disabling it (crosshair needs to be enabled for interaction to work)
+        public bool HideOnFirstPersonZoom = true;
+        public bool HideOnDeath = true;
 	
-	protected vp_FPPlayerEventHandler m_Player = null;
+        protected vp_FPPlayerEventHandler m_Player = null;
 	
 	
-	protected virtual void Awake()
-	{
+        protected virtual void Awake()
+        {
 		
-		m_Player = GameObject.FindObjectOfType(typeof(vp_FPPlayerEventHandler)) as vp_FPPlayerEventHandler; // cache the player event handler
+            m_Player = GameObject.FindObjectOfType(typeof(vp_FPPlayerEventHandler)) as vp_FPPlayerEventHandler; // cache the player event handler
 		
-	}
+        }
 	
 	
-	/// <summary>
-	/// registers this component with the event handler (if any)
-	/// </summary>
-	protected virtual void OnEnable()
-	{
+        /// <summary>
+        /// registers this component with the event handler (if any)
+        /// </summary>
+        protected virtual void OnEnable()
+        {
 
-		// allow this monobehaviour to talk to the player event handler
-		if (m_Player != null)
-			m_Player.Register(this);
+            // allow this monobehaviour to talk to the player event handler
+            if (m_Player != null)
+                m_Player.Register(this);
 
-	}
-
-
-	/// <summary>
-	/// unregisters this component from the event handler (if any)
-	/// </summary>
-	protected virtual void OnDisable()
-	{
-
-		// unregister this monobehaviour from the player event handler
-		if (m_Player != null)
-			m_Player.Unregister(this);
-
-	}
+        }
 
 
-	/// <summary>
-	/// draws the crosshair texture smack in the middle of the screen
-	/// </summary>
-	void OnGUI()
-	{
+        /// <summary>
+        /// unregisters this component from the event handler (if any)
+        /// </summary>
+        protected virtual void OnDisable()
+        {
 
-		if (m_ImageCrosshair == null)
-			return;
+            // unregister this monobehaviour from the player event handler
+            if (m_Player != null)
+                m_Player.Unregister(this);
 
-		if (Hide)
-			return;
+        }
 
-		if(HideOnFirstPersonZoom && m_Player.Zoom.Active && m_Player.IsFirstPerson.Get())
-			return;
 
-		if(HideOnDeath && m_Player.Dead.Active)
-			return;
+        /// <summary>
+        /// draws the crosshair texture smack in the middle of the screen
+        /// </summary>
+        void OnGUI()
+        {
 
-		GUI.color = new Color(1, 1, 1, 0.8f);
-		GUI.DrawTexture(new Rect((Screen.width * 0.5f) - (m_ImageCrosshair.width * 0.5f),
-			(Screen.height * 0.5f) - (m_ImageCrosshair.height * 0.5f), m_ImageCrosshair.width,
-			m_ImageCrosshair.height), m_ImageCrosshair);
-		GUI.color = Color.white;
+            if (m_ImageCrosshair == null)
+                return;
+
+            if (Hide)
+                return;
+
+            if(HideOnFirstPersonZoom && m_Player.Zoom.Active && m_Player.IsFirstPerson.Get())
+                return;
+
+            if(HideOnDeath && m_Player.Dead.Active)
+                return;
+
+            UnityEngine.GUI.color = new Color(1, 1, 1, 0.8f);
+            UnityEngine.GUI.DrawTexture(new Rect((Screen.width * 0.5f) - (m_ImageCrosshair.width * 0.5f),
+                                     (Screen.height * 0.5f) - (m_ImageCrosshair.height * 0.5f), m_ImageCrosshair.width,
+                                     m_ImageCrosshair.height), m_ImageCrosshair);
+            UnityEngine.GUI.color = Color.white;
 	
-	}
+        }
 	
 	
-	protected virtual Texture OnValue_Crosshair
-	{
-		get { return m_ImageCrosshair; }
-		set { m_ImageCrosshair = value; }
-	}
+        protected virtual Texture OnValue_Crosshair
+        {
+            get { return m_ImageCrosshair; }
+            set { m_ImageCrosshair = value; }
+        }
 	
 
+    }
 }
 

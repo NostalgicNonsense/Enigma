@@ -8,6 +8,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using Debug = UnityEngine.Debug;
 using UnityEditor.SceneManagement;
 

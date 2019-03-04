@@ -14,72 +14,74 @@
 //
 ///////////////////////////////////////////////////////////////////////////////// 
 
+using UFPS.Base.Scripts.Core.Utility;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(vp_DamageHandler))]
-
-public class vp_Grenade : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Combat
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(vp_DamageHandler))]
 
-	public float LifeTime = 3.0f;
-	public float RigidbodyForce = 10.0f;		// this force will be applied to the rigidbody when spawned
-	public float RigidbodySpin = 0.0f;			// this much random torque will be applied to rigidbody when spawned.
-												// NOTE: spin is currently not recommended for use with the UFPS multiplayer add-on, since rigidbodies are not yet serialized!
+    public class vp_Grenade : MonoBehaviour
+    {
 
-	protected Rigidbody m_Rigidbody = null;
-	protected Transform m_Source = null;				// immediate cause of the damage
-	protected Transform m_OriginalSource = null;		// initial cause of the damage
+        public float LifeTime = 3.0f;
+        public float RigidbodyForce = 10.0f;		// this force will be applied to the rigidbody when spawned
+        public float RigidbodySpin = 0.0f;			// this much random torque will be applied to rigidbody when spawned.
+        // NOTE: spin is currently not recommended for use with the UFPS multiplayer add-on, since rigidbodies are not yet serialized!
 
-
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void Awake()
-	{
-		m_Rigidbody = GetComponent<Rigidbody>();
-	}
+        protected Rigidbody m_Rigidbody = null;
+        protected Transform m_Source = null;				// immediate cause of the damage
+        protected Transform m_OriginalSource = null;		// initial cause of the damage
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void OnEnable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void Awake()
+        {
+            m_Rigidbody = GetComponent<Rigidbody>();
+        }
 
-		if (m_Rigidbody == null)
-			return;
 
-		// destroy the grenade object in 'lifetime' seconds. this will only work
-		// if the object has a vp_DamageHandler-derived component on it
-		vp_Timer.In(LifeTime, ()=>
-		{
-			transform.SendMessage("DieBySources", new Transform[] { m_Source, m_OriginalSource }, SendMessageOptions.DontRequireReceiver);
-		});
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnEnable()
+        {
 
-		// apply force on spawn
-		if (RigidbodyForce != 0.0f)
-			m_Rigidbody.AddForce((transform.forward * RigidbodyForce), ForceMode.Impulse); 
-		if (RigidbodySpin != 0.0f)
-			m_Rigidbody.AddTorque(Random.rotation.eulerAngles * RigidbodySpin);
+            if (m_Rigidbody == null)
+                return;
+
+            // destroy the grenade object in 'lifetime' seconds. this will only work
+            // if the object has a vp_DamageHandler-derived component on it
+            vp_Timer.In(LifeTime, ()=>
+            {
+                transform.SendMessage("DieBySources", new Transform[] { m_Source, m_OriginalSource }, SendMessageOptions.DontRequireReceiver);
+            });
+
+            // apply force on spawn
+            if (RigidbodyForce != 0.0f)
+                m_Rigidbody.AddForce((transform.forward * RigidbodyForce), ForceMode.Impulse); 
+            if (RigidbodySpin != 0.0f)
+                m_Rigidbody.AddTorque(Random.rotation.eulerAngles * RigidbodySpin);
 		
-	}
+        }
 
 
-	/// <summary>
-	/// sets the inflictor (original source) of any resulting damage.
-	/// this is called by the 'vp_Shooter' script and is picked up by
-	/// various other scripts, especially in UFPS multiplayer add-on.
-	/// NOTE: this method must be called between spawning, and before
-	/// 'OnEnable' is called.
-	/// </summary>
-	public void SetSource(Transform source)
-	{
-		m_Source = transform;
-		m_OriginalSource = source;
-	}
+        /// <summary>
+        /// sets the inflictor (original source) of any resulting damage.
+        /// this is called by the 'vp_Shooter' script and is picked up by
+        /// various other scripts, especially in UFPS multiplayer add-on.
+        /// NOTE: this method must be called between spawning, and before
+        /// 'OnEnable' is called.
+        /// </summary>
+        public void SetSource(Transform source)
+        {
+            m_Source = transform;
+            m_OriginalSource = source;
+        }
 
 
+    }
 }

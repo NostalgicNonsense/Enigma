@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using Assets.Enigma.Components.Base_Classes.Buildings;
+﻿using Enigma.Components.Base_Classes.Buildings;
+using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.Base_Classes.TeamSettings.Resources;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
 
-namespace Assets.Enigma.Components.UI.Buildings
+namespace Enigma.Components.UI.Commander.Buildings
 {
     public class ButtonBuilding : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

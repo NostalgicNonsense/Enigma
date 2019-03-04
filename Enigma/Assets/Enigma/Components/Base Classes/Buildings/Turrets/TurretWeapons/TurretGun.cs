@@ -1,12 +1,14 @@
 ﻿using System.Collections;
-using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.HelpClasses.Builders;
-using Assets.Enigma.Components.HelpClasses.ExtensionMethods;
+using Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
+using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.HelpClasses.Builders;
+using Enigma.Components.HelpClasses.ExtensionMethods;
+using UFPS.Base.Scripts.Gameplay.Combat;
+using UFPS.Base.Scripts.Gameplay.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
+namespace Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 {
     public class TurretGun : MonoBehaviour, ITurretWeapon
     {

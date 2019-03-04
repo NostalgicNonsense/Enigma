@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using System.Collections.Generic;
+using Marketplace.RealisticTankController.Scripts;
 
 [CustomEditor(typeof(RTC_Settings))]
 public class RTC_SettingsEditor : Editor {

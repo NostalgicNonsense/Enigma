@@ -11,106 +11,108 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class vp_Switch : vp_Interactable
+namespace UFPS.Base.Scripts.Gameplay.Player.Local.Interaction
 {
+    public class vp_Switch : vp_Interactable
+    {
 	
-	public GameObject Target = null;
-	public string TargetMessage = "";
-	public AudioSource AudioSource = null;
-	public Vector2 SwitchPitchRange = new Vector2(1.0f, 1.5f);
-	public List<AudioClip> SwitchSounds = new List<AudioClip>();		// list of sounds to randomly play when switched
-	
-	
-	protected override void Start()
-	{
-		
-		base.Start();
-		
-		if(AudioSource == null)
-			AudioSource = GetComponent<AudioSource>() == null ? gameObject.AddComponent<AudioSource>() : GetComponent<AudioSource>();
-		
-	}
+        public GameObject Target = null;
+        public string TargetMessage = "";
+        public AudioSource AudioSource = null;
+        public Vector2 SwitchPitchRange = new Vector2(1.0f, 1.5f);
+        public List<AudioClip> SwitchSounds = new List<AudioClip>();		// list of sounds to randomly play when switched
 	
 	
-	/// <summary>
-	/// try to interact with this object
-	/// </summary>
-	public override bool TryInteract(vp_PlayerEventHandler player)
-	{
+        protected override void Start()
+        {
 		
-		if(Target == null)
-			return false;
+            base.Start();
 		
-		if(m_Player == null)
-			m_Player = player;
+            if(AudioSource == null)
+                AudioSource = GetComponent<AudioSource>() == null ? gameObject.AddComponent<AudioSource>() : GetComponent<AudioSource>();
 		
-		PlaySound();
-
-		Target.SendMessage(TargetMessage, SendMessageOptions.DontRequireReceiver);
-		
-		return true;
-		
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	public virtual void PlaySound()
-	{
-		
-		if(AudioSource == null)
-			return;
-		
-		if( SwitchSounds.Count == 0 )
-			return;
-		
-		AudioClip soundToPlay = SwitchSounds[ Random.Range( 0, SwitchSounds.Count ) ];
-		
-		if(soundToPlay == null)
-			return;
-		
-		AudioSource.pitch = Random.Range(SwitchPitchRange.x, SwitchPitchRange.y);
-		AudioSource.PlayOneShot( soundToPlay );
-		
-	}
+        }
 	
 	
-	/// <summary>
-	/// this is triggered when an object enters the collider and
-	/// InteractType is set to trigger
-	/// </summary>
-	protected override void OnTriggerEnter(Collider col)
-	{
+        /// <summary>
+        /// try to interact with this object
+        /// </summary>
+        public override bool TryInteract(vp_PlayerEventHandler player)
+        {
 		
-		// only do something if the trigger is of type Trigger
-		if (InteractType != vp_InteractType.Trigger)
-			return;
-
-		// see if the colliding object was a valid recipient
-		foreach(string s in RecipientTags)
-		{
-			if(col.gameObject.tag == s)
-				goto isRecipient;
-		}
-		return;
-		isRecipient:
-
-		m_Player = col.transform.root.GetComponent<vp_PlayerEventHandler>();
-
-		if (m_Player == null)
-			return;
-
-		if ((m_Player.Interactable.Get() != null) && (m_Player.Interactable.Get().GetComponent<Collider>() == col))
-			return;
-
-		// calls the TryInteract method which is hopefully on the inherited class
-		TryInteract(m_Player);
+            if(Target == null)
+                return false;
 		
-	}
+            if(m_Player == null)
+                m_Player = player;
+		
+            PlaySound();
+
+            Target.SendMessage(TargetMessage, SendMessageOptions.DontRequireReceiver);
+		
+            return true;
+		
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void PlaySound()
+        {
+		
+            if(AudioSource == null)
+                return;
+		
+            if( SwitchSounds.Count == 0 )
+                return;
+		
+            AudioClip soundToPlay = SwitchSounds[ Random.Range( 0, SwitchSounds.Count ) ];
+		
+            if(soundToPlay == null)
+                return;
+		
+            AudioSource.pitch = Random.Range(SwitchPitchRange.x, SwitchPitchRange.y);
+            AudioSource.PlayOneShot( soundToPlay );
+		
+        }
 	
+	
+        /// <summary>
+        /// this is triggered when an object enters the collider and
+        /// InteractType is set to trigger
+        /// </summary>
+        protected override void OnTriggerEnter(Collider col)
+        {
+		
+            // only do something if the trigger is of type Trigger
+            if (InteractType != vp_InteractType.Trigger)
+                return;
+
+            // see if the colliding object was a valid recipient
+            foreach(string s in RecipientTags)
+            {
+                if(col.gameObject.tag == s)
+                    goto isRecipient;
+            }
+            return;
+            isRecipient:
+
+            m_Player = col.transform.root.GetComponent<vp_PlayerEventHandler>();
+
+            if (m_Player == null)
+                return;
+
+            if ((m_Player.Interactable.Get() != null) && (m_Player.Interactable.Get().GetComponent<Collider>() == col))
+                return;
+
+            // calls the TryInteract method which is hopefully on the inherited class
+            TryInteract(m_Player);
+		
+        }
+	
+    }
 }

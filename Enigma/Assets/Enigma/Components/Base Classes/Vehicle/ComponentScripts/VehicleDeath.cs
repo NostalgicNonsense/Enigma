@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
+namespace Enigma.Components.Base_Classes.Vehicle.ComponentScripts
 {
     public class VehicleDeath : MonoBehaviour
     {

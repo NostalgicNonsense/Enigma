@@ -1,8 +1,8 @@
 using System.Collections;
+using Marketplace.Standard_Assets.Utility;
 using UnityEngine;
-using UnityStandardAssets.Utility;
 
-namespace UnityStandardAssets.Effects
+namespace Marketplace.Standard_Assets.ParticleSystems.Scripts
 {
     public class Explosive : MonoBehaviour
     {

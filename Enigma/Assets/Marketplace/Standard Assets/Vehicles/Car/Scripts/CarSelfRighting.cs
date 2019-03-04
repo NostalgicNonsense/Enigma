@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Marketplace.Standard_Assets.Vehicles.Car.Scripts
 {
     public class CarSelfRighting : MonoBehaviour
     {

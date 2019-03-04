@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Gibs
+namespace Enigma.Components.Gibs
 {
     public class GibExplosion : MonoBehaviour
     {

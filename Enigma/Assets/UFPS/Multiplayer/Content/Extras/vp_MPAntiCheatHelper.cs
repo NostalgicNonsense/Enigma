@@ -29,6 +29,9 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UFPS.Base.Scripts.Core.Attributes;
+
 #if ANTICHEAT
 
 using CodeStage.AntiCheat.Detectors;
@@ -222,10 +225,13 @@ public class vp_MPAntiCheatHelper : Photon.MonoBehaviour
 
 }
 #elif UNITY_EDITOR
-public class vp_MPAntiCheatHelper : Photon.MonoBehaviour
+namespace UFPS.Multiplayer.Content.Extras
 {
-	[vp_HelpBox("To enable this component:\n\n• 1) Install 'Anti-Cheat Toolkit' from the Unity Asset Store.\n\n• 2) From the Unity main menu, go to 'Edit -> Project Settings -> Player -> Other Settings -> Scripting Define Symbols' and add the following string to the text field:\n    ;ANTICHEAT\n\n• For more info on how to use the component, see the manual 'Cheat Detection' chapter.", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
-	public float help;
+    public class vp_MPAntiCheatHelper : MonoBehaviour
+    {
+        [vp_HelpBox("To enable this component:\n\n• 1) Install 'Anti-Cheat Toolkit' from the Unity Asset Store.\n\n• 2) From the Unity main menu, go to 'Edit -> Project Settings -> Player -> Other Settings -> Scripting Define Symbols' and add the following string to the text field:\n    ;ANTICHEAT\n\n• For more info on how to use the component, see the manual 'Cheat Detection' chapter.", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.Nothing)]
+        public float help;
+    }
 }
 #endif
 

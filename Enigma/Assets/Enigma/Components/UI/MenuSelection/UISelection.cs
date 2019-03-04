@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.UI.MenuSelection
+namespace Enigma.Components.UI.MenuSelection
 {
     public class UISelection : MonoBehaviour
     {

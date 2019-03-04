@@ -1,11 +1,10 @@
-﻿using Assets.Enigma.Components.Base_Classes.Maps.Preplaced;
-using Assets.Enigma.Components.Base_Classes.Player;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using System.Linq;
+﻿using System.Linq;
+using Enigma.Components.Base_Classes.Player;
+using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Assets.Enigma.Components.Network
+namespace Enigma.Components.Network
 {
     public class NetworkManagerExtension : NetworkManager
     {

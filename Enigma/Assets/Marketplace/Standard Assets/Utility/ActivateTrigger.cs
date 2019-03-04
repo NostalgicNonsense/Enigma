@@ -1,7 +1,7 @@
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace UnityStandardAssets.Utility
+namespace Marketplace.Standard_Assets.Utility
 {
     public class ActivateTrigger : MonoBehaviour
     {

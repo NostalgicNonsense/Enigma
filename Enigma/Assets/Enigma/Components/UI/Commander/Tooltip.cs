@@ -1,8 +1,8 @@
-﻿using Assets.Enigma.Components.Base_Classes.Buildings;
+﻿using Enigma.Components.Base_Classes.Buildings;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Enigma.Components.UI.Commander
+namespace Enigma.Components.UI.Commander
 {
     public class Tooltip : MonoBehaviour
     {

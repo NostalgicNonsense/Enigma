@@ -13,11 +13,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
+using UnityEngine;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-#if UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_5 || UNITY_5_0 || UNITY_5_1 || UNITY_5_3_OR_NEWER
-    using UnityEngine;
-    using Hashtable = ExitGames.Client.Photon.Hashtable;
-    using SupportClassPun = ExitGames.Client.Photon.SupportClass;
+namespace Photon_Unity_Networking.Plugins.PhotonNetwork
+{
 #endif
 
 
@@ -780,16 +780,16 @@ using ExitGames.Client.Photon;
         }
 
 
-        #if PHOTON_LIB_MIN_4_1_2
-        /// <summary>
-        /// Send an event with custom code/type and any content to the other players in the same room.
-        /// </summary>
-        /// <remarks>This override explicitly uses another parameter order to not mix it up with the implementation for Hashtable only.</remarks>
-        /// <param name="eventCode">Identifies this type of event (and the content). Your game's event codes can start with 0.</param>
-        /// <param name="customEventContent">Any serializable datatype (including Hashtable like the other OpRaiseEvent overloads).</param>
-        /// <param name="raiseEventOptions">Contains (slightly) less often used options. If you pass null, the default options will be used.</param>
-        /// <param name="sendOptions">Send options wrap up reliability, sequencing and channel.</param>
-        /// <returns>If operation could be enqueued for sending. Sent when calling: Service or SendOutgoingCommands.</returns>
+#if PHOTON_LIB_MIN_4_1_2
+/// <summary>
+/// Send an event with custom code/type and any content to the other players in the same room.
+/// </summary>
+/// <remarks>This override explicitly uses another parameter order to not mix it up with the implementation for Hashtable only.</remarks>
+/// <param name="eventCode">Identifies this type of event (and the content). Your game's event codes can start with 0.</param>
+/// <param name="customEventContent">Any serializable datatype (including Hashtable like the other OpRaiseEvent overloads).</param>
+/// <param name="raiseEventOptions">Contains (slightly) less often used options. If you pass null, the default options will be used.</param>
+/// <param name="sendOptions">Send options wrap up reliability, sequencing and channel.</param>
+/// <returns>If operation could be enqueued for sending. Sent when calling: Service or SendOutgoingCommands.</returns>
         public virtual bool OpRaiseEvent(byte eventCode, object customEventContent, RaiseEventOptions raiseEventOptions, SendOptions sendOptions)
         {
             this.opParameters.Clear(); // re-used private variable to avoid many new Dictionary() calls (garbage collection)
@@ -1046,7 +1046,7 @@ using ExitGames.Client.Photon;
         /// </summary>
         public const int InvalidEncryptionParameters = 32741; // 0x7FFF - 24,
 
-}
+    }
 
 
     /// <summary>
@@ -1112,7 +1112,7 @@ using ExitGames.Client.Photon;
 
         /// <summary>(245) Room Time To Live. How long a room stays available (and in server-memory), after the last player becomes inactive. After this time, the room gets persisted or destroyed.</summary>
         public const byte EmptyRoomTtl = (byte)245;
-}
+    }
 
 
     /// <summary>
@@ -1406,7 +1406,7 @@ using ExitGames.Client.Photon;
         public const byte ExchangeKeysForEncryption = 250;
 
         /// <summary>(255) Code for OpJoin, to get into a room.</summary>
-		[Obsolete]
+        [Obsolete]
         public const byte Join = 255;
 
         /// <summary>(231) Authenticates this peer and connects to a virtual application</summary>
@@ -1700,29 +1700,29 @@ using ExitGames.Client.Photon;
         public bool DeleteNullProperties { get { return this.deleteNullPropertiesField; } set { this.deleteNullPropertiesField = value; } }
         private bool deleteNullPropertiesField = false;
 
-    #region Obsoleted Naming
+        #region Obsoleted Naming
 
-    [Obsolete("Use property with uppercase naming instead.")]
-    public bool isVisible { get { return this.isVisibleField; } set { this.isVisibleField = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public bool isOpen { get { return this.isOpenField; } set { this.isOpenField = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public byte maxPlayers { get { return this.MaxPlayers; } set { this.MaxPlayers = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public bool cleanupCacheOnLeave { get { return this.cleanupCacheOnLeaveField; } set { this.cleanupCacheOnLeaveField = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public Hashtable customRoomProperties { get { return this.CustomRoomProperties; } set { this.CustomRoomProperties = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public string[] customRoomPropertiesForLobby { get { return this.CustomRoomPropertiesForLobby; } set { this.CustomRoomPropertiesForLobby = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public string[] plugins { get { return this.Plugins; } set { this.Plugins = value; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public bool suppressRoomEvents { get { return this.suppressRoomEventsField; } }
-    [Obsolete("Use property with uppercase naming instead.")]
-    public bool publishUserId { get { return this.publishUserIdField; } set { this.publishUserIdField = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public bool isVisible { get { return this.isVisibleField; } set { this.isVisibleField = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public bool isOpen { get { return this.isOpenField; } set { this.isOpenField = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public byte maxPlayers { get { return this.MaxPlayers; } set { this.MaxPlayers = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public bool cleanupCacheOnLeave { get { return this.cleanupCacheOnLeaveField; } set { this.cleanupCacheOnLeaveField = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public Hashtable customRoomProperties { get { return this.CustomRoomProperties; } set { this.CustomRoomProperties = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public string[] customRoomPropertiesForLobby { get { return this.CustomRoomPropertiesForLobby; } set { this.CustomRoomPropertiesForLobby = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public string[] plugins { get { return this.Plugins; } set { this.Plugins = value; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public bool suppressRoomEvents { get { return this.suppressRoomEventsField; } }
+        [Obsolete("Use property with uppercase naming instead.")]
+        public bool publishUserId { get { return this.publishUserIdField; } set { this.publishUserIdField = value; } }
 
-    #endregion
-}
+        #endregion
+    }
 
 
     /// <summary>Aggregates several less-often used options for operation RaiseEvent. See field descriptions for usage details.</summary>
@@ -1731,19 +1731,19 @@ using ExitGames.Client.Photon;
         /// <summary>Default options: CachingOption: DoNotCache, InterestGroup: 0, targetActors: null, receivers: Others, sequenceChannel: 0.</summary>
         public readonly static RaiseEventOptions Default = new RaiseEventOptions();
 
-		/// <summary>
-		/// Reset this instance. For better memory handling than instanciating a new one always,
-		/// </summary>
-		public void Reset()
-		{
-			this.CachingOption = Default.CachingOption;
-			this.InterestGroup = Default.InterestGroup;
-			this.TargetActors = Default.TargetActors;
-			this.Receivers = Default.Receivers;
-			this.SequenceChannel = Default.SequenceChannel;
-			this.ForwardToWebhook = Default.ForwardToWebhook;
-			this.Encrypt = Default.Encrypt;
-		}
+        /// <summary>
+        /// Reset this instance. For better memory handling than instanciating a new one always,
+        /// </summary>
+        public void Reset()
+        {
+            this.CachingOption = Default.CachingOption;
+            this.InterestGroup = Default.InterestGroup;
+            this.TargetActors = Default.TargetActors;
+            this.Receivers = Default.Receivers;
+            this.SequenceChannel = Default.SequenceChannel;
+            this.ForwardToWebhook = Default.ForwardToWebhook;
+            this.Encrypt = Default.Encrypt;
+        }
 
         /// <summary>Defines if the server should simply send the event, put it in the cache or remove events that are like this one.</summary>
         /// <remarks>
@@ -1963,3 +1963,4 @@ using ExitGames.Client.Photon;
             return string.Format("AuthenticationValues UserId: {0}, GetParameters: {1} Token available: {2}", this.UserId, this.AuthGetParameters, this.Token != null);
         }
     }
+}

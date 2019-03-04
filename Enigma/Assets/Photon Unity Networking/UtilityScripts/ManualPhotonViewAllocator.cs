@@ -1,31 +1,35 @@
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEngine;
-using System.Collections;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-[RequireComponent(typeof(PhotonView))]
-public class ManualPhotonViewAllocator : MonoBehaviour
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    public GameObject Prefab;
-
-    public void AllocateManualPhotonView()
+    [RequireComponent(typeof(PhotonView))]
+    public class ManualPhotonViewAllocator : MonoBehaviour
     {
-        PhotonView pv = this.gameObject.GetPhotonView();
-        if (pv == null)
+        public GameObject Prefab;
+
+        public void AllocateManualPhotonView()
         {
-            Debug.LogError("Can't do manual instantiation without PhotonView component.");
-            return;
+            PhotonView pv = this.gameObject.GetPhotonView();
+            if (pv == null)
+            {
+                Debug.LogError("Can't do manual instantiation without PhotonView component.");
+                return;
+            }
+
+            int viewID = PhotonNetwork.AllocateViewID();
+            pv.RPC("InstantiateRpc", PhotonTargets.AllBuffered, viewID);
         }
 
-        int viewID = PhotonNetwork.AllocateViewID();
-        pv.RPC("InstantiateRpc", PhotonTargets.AllBuffered, viewID);
-    }
+        [PunRPC]
+        public void InstantiateRpc(int viewID)
+        {
+            GameObject go = GameObject.Instantiate(Prefab, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity) as GameObject;
+            go.GetPhotonView().viewID = viewID;
 
-    [PunRPC]
-    public void InstantiateRpc(int viewID)
-    {
-        GameObject go = GameObject.Instantiate(Prefab, InputToEvent.inputHitPos + new Vector3(0, 5f, 0), Quaternion.identity) as GameObject;
-        go.GetPhotonView().viewID = viewID;
-
-        OnClickDestroy ocd = go.GetComponent<OnClickDestroy>();
-        ocd.DestroyByRpc = true;
+            OnClickDestroy ocd = go.GetComponent<OnClickDestroy>();
+            ocd.DestroyByRpc = true;
+        }
     }
 }

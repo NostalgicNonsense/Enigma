@@ -1,32 +1,36 @@
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEngine;
-using System.Collections;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
-public class OnJoinedInstantiate : MonoBehaviour
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    public Transform SpawnPosition;
-    public float PositionOffset = 2.0f;
-    public GameObject[] PrefabsToInstantiate;   // set in inspector
-
-    public void OnJoinedRoom()
+    public class OnJoinedInstantiate : MonoBehaviour
     {
-        if (this.PrefabsToInstantiate != null)
+        public Transform SpawnPosition;
+        public float PositionOffset = 2.0f;
+        public GameObject[] PrefabsToInstantiate;   // set in inspector
+
+        public void OnJoinedRoom()
         {
-            foreach (GameObject o in this.PrefabsToInstantiate)
+            if (this.PrefabsToInstantiate != null)
             {
-                Debug.Log("Instantiating: " + o.name);
-
-                Vector3 spawnPos = Vector3.up;
-                if (this.SpawnPosition != null)
+                foreach (GameObject o in this.PrefabsToInstantiate)
                 {
-                    spawnPos = this.SpawnPosition.position;
+                    Debug.Log("Instantiating: " + o.name);
+
+                    Vector3 spawnPos = Vector3.up;
+                    if (this.SpawnPosition != null)
+                    {
+                        spawnPos = this.SpawnPosition.position;
+                    }
+
+                    Vector3 random = Random.insideUnitSphere;
+                    random.y = 0;
+                    random = random.normalized;
+                    Vector3 itempos = spawnPos + this.PositionOffset * random;
+
+                    PhotonNetwork.Instantiate(o.name, itempos, Quaternion.identity, 0);
                 }
-
-                Vector3 random = Random.insideUnitSphere;
-                random.y = 0;
-                random = random.normalized;
-                Vector3 itempos = spawnPos + this.PositionOffset * random;
-
-                PhotonNetwork.Instantiate(o.name, itempos, Quaternion.identity, 0);
             }
         }
     }

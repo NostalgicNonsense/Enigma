@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace UnityStandardAssets.Vehicles.Aeroplane
+namespace Marketplace.Standard_Assets.Vehicles.Aircraft.Scripts
 {
     [RequireComponent(typeof (AeroplaneController))]
     public class AeroplaneAiControl : MonoBehaviour

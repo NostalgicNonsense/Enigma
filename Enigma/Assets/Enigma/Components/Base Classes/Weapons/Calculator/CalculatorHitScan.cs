@@ -1,9 +1,10 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
-using Assets.Enigma.Enums;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Enigma.Enums;
+using UFPS.Base.Scripts.Gameplay.Combat;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Weapons.Calculator
+namespace Enigma.Components.Base_Classes.Weapons.Calculator
 {
     public class CalculatorHitScan : vp_Bullet
     {

@@ -14,95 +14,103 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UFPS.Base.Scripts.Gameplay;
+using UFPS.Base.Scripts.Gameplay.Player.Local.Interaction;
+using UFPS.Multiplayer.Scripts.Player;
 using UnityEngine;
+using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
-[RequireComponent(typeof(vp_PlatformSwitch))]
-[RequireComponent(typeof(PhotonView))]
-
-public class vp_MPPlatformSwitch : Photon.MonoBehaviour
+namespace UFPS.Multiplayer.Scripts.Interaction
 {
+    [RequireComponent(typeof(vp_PlatformSwitch))]
+    [RequireComponent(typeof(PhotonView))]
 
-	// cache the interactable component
-	protected vp_Interactable m_Interactable = null;
-	protected vp_Interactable Interactable
-	{
-		get
-		{
-			if (m_Interactable == null)
-			{
-				m_Interactable = GetComponent<vp_Interactable>();
-			}
-			return m_Interactable;
-		}
-	}
+    public class vp_MPPlatformSwitch : MonoBehaviour
+    {
 
-	protected Collider m_Collider = null;
-	protected Collider Collider
-	{
-		get
-		{
-			if (m_Collider == null)
-				m_Collider = transform.GetComponent<Collider>();
-			return m_Collider;
-		}
-	}
+        // cache the interactable component
+        protected vp_Interactable m_Interactable = null;
+        protected vp_Interactable Interactable
+        {
+            get
+            {
+                if (m_Interactable == null)
+                {
+                    m_Interactable = GetComponent<vp_Interactable>();
+                }
+                return m_Interactable;
+            }
+        }
 
-
-	/// <summary>
-	/// this gets called by the vp_PlatformSwitch component on the
-	/// same gameobject every time a non-master client enables a
-	/// switch in a non-master scene using their 'Interact' key
-	/// (default: F) 
-	/// </summary>
-	public void ClientTryInteract()
-	{
-
-		if (!vp_Gameplay.IsMultiplayer)
-			return;
-
-		if (vp_Gameplay.IsMaster)
-			return;
-
-		// send a message to the master client requesting to interact
-		// with this switch
-		photonView.RPC("RequestInteraction", PhotonTargets.MasterClient);
-
-	}
+        protected Collider m_Collider = null;
+        protected Collider Collider
+        {
+            get
+            {
+                if (m_Collider == null)
+                    m_Collider = transform.GetComponent<Collider>();
+                return m_Collider;
+            }
+        }
 
 
-	/// <summary>
-	/// this is executed on the master, and gets called by a client
-	/// who wishes to enable a switch in the master scene
-	/// </summary>
-	[PunRPC]
-	void RequestInteraction(PhotonMessageInfo info)
-	{
+        /// <summary>
+        /// this gets called by the vp_PlatformSwitch component on the
+        /// same gameobject every time a non-master client enables a
+        /// switch in a non-master scene using their 'Interact' key
+        /// (default: F) 
+        /// </summary>
+        public void ClientTryInteract()
+        {
 
-		if (!vp_Gameplay.IsMaster)
-			return;
+            if (!vp_Gameplay.IsMultiplayer)
+                return;
 
-		if (info.sender.IsMasterClient)
-			return;
+            if (vp_Gameplay.IsMaster)
+                return;
 
-		// find the networkplayer corresponding to the sender id
-		vp_MPNetworkPlayer player = vp_MPNetworkPlayer.Get(info.sender.ID);
+            // send a message to the master client requesting to interact
+            // with this switch
+            photonView.RPC("RequestInteraction", PhotonTargets.MasterClient);
 
-		// abort if no such player
-		if (player == null)
-			return;
+        }
 
-		// in order to trigger an interaction, the player must be close to the interactable
-		if (!player.IsCloseTo(Collider))
-			return;
 
-		if (player.Player == null)
-			return;
+        /// <summary>
+        /// this is executed on the master, and gets called by a client
+        /// who wishes to enable a switch in the master scene
+        /// </summary>
+        [PunRPC]
+        void RequestInteraction(PhotonMessageInfo info)
+        {
 
-		Interactable.TryInteract(player.Player);
+            if (!vp_Gameplay.IsMaster)
+                return;
 
-	}
+            if (info.sender.IsMasterClient)
+                return;
+
+            // find the networkplayer corresponding to the sender id
+            vp_MPNetworkPlayer player = vp_MPNetworkPlayer.Get(info.sender.ID);
+
+            // abort if no such player
+            if (player == null)
+                return;
+
+            // in order to trigger an interaction, the player must be close to the interactable
+            if (!player.IsCloseTo(Collider))
+                return;
+
+            if (player.Player == null)
+                return;
+
+            Interactable.TryInteract(player.Player);
+
+        }
 	
 
+    }
 }
 
 

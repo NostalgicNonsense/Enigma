@@ -12,6 +12,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Effects.SurfaceSystem;
 
 [CustomEditor(typeof(vp_SurfaceManager))]
 

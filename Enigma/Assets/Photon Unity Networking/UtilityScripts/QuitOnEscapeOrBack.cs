@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class QuitOnEscapeOrBack : MonoBehaviour
+namespace Photon_Unity_Networking.UtilityScripts
 {
-    private void Update()
+    public class QuitOnEscapeOrBack : MonoBehaviour
     {
-        // "back" button of phone equals "Escape". quit app if that's pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
+        private void Update()
         {
-            Application.Quit();
+            // "back" button of phone equals "Escape". quit app if that's pressed
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
 }

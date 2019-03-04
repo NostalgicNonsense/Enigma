@@ -9,6 +9,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Effects;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
 using UnityEngine;
 using UnityEditor;
 

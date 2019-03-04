@@ -1,8 +1,8 @@
 ﻿using System;
-using UnityEditor;
+using Enigma.Components.Base_Classes.Vehicle.VehicleScripts;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts
+namespace Enigma.Components.Base_Classes.Vehicle.ComponentScripts
 {
     public class EnigmaDamageHandler : MonoBehaviour
     {

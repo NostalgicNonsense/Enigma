@@ -13,9 +13,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using ExitGames.Client.Photon;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
+using MonoBehaviour = UnityEngine.MonoBehaviour;
 
 
 public class PunWizardText

@@ -10,129 +10,132 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Dashboard")]
-public class RTC_UIDashboard : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/UI/Dashboard")]
+    public class RTC_UIDashboard : MonoBehaviour {
 
-	// Getting an Instance of Main Shared RTC Settings.
-	#region RTC Settings Instance
+        // Getting an Instance of Main Shared RTC Settings.
+        #region RTC Settings Instance
 
-	private RTC_Settings RTCSettingsInstance;
-	private RTC_Settings RTCSettings {
-		get {
-			if (RTCSettingsInstance == null) {
-				RTCSettingsInstance = RTC_Settings.Instance;
-			}
-			return RTCSettingsInstance;
-		}
-	}
+        private RTC_Settings RTCSettingsInstance;
+        private RTC_Settings RTCSettings {
+            get {
+                if (RTCSettingsInstance == null) {
+                    RTCSettingsInstance = RTC_Settings.Instance;
+                }
+                return RTCSettingsInstance;
+            }
+        }
 
-	#endregion
+        #endregion
 
-	private RectTransform rectTransform;
-	private RTC_MainCamera mainCamera;
+        private RectTransform rectTransform;
+        private RTC_MainCamera mainCamera;
 
-	public GameObject UIRoot;
-	public GameObject mobileControllers;
+        public GameObject UIRoot;
+        public GameObject mobileControllers;
 
-	[Space()]
-	public RTC_TankController currentTankController;
-	public RTC_TankGunController currentGunController;
+        [Space()]
+        public RTC_TankController currentTankController;
+        public RTC_TankGunController currentGunController;
 
-	[Header("UI Texts")]
-	[Space()]
-	public Text projectileName;
-	public Text currentAmmo;
-	public Text totalAmmo;
+        [Header("UI Texts")]
+        [Space()]
+        public Text projectileName;
+        public Text currentAmmo;
+        public Text totalAmmo;
 
-	[Header("UI Images")]
-	[Space()]
-	public Image crosshair;
-	public Image tankRotation;
+        [Header("UI Images")]
+        [Space()]
+        public Image crosshair;
+        public Image tankRotation;
 
 
-	[Space()]
-	public bool disableUIWhenNoVehicle = true;
+        [Space()]
+        public bool disableUIWhenNoVehicle = true;
 
-	void Awake () {
+        void Awake () {
 
-		if (RTCSettings.uiType == RTC_Settings.UIType.None) {
-			gameObject.SetActive (false);
-			return;
-		}
+            if (RTCSettings.uiType == RTC_Settings.UIType.None) {
+                gameObject.SetActive (false);
+                return;
+            }
 
-		rectTransform = GetComponent<RectTransform> ();
+            rectTransform = GetComponent<RectTransform> ();
 
-		if (RTCSettings.controllerType != RTC_Settings.ControllerType.Mobile)
-			mobileControllers.SetActive (false);
-		else
-			mobileControllers.SetActive (true);
+            if (RTCSettings.controllerType != RTC_Settings.ControllerType.Mobile)
+                mobileControllers.SetActive (false);
+            else
+                mobileControllers.SetActive (true);
 	
-	}
+        }
 
-	void OnEnable(){
+        void OnEnable(){
 
-		RTC_TankController.OnRTCSpawned += OnRTCSpawned;
+            RTC_TankController.OnRTCSpawned += OnRTCSpawned;
 
-	}
+        }
 
-	void OnRTCSpawned (RTC_TankController tankController) {
+        void OnRTCSpawned (RTC_TankController tankController) {
 
-		currentTankController = tankController;
-		currentGunController = tankController.GetComponent<RTC_TankGunController>();
+            currentTankController = tankController;
+            currentGunController = tankController.GetComponent<RTC_TankGunController>();
 	
-	}
+        }
 
-	void OnDisable(){
+        void OnDisable(){
 
-		RTC_TankController.OnRTCSpawned -= OnRTCSpawned;
+            RTC_TankController.OnRTCSpawned -= OnRTCSpawned;
 
-	}
+        }
 
-	void LateUpdate(){
+        void LateUpdate(){
 
-		if (!currentTankController || !currentGunController) {
-			UIRoot.SetActive (false);
-			return;
-		}
+            if (!currentTankController || !currentGunController) {
+                UIRoot.SetActive (false);
+                return;
+            }
 
-		if (!currentTankController.canControl || !currentTankController.gameObject.activeInHierarchy || !currentTankController.enabled) {
-			if (disableUIWhenNoVehicle)
-				UIRoot.SetActive (false);
-			return;
-		}
+            if (!currentTankController.canControl || !currentTankController.gameObject.activeInHierarchy || !currentTankController.enabled) {
+                if (disableUIWhenNoVehicle)
+                    UIRoot.SetActive (false);
+                return;
+            }
 
-		if(!UIRoot.activeInHierarchy)
-			UIRoot.SetActive (true);
+            if(!UIRoot.activeInHierarchy)
+                UIRoot.SetActive (true);
 
-		projectileName.text = currentGunController.projectile.name;
+            projectileName.text = currentGunController.projectile.name;
 
-		if (!currentGunController.reloading)
-			currentAmmo.text = currentGunController.currentAmmo.ToString ();
-		else
-			currentAmmo.text = "R";
+            if (!currentGunController.reloading)
+                currentAmmo.text = currentGunController.currentAmmo.ToString ();
+            else
+                currentAmmo.text = "R";
 
-		if(crosshair){
+            if(crosshair){
 
-			if (!mainCamera) {
-				mainCamera = GameObject.FindObjectOfType<RTC_MainCamera> ();
-				return;
-			}
+                if (!mainCamera) {
+                    mainCamera = GameObject.FindObjectOfType<RTC_MainCamera> ();
+                    return;
+                }
 
-			Vector3 vpPosition = mainCamera.cam.WorldToViewportPoint(currentGunController.directedTarget.position);
-			crosshair.transform.position = mainCamera.cam.WorldToViewportPoint(currentGunController.directedTarget.position);
+                Vector3 vpPosition = mainCamera.cam.WorldToViewportPoint(currentGunController.directedTarget.position);
+                crosshair.transform.position = mainCamera.cam.WorldToViewportPoint(currentGunController.directedTarget.position);
 
-			Vector3 pos;
-			pos.x = rectTransform.rect.width  * vpPosition.x - rectTransform.rect.width / 2f;
-			pos.y = rectTransform.rect.height * vpPosition.y - rectTransform.rect.height / 2f;
-			pos.z = 0f;
+                Vector3 pos;
+                pos.x = rectTransform.rect.width  * vpPosition.x - rectTransform.rect.width / 2f;
+                pos.y = rectTransform.rect.height * vpPosition.y - rectTransform.rect.height / 2f;
+                pos.z = 0f;
 
-			crosshair.transform.localPosition = pos;
+                crosshair.transform.localPosition = pos;
 
-		}
+            }
 
-		if(tankRotation)
-			tankRotation.rectTransform.localRotation = Quaternion.Euler (0f, 0f, currentGunController.rotationOfTheGun);
+            if(tankRotation)
+                tankRotation.rectTransform.localRotation = Quaternion.Euler (0f, 0f, currentGunController.rotationOfTheGun);
 
-	}
+        }
 
+    }
 }

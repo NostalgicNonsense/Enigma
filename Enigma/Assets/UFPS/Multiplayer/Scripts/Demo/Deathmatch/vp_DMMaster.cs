@@ -13,48 +13,50 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using UFPS.Multiplayer.Scripts.Demo.GUI;
+using UFPS.Multiplayer.Scripts.Master;
 
 
-public class vp_DMMaster : vp_MPMaster
+namespace UFPS.Multiplayer.Scripts.Demo.Deathmatch
 {
+    public class vp_DMMaster : vp_MPMaster
+    {
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	[PunRPC]
-	protected override void ReceiveFreeze(PhotonMessageInfo info)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        [PunRPC]
+        protected override void ReceiveFreeze(PhotonMessageInfo info)
+        {
 
-		if (!info.sender.IsMasterClient)
-			return;
+            if (!info.sender.IsMasterClient)
+                return;
 
-		base.ReceiveFreeze(info);
+            base.ReceiveFreeze(info);
 
-		vp_DMDemoScoreBoard.ShowScore = true;
+            vp_DMDemoScoreBoard.ShowScore = true;
 
-	}
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	[PunRPC]
-	protected override void ReceiveUnFreeze(PhotonMessageInfo info)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        [PunRPC]
+        protected override void ReceiveUnFreeze(PhotonMessageInfo info)
+        {
 
-		if (!info.sender.IsMasterClient)
-			return;
+            if (!info.sender.IsMasterClient)
+                return;
 
-		base.ReceiveUnFreeze(info);
+            base.ReceiveUnFreeze(info);
 
-		vp_DMDemoScoreBoard.ShowScore = false;
+            vp_DMDemoScoreBoard.ShowScore = false;
 		
-	}
+        }
 	
 	
+    }
 }

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
-using Assets.Enigma.Components.Base_Classes.Launchables;
+using Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
+using Enigma.Components.Base_Classes.Launchables;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
+namespace Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 {
     public class TurretMissileLauncher : MonoBehaviour, ITurretWeapon
     {

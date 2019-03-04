@@ -9,35 +9,38 @@
 
 using UnityEngine;
 
-[System.Serializable]
-public class RTC_GroundMaterials : ScriptableObject {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    [System.Serializable]
+    public class RTC_GroundMaterials : ScriptableObject {
 	
-	#region singleton
-	public static RTC_GroundMaterials instance;
-	public static RTC_GroundMaterials Instance{	get{if(instance == null) instance = Resources.Load("RTC Assets/RTC_GroundMaterials") as RTC_GroundMaterials; return instance;}}
-	#endregion
+        #region singleton
+        public static RTC_GroundMaterials instance;
+        public static RTC_GroundMaterials Instance{	get{if(instance == null) instance = Resources.Load("RTC Assets/RTC_GroundMaterials") as RTC_GroundMaterials; return instance;}}
+        #endregion
 
-	[System.Serializable]
-	public class GroundMaterialFrictions{
+        [System.Serializable]
+        public class GroundMaterialFrictions{
 		
-		public PhysicMaterial groundMaterial;
-		public float forwardStiffness = 1f;
-		public float sidewaysStiffness = 1f;
-		public float slip = .25f;
+            public PhysicMaterial groundMaterial;
+            public float forwardStiffness = 1f;
+            public float sidewaysStiffness = 1f;
+            public float slip = .25f;
 
-		public float minimumDamp = 1f;
-		public float maximumDamp = 1f;
+            public float minimumDamp = 1f;
+            public float maximumDamp = 1f;
 
-		public GameObject groundParticles;
+            public GameObject groundParticles;
 
-	}
+        }
 		
-	public GroundMaterialFrictions[] frictions;
+        public GroundMaterialFrictions[] frictions;
 
-	public bool useTerrainSplatMapForGroundFrictions = false;
-	public PhysicMaterial terrainPhysicMaterial;
-	public int[] terrainSplatMapIndex;
+        public bool useTerrainSplatMapForGroundFrictions = false;
+        public PhysicMaterial terrainPhysicMaterial;
+        public int[] terrainSplatMapIndex;
 
+    }
 }
 
 

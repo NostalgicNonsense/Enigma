@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-namespace UnityStandardAssets.Utility
+namespace Marketplace.Standard_Assets.Utility
 {
     public class FollowTarget : MonoBehaviour
     {

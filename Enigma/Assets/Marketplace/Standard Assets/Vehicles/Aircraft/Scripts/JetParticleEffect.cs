@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Aeroplane
+namespace Marketplace.Standard_Assets.Vehicles.Aircraft.Scripts
 {
     [RequireComponent(typeof (ParticleSystem))]
     public class JetParticleEffect : MonoBehaviour

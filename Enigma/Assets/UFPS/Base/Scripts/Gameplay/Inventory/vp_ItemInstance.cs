@@ -11,35 +11,38 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Inventory.ItemTypes;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-[System.Serializable]
-public class vp_ItemInstance
+namespace UFPS.Base.Scripts.Gameplay.Inventory
 {
+    [System.Serializable]
+    public class vp_ItemInstance
+    {
 
-	[SerializeField]
-	public vp_ItemType Type;
-	[SerializeField]
-	public int ID = 0;
+        [SerializeField]
+        public vp_ItemType Type;
+        [SerializeField]
+        public int ID = 0;
 
-	[SerializeField]
-	public vp_ItemInstance(vp_ItemType type, int id)
-	{
-		ID = id;
-		Type = type;
-	}
+        [SerializeField]
+        public vp_ItemInstance(vp_ItemType type, int id)
+        {
+            ID = id;
+            Type = type;
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	public virtual void SetUniqueID()
-	{
-		ID = vp_Utility.UniqueID;
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void SetUniqueID()
+        {
+            ID = vp_Utility.UniqueID;
+        }
 
+    }
 }
 
 

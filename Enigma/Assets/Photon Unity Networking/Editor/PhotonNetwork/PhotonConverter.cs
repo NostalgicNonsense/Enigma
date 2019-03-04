@@ -16,8 +16,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
-public class PhotonConverter : Photon.MonoBehaviour
+public class PhotonConverter : MonoBehaviour
 {
     public static List<string> GetScriptsInFolder(string folder)
     {

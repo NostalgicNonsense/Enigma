@@ -21,125 +21,129 @@
 //
 ///////////////////////////////////////////////////////////////////////////////// 
 
-using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-
-public class vp_Debris : MonoBehaviour
+namespace UFPS.Base.Scripts.Effects
 {
+    [RequireComponent(typeof(AudioSource))]
 
-	// gameplay
-	public float Radius = 2.0f;					// any objects within radius will be affected by the force
-	public float Force = 10.0f;					// amount of motion force to apply to affected objects
-	public float UpForce = 1.0f;				// how much to push affected objects up in the air
+    public class vp_Debris : MonoBehaviour
+    {
 
-	// sound
-	public List<AudioClip> Sounds = new List<AudioClip>();
-	public float SoundMinPitch = 0.8f;			// random pitch range for explosion sound
-	public float SoundMaxPitch = 1.2f;
-	AudioSource m_Audio = null;
-	AudioSource Audio
-	{
-		get
-		{
-			if (m_Audio == null)
-				m_Audio = GetComponent<AudioSource>();
-			return m_Audio;
-		}
-	}
+        // gameplay
+        public float Radius = 2.0f;					// any objects within radius will be affected by the force
+        public float Force = 10.0f;					// amount of motion force to apply to affected objects
+        public float UpForce = 1.0f;				// how much to push affected objects up in the air
 
-	public float LifeTime = 5.0f;				// total lifetime of effect, during which rigidbodies will be removed at random points
+        // sound
+        public List<AudioClip> Sounds = new List<AudioClip>();
+        public float SoundMinPitch = 0.8f;			// random pitch range for explosion sound
+        public float SoundMaxPitch = 1.2f;
+        AudioSource m_Audio = null;
+        AudioSource Audio
+        {
+            get
+            {
+                if (m_Audio == null)
+                    m_Audio = GetComponent<AudioSource>();
+                return m_Audio;
+            }
+        }
 
-	protected bool m_Destroy = false;
-	protected Collider[] m_Colliders = null;
-	protected Dictionary<Collider, Dictionary<string, object>> m_PiecesInitial = new Dictionary<Collider, Dictionary<string, object>>();
+        public float LifeTime = 5.0f;				// total lifetime of effect, during which rigidbodies will be removed at random points
+
+        protected bool m_Destroy = false;
+        protected Collider[] m_Colliders = null;
+        protected Dictionary<Collider, Dictionary<string, object>> m_PiecesInitial = new Dictionary<Collider, Dictionary<string, object>>();
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void Awake()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        void Awake()
+        {
 	
-		m_Colliders = GetComponentsInChildren<Collider>();
+            m_Colliders = GetComponentsInChildren<Collider>();
 
-		foreach (Collider col in m_Colliders)
-		{
-			if (col.GetComponent<Rigidbody>())
-				m_PiecesInitial.Add(col, new Dictionary<string, object>() { { "Position", col.transform.localPosition }, { "Rotation", col.transform.localRotation } });
-		}
+            foreach (Collider col in m_Colliders)
+            {
+                if (col.GetComponent<Rigidbody>())
+                    m_PiecesInitial.Add(col, new Dictionary<string, object>() { { "Position", col.transform.localPosition }, { "Rotation", col.transform.localRotation } });
+            }
 	
-	}
+        }
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void OnEnable()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnEnable()
+        {
 	
-		m_Destroy = false;
-		if(Audio != null)
-			Audio.playOnAwake = true;
+            m_Destroy = false;
+            if(Audio != null)
+                Audio.playOnAwake = true;
 		
-		foreach (Collider col in m_Colliders)
-		{
-			Rigidbody r = col.GetComponent<Rigidbody>();
-			if (r != null)
-			{
-				col.transform.localPosition = (Vector3)m_PiecesInitial[col]["Position"];
-				col.transform.localRotation = (Quaternion)m_PiecesInitial[col]["Rotation"];
+            foreach (Collider col in m_Colliders)
+            {
+                Rigidbody r = col.GetComponent<Rigidbody>();
+                if (r != null)
+                {
+                    col.transform.localPosition = (Vector3)m_PiecesInitial[col]["Position"];
+                    col.transform.localRotation = (Quaternion)m_PiecesInitial[col]["Rotation"];
 			
-				r.velocity = Vector3.zero;
-				r.angularVelocity = Vector3.zero;
+                    r.velocity = Vector3.zero;
+                    r.angularVelocity = Vector3.zero;
 			
-				r.AddExplosionForce((Force / Time.timeScale) / vp_TimeUtility.AdjustedTimeScale, transform.position, Radius, UpForce);
-				Collider c = col;
-				vp_Timer.In(Random.Range(LifeTime * 0.5f, LifeTime * 0.95f), delegate()
-				{
-					if (c != null)
-						vp_Utility.Activate(c.gameObject, false);
-				});
-			}
-		}
+                    r.AddExplosionForce((Force / Time.timeScale) / vp_TimeUtility.AdjustedTimeScale, transform.position, Radius, UpForce);
+                    Collider c = col;
+                    vp_Timer.In(Random.Range(LifeTime * 0.5f, LifeTime * 0.95f), delegate()
+                    {
+                        if (c != null)
+                            vp_Utility.Activate(c.gameObject, false);
+                    });
+                }
+            }
 
-		vp_Timer.In(LifeTime, delegate()
-		{
-			m_Destroy = true;
-		});
+            vp_Timer.In(LifeTime, delegate()
+            {
+                m_Destroy = true;
+            });
 
-		// play sound
-		if ((Audio != null) && (Sounds.Count > 0))
-		{
-			Audio.rolloffMode = AudioRolloffMode.Linear;
-			Audio.clip = Sounds[(int)Random.Range(0, (Sounds.Count))];
-			Audio.pitch = Random.Range(SoundMinPitch, SoundMaxPitch) * Time.timeScale;
-			Audio.Play();
-		}
+            // play sound
+            if ((Audio != null) && (Sounds.Count > 0))
+            {
+                Audio.rolloffMode = AudioRolloffMode.Linear;
+                Audio.clip = Sounds[(int)Random.Range(0, (Sounds.Count))];
+                Audio.pitch = Random.Range(SoundMinPitch, SoundMaxPitch) * Time.timeScale;
+                Audio.Play();
+            }
 
-	}
-
-
-	/// <summary>
-	/// 
-	/// </summary>
-	void Update()
-	{
-
-		// the effect should be removed as soon as the 'm_Destroy' flag
-		// has been set and the sound has stopped playing
-		if (m_Destroy && (Audio != null) && (!Audio.isPlaying))
-		{
-			foreach (Collider col in m_Colliders)
-			{
-				vp_Utility.Activate(col.gameObject, true);
-			}
-			vp_Utility.Destroy(gameObject);
-		}
-
-	}
+        }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        void Update()
+        {
+
+            // the effect should be removed as soon as the 'm_Destroy' flag
+            // has been set and the sound has stopped playing
+            if (m_Destroy && (Audio != null) && (!Audio.isPlaying))
+            {
+                foreach (Collider col in m_Colliders)
+                {
+                    vp_Utility.Activate(col.gameObject, true);
+                }
+                vp_Utility.Destroy(gameObject);
+            }
+
+        }
+
+
+    }
 }
 

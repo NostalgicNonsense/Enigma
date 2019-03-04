@@ -1,11 +1,14 @@
 using UnityEngine;
 
-/// <summary>This component will destroy the GameObject it is attached to (in Start()).</summary>
-public class OnStartDelete : MonoBehaviour 
+namespace Photon_Unity_Networking.UtilityScripts
 {
-	// Use this for initialization
-	void Start()
+    /// <summary>This component will destroy the GameObject it is attached to (in Start()).</summary>
+    public class OnStartDelete : MonoBehaviour 
     {
-		Destroy(this.gameObject);
-	}
+        // Use this for initialization
+        void Start()
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

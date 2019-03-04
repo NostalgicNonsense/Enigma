@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityStandardAssets.Vehicles.Ball
+namespace Marketplace.Standard_Assets.Characters.RollerBall.Scripts
 {
     public class Ball : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿namespace Assets.Enigma.Enums
+﻿namespace Enigma.Enums
 {
     public enum EnigmaTags
     {

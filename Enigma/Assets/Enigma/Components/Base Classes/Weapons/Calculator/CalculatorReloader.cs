@@ -1,4 +1,6 @@
-﻿namespace Assets.Enigma.Components.Base_Classes.Weapons.Calculator
+﻿using UFPS.Base.Scripts.Gameplay.Player;
+
+namespace Enigma.Components.Base_Classes.Weapons.Calculator
 {
     public class CalculatorReloader : vp_WeaponReloader
     {

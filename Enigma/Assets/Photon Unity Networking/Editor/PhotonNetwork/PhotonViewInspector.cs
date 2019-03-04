@@ -18,6 +18,7 @@ using UnityEditor;
 using UnityEngine;
 
 using Photon.Pun;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
 
 
 [CustomEditor(typeof (PhotonView))]

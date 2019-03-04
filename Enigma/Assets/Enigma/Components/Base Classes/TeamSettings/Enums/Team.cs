@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Enums
+namespace Enigma.Components.Base_Classes.TeamSettings.Enums
 {
     public class Team : MonoBehaviour
     {

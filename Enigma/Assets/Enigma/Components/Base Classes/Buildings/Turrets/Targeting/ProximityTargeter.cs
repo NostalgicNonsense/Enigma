@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Assets.Enigma.Components.HelpClasses.ExtensionMethods;
-using Assets.Enigma.Enums;
+using Enigma.Components.HelpClasses.ExtensionMethods;
+using Enigma.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
+namespace Enigma.Components.Base_Classes.Buildings.Turrets.Targeting
 {
     public class ProximityTargeter : MonoBehaviour, ITargeter
     {

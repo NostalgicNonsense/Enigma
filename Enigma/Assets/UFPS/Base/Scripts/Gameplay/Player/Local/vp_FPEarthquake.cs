@@ -11,140 +11,144 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Motion;
 using UnityEngine;
 
-public class vp_FPEarthquake : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Player.Local
 {
+    public class vp_FPEarthquake : MonoBehaviour
+    {
 
-	protected Vector3 m_CameraEarthQuakeForce = new Vector3();
+        protected Vector3 m_CameraEarthQuakeForce = new Vector3();
 
-	protected float m_Endtime = 0.0f;
-	protected Vector2 m_Magnitude = Vector2.zero;
-
-
-	vp_FPPlayerEventHandler m_FPPlayer = null;
-	vp_FPPlayerEventHandler FPPlayer
-	{
-		get
-		{
-			if (m_FPPlayer == null)
-				m_FPPlayer = GameObject.FindObjectOfType(typeof(vp_FPPlayerEventHandler)) as vp_FPPlayerEventHandler;
-			return m_FPPlayer;
-		}
-	}
+        protected float m_Endtime = 0.0f;
+        protected Vector2 m_Magnitude = Vector2.zero;
 
 
-
-	/// <summary>
-	/// registers this component with the event handler (if any)
-	/// </summary>
-	protected virtual void OnEnable()
-	{
-
-		if (FPPlayer != null)
-			FPPlayer.Register(this);
-
-	}
-
-
-	/// <summary>
-	/// unregisters this component from the event handler (if any)
-	/// </summary>
-	protected virtual void OnDisable()
-	{
+        vp_FPPlayerEventHandler m_FPPlayer = null;
+        vp_FPPlayerEventHandler FPPlayer
+        {
+            get
+            {
+                if (m_FPPlayer == null)
+                    m_FPPlayer = GameObject.FindObjectOfType(typeof(vp_FPPlayerEventHandler)) as vp_FPPlayerEventHandler;
+                return m_FPPlayer;
+            }
+        }
 
 
-		if (FPPlayer != null)
-			FPPlayer.Unregister(this);
 
-	}
+        /// <summary>
+        /// registers this component with the event handler (if any)
+        /// </summary>
+        protected virtual void OnEnable()
+        {
+
+            if (FPPlayer != null)
+                FPPlayer.Register(this);
+
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void FixedUpdate()
-	{
+        /// <summary>
+        /// unregisters this component from the event handler (if any)
+        /// </summary>
+        protected virtual void OnDisable()
+        {
 
-		if (Time.timeScale != 0.0f)
-			UpdateEarthQuake();
 
-	}
+            if (FPPlayer != null)
+                FPPlayer.Unregister(this);
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void FixedUpdate()
+        {
+
+            if (Time.timeScale != 0.0f)
+                UpdateEarthQuake();
+
+        }
 
 	
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void UpdateEarthQuake()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void UpdateEarthQuake()
+        {
 
-		if (!FPPlayer.CameraEarthQuake.Active)
-		{
-			m_CameraEarthQuakeForce = Vector3.zero;
-			return;
-		}
+            if (!FPPlayer.CameraEarthQuake.Active)
+            {
+                m_CameraEarthQuakeForce = Vector3.zero;
+                return;
+            }
 
-		// the horizontal move is a perlin noise value between 0 and
-		// 'm_EarthQuakeMagnitude' (depending on 'm_EarthQuakeTime').
-		// horizMove will ease out during the last second.
-		m_CameraEarthQuakeForce = Vector3.Scale(vp_SmoothRandom.GetVector3Centered(1),
-							m_Magnitude.x * (Vector3.right + Vector3.forward) * Mathf.Min(m_Endtime - Time.time, 1.0f)
-							* Time.timeScale);
+            // the horizontal move is a perlin noise value between 0 and
+            // 'm_EarthQuakeMagnitude' (depending on 'm_EarthQuakeTime').
+            // horizMove will ease out during the last second.
+            m_CameraEarthQuakeForce = Vector3.Scale(vp_SmoothRandom.GetVector3Centered(1),
+                                                    m_Magnitude.x * (Vector3.right + Vector3.forward) * Mathf.Min(m_Endtime - Time.time, 1.0f)
+                                                    * Time.timeScale);
 
-		// vertMove will ease out during the last second.
-		m_CameraEarthQuakeForce.y = 0;
-		if (UnityEngine.Random.value < (0.3f * Time.timeScale))
-			m_CameraEarthQuakeForce.y = UnityEngine.Random.Range(0, (m_Magnitude.y * 0.35f)) * Mathf.Min(m_Endtime - Time.time, 1.0f);
+            // vertMove will ease out during the last second.
+            m_CameraEarthQuakeForce.y = 0;
+            if (UnityEngine.Random.value < (0.3f * Time.timeScale))
+                m_CameraEarthQuakeForce.y = UnityEngine.Random.Range(0, (m_Magnitude.y * 0.35f)) * Mathf.Min(m_Endtime - Time.time, 1.0f);
 
-	}
+        }
 	
 
-	/// <summary>
-	/// this callback is triggered right after the 'CameraEarthQuake
-	/// activity has been approved for activation
-	/// </summary>
-	protected virtual void OnStart_CameraEarthQuake()
-	{
+        /// <summary>
+        /// this callback is triggered right after the 'CameraEarthQuake
+        /// activity has been approved for activation
+        /// </summary>
+        protected virtual void OnStart_CameraEarthQuake()
+        {
 
-		Vector3 arg = (Vector3)FPPlayer.CameraEarthQuake.Argument;
+            Vector3 arg = (Vector3)FPPlayer.CameraEarthQuake.Argument;
 
-		m_Magnitude.x = arg.x;
-		m_Magnitude.y = arg.y;
+            m_Magnitude.x = arg.x;
+            m_Magnitude.y = arg.y;
 
-		m_Endtime = Time.time + arg.z;
+            m_Endtime = Time.time + arg.z;
 
-		FPPlayer.CameraEarthQuake.AutoDuration = arg.z;
+            FPPlayer.CameraEarthQuake.AutoDuration = arg.z;
 
-	}
-
-
-	/// <summary>
-	/// makes the ground shake as if a bomb has gone off nearby
-	/// </summary>
-	protected virtual void OnMessage_CameraBombShake(float impact)
-	{
-
-		FPPlayer.CameraEarthQuake.TryStart(new Vector3(impact * 0.5f, impact * 0.5f, 1.0f));
-
-	}
+        }
 
 
-	/// <summary>
-	/// gets or sets the current earthquake force
-	/// </summary>
-	protected virtual Vector3 OnValue_CameraEarthQuakeForce
-	{
-		get
-		{
-			return m_CameraEarthQuakeForce;
-		}
-		set
-		{
-			m_CameraEarthQuakeForce = value;
-		}
-	}
+        /// <summary>
+        /// makes the ground shake as if a bomb has gone off nearby
+        /// </summary>
+        protected virtual void OnMessage_CameraBombShake(float impact)
+        {
+
+            FPPlayer.CameraEarthQuake.TryStart(new Vector3(impact * 0.5f, impact * 0.5f, 1.0f));
+
+        }
 
 
+        /// <summary>
+        /// gets or sets the current earthquake force
+        /// </summary>
+        protected virtual Vector3 OnValue_CameraEarthQuakeForce
+        {
+            get
+            {
+                return m_CameraEarthQuakeForce;
+            }
+            set
+            {
+                m_CameraEarthQuakeForce = value;
+            }
+        }
+
+
+    }
 }
 
 	

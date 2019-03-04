@@ -1,8 +1,8 @@
 using System;
+using Marketplace.Standard_Assets.CrossPlatformInput.Scripts.PlatformSpecific;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput.PlatformSpecific;
 
-namespace UnityStandardAssets.CrossPlatformInput
+namespace Marketplace.Standard_Assets.CrossPlatformInput.Scripts
 {
 	public static class CrossPlatformInputManager
 	{

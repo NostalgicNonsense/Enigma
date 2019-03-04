@@ -15,6 +15,12 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Inventory;
+using UFPS.Base.Scripts.Gameplay.Player;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
+using UFPS.Base.Scripts.Gameplay.Player.Local.FootstepManager;
+using UFPS.Base.Scripts.GUI;
 
 
 public class vp_RemotePlayerWizard

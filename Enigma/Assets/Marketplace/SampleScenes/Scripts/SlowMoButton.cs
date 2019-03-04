@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UnityStandardAssets.SceneUtils
+namespace Marketplace.SampleScenes.Scripts
 {
     public class SlowMoButton : MonoBehaviour
     {

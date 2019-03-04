@@ -2,16 +2,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class LevelReset :MonoBehaviour , IPointerClickHandler
+namespace Marketplace.SampleScenes.Scripts
 {
-    public void OnPointerClick(PointerEventData data)
+    public class LevelReset :MonoBehaviour , IPointerClickHandler
     {
-        // reload the scene
-        SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
-    }
+        public void OnPointerClick(PointerEventData data)
+        {
+            // reload the scene
+            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        }
 
 
-    private void Update()
-    {
+        private void Update()
+        {
+        }
     }
 }

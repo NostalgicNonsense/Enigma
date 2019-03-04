@@ -20,48 +20,52 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Attributes;
+using UFPS.Base.Scripts.Effects.SurfaceSystem;
 using UnityEngine;
-using System.Collections.Generic;
 
-[RequireComponent(typeof(AudioSource))]
-
-public class vp_FXBullet : vp_Bullet
+namespace UFPS.Base.Scripts.Gameplay.Combat
 {
+    [RequireComponent(typeof(AudioSource))]
 
-	public vp_ImpactEvent ImpactEvent = null;		// for spawning surface effects on impact with the UFPS surface system
+    public class vp_FXBullet : vp_Bullet
+    {
+
+        public vp_ImpactEvent ImpactEvent = null;		// for spawning surface effects on impact with the UFPS surface system
 #if UNITY_EDITOR
-	[vp_HelpBox("Make sure to assign an ImpactEvent object into the above slot (click the small circle to select). This will allow the bullet to spawn impact effects intelligently depending on the surface hit, by hooking into the powerful UFPS surface system.", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.EmptyLine)]
-	public float hitscanBulletHelp;
+        [vp_HelpBox("Make sure to assign an ImpactEvent object into the above slot (click the small circle to select). This will allow the bullet to spawn impact effects intelligently depending on the surface hit, by hooking into the powerful UFPS surface system.", UnityEditor.MessageType.Info, null, null, false, vp_PropertyDrawerUtility.Space.EmptyLine)]
+        public float hitscanBulletHelp;
 #endif
 
 
-	/// <summary>
-	/// snaps the bullet to the hit point (for proper 3d audio positioning)
-	/// and tries to spawn a UFPS surface effect
-	/// </summary>
-	protected override void TrySpawnFX()
-	{
+        /// <summary>
+        /// snaps the bullet to the hit point (for proper 3d audio positioning)
+        /// and tries to spawn a UFPS surface effect
+        /// </summary>
+        protected override void TrySpawnFX()
+        {
 
-		// move transform to impact point in order for the audio source to play
-		// impact sound at the correct 3d position
-		m_Transform.position = m_Hit.point;
+            // move transform to impact point in order for the audio source to play
+            // impact sound at the correct 3d position
+            m_Transform.position = m_Hit.point;
 
-		vp_SurfaceManager.SpawnEffect(m_Hit, ImpactEvent, m_Audio);
+            vp_SurfaceManager.SpawnEffect(m_Hit, ImpactEvent, m_Audio);
 
-	}
-
-
-	/// <summary>
-	/// applies damage in the UFPS format, with the amount of damage, its source
-	/// and the damage type 'Bullet'
-	/// </summary>
-	protected override void DoUFPSDamage()
-	{
-
-		m_TargetDHandler.Damage(new vp_DamageInfo(Damage, m_Source, vp_DamageInfo.DamageType.Bullet));
-
-	}
+        }
 
 
+        /// <summary>
+        /// applies damage in the UFPS format, with the amount of damage, its source
+        /// and the damage type 'Bullet'
+        /// </summary>
+        protected override void DoUFPSDamage()
+        {
+
+            m_TargetDHandler.Damage(new vp_DamageInfo(Damage, m_Source, vp_DamageInfo.DamageType.Bullet));
+
+        }
+
+
+    }
 }
 

@@ -9,54 +9,57 @@
 
 using UnityEngine;
 
-[AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Fragments")]
-public class RTC_Fragments : MonoBehaviour {
+namespace Marketplace.RealisticTankController.Scripts
+{
+    [AddComponentMenu("BoneCracker Games/Realistic Tank Controller/Misc/Fragments")]
+    public class RTC_Fragments : MonoBehaviour {
 
-	private Rigidbody rigid;
+        private Rigidbody rigid;
 
-	private bool broken = false;
+        private bool broken = false;
 
-	void Awake () {
+        void Awake () {
 
-		rigid = GetComponent<Rigidbody> ();
-		rigid.isKinematic = true;
+            rigid = GetComponent<Rigidbody> ();
+            rigid.isKinematic = true;
 
-	}
+        }
 	
-	// Update is called once per frame
-	void FixedUpdate () {
+        // Update is called once per frame
+        void FixedUpdate () {
 	
-		if(!broken)
-			Checking();
+            if(!broken)
+                Checking();
 
-	}
+        }
 
-	void Checking(){
+        void Checking(){
 
-		if (rigid.IsSleeping())
-			return;
+            if (rigid.IsSleeping())
+                return;
 
-		RaycastHit hit;
+            RaycastHit hit;
 		
-		if(Physics.Raycast(transform.position, -transform.forward, out hit)){
-			if(hit.rigidbody && hit.rigidbody.isKinematic != true){
-				rigid.isKinematic = false;
-				broken = true;
-			}
-		}
+            if(Physics.Raycast(transform.position, -transform.forward, out hit)){
+                if(hit.rigidbody && hit.rigidbody.isKinematic != true){
+                    rigid.isKinematic = false;
+                    broken = true;
+                }
+            }
 
-	}
+        }
 
-	void OnCollisionEnter (Collision collision) {
+        void OnCollisionEnter (Collision collision) {
 
-		if(collision.relativeVelocity.magnitude < 1.5f)
-			return;
+            if(collision.relativeVelocity.magnitude < 1.5f)
+                return;
 		
-		if(collision.transform.gameObject.layer != LayerMask.NameToLayer("Fragment")){
-			rigid.isKinematic = false;
-		}
+            if(collision.transform.gameObject.layer != LayerMask.NameToLayer("Fragment")){
+                rigid.isKinematic = false;
+            }
 
-	}
+        }
 
 
+    }
 }

@@ -1,7 +1,7 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Player
+namespace Enigma.Components.Base_Classes.Player
 {
     public class SpawnPos : MonoBehaviour
     {

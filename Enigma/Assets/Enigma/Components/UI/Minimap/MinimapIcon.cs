@@ -1,9 +1,10 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using UnityEngine;
+using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
-namespace Assets.Enigma.Components.UI.Minimap
+namespace Enigma.Components.UI.Minimap
 {
-    public class MinimapIcon : Photon.MonoBehaviour
+    public class MinimapIcon : MonoBehaviour
     {
         private Team team;
 

@@ -14,6 +14,7 @@
 #endif
 
 
+using Photon_Unity_Networking.Plugins.PhotonNetwork.Views;
 using UnityEditor;
 using UnityEngine;
 

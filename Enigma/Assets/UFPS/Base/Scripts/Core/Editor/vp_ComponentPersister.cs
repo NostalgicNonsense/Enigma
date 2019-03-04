@@ -20,6 +20,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.ComponentSystem;
 
 
 public class vp_ComponentPersister

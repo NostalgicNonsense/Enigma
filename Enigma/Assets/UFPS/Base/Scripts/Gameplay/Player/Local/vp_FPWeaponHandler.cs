@@ -10,36 +10,33 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections.Generic;
-using System;
-using System.Collections;
-
-
-public class vp_FPWeaponHandler : vp_WeaponHandler
+namespace UFPS.Base.Scripts.Gameplay.Player.Local
 {
+    public class vp_FPWeaponHandler : vp_WeaponHandler
+    {
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual bool OnAttempt_AutoReload()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnAttempt_AutoReload()
+        {
 
-		if (!ReloadAutomatically)
-			return false;
+            if (!ReloadAutomatically)
+                return false;
 
-		if (CurrentWeapon == null)
-			return false;
+            if (CurrentWeapon == null)
+                return false;
 
-		if (CurrentWeapon.AnimationType == (int)vp_Weapon.Type.Melee)
-			return false;
+            if (CurrentWeapon.AnimationType == (int)vp_Weapon.Type.Melee)
+                return false;
 
-		return m_Player.Reload.TryStart();
+            return m_Player.Reload.TryStart();
 
-	}
+        }
 
 
+    }
 }
 
 

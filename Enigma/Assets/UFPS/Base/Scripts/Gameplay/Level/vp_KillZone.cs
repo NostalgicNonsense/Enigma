@@ -23,63 +23,67 @@
 //					
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Combat;
+using UFPS.Base.Scripts.Gameplay.Level.Spawning;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-public class vp_KillZone : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Level
 {
+    public class vp_KillZone : MonoBehaviour
+    {
 
-	vp_DamageHandler m_TargetDamageHandler = null;
-	vp_Respawner m_TargetRespawner = null;
+        vp_DamageHandler m_TargetDamageHandler = null;
+        vp_Respawner m_TargetRespawner = null;
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void Start()
-	{
-		gameObject.layer = vp_Layer.Trigger;
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        void Start()
+        {
+            gameObject.layer = vp_Layer.Trigger;
+        }
 	
 
-	/// <summary>
-	/// 
-	/// </summary>
-	void OnTriggerEnter(Collider col)
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnTriggerEnter(Collider col)
+        {
 
-		// return if this is not a relevant object. TIP: this check can be expanded
-		if (col.gameObject.layer == vp_Layer.Debris
-			|| col.gameObject.layer == vp_Layer.Pickup)
-			return;
+            // return if this is not a relevant object. TIP: this check can be expanded
+            if (col.gameObject.layer == vp_Layer.Debris
+                || col.gameObject.layer == vp_Layer.Pickup)
+                return;
 
-		// try to find a damagehandler on the target and abort on fail
-		m_TargetDamageHandler = vp_DamageHandler.GetDamageHandlerOfCollider(col);
-		if (m_TargetDamageHandler == null)
-			return;
+            // try to find a damagehandler on the target and abort on fail
+            m_TargetDamageHandler = vp_DamageHandler.GetDamageHandlerOfCollider(col);
+            if (m_TargetDamageHandler == null)
+                return;
 
-		// abort if target is already dead
-		// NOTE: this deals with cases of multiple 'OnTriggerEnter' calls on contact
-		if (m_TargetDamageHandler.CurrentHealth <= 0)
-			return;
+            // abort if target is already dead
+            // NOTE: this deals with cases of multiple 'OnTriggerEnter' calls on contact
+            if (m_TargetDamageHandler.CurrentHealth <= 0)
+                return;
 
-		// try to find a respawner on the target to see if it's currently OK to kill it
-		m_TargetRespawner = vp_Respawner.GetByCollider(col);
-		if (m_TargetRespawner != null)
-		{
-			// abort if target has respawned within one second before this call.
-			// NOTE: this addresses a case where 'OnTriggerEnter' is called when
-			// teleporting (respawning) away from the trigger, resulting in the
-			// object getting insta-killed on respawn. it will only work if the
-			// target gameobject has a vp_Respawner-derived component
-			if (Time.time < m_TargetRespawner.LastRespawnTime + 1.0f)
-				return;
-		}
+            // try to find a respawner on the target to see if it's currently OK to kill it
+            m_TargetRespawner = vp_Respawner.GetByCollider(col);
+            if (m_TargetRespawner != null)
+            {
+                // abort if target has respawned within one second before this call.
+                // NOTE: this addresses a case where 'OnTriggerEnter' is called when
+                // teleporting (respawning) away from the trigger, resulting in the
+                // object getting insta-killed on respawn. it will only work if the
+                // target gameobject has a vp_Respawner-derived component
+                if (Time.time < m_TargetRespawner.LastRespawnTime + 1.0f)
+                    return;
+            }
 
-		m_TargetDamageHandler.Damage(new vp_DamageInfo(m_TargetDamageHandler.CurrentHealth, m_TargetDamageHandler.Transform, vp_DamageInfo.DamageType.KillZone));
+            m_TargetDamageHandler.Damage(new vp_DamageInfo(m_TargetDamageHandler.CurrentHealth, m_TargetDamageHandler.Transform, vp_DamageInfo.DamageType.KillZone));
 
-	}
+        }
 
 
+    }
 }

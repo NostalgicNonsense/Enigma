@@ -1,10 +1,10 @@
 ﻿using System;
+using Enigma.Components.Base_Classes.Buildings;
+using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.Base_Classes.TeamSettings.Resources;
 using UnityEngine;
-using Assets.Enigma.Components.Base_Classes.Buildings;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.Base_Classes.TeamSettings.Resources;
 
-namespace Assets.Enigma.Components.Base_Classes.Commander
+namespace Enigma.Components.Base_Classes.Command
 {
     public class BuildingPlacement : MonoBehaviour
     {

@@ -12,6 +12,8 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.Utility;
+using UFPS.Base.Scripts.Gameplay.Player;
 
 [CustomEditor(typeof(vp_Weapon))]
 

@@ -19,6 +19,8 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using UFPS.Base.Scripts.Core.ComponentSystem;
+using UFPS.Base.Scripts.Gameplay.Player.Local;
 
 public static class vp_EditorUtility
 {

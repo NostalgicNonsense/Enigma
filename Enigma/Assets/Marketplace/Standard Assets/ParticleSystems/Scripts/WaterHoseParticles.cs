@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace UnityStandardAssets.Effects
+namespace Marketplace.Standard_Assets.ParticleSystems.Scripts
 {
     public class WaterHoseParticles : MonoBehaviour
     {

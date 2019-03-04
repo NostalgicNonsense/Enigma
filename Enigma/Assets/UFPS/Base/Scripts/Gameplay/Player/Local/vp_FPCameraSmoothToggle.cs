@@ -41,156 +41,159 @@
 //							player control
 //
 /////////////////////////////////////////////////////////////////////////////////
+
 using UnityEngine;
-using System.Collections;
 
-public class vp_FPCameraSmoothToggle : MonoBehaviour
+namespace UFPS.Base.Scripts.Gameplay.Player.Local
 {
+    public class vp_FPCameraSmoothToggle : MonoBehaviour
+    {
 
-	public Vector3 TargetPos;
-	[Range(0, 30)]
-	public float InterpolationSpeed = 10.0f;
-	[Range(0, 0.1f)]
-	public float RepositionSnap = 0.001f;	// 1 millimeter
-	public float RerotateSnap = 0.1f;		// 1 tenth of a degree
+        public Vector3 TargetPos;
+        [Range(0, 30)]
+        public float InterpolationSpeed = 10.0f;
+        [Range(0, 0.1f)]
+        public float RepositionSnap = 0.001f;	// 1 millimeter
+        public float RerotateSnap = 0.1f;		// 1 tenth of a degree
 
-	protected int m_WieldedWeapon = 0;
-	protected Vector3 m_OriginalAngle = Vector3.zero;
-	protected bool m_Restoring = false;
+        protected int m_WieldedWeapon = 0;
+        protected Vector3 m_OriginalAngle = Vector3.zero;
+        protected bool m_Restoring = false;
 
-	public System.Action InterpolateMethod = null;
+        public System.Action InterpolateMethod = null;
 
-	vp_FPCamera m_FPCamera = null;
-	vp_FPCamera FPCamera
-	{
-		get
-		{
-			if (m_FPCamera == null)
-				m_FPCamera = transform.GetComponent<vp_FPCamera>();
+        vp_FPCamera m_FPCamera = null;
+        vp_FPCamera FPCamera
+        {
+            get
+            {
+                if (m_FPCamera == null)
+                    m_FPCamera = transform.GetComponent<vp_FPCamera>();
 
-			return m_FPCamera;
-		}
-	}
+                return m_FPCamera;
+            }
+        }
 
-	vp_FPController m_FPController = null;
-	vp_FPController FPController
-	{
-		get
-		{
-			if (m_FPController == null)
-				m_FPController = GameObject.FindObjectOfType<vp_FPController>();
-			return m_FPController;
-		}
-	}
+        vp_FPController m_FPController = null;
+        vp_FPController FPController
+        {
+            get
+            {
+                if (m_FPController == null)
+                    m_FPController = GameObject.FindObjectOfType<vp_FPController>();
+                return m_FPController;
+            }
+        }
 
-	vp_FPPlayerEventHandler m_FPPlayer = null;
-	vp_FPPlayerEventHandler FPPlayer
-	{
-		get
-		{
-			if (m_FPPlayer == null)
-				m_FPPlayer = GameObject.FindObjectOfType<vp_FPPlayerEventHandler>();
-			return m_FPPlayer;
-		}
-	}
+        vp_FPPlayerEventHandler m_FPPlayer = null;
+        vp_FPPlayerEventHandler FPPlayer
+        {
+            get
+            {
+                if (m_FPPlayer == null)
+                    m_FPPlayer = GameObject.FindObjectOfType<vp_FPPlayerEventHandler>();
+                return m_FPPlayer;
+            }
+        }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected void Start()
-	{
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void Start()
+        {
 
-		if (FPCamera == null)
-			Debug.LogError("Error (" + this + ") This script must sit on the same gameobject as a vp_FPCamera component.");
+            if (FPCamera == null)
+                Debug.LogError("Error (" + this + ") This script must sit on the same gameobject as a vp_FPCamera component.");
 
-		InterpolateMethod = delegate
-		{
-			FPCamera.transform.position = Vector3.Lerp(FPCamera.transform.position, TargetPos, Time.deltaTime * InterpolationSpeed);
+            InterpolateMethod = delegate
+            {
+                FPCamera.transform.position = Vector3.Lerp(FPCamera.transform.position, TargetPos, Time.deltaTime * InterpolationSpeed);
 
-			FPCamera.transform.eulerAngles = new Vector3(
-				Mathf.LerpAngle(FPCamera.transform.eulerAngles.x, m_OriginalAngle.x, Time.deltaTime * InterpolationSpeed),
-				Mathf.LerpAngle(FPCamera.transform.eulerAngles.y, m_OriginalAngle.y, Time.deltaTime * InterpolationSpeed),
-				0
-			);
-		};
+                FPCamera.transform.eulerAngles = new Vector3(
+                    Mathf.LerpAngle(FPCamera.transform.eulerAngles.x, m_OriginalAngle.x, Time.deltaTime * InterpolationSpeed),
+                    Mathf.LerpAngle(FPCamera.transform.eulerAngles.y, m_OriginalAngle.y, Time.deltaTime * InterpolationSpeed),
+                    0
+                );
+            };
 
-	}
+        }
 	
 
-	/// <summary>
-	/// disables a vp_FPCamera and its spring and bob system after
-	/// backing up its original angle, unwielding the current weapon,
-	/// stopping the controller and preventing gameplay input
-	/// </summary>
-	public void DisableFPCamera()
-	{
+        /// <summary>
+        /// disables a vp_FPCamera and its spring and bob system after
+        /// backing up its original angle, unwielding the current weapon,
+        /// stopping the controller and preventing gameplay input
+        /// </summary>
+        public void DisableFPCamera()
+        {
 
-		m_OriginalAngle = FPCamera.transform.eulerAngles;	// backup camera angle
-		// NOTE: we can't backup camera position because controller could have moved
+            m_OriginalAngle = FPCamera.transform.eulerAngles;	// backup camera angle
+            // NOTE: we can't backup camera position because controller could have moved
 
-		m_WieldedWeapon = FPPlayer.CurrentWeaponIndex.Get();	// remember the weapon we are holding
-		FPPlayer.SetWeapon.TryStart(0);	// unwield current weapon
-		FPController.Stop();	// stop controller
-		FPPlayer.InputAllowGameplay.Set(false);	// prevent player from moving
-		FPCamera.SnapSprings();	// reset spring state to default
-		FPCamera.StopSprings();	// stop springs and zero out bob
-		FPCamera.enabled = false;	// disable vp_FPCamera
+            m_WieldedWeapon = FPPlayer.CurrentWeaponIndex.Get();	// remember the weapon we are holding
+            FPPlayer.SetWeapon.TryStart(0);	// unwield current weapon
+            FPController.Stop();	// stop controller
+            FPPlayer.InputAllowGameplay.Set(false);	// prevent player from moving
+            FPCamera.SnapSprings();	// reset spring state to default
+            FPCamera.StopSprings();	// stop springs and zero out bob
+            FPCamera.enabled = false;	// disable vp_FPCamera
 		
-	}
+        }
 	
 
-	/// <summary>
-	/// causes the FPS camera to reclaim control over the unity main
-	/// camera using smooth interpolation to the original angle and
-	/// current vp_FPController smooth position
-	/// </summary>
-	public void EnableFPCamera()
-	{
-		m_Restoring = true;
-	}
+        /// <summary>
+        /// causes the FPS camera to reclaim control over the unity main
+        /// camera using smooth interpolation to the original angle and
+        /// current vp_FPController smooth position
+        /// </summary>
+        public void EnableFPCamera()
+        {
+            m_Restoring = true;
+        }
 
 
-	/// <summary>
-	/// calculates correct target position for restoring the camera,
-	/// optionally moves there after calling 'EnableCamera' and re-enables
-	/// the camera when done
-	/// </summary>
-	protected void LateUpdate()
-	{
+        /// <summary>
+        /// calculates correct target position for restoring the camera,
+        /// optionally moves there after calling 'EnableCamera' and re-enables
+        /// the camera when done
+        /// </summary>
+        protected void LateUpdate()
+        {
 
-		// SNIPPET: for testing this script in the editor. see top of file for instructions
-		//if (Input.GetKeyUp(KeyCode.H))
-		//{
-		//	if (FPCamera.enabled)
-		//		DisableFPCamera();
-		//	else
-		//		EnableFPCamera();
-		//}
+            // SNIPPET: for testing this script in the editor. see top of file for instructions
+            //if (Input.GetKeyUp(KeyCode.H))
+            //{
+            //	if (FPCamera.enabled)
+            //		DisableFPCamera();
+            //	else
+            //		EnableFPCamera();
+            //}
 
-		if (!m_Restoring)
-			return;
+            if (!m_Restoring)
+                return;
 
-		// calculate target camera position depending on up-to-date controller position
-		TargetPos = FPController.SmoothPosition + FPController.Transform.TransformDirection(FPCamera.PositionOffset);
+            // calculate target camera position depending on up-to-date controller position
+            TargetPos = FPController.SmoothPosition + FPController.Transform.TransformDirection(FPCamera.PositionOffset);
 
-		// interpolate position towards current target, and rotation towards original one
-		InterpolateMethod.Invoke();
+            // interpolate position towards current target, and rotation towards original one
+            InterpolateMethod.Invoke();
 
-		// re-enable camera when we're within 1 millimeter from target position,
-		// and within a tenth of a degree from original angle
-		if (Vector3.Distance(FPCamera.transform.position, TargetPos) <= RepositionSnap
-			&& (Mathf.DeltaAngle(FPCamera.transform.eulerAngles.x, m_OriginalAngle.x) < RerotateSnap)
-			&& (Mathf.DeltaAngle(FPCamera.transform.eulerAngles.y, m_OriginalAngle.y) < RerotateSnap)
-			)
-		{
-			FPPlayer.SetWeapon.TryStart(m_WieldedWeapon);	// rewield the weapon we held (if any)
-			FPPlayer.InputAllowGameplay.Set(true);		// allow player to move
-			FPCamera.enabled = true;	// reenable vp_FPCamera
-			m_Restoring = false;
-		}
+            // re-enable camera when we're within 1 millimeter from target position,
+            // and within a tenth of a degree from original angle
+            if (Vector3.Distance(FPCamera.transform.position, TargetPos) <= RepositionSnap
+                && (Mathf.DeltaAngle(FPCamera.transform.eulerAngles.x, m_OriginalAngle.x) < RerotateSnap)
+                && (Mathf.DeltaAngle(FPCamera.transform.eulerAngles.y, m_OriginalAngle.y) < RerotateSnap)
+            )
+            {
+                FPPlayer.SetWeapon.TryStart(m_WieldedWeapon);	// rewield the weapon we held (if any)
+                FPPlayer.InputAllowGameplay.Set(true);		// allow player to move
+                FPCamera.enabled = true;	// reenable vp_FPCamera
+                m_Restoring = false;
+            }
 		
-	}
+        }
 
 
+    }
 }

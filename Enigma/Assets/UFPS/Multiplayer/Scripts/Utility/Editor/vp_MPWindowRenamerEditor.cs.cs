@@ -9,6 +9,7 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
+using UFPS.Multiplayer.Scripts.Utility;
 using UnityEditor;
 
 [CustomEditor(typeof(vp_MPWindowRenamer))]

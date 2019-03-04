@@ -1,9 +1,9 @@
-﻿using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
-using Assets.Enigma.Components.Basic_Items;
-using Assets.Enigma.Enums;
+﻿using Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Enigma.Components.Gibs;
+using Enigma.Enums;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.Shells
+namespace Enigma.Components.Base_Classes.Launchables
 {
     public class ShellBase : MonoBehaviour
     {

@@ -1,8 +1,8 @@
-﻿using Assets.Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Assets.Enigma.Components.HelpClasses;
+﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
+using Enigma.Components.HelpClasses;
 using UnityEngine;
 
-namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
+namespace Enigma.Components.Base_Classes.TeamSettings.Resources
 {
     public class ResourceTeams : MonoBehaviour
     {

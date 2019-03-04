@@ -11,22 +11,23 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using UFPS.Base.Scripts.Core.EventSystem;
 
-public class vp_MPDebug
+namespace UFPS.Multiplayer.Scripts.Utility
 {
+    public class vp_MPDebug
+    {
 
-	/// <summary>
-	/// prints a message to an appropriate multiplayer gui target
-	/// </summary>
-	public static void Log(string msg)
-	{
+        /// <summary>
+        /// prints a message to an appropriate multiplayer gui target
+        /// </summary>
+        public static void Log(string msg)
+        {
 
-		vp_GlobalEvent<string, bool>.Send("ChatMessage", msg, false, vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
-		//Debug.Log(msg);
+            vp_GlobalEvent<string, bool>.Send("ChatMessage", msg, false, vp_GlobalEventMode.DONT_REQUIRE_LISTENER);
+            //Debug.Log(msg);
 
-	}
+        }
 
+    }
 }

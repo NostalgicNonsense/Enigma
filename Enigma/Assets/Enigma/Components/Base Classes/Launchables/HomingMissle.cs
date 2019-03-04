@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-using Assets.Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
+using Enigma.Components.Base_Classes.Vehicle.ComponentScripts;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Assets.Enigma.Components.Base_Classes.Launchables
+namespace Enigma.Components.Base_Classes.Launchables
 {
     public class HomingMissle : NetworkBehaviour
     {

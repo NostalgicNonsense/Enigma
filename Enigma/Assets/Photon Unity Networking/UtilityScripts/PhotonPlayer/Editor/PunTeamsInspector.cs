@@ -12,6 +12,8 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Photon_Unity_Networking.Plugins.PhotonNetwork;
+using Photon_Unity_Networking.UtilityScripts;
 using UnityEditor;
 
 namespace ExitGames.UtilityScripts

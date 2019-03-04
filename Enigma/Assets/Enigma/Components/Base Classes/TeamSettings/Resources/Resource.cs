@@ -1,4 +1,4 @@
-﻿namespace Assets.Enigma.Components.Base_Classes.TeamSettings.Resources
+﻿namespace Enigma.Components.Base_Classes.TeamSettings.Resources
 {
     public abstract class Resource
     {
