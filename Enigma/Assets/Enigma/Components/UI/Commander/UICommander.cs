@@ -1,5 +1,5 @@
-﻿using Enigma.Components.Base_Classes.Command;
-using Enigma.Components.Base_Classes.TeamSettings.Resources;
+﻿using Enigma.Components.Gameplay.Command;
+using Enigma.Components.Gameplay.TeamSettings.Resources;
 using UnityEngine;
 
 namespace Enigma.Components.UI.Commander

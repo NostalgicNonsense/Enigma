@@ -1,6 +1,6 @@
-﻿using Enigma.Components.Base_Classes.Buildings;
-using Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Enigma.Components.Base_Classes.TeamSettings.Resources;
+﻿using Enigma.Components.Gameplay.Buildings;
+using Enigma.Components.Gameplay.TeamSettings.Enums;
+using Enigma.Components.Gameplay.TeamSettings.Resources;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;

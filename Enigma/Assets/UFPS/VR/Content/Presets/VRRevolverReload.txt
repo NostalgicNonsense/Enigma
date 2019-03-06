@@ -1,9 +1,0 @@
-///////////////////////////////////////////////////////////
-// Component Preset Script
-///////////////////////////////////////////////////////////
-
-ComponentType vp_FPWeapon
-PositionOffset 0.22 -0.16 0.16
-RotationOffset 36.42 -12.17137 -26.7117
-ShakeSpeed 0.25
-ShakeAmplitude 0.2 0.2 2

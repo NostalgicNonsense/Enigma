@@ -1,6 +1,5 @@
-﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
+﻿using Enigma.Components.Gameplay.TeamSettings.Enums;
 using UnityEngine;
-using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
 namespace Enigma.Components.UI.Minimap
 {

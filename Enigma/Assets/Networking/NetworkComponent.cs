@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using MonoBehaviour = Photon_Unity_Networking.Plugins.PhotonNetwork.MonoBehaviour;
 
 namespace Networking.Serialization
 {

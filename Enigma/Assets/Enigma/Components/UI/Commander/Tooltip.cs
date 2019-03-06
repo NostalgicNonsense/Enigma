@@ -1,4 +1,4 @@
-﻿using Enigma.Components.Base_Classes.Buildings;
+﻿using Enigma.Components.Gameplay.Buildings;
 using UnityEngine;
 using UnityEngine.UI;
 
