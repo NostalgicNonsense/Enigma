@@ -12,13 +12,14 @@ namespace Networking
         public Guid Guid { get; set; }
         private ConnectionHandler _connectHandlerInstance;
         private Dictionary<Type, UpdateEvent<Component>> _networkedComponentsInGameObject;
+        private object _lock = new object();
 
         private void Awake()
         {
             var components = GetComponents(typeof(NetworkedComponent));
             _connectHandlerInstance = ConnectionHandler.ConnectionHandlerInstance;
             _networkedComponentsInGameObject = components.ToDictionary(c => c.GetType(), v => new UpdateEvent<Component>(v));
-            _connectHandlerInstance.AddListener(this);
+            while (_connectHandlerInstance.TryAddListener(this) != true)
             _connectHandlerInstance.SendTcpUpdate(new NetworkWrapper(this));
         }
 
@@ -59,6 +60,17 @@ namespace Networking
                 HasBeenUpdatedSinceLastGet = false;
             }
 
+            public UpdateEvent(T value, bool newNetworkObject)
+            {
+                _value = value;
+                HasBeenUpdatedSinceLastGet = false;
+            }
+
+            public void Update(object obj)
+            {
+                Value = (T)obj;
+            }
+
             public T Value
             {
                 get
@@ -70,6 +82,23 @@ namespace Networking
                 {
                     HasBeenUpdatedSinceLastGet = false;
                     _value = value;
+                }
+            }
+        }
+
+        public void SafeAdd(object value)
+        {
+            // we have a local lock here
+            lock (_lock)
+            {
+                if (_networkedComponentsInGameObject.ContainsKey(value.GetType()))
+                {
+                    _networkedComponentsInGameObject[value.GetType()].Update(value);
+                }
+                else
+                {
+                    var newComponent = gameObject.AddComponent(value.GetType());
+                    _networkedComponentsInGameObject.Add(value.GetType(), new UpdateEvent<Component>(newComponent));
                 }
             }
         }

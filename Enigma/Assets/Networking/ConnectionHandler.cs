@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Networking.Serialization;
+using Networking.Serialization.SerializationModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UtilityCode.Extensions;
 using WebSocketSharp;
@@ -15,10 +21,11 @@ namespace Networking
     {
         //todo: WE need exception handling
         public static readonly ConnectionHandler ConnectionHandlerInstance;
+        private ISerializer _serializer;
         private ServerInfo _serverInfo;
         private TcpClient _tcpClient;
         private UdpClient _udpClient;
-        private Dictionary<Guid, NetworkEntity> _networkedEntitiesByGuid;
+        private ConcurrentDictionary<Guid, NetworkEntity> _networkedEntitiesByGuid;
         private static int _tcpPortNumber = 5411; // refactor;
         private static int _udpPortNumber = 5412;
 
@@ -29,13 +36,14 @@ namespace Networking
                 _serverInfo = ServerInfo.CurrentServerInfo,
                 _tcpClient = new TcpClient(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily),
                 _udpClient = new UdpClient(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily),
-                _networkedEntitiesByGuid = new Dictionary<Guid, NetworkEntity>()
+                _networkedEntitiesByGuid = new ConcurrentDictionary<Guid, NetworkEntity>(),
+                _serializer = new Serializer()
             };
         }
 
-        public void AddListener(NetworkEntity networkEntity)
+        public bool TryAddListener(NetworkEntity networkEntity)
         {
-            _networkedEntitiesByGuid.Add(networkEntity.Guid, networkEntity);
+            return _networkedEntitiesByGuid.TryAdd(networkEntity.Guid, networkEntity);
         }
 
         /// <summary>
@@ -55,28 +63,63 @@ namespace Networking
 
         private void ListenUdp()
         {
-            var localEndPoint = new IPEndPoint(_serverInfo.IpAddress, _tcpPortNumber);
-            var socket = new Socket(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            socket.Bind(localEndPoint);
-            socket.Listen(1000); // idk what im doing
-            var startChar = Encoding.UTF8.GetBytes("{");
-            for (;;)
+
+        }
+
+        private long GetLengthOfMessage(byte[] bytes)
+        {
+            var cr = Encoding.ASCII.GetBytes("\\r")[0];
+            var newLine = Encoding.ASCII.GetBytes("\\n")[0];
+            var index = 0;
+            var lengthBytes = new byte[8];
+            while (true)
             {
-                socket.Accept();
-                var byteList = new List<ArraySegment<byte>>();
-                socket.Receive(byteList);
-                int i = 0;
-                while (true)
+                if (bytes[index] == cr && bytes[index + 1] == newLine)
                 {
-                    
+                    break;
                 }
+
+                lengthBytes[index] = bytes[index];
             }
+
+            return BitConverter.ToInt64(lengthBytes, 0);
         }
 
         private void ListenTcp()
         {
             var localEndPoint = new IPEndPoint(_serverInfo.IpAddress, _tcpPortNumber);
-            var socket = new Socket(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+            var socket = new Socket(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            socket.Bind(localEndPoint);
+            socket.Listen(1000); // idk what im doing
+            socket.Accept();
+            for (;;)
+            {
+                var bytes = new byte[10];
+                socket.Receive(bytes);
+                var length = GetLengthOfMessage(bytes);
+                var byteSize = new byte[length];
+                socket.Receive(byteSize);
+                DeserializeAndAddToDictionary(byteSize);
+            }
+        }
+
+        private void DeserializeAndAddToDictionary(byte[] rawBytes)
+        {
+            var message = JsonConvert.DeserializeObject<NetworkWrapper>(Encoding.UTF8.GetString(rawBytes));
+            if (_networkedEntitiesByGuid.ContainsKey(message.Guid) == false)
+            {
+                var gameObject = new GameObject(message.Guid.ToString());
+                var netWorkEntity = gameObject.AddComponent<NetworkEntity>();
+                netWorkEntity.Guid = message.Guid;
+                while (_networkedEntitiesByGuid.TryAdd(message.Guid, netWorkEntity) != true) ;
+            }
+
+            foreach (var gameObject in message.GameObjects)
+            {
+                var serializedObject = _serializer.Deserialize(JObject.FromObject(gameObject));
+                var targetNetworkGameObject = _networkedEntitiesByGuid[message.Guid];
+                targetNetworkGameObject.SafeAdd(serializedObject);
+            }
         }
 
         public void SendUdpUpdate(object value)

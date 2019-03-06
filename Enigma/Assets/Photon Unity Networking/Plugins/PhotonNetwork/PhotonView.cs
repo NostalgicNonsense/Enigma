@@ -16,8 +16,6 @@ using UnityEngine;
 
 namespace Photon_Unity_Networking.Plugins.PhotonNetwork
 {
-#endif
-
 
     public enum ViewSynchronization { Off, ReliableDeltaCompressed, Unreliable, UnreliableOnChange }
     public enum OnSerializeTransform { OnlyPosition, OnlyRotation, OnlyScale, PositionAndRotation, All }

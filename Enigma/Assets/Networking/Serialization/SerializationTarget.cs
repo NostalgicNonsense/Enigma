@@ -24,9 +24,9 @@ namespace Networking.Serialization
             return matches / ParameterNames.Count;
         }
 
-        public object ReturnObjectOfType(string jObject)
+        public object ReturnObjectOfType(JObject jObject)
         {
-            return JsonConvert.DeserializeAnonymousType(jObject, Type);
+            return jObject.ToObject(Type);
         }
     }
 }

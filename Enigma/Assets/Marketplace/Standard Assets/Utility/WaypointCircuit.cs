@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Marketplace.Standard_Assets.Utility
 {
-#endif
 
     public class WaypointCircuit : MonoBehaviour
     {
