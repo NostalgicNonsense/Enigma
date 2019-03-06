@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 namespace Marketplace.Standard_Assets.Utility
 {
-#endif
-
     public class TimedObjectActivator : MonoBehaviour
     {
         public enum Action

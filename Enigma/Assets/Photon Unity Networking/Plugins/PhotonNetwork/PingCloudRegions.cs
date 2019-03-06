@@ -88,8 +88,6 @@ namespace Photon_Unity_Networking.Plugins.PhotonNetwork
 
     }
 
-#endif
-
 
 #if UNITY_WEBGL
 

@@ -18,7 +18,6 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Photon_Unity_Networking.Plugins.PhotonNetwork
 {
-#endif
 
 
     /// <summary>
