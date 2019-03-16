@@ -18,7 +18,7 @@ namespace UnityStandardAssets.Water
         public override void OnInspectorGUI()
         {
             serObj.Update();
-
+            /*
             GameObject go = ((GerstnerDisplace)serObj.targetObject).gameObject;
             WaterBase wb = (WaterBase)go.GetComponent(typeof(WaterBase));
             Material sharedWaterMaterial = wb.sharedMaterial;
@@ -99,10 +99,11 @@ namespace UnityStandardAssets.Water
 			
                 heightDisplacement = EditorGUILayout.Slider("Height", heightDisplacement, 0.0F, 5.0F);
                 WaterEditorUtility.SetMaterialFloat("_HeightDisplacement", heightDisplacement, sharedWaterMaterial);
-                */
+                
             }
 
             serObj.ApplyModifiedProperties();
+        */
         }
     }
 }
