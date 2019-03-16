@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace Networking.Serialization
+﻿namespace Networking.Serialization
 {
     public interface ISerializer
     {

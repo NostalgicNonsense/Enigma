@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -9,11 +7,8 @@ using System.Text;
 using System.Threading;
 using Networking.Serialization;
 using Networking.Serialization.SerializationModel;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UtilityCode.Extensions;
-using WebSocketSharp;
 
 namespace Networking
 {
@@ -63,7 +58,6 @@ namespace Networking
 
         private void ListenUdp()
         {
-
         }
 
         private long GetLengthOfMessage(byte[] bytes)
@@ -88,7 +82,8 @@ namespace Networking
         private void ListenTcp()
         {
             var localEndPoint = new IPEndPoint(_serverInfo.IpAddress, _tcpPortNumber);
-            var socket = new Socket(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            var socket = new Socket(ServerInfo.CurrentServerInfo.IpAddress.AddressFamily, SocketType.Stream,
+                                    ProtocolType.Tcp);
             socket.Bind(localEndPoint);
             socket.Listen(1000); // idk what im doing
             socket.Accept();
@@ -152,6 +147,5 @@ namespace Networking
         {
             return Encoding.UTF8.GetBytes(value);
         }
-    
     }
 }

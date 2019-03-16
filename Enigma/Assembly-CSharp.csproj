@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{BAF4E6C2-C1E0-CFEE-14AC-2A04B0177AD8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -243,6 +244,9 @@
     <Compile Include="Assets\Networking\Serialization\SerializationTarget.cs" />
     <Compile Include="Assets\Networking\Serialization\Serializer.cs" />
     <Compile Include="Assets\Networking\ServerInfo.cs" />
+    <Compile Include="Assets\Utility\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Utility\IEnumerableExtensions.cs" />
+    <Compile Include="Assets\Utility\LongExtensions.cs" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
