@@ -169,7 +169,7 @@ public class RTC_EditorWindows : Editor {
 	#region Add UI
 	[MenuItem("Tools/BoneCracker Games/Realistic Tank Controller/Create/UI/Add RTC Canvas To Scene", false, -50)]
 	public static void CreateRTCCanvas(){
-
+        /*
 		if (GameObject.FindObjectOfType<RTC_UIDashboard> ()) {
 
 			EditorUtility.DisplayDialog ("Scene has RTC Canvas already!", "Scene has RTC Canvas already!", "Ok");
@@ -181,7 +181,7 @@ public class RTC_EditorWindows : Editor {
 			canvas.name = RTC_Settings.Instance.RTCCanvas.name;
 
 		}
-
+        */
 	}
 	#endregion
 

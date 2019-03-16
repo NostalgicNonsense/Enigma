@@ -1,6 +1,5 @@
 ﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using Enigma.Components.Network;
-using UFPS.Multiplayer.Scripts.Master;
 using UnityEngine;
 
 namespace Enigma.Components.UI.MenuSelection
@@ -9,14 +8,10 @@ namespace Enigma.Components.UI.MenuSelection
     {
         private NetworkManagerExtension netWorkManagerExtension;
 
-        private vp_MPMaster vp_master;
-
         public void Start()
         {
             netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
             
-            vp_master = FindObjectOfType<vp_MPMaster>();
-
             Init();
         }
 
@@ -54,9 +49,6 @@ namespace Enigma.Components.UI.MenuSelection
         {
             HideMenu();
             int teamNumber = GetTeamNumber(teamName);
-
-            var playerTypeName = vp_MPTeamManager.Instance.GetTeamPlayerTypeName(teamNumber);
-            var placement = vp_MPPlayerSpawner.GetRandomPlacement(vp_MPTeamManager.GetTeamName(teamNumber));
 
             //vp_master.photonView.RPC("ReceiveInitialSpawnInfo", PhotonTargets.All, PhotonNetwork.player.ID, PhotonNetwork.player, placement.Position, placement.Rotation, playerTypeName, teamNumber);
 

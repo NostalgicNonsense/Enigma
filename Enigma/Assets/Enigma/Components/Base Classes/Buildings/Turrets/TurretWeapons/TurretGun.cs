@@ -3,8 +3,6 @@ using Enigma.Components.Base_Classes.Buildings.Turrets.Targeting;
 using Enigma.Components.Base_Classes.TeamSettings.Enums;
 using Enigma.Components.HelpClasses.Builders;
 using Enigma.Components.HelpClasses.ExtensionMethods;
-using UFPS.Base.Scripts.Gameplay.Combat;
-using UFPS.Base.Scripts.Gameplay.Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -72,12 +70,14 @@ namespace Enigma.Components.Base_Classes.Buildings.Turrets.TurretWeapons
 
         private void HandleHit(RaycastHit hit)
         {
+            /*
             var playerHit = hit.collider.gameObject.GetComponentInChildren<vp_CharacterController>();
             if (playerHit != null)
             {
                 var damageHandler = playerHit.CharacterController.GetComponent<vp_DamageHandler>();
                 damageHandler.Damage(Damage);
             }
+            */
         }
 
         private Vector3 GetDirectionToTarget(Transform targeTransform)
