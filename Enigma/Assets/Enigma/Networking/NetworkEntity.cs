@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Networking.Serialization.SerializationModel;
+using Enigma.Networking.Serialization.SerializationModel;
 using UnityEngine;
 
-namespace Networking
+namespace Enigma.Networking
 {
     public class NetworkEntity : MonoBehaviour
     {

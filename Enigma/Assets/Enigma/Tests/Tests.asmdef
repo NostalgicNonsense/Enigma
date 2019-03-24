@@ -1,0 +1,12 @@
+﻿{
+    "name": "Tests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "references": [
+    "EnigmaCore"
+  ] 
+}

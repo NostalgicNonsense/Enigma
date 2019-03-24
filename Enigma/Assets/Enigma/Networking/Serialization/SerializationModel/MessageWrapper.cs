@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Networking.Serialization.SerializationModel
+namespace Enigma.Networking.Serialization.SerializationModel
 {
     // it's a struct to reduce the expense of building a wrapper object
     internal struct NetworkWrapper

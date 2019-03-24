@@ -60,57 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Building.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingHologram.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingResourceGive.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\BuildingStats.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Captureables\CaptureFlag.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Captureables\CaptureZone.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Enums\BuildingType.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\Targeting\ITargeter.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\Targeting\ProximityTargeter.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\Turret.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretWeapons\ITurretWeapon.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretWeapons\TurretGun.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Buildings\Turrets\TurretWeapons\TurretMissileLauncher.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Command\BuildingPlacement.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Command\CommanderControl.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Launchables\HomingMissle.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Launchables\ShellBase.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Maps\Preplaced\MultiplayerSpawnType.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Player\IPlayer.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Player\Player.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Player\PlayerSpectator.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Player\SpawnPos.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Enums\Team.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Money.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Oil.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\Resource.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\TeamSettings\Resources\ResourceTeams.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\EnigmaDamageHandler.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Passengers.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\Turret.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\ComponentScripts\VehicleDeath.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\IVehicle.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\SimpleCarController.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleScripts\TankController.cs" />
-    <Compile Include="Assets\Enigma\Components\Base Classes\Vehicle\VehicleWeapons\CannonBase.cs" />
-    <Compile Include="Assets\Enigma\Components\Gibs\BasicExplosion.cs" />
-    <Compile Include="Assets\Enigma\Components\Gibs\GibExplosion.cs" />
-    <Compile Include="Assets\Enigma\Components\Gibs\GibFadeout.cs" />
-    <Compile Include="Assets\Enigma\Components\HelpClasses\Builders\InaccurateRayBuilder.cs" />
-    <Compile Include="Assets\Enigma\Components\HelpClasses\ExtensionMethods\Vector3Extensions.cs" />
-    <Compile Include="Assets\Enigma\Components\HelpClasses\Tuple.cs" />
-    <Compile Include="Assets\Enigma\Components\Network\NetworkManagerExtension.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\Commander\Buildings\ButtonBuilding.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\Commander\Tooltip.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\Commander\UICommander.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\MenuSelection\TeamSelection.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\MenuSelection\UISelection.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\Minimap\Minimap.cs" />
-    <Compile Include="Assets\Enigma\Components\UI\Minimap\MinimapIcon.cs" />
-    <Compile Include="Assets\Enigma\Enums\EnigmaTags.cs" />
-    <Compile Include="Assets\Enigma\Enums\GameEntityType.cs" />
     <Compile Include="Assets\Marketplace\RealisticTankController\Scripts\RTC_Ammunation.cs" />
     <Compile Include="Assets\Marketplace\RealisticTankController\Scripts\RTC_CreateAudioSource.cs" />
     <Compile Include="Assets\Marketplace\RealisticTankController\Scripts\RTC_CreateWheelCollider.cs" />
@@ -235,77 +184,50 @@
     <Compile Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\Networking\ConnectionHandler.cs" />
-    <Compile Include="Assets\Networking\NetworkComponent.cs" />
-    <Compile Include="Assets\Networking\NetworkEntity.cs" />
-    <Compile Include="Assets\Networking\Serialization\ISerializer.cs" />
-    <Compile Include="Assets\Networking\Serialization\SerializationModel\MessageWrapper.cs" />
-    <Compile Include="Assets\Networking\Serialization\SerializationTarget.cs" />
-    <Compile Include="Assets\Networking\Serialization\Serializer.cs" />
-    <Compile Include="Assets\Networking\ServerInfo.cs" />
-    <Compile Include="Assets\Utility\GameObjectExtensions.cs" />
-    <Compile Include="Assets\Utility\IEnumerableExtensions.cs" />
-    <Compile Include="Assets\Utility\LongExtensions.cs" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_MegaSpeed.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Dead.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Guidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Dead.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Run.txt" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ImageEffects\Readme.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
     <None Include="Assets\Marketplace\race-track-lake\readmore.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Run.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Crouch.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Freeze.txt" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\netstandard1.0\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
     <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Crouch.txt" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\netstandard1.3\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Fonts\OpenSans\License!.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_Dead.txt" />
     <None Include="Assets\Marketplace\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Crouch.txt" />
     <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_MegaSpeed.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Freeze.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.xml" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Cameras\CameraGuidelines.txt" />
-    <None Include="Assets\Enigma\Components\Base Classes\Buildings\Barrack\BuildingShed\BuildingShedInfo.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\Controller_MPRobberHDWeapons_Freeze.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\Controller_MPHeroHDWeapons_MegaSpeed.txt" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\net35\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Run.txt" />
-    <None Include="Assets\Enigma\Prefabs\Player\_NF\Weapons_NF\RemotePlayerPresets\WeaponShooter_1Pistol_Zoom.txt" />
     <None Include="Assets\Marketplace\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\packages\Newtonsoft.Json.12.0.1\lib\net20\Newtonsoft.Json.xml" />
     <None Include="Assets\Marketplace\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
-    <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
     <None Include="Assets\Marketplace\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Enigma/Enigma/Enigma/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -516,6 +438,33 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net20/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net35/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net40/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net45/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.0/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.3/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard2.0/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
@@ -879,6 +828,10 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{441D3E70-DC4B-DD57-FF9D-655BB62C6481}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="EnigmaCore.csproj">
+      <Project>{D7B30A16-13A0-0286-FC62-0A49570F1E18}</Project>
+      <Name>EnigmaCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,6 @@
-﻿namespace Networking.Serialization
+﻿using global::Newtonsoft.Json.Linq;
+
+namespace Enigma.Networking.Serialization
 {
     public interface ISerializer
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Networking
+namespace Enigma.Networking
 {
     [RequireComponent(typeof(NetworkEntity))]
     public abstract class NetworkedComponent : MonoBehaviour

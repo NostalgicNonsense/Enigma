@@ -1,7 +1,8 @@
-﻿using System;
+﻿extern alias Newtonsoft;
+using System;
 using System.Collections.Generic;
 
-namespace Networking.Serialization
+namespace Enigma.Networking.Serialization
 {
     public class SerializationTarget
     {
