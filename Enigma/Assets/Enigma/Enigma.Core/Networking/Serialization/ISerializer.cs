@@ -1,4 +1,4 @@
-﻿using global::Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace Enigma.Networking.Serialization
 {

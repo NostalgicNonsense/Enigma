@@ -1,6 +1,6 @@
-﻿extern alias Newtonsoft;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace Enigma.Networking.Serialization
 {
