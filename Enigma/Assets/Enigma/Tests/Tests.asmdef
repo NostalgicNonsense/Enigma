@@ -7,6 +7,6 @@
     "Editor"
   ],
   "references": [
-    "EnigmaCore"
+    "Enigma.Core"
   ] 
 }

@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{D7B30A16-13A0-0286-FC62-0A49570F1E18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -71,16 +72,8 @@
     <Compile Include="Assets\Enigma\Enigma.Core\Utility\GameObjectExtensions.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Utility\IEnumerableExtensions.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Utility\LongExtensions.cs" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.xml" />
     <None Include="Assets\Enigma\Enigma.Core\EnigmaCore.asmdef" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\netstandard1.0\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\netstandard1.3\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\net35\Newtonsoft.Json.xml" />
-    <None Include="Assets\Enigma\Enigma.Core\packages\Newtonsoft.Json.12.0.1\lib\net20\Newtonsoft.Json.xml" />
+    <None Include="nuget.config" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -309,33 +302,6 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net20/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net35/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net40/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/net45/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.0/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.3/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/netstandard2.0/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/packages/Newtonsoft.Json.12.0.1/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
     </Reference>
@@ -359,33 +325,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.3/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/net40/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/netstandard1.0/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/net45/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/net35/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/net20/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/netstandard2.0/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/packages/Newtonsoft.Json.12.0.1/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
