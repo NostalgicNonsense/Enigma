@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Networking.Serialization;
-using Networking.Serialization.SerializationModel;
+using Enigma.Networking.Serialization;
+using Enigma.Networking.Serialization.SerializationModel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UtilityCode.Extensions;
 
-namespace Networking
+namespace Enigma.Networking
 {
     public class ConnectionHandler
     {
@@ -57,7 +59,7 @@ namespace Networking
         }
 
         private void ListenUdp()
-        {
+        { 
             //TODO
         }
 

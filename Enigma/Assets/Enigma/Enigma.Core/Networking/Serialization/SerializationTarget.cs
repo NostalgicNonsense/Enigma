@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
-namespace Networking.Serialization
+namespace Enigma.Networking.Serialization
 {
     public class SerializationTarget
     {

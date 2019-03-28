@@ -73,9 +73,6 @@
     <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
     <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
     <Compile Include="Assets\Marketplace\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
-    <Reference Include="Assembly-UnityScript">
-      <HintPath>C:/Enigma/Enigma/Enigma/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Enigma/Enigma/Enigma/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -327,6 +324,15 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGetForUnity">
+      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/NuGetForUnity.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
@@ -706,6 +712,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{BAF4E6C2-C1E0-CFEE-14AC-2A04B0177AD8}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Enigma.Core.csproj">
+      <Project>{9B3FB4A6-8DD1-12EB-C32E-7D7814C84EB4}</Project>
+      <Name>Enigma.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
