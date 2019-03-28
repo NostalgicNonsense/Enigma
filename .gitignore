@@ -28,6 +28,7 @@ sysinfo.txt
 *.unitypackage
 *.ide-shm
 *.ide-wal
+
 Enigma/.vs/Enigma/v15/.suo
 Enigma/.vs/Enigma/v15/sqlite3/storage.ide
 Enigma/.vs/Enigma/v15/Server/sqlite3/storage.ide
@@ -49,6 +50,7 @@ Enigma/Assets/Marketplace/RealisticTankController/Models/RTC_Tank.fbm/Tank_D.tga
 # User-specific files
 *.rsuser
 *.suo
+*.csproj
 *.user
 *.userosscache
 *.sln.docstates
