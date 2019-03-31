@@ -6,14 +6,13 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using Assets.Enigma.Enigma.Core.Networking.Serialization;
-using Enigma.Networking.Serialization;
-using Enigma.Networking.Serialization.SerializationModel;
+using Assets.Enigma.Enigma.Core.Networking.Serialization.SerializationModel;
+using Assets.Enigma.Enigma.Core.Utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using UtilityCode.Extensions;
 
-namespace Enigma.Networking
+namespace Assets.Enigma.Enigma.Core.Networking
 {
     public class ConnectionHandler
     {
@@ -116,9 +115,10 @@ namespace Enigma.Networking
 
             foreach (var gameObject in message.GameObjects)
             {
-                var serializedObject = _serializer.Deserialize(JObject.FromObject(gameObject));
                 var targetNetworkGameObject = _networkedEntitiesByGuid[message.Guid];
-                targetNetworkGameObject.SafeAdd(serializedObject);
+                var jObject = JObject.FromObject(gameObject);
+                var serializationTarget = _serializer.IdentifyBestTypeMatch(jObject);
+                targetNetworkGameObject.SafeAdd(serializationTarget.Type, jObject);
             }
         }
 

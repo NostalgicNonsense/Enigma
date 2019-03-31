@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utility
+namespace Assets.Enigma.Enigma.Core.Utility
 {
     public static class GameObjectExtensions
     {

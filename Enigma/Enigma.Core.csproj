@@ -65,7 +65,9 @@
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\NetworkComponent.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\NetworkEntity.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\ComponentPropertyResolver.cs" />
+    <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\ComponentUpdater.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\ISerializer.cs" />
+    <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\NetworkComponentConverter.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\SerializationModel\NetworkWrapper.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\SerializationTarget.cs" />
     <Compile Include="Assets\Enigma\Enigma.Core\Networking\Serialization\Serializer.cs" />

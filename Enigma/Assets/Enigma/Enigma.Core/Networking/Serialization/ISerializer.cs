@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace Enigma.Networking.Serialization
+namespace Assets.Enigma.Enigma.Core.Networking.Serialization
 {
     public interface ISerializer
     {
-        object Deserialize(string value);
-
+        T Deserialize<T>(string value);
         string Serialize(object value);
 
-        object Deserialize(JObject value);
+        SerializationTarget IdentifyBestTypeMatch(JObject value);
     }
 }

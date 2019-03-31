@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Enigma.Networking;
-using Enigma.Networking.Serialization;
+using Assets.Enigma.Enigma.Core.Utility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using UtilityCode.Extensions;
 
 namespace Assets.Enigma.Enigma.Core.Networking.Serialization
 {
@@ -14,9 +12,8 @@ namespace Assets.Enigma.Enigma.Core.Networking.Serialization
     {
         private static readonly IEnumerable<SerializationTarget> SerializationTargets;
         private static readonly JsonSerializerSettings Settings;
-        private static readonly JsonLoadSettings LoadSettings;
 
-
+        #region  Constructor
         static Serializer()
         {
             // sorry about this..
@@ -36,18 +33,14 @@ namespace Assets.Enigma.Enigma.Core.Networking.Serialization
                 ContractResolver = jsonResolver
             };
         }
+        #endregion
 
-        public object Deserialize(JObject value)
+        public SerializationTarget IdentifyBestTypeMatch(JObject value)
         {
             var bestMatchedType =
                 SerializationTargets
                     .OrderByDescending(c => c.GetNumberOfParameterNameMatches(JObject.FromObject(value))).First();
-            return bestMatchedType.ReturnObjectOfType(value);
-        }
-
-        public object Deserialize(string value)
-        {
-            return Deserialize(JObject.Parse(value));
+            return bestMatchedType;
         }
 
         public string Serialize(object value)

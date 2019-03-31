@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Assets.Enigma.Enigma.Core.Networking.Serialization
@@ -22,11 +21,6 @@ namespace Assets.Enigma.Enigma.Core.Networking.Serialization
             }
 
             return matches / ParameterNames.Count;
-        }
-
-        public object ReturnObjectOfType(JObject jObject)
-        {
-            return jObject.ToObject(Type);
         }
     }
 }

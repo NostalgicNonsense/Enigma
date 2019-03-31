@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Enigma.Networking.Serialization.SerializationModel;
+using Assets.Enigma.Enigma.Core.Networking.Serialization;
+using Assets.Enigma.Enigma.Core.Networking.Serialization.SerializationModel;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace Enigma.Networking
+namespace Assets.Enigma.Enigma.Core.Networking
 {
     public class NetworkEntity : MonoBehaviour
     {
         public Guid Guid { get; set; }
         private ConnectionHandler _connectHandlerInstance;
-        private Dictionary<Type, UpdateEvent<Component>> _networkedComponentsInGameObject;
-        private object _lock = new object();
+        private Dictionary<Type, UpdateEvent> _networkedComponentsInGameObject;
+        private readonly object _lock = new object();
 
         private void Awake()
         {
             var components = GetComponents(typeof(NetworkedComponent));
             _connectHandlerInstance = ConnectionHandler.ConnectionHandlerInstance;
-            _networkedComponentsInGameObject = components.ToDictionary(c => c.GetType(), v => new UpdateEvent<Component>(v));
+            _networkedComponentsInGameObject = components.ToDictionary(c => c.GetType(), v => new UpdateEvent());
             while (_connectHandlerInstance.TryAddListener(this) != true)
             _connectHandlerInstance.SendTcpUpdate(new NetworkWrapper(this));
         }
@@ -39,66 +41,54 @@ namespace Enigma.Networking
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
-        public void TryGetUpdates<T>(ref T value) where T : Component
+        public void TryGetUpdates<T>(T value) where T : NetworkedComponent
         {
             if (_networkedComponentsInGameObject.ContainsKey(typeof(T)) &&
                 _networkedComponentsInGameObject[typeof(T)].HasBeenUpdatedSinceLastGet)
             {
-                value = (T) _networkedComponentsInGameObject[typeof(T)].Value;
+                _networkedComponentsInGameObject[typeof(T)].Update(value);
             }
         }
 
-        private struct UpdateEvent<T> where T : Component
+        private class UpdateEvent
         {
-            private T _value;
-            public bool HasBeenUpdatedSinceLastGet;
+            private JObject _mostRecentMessage;
+            public bool HasBeenUpdatedSinceLastGet { get; private set; }
 
-            public UpdateEvent(T value)
+            public UpdateEvent()
             {
-                _value = value;
                 HasBeenUpdatedSinceLastGet = false;
             }
 
-            public UpdateEvent(T value, bool newNetworkObject)
+            public void AddNewestMessage(JObject jObject)
             {
-                _value = value;
+                HasBeenUpdatedSinceLastGet = true;
+                _mostRecentMessage = jObject;
+            }
+
+            public void Update(NetworkedComponent component)
+            {
                 HasBeenUpdatedSinceLastGet = false;
-            }
-
-            public void Update(object obj)
-            {
-                Value = (T)obj;
-            }
-
-            public T Value
-            {
-                get
-                {
-                    HasBeenUpdatedSinceLastGet = true;
-                    return _value;
-                }
-                set
-                {
-                    HasBeenUpdatedSinceLastGet = false;
-                    _value = value;
-                }
+                ComponentUpdater.UpdateObjectOfType(component, _mostRecentMessage);
             }
         }
 
-        public void SafeAdd(object value)
+        public void SafeAdd(Type type, JObject jObject)
         {
             // we have a local lock here
             lock (_lock)
             {
-                if (_networkedComponentsInGameObject.ContainsKey(value.GetType()))
+                if (!_networkedComponentsInGameObject.ContainsKey(type))
                 {
-                    _networkedComponentsInGameObject[value.GetType()].Update(value);
+                    var newComponent = gameObject.AddComponent(type);
+                    _networkedComponentsInGameObject.Add(type, new UpdateEvent());
+                    ComponentUpdater.UpdateObjectOfType((NetworkedComponent)newComponent, jObject);
                 }
                 else
                 {
-                    var newComponent = gameObject.AddComponent(value.GetType());
-                    _networkedComponentsInGameObject.Add(value.GetType(), new UpdateEvent<Component>(newComponent));
+                    _networkedComponentsInGameObject[type].AddNewestMessage(jObject);
                 }
+
             }
         }
     }

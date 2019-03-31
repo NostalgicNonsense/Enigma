@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enigma.Networking
+namespace Assets.Enigma.Enigma.Core.Networking
 {
     [RequireComponent(typeof(NetworkEntity))]
     public abstract class NetworkedComponent : MonoBehaviour
@@ -26,7 +26,7 @@ namespace Enigma.Networking
         protected void Update()
         {
             var obj = this; // have to create a reference value to pass 
-            _networkEntity.TryGetUpdates(ref obj);
+            _networkEntity.TryGetUpdates(obj);
         }
         
     }

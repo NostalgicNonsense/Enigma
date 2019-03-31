@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
+using Assets.Enigma.Enigma.Core.Networking;
 using Assets.Enigma.Enigma.Core.Networking.Serialization;
-using Enigma.Networking;
-using Enigma.Networking.Serialization;
-using Enigma.Networking.Serialization.SerializationModel;
+using Assets.Enigma.Enigma.Core.Networking.Serialization.SerializationModel;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using UnityEngine;
@@ -37,11 +36,11 @@ namespace Assets.Enigma.Tests.CoreTests
 
 
 
-            var results = deserializedMessage.GameObjects.Select(c => Serializer.Deserialize(JObject.FromObject(c)))
+            var results = deserializedMessage.GameObjects.Select(c => Serializer.IdentifyBestTypeMatch(JObject.FromObject(c)))
                                              .ToList();
 
-            Assert.True(results.Any(c => c.GetType() == typeof(TestObjOne)));
-            Assert.True(results.Any(c => c.GetType() == typeof(TestObjTwo)));
+            Assert.True(results.Any(c => c.Type == typeof(TestObjOne)));
+            Assert.True(results.Any(c => c.Type == typeof(TestObjTwo)));
         }
 
         private class TestObjOne : NetworkedComponent
@@ -54,7 +53,5 @@ namespace Assets.Enigma.Tests.CoreTests
         {
             public byte ByteValue { get; set; }
         }
-
-
     }
 }
