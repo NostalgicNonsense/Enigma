@@ -328,18 +328,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetZip">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/DotNetZip.dll</HintPath>
-    </Reference>
-    <Reference Include="NuGetForUnity">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/NuGetForUnity.dll</HintPath>
-    </Reference>
-    <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -705,10 +693,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{441D3E70-DC4B-DD57-FF9D-655BB62C6481}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{BAF4E6C2-C1E0-CFEE-14AC-2A04B0177AD8}</Project>
       <Name>Assembly-CSharp</Name>

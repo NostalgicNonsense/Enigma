@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Assets.Enigma.Enigma.Core.Networking.Serialization;
 using Enigma.Networking.Serialization;
 using Enigma.Networking.Serialization.SerializationModel;
 using Newtonsoft.Json;
@@ -106,6 +107,7 @@ namespace Enigma.Networking
             var message = JsonConvert.DeserializeObject<NetworkWrapper>(Encoding.UTF8.GetString(rawBytes));
             if (_networkedEntitiesByGuid.ContainsKey(message.Guid) == false)
             {
+                // if we don't have an object with this ID, create a new one.
                 var gameObject = new GameObject(message.Guid.ToString());
                 var netWorkEntity = gameObject.AddComponent<NetworkEntity>();
                 netWorkEntity.Guid = message.Guid;

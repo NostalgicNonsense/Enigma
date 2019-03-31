@@ -276,7 +276,6 @@
     <None Include="Assets\Marketplace\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
     <None Include="Assets\Marketplace\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_2AssaultRifle_Zoom.txt" />
-    <None Include="Assets\NuGet\LICENSE.txt" />
     <None Include="Assets\Enigma\Prefabs\Player\_BE\Weapons_BE\RemotePlayerPresets\Controller_MPSwatHDWeapons_Freeze.txt" />
     <None Include="Assets\Enigma\Prefabs\Player\_Local\RemotePlayerPresets\WeaponShooter_3Shotgun_Zoom.txt" />
     <None Include="Assets\Marketplace\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
@@ -509,12 +508,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
@@ -869,10 +862,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{441D3E70-DC4B-DD57-FF9D-655BB62C6481}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Enigma.Core.csproj">
       <Project>{9B3FB4A6-8DD1-12EB-C32E-7D7814C84EB4}</Project>
       <Name>Enigma.Core</Name>

@@ -60,7 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Enigma\Tests\SerializationTargetTests.cs" />
+    <Compile Include="Assets\Enigma\Tests\CoreTests\SerializationTargetTests.cs" />
     <None Include="Assets\Enigma\Tests\Tests.asmdef" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -304,18 +304,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Enigma/Enigma/Enigma/Assets/Enigma/Enigma.Core/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetZip">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/DotNetZip.dll</HintPath>
-    </Reference>
-    <Reference Include="NuGetForUnity">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/NuGet/Editor/NuGetForUnity.dll</HintPath>
-    </Reference>
-    <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>C:/Enigma/Enigma/Enigma/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Jacob/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
