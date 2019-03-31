@@ -1,16 +1,13 @@
 ﻿using Enigma.Components.Base_Classes.TeamSettings.Enums;
-using Enigma.Components.Network;
 using UnityEngine;
 
 namespace Enigma.Components.UI.MenuSelection
 {
     public class TeamSelection : UISelection
     {
-        private NetworkManagerExtension netWorkManagerExtension;
 
         public void Start()
         {
-            netWorkManagerExtension = GameObject.FindObjectOfType<NetworkManagerExtension>();
             
             Init();
         }
