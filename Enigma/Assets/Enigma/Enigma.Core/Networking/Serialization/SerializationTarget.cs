@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
-namespace Enigma.Networking.Serialization
+namespace Assets.Enigma.Enigma.Core.Networking.Serialization
 {
     public class SerializationTarget
     {
@@ -21,11 +21,6 @@ namespace Enigma.Networking.Serialization
             }
 
             return matches / ParameterNames.Count;
-        }
-
-        public object ReturnObjectOfType(JObject jObject)
-        {
-            return jObject.ToObject(Type);
         }
     }
 }

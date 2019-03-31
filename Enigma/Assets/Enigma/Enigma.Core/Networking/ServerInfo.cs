@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Enigma.Networking
+namespace Assets.Enigma.Enigma.Core.Networking
 {
     public class ServerInfo
     {

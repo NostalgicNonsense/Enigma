@@ -1,51 +1,56 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Assets.Enigma.Enigma.Core.Utility;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using UnityEngine;
-using UtilityCode.Extensions;
 
-namespace Enigma.Networking.Serialization
+namespace Assets.Enigma.Enigma.Core.Networking.Serialization
 {
     public class Serializer : ISerializer
     {
-        private static IEnumerable<SerializationTarget> _serializationTargets;
+        private static readonly IEnumerable<SerializationTarget> SerializationTargets;
+        private static readonly JsonSerializerSettings Settings;
 
+        #region  Constructor
         static Serializer()
         {
-            var typesInThisAssembly = typeof(Serializer)
-                                      .Assembly.GetTypes().Where(c => c.IsSubclassOf(typeof(NetworkedComponent)));
-            _serializationTargets = typesInThisAssembly.Select(type => new SerializationTarget
+            // sorry about this..
+            var typesInThisAssembly = AppDomain.CurrentDomain.GetAssemblies()
+                                               .SelectMany(a => a.GetTypes().Where(
+                                                           c => c.IsSubclassOf(typeof(NetworkedComponent))));
+            SerializationTargets = typesInThisAssembly.Select(type => new SerializationTarget
             {
                 ParameterNames = type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
                                   .Select(parameterInfo => parameterInfo.Name).ToHashSet(),
                 Type = type
             });
 
-            _serializationTargets.Append(new SerializationTarget
+            var jsonResolver = new ComponentPropertyResolver();
+            Settings = new JsonSerializerSettings
             {
-                Type = typeof(Vector3),
-                ParameterNames = typeof(Vector3).GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                                .Select(parameterInfo => parameterInfo.Name).ToHashSet()
-            });
+                ContractResolver = jsonResolver
+            };
         }
+        #endregion
 
-        public object Deserialize(JObject value)
+        public SerializationTarget IdentifyBestTypeMatch(JObject value)
         {
             var bestMatchedType =
-                _serializationTargets
+                SerializationTargets
                     .OrderByDescending(c => c.GetNumberOfParameterNameMatches(JObject.FromObject(value))).First();
-            return bestMatchedType.ReturnObjectOfType(value);
-        }
-
-        public object Deserialize(string value)
-        {
-            return Deserialize(JObject.Parse(value));
+            return bestMatchedType;
         }
 
         public string Serialize(object value)
         {
-            return JsonUtility.ToJson(value);
+            return JsonConvert.SerializeObject(value, Settings);
+        }
+
+        public T Deserialize<T>(string value)
+        {
+            return JsonConvert.DeserializeObject<T>(value, Settings);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace UtilityCode.Extensions
+namespace Assets.Enigma.Enigma.Core.Utility
 {
     public static class IEnumerableExtensions
     {
